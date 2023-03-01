@@ -25,6 +25,7 @@
 <pre>
   &lt;!DOCTYPE html>
   &lt;html>
+    &lt;!-- This is the sintax of a comment -->
     &lt;head>
       &lt;title> My first HTML page! &lt;/title>
     &lt;/head>
@@ -44,14 +45,316 @@
     The <em>&lt;head> &lt;/head></em> tags delimit the header and can contain information about the page. 
     The sample code adds a title to our page, which will appear in the top bar of your browser.
   </li>
-  <li>
-    After the header, the <em>&lt;body> &lt;/body></em> tags delimit the page's scope. The "body" will contain all the content available to the user, such as texts, videos, and images. </li>
+  <li> After the header, the <em>&lt;body> &lt;/body></em> tags delimit the page's scope. The "body" will contain all the content available to the user, such as texts, videos, and images. </li>
+  <li> Comments are information not exhibited by the browser. They are useful for documenting your code. Any text between <strong>&lt;!--</strong> and <strong>--></strong> is a comment. </li>
 </ul>
 
 
+<p>Let's continue improving our code and getting acquainted with more HTML tags. 
+  We're going to explore then during the class: </p>
+
+   <table>
+    <tbody>
+    <tr>
+    <th>Tag</th>
+    <th>Short description</th>
+    </tr>
+    <tr>
+      <td>&lt;br></td>
+      <td>Breaks a line, such as the "Enter" button, when you are typing in a text editor. </td>
+    </tr>
+    <tr>
+      <td>&lt;p>&lt;/p></td>
+      <td>Formats text as paragraphs.</td>
+    </tr>
+    <tr>
+      <td>&lt;h1>&lt;/h1></td>
+      <td>Formats text in a header style. There are different sizes; try to increase the number 1 up to 6 (h2, h3, ..., h6).</td>
+    </tr>
+    <tr>
+      <td>&lt;a href="link"> Text &lt;/a></td>
+      <td>Creates hyperlinks.</td>
+    </tr>
+    <tr>
+      <td>&lt;img src="image-file"></td>
+      <td>Inserts images on the page.</td>
+    </tr>
+    <tr>
+      <td>&lt;link rel="icon" href="image-file" type="image/x-icon"></td>
+      <td>Inserts a small image before the page's title configured in the header. It's called a favicon.
+        <br> You can create your images or download free ones. 
+      </td>
+    </tr>
+
+    
+    </tbody>
+    </table>
+
+    <br>
+    
+<h3>02: HTML: Semantics, Lists, Tables, Symbols, and more fun tags</h3>
 
 
+<h4>Text formatting with HTML semantics</h4>
 
+<table>
+  <tbody>
+  <tr>
+  <th>Tag</th>
+  <th>Result</th>
+  </tr>
+ 
+  <tr>
+    <td>&lt;strong> Text in 'strong' writing. &lt;/strong></td>
+    <td><strong>Text in strong writing. </strong></td>
+  </tr>
+  <tr>
+    <td>&lt;em> Text with emphasis. &lt;/em></td>
+    <td><em>Text with emphasis. </em></td>
+  </tr>
+  <tr>
+    <td>&lt;mark> Marked text. &lt;/mark></td>
+    <td><mark>Marked text. </mark></td>
+  </tr>
+  <tr>
+    <td>&lt;del> Desconsidered text. &lt;/del></td>
+    <td><del>Desconsidered text. </del></td>
+  </tr>
+  <tr>
+    <td>&lt;ins> Inserted text. &lt;/ins></td>
+    <td><ins>Inserted text. </ins></td>
+  </tr>
+  <tr>
+    <td>&lt;address> Some address here. &lt;/address></td>
+    <td><address> Some address here. </address></td>
+  </tr>
+  <tr>
+    <td>That is a &lt;sub> subscript &lt;/sub> text. </td>
+    <td>That is a <sub> subscript</sub> text. </td>
+  </tr>
+  <tr>
+    <td>That is a &lt;sup> superscript &lt;/sup> text. </td>
+    <td>That is a <sup> superscript</sup> text. </td>
+  </tr>
+  <tr>
+    <td>That is a &lt;q> quoted &lt;/q> text. </td>
+    <td>That is a <q> quoted</q> text. </td>
+  </tr>
+  <tr>
+    <td>The <em>blockquote</em> tag formats the quote differently.<br>
+      &lt;blockquote> This is a quote. &lt;/blockquote> </td>
+    <td>The <em>blockquote</em> tag formats the quote differently.<br>
+      <blockquote> This is a quote. </blockquote> And them, returns to the text.</td>
+      <!--TODO cite sample-->
+  </tr>
+  <tr>
+    <td>&lt;abbr title="Usefull to explain abbreviations"> ABBR  &lt;/abbr>. </td>
+    <td><abbr title="Usefull to explain abbreviations"> ABBR  </abbr>. </td>
+  </tr>
+  <tr>
+    <td>That is an &lt;bdo dir="rtl"> inverted &lt;/bdo> text.
+      <br> "rtl" stands for Right-to-Left direction. </td>
+    <td>That is an <bdo dir="rtl">inverted</bdo> text. </td>
+  </tr>
+  </tbody>
+</table>
+
+<br>
+
+<h4>Lists</h4>
+
+<table>
+<tbody>  
+  <tr>
+    <th>List type</th>
+    <th>CODE</th>
+    <th>OUTPUT</th>
+  </tr>
+  <tr>
+    <td>Ordered list (ol)</td>
+    <td>
+    <pre>
+      &lt;ol> 
+        &lt;li> First element. &lt;/li>
+        &lt;li> Second element. &lt;/li>
+        &lt;li> Third element. &lt;/li>
+      &lt;/ol>
+    </pre>
+    </td>
+    <td>
+      <ol> 
+        <li> First element. </li>
+        <li> Second element. </li>
+        <li> Third element. </li>
+      </ol>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>Ordered list <br> with <em>type</em> and <em>start</em> tags. <br>
+    Try type="1" (default), "a", "A", "I", and "i".</td>
+    <td>
+    <pre>
+      &lt;ol type="A" start="2"> 
+        &lt;li> First element. &lt;/li>
+        &lt;li> Second element. &lt;/li>
+        &lt;li> Third element. &lt;/li>
+      &lt;/ol>
+    </pre>
+    </td>
+    <td>
+      <ol type="A" start="2"> 
+        <li> First element. </li>
+        <li> Second element. </li>
+        <li> Third element. </li>
+      </ol>
+    </td>
+  </tr>
+
+  <tr>
+    <td>Unordered list (ul)</td>
+    <td>
+    <pre>
+      &lt;ul> 
+        &lt;li> First element. &lt;/li>
+        &lt;li> Second element. &lt;/li>
+        &lt;li> Third element. &lt;/li>
+      &lt;/ul>
+    </pre>
+    </td>
+    <td>
+      <ul> 
+        <li> First element. </li>
+        <li> Second element. </li>
+        <li> Third element. </li>
+      </ul>
+    </td>
+  </tr>
+
+  
+  <tr>
+    <td>Unordered list with <em>type</em> tag.
+      <br> Try type="disc" (default), "square", and "circle".
+    </td>
+    <td>
+    <pre>
+      &lt;ul type="square" > 
+        &lt;li> First element. &lt;/li>
+        &lt;li> Second element. &lt;/li>
+        &lt;li> Third element. &lt;/li>
+      &lt;/ul>
+    </pre>
+    </td>
+    <td>
+      <ul type="circle"> 
+        <li> First element. </li>
+        <li> Second element. </li>
+        <li> Third element. </li>
+      </ul>
+    </td>
+  </tr>
+
+  <tr>
+    <td>Linked list <br>(Have fun mixing the lists!)</td>
+    <td>
+    <pre>
+      &lt;ol> 
+        &lt;li> First element. &lt;/li>
+        &lt;li> Second element. &lt;/li>
+          &lt;ul> 
+            &lt;li> First item of the second element. &lt;/li>
+            &lt;li> Second item of the second element. &lt;/li>
+            &lt;li> Third item of the second element. &lt;/li>
+          &lt;/ul>
+        &lt;li> Third element. &lt;/li>
+      &lt;/ol>
+    </pre>
+    </td>
+    <td>
+      <ol> 
+        <li> First element. </li>
+        <li> Second element. </li>
+            <ul> 
+              <li> First item of the second element. </li>
+              <li> Second item of the second element. </li>
+              <li> Third item of the second element. </li>
+            </ul>
+        <li> Third element. </li>
+      </ol>
+    </td>
+  </tr>
+
+  <tr>
+    <td>Definition list (dl)</td>
+    <td>
+    <pre>
+      &lt;dl> 
+        &lt;dt> FIRST definition term (dt) &lt;/dt>
+        &lt;dd> Definition description (dd) of term 01. &lt;/dd>
+
+        &lt;dt> SECOND definition term &lt;/dt>
+        &lt;dd> Definition description of term 02. &lt;/dd>
+
+        &lt;dt> THRID definition term &lt;/dt>
+        &lt;dd> Definition description of term 03. &lt;/dd>
+      &lt;/dl>
+    </pre>
+    </td>
+    <td>
+      <dl> 
+        <dt> FIRST definition term (dt) </dt>
+        <dd> Definition description (dd) of term 01. </dd>
+
+        <dt> SECOND definition term </dt>
+        <dd> Definition description of term 02. </dd>
+
+        <dt> THRID definition term </dt>
+        <dd> Definition description of term 03. </dd>
+      </dl>
+    </td>
+  </tr>
+
+</tbody>
+</table>
+
+
+<!--h4>Table</h4>
+
+<table>
+  <tbody>  
+    <tr>
+    <td></td>
+    <td></td>
+    </tr>
+  </tbody>
+  </table>
+
+<h4>Special symbols (TODO ..)</h4>
+<p>To add special symbols you can use HTML Entities. For example:</p>
+<ul>
+  <li>&ampreg;    for copyrigth symbol &reg;</li>
+  <li>&amptrade;  for trade mark &trade;</li>
+  <li>&ampDelta;  for Delta &Delta;</li>
+
+</ul>
+
+<h3>03: External sources</h3>
+
+<p>We've seen preatty basic HTML tags. Here some more sources where you can find . . . </p>
+
+<ul>
+  <li> <a href="https://www.w3schools.com/html/default.asp"> W3schools HTML Tutorial</a></li>
+</ul>
+
+<p>More advanced content:</p>
+<ul>
+  <li> (TODO) About current RFCs..</li>
+</ul>
+
+<p>About HTML History</p>
+<ul>
+  <li> (TODO) Back in time...</li>
+</ul-->
 <br><br><br><br>
 <center> (To be continued...)</center>
 <br><br><br><br>
