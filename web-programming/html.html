@@ -73,7 +73,22 @@
     </tr>
     <tr>
       <td>&lt;a href="link"> Text &lt;/a></td>
-      <td>Creates hyperlinks.</td>
+      <td>Creates hyperlinks.
+        <br>For example: The code &lt;a href="http://stefanisp.github.io"> My github page. &lt;/a> becomes:
+        <br> <a href="http://stefanisp.github.io" target="_top"> My github page.</a>
+        <!--br> You can configure a target attribute to inform the browser how to redirect:
+        <br> _blank - opens the link in a new window.
+        <br> _self - open in the same window. 
+        <br> _parent
+        <br> _top -->
+      </td>
+    </tr>
+    <tr>
+      <td>&lt;a href="path to file" download="file name" type="type"> Text &lt;/a></td>
+      <td>Hyperlinks with special attribute for downloads.
+        <br>For example: The code &lt;a href="images/figure01.png" download="figure01.png" type="image/png"> Download figure. &lt;/a> becomes:
+        <br> <a href="images/figure01.png" download="figure01.png" type="image/png"> Download figure.</a>
+      </td>
     </tr>
     <tr>
       <td>&lt;img src="image-file"></td>
@@ -317,8 +332,13 @@
 </tbody>
 </table>
 
+<p>Esta página já está desatualizada.</p>
+
 
 <!--h4>Table</h4>
+
+IMAGES https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html/
+
 
 <table>
   <tbody>  
