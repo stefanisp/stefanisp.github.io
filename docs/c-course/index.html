@@ -15,7 +15,7 @@ Programar é a tarefa de se comunicar com o computador através da escrita de um
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4a13f9273fe167348c37bfa631a7db1fac4a1ee522af3aa8b5d643c27cc58057.js" integrity="sha256-ShP5Jz/hZzSMN7&#43;mMafbH6xKHuUirzqotdZDwnzFgFc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e1e36664cebd53d7e97b9246076c3d40767be79d299104a1bd26ab85124e71c3.js" integrity="sha256-4eNmZM69U9fpe5JGB2w9QHZ7550pkQShvSarhRJOccM=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://stefanisp.github.io/docs/c-course/index.xml" title="stefanisp.github.io" />
 <!--
 Made with Book Theme
@@ -191,7 +191,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#if-else">IF-ELSE</a></li>
         <li><a href="#switch-case">SWITCH-CASE</a></li>
-        <li><a href="#operador-condicional">Operador condicional</a></li>
+        <li><a href="#condição--verdadeiro--falso"><em>Condição</em> ? <em>verdadeiro</em> : <em>falso</em></a></li>
       </ul>
     </li>
     <li><a href="#comandos-de-repetição">Comandos de repetição</a>
@@ -787,9 +787,9 @@ w = !(x == y);  // w recebe o valor 1, como resultado de !(0)
 <pre><code>if (condição)
     instrução;
 </code></pre>
-<p>Por exemplo: (Leia-se: <strong>SE</strong> <em>x for menor que zero</em>, <strong>ENTÃO</strong> <em>imprima na tela o texto &ldquo;O valor de x é negativo&rdquo;</em>. )</p>
-<pre><code>if (x &lt; 0)
-    printf(&quot;O valor de x é negativo&quot;);
+<p>Por exemplo: (Leia-se: <strong>SE</strong> <em>x for maior que zero</em>, <strong>ENTÃO</strong> <em>imprima na tela o texto &ldquo;O valor de x é positivo&rdquo;</em>. )</p>
+<pre><code>if (x &gt; 0)
+    printf(&quot;O valor de x é positivo.&quot;);
 </code></pre>
 <p>A sintaxe acima funciona apenas para avaliação condicional de uma única linha de instrução. Para incluir mais linhas de instrução, devemos adicionar um par de chaves {} para iniciar e fechar um <em>bloco de instruções</em>. Dessa forma, todas as instruções dentro do bloco serão executadas apenas se a condição for verdadeira.</p>
 <pre><code>if (condição){  // inicio do bloco de instruções;
@@ -800,8 +800,8 @@ w = !(x == y);  // w recebe o valor 1, como resultado de !(0)
 } // final do bloco de instruções;
 </code></pre>
 <p>Exemplo:</p>
-<pre><code>if (x &lt; 0){
-    printf(&quot;O valor de x é negativo&quot;); 
+<pre><code>if (x &gt; 0){
+    printf(&quot;O valor de x é positivo.&quot;); 
     x = x + 1;
     z = x;
 }
@@ -812,29 +812,141 @@ w = !(x == y);  // w recebe o valor 1, como resultado de !(0)
 else
     instrução_se_condição_falsa;
 </code></pre>
-<p>Por exemplo: (Leia-se: <strong>SE</strong> <em>x for menor que zero</em>, <strong>ENTÃO</strong> <em>imprima na tela o texto &ldquo;O valor de x é negativo&rdquo;</em>, <strong>SE NÃO</strong>, imprima na tela o texto &ldquo;<em>O valor de x é positivo ou igual a zero</em>&rdquo;. )</p>
-<pre><code>if (x &lt; 0)
-    printf(&quot;O valor de x é negativo&quot;);
+<p>Por exemplo: (Leia-se: <strong>SE</strong> <em>x for maior que zero</em>, <strong>ENTÃO</strong> <em>imprima na tela o texto &ldquo;O valor de x é positivo&rdquo;</em>, <strong>SE NÃO</strong>, imprima na tela o texto &ldquo;<em>O valor de x é negativo ou igual a zero</em>&rdquo;. )</p>
+<pre><code>if (x &gt; 0)
+    printf(&quot;O valor de x é positivo.&quot;);
 else
-    printf(&quot;O valor de x é positivo ou igual a zero&quot;);
+    printf(&quot;O valor de x é negativo ou igual a zero.&quot;);
 </code></pre>
 <p>Da mesma forma, podemos criar blocos de instruções a partir do <em>else</em>. Por exemplo:</p>
-<pre><code>if (x &lt; 0){
-    printf(&quot;O valor de x é negativo&quot;); 
+<pre><code>if (x &gt; 0){
+    printf(&quot;O valor de x é positivo.&quot;); 
     x = x + 1;
     z = x;
 } else { 
-    printf(&quot;O valor de x é positivo ou igual a zero.&quot;);
+    printf(&quot;O valor de x é negativo ou igual a zero.&quot;);
     w = x; 
 }
+</code></pre>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Mais exemplos</span>
+      <span>...</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      TODO
+    </div>
+  </label>
+</div>
+
+<p>É possível fazer o aninhamento da estrutura IF-ELSE.</p>
+<pre><code>if (condição_01){
+    instrução_01;
+} else if (condição_02){
+    instrução_02;
+    } else {
+        instrução_03;
+        }
+</code></pre>
+<p>Exemplo:</p>
+<pre><code>if (x &gt; 0) {
+    printf(&quot;O valor de x é positivo.&quot;); 
+
+} else if (x &lt; 0) { 
+    printf(&quot;O valor de x é negativo.&quot;);
+    
+    } else{
+        printf(&quot;O valor de x é zero.&quot;);
+    }
+</code></pre>
+<p>Podemos fazer quantos aninhamentos quisermos, por exemplo:</p>
+<pre><code>if (lados == 3) {
+    printf(&quot;O polígono é um triângulo.&quot;); 
+
+} else if (lados == 4) { 
+    printf(&quot;O polígono é um quadrilátero.&quot;);
+    
+    } else if (lados == 5) { 
+        printf(&quot;O polígono é um pentágono.&quot;);
+    
+        } else if (lados == 6) { 
+            printf(&quot;O polígono é um hexágono.&quot;);
+    
+            } else if (lados == 7) { 
+                printf(&quot;O polígono é um heptágono.&quot;);
+    
+                } else{
+                    printf(&quot;Valor não identificado.&quot;);
+                }  
+</code></pre>
+<p>Como temos uma única linha de instrução para cada condição, poderíamos reescrever o código acima dessa forma:</p>
+<pre><code>if (lados == 3)
+    printf(&quot;O polígono é um triângulo.&quot;); 
+
+else if (lados == 4) 
+    printf(&quot;O polígono é um quadrilátero.&quot;);
+    
+    else if (lados == 5)
+        printf(&quot;O polígono é um pentágono.&quot;);
+    
+        else if (lados == 6) 
+            printf(&quot;O polígono é um hexágono.&quot;);
+    
+            else if (lados == 7) 
+                printf(&quot;O polígono é um heptágono.&quot;);
+    
+                else
+                    printf(&quot;Valor não identificado.&quot;);
 </code></pre>
 <h3 id="switch-case">
   SWITCH-CASE
   <a class="anchor" href="#switch-case">#</a>
 </h3>
-<h3 id="operador-condicional">
-  Operador condicional
-  <a class="anchor" href="#operador-condicional">#</a>
+<p>Blocos de códigos condicionais também podem ser criados com a estrutura SWITCH-CASE. A sintaxe é:</p>
+<pre><code>switch(variável){
+    case valor_1:
+        instruções; //podem ser várias linhas de instruções
+        break;
+    case valor_2:
+        instruções;
+        break;
+    ...
+    case valor_m:
+        instruções;
+        break;
+    default:            
+        instruções;
+}
+</code></pre>
+<p>Por exemplo:</p>
+<pre><code>switch(lados){
+    case 3:
+        printf(&quot;O polígono é um triângulo.&quot;); 
+        break;
+    case 4:
+        printf(&quot;O polígono é um quadrilátero.&quot;);
+        break;
+    case 5:
+        printf(&quot;O polígono é um pentágono.&quot;);
+        break;
+    case 6:
+        printf(&quot;O polígono é um hexágono.&quot;);
+        break;
+   case 7:
+        printf(&quot;O polígono é um heptágono.&quot;);
+        break;
+    default:            
+        printf(&quot;Valor não identificado.&quot;);
+}
+</code></pre>
+<p>Vamos entender:</p>
+<p>&hellip;</p>
+<h3 id="condição--verdadeiro--falso">
+  <em>Condição</em> ? <em>verdadeiro</em> : <em>falso</em>
+  <a class="anchor" href="#condi%c3%a7%c3%a3o--verdadeiro--falso">#</a>
 </h3>
 <h2 id="comandos-de-repetição">
   Comandos de repetição
@@ -956,7 +1068,7 @@ else
       <ul>
         <li><a href="#if-else">IF-ELSE</a></li>
         <li><a href="#switch-case">SWITCH-CASE</a></li>
-        <li><a href="#operador-condicional">Operador condicional</a></li>
+        <li><a href="#condição--verdadeiro--falso"><em>Condição</em> ? <em>verdadeiro</em> : <em>falso</em></a></li>
       </ul>
     </li>
     <li><a href="#comandos-de-repetição">Comandos de repetição</a>
