@@ -15,7 +15,7 @@ Programar é a tarefa de se comunicar com o computador através da escrita de um
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.e1e36664cebd53d7e97b9246076c3d40767be79d299104a1bd26ab85124e71c3.js" integrity="sha256-4eNmZM69U9fpe5JGB2w9QHZ7550pkQShvSarhRJOccM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.5c5111973e8b866ef801f80b5b8c2c5194bed13cdbbe888c897a98aedea2a691.js" integrity="sha256-XFERlz6Lhm74AfgLW4wsUZS&#43;0TzbvoiMiXqYrt6ippE=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://stefanisp.github.io/docs/c-course/index.xml" title="stefanisp.github.io" />
 <!--
 Made with Book Theme
@@ -84,42 +84,6 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
-      
-        <li class="book-section-flat" >
-          
-  
-  
-
-  
-    <a href="/docs/python/" class="">Curso: Programação com Python</a>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li class="book-section-flat" >
-          
-  
-  
-
-  
-    <a href="/docs/redes/" class="">Curso: Redes de Computadores</a>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
   </ul>
 
 
@@ -181,6 +145,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#ponto-e-vírgula">Ponto e vírgula</a></li>
         <li><a href="#variáveis">Variáveis</a></li>
         <li><a href="#operador-de-atribuição">Operador de atribuição</a></li>
+        <li><a href="#lendo-e-imprimindo-valores-de-variáveis">Lendo e imprimindo valores de variáveis</a></li>
         <li><a href="#operadores-aritméticos-binários">Operadores aritméticos binários</a></li>
         <li><a href="#operadores-aritméticos-unários">Operadores aritméticos unários</a></li>
         <li><a href="#operadores-relacionais">Operadores relacionais</a></li>
@@ -191,7 +156,6 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#if-else">IF-ELSE</a></li>
         <li><a href="#switch-case">SWITCH-CASE</a></li>
-        <li><a href="#condição--verdadeiro--falso"><em>Condição</em> ? <em>verdadeiro</em> : <em>falso</em></a></li>
       </ul>
     </li>
     <li><a href="#comandos-de-repetição">Comandos de repetição</a>
@@ -250,10 +214,10 @@ https://github.com/alex-shpak/hugo-book
   Primeiro programa em C
   <a class="anchor" href="#primeiro-programa-em-c">#</a>
 </h2>
-<p>Agora vamos executar o primeiro código em C. Ao ser executado, o programa irá imprimir na tela a mensagem <em>&ldquo;Olá mundo lindo!&rdquo;</em>. Digite o seguinte texto (código-fonte) em um arquivo chamado <strong>primeiro_programa.c</strong>:</p>
+<p>Agora vamos executar o primeiro código em C. Ao ser executado, o programa irá imprimir na tela a mensagem <em>&ldquo;Olá, mundo lindo!&rdquo;</em>. Digite o seguinte texto (código-fonte) em um arquivo chamado <strong>primeiro_programa.c</strong>:</p>
 <pre><code>#include &lt;stdio.h&gt;
 int main() {
-    printf(&quot;Olá mundo lindo!&quot;);
+    printf(&quot;Olá, mundo lindo!&quot;);
     return 0;
 }
 </code></pre>
@@ -450,6 +414,70 @@ x = y = z = 4;
 <pre><code>z = 'c'; 
 z = 99;   //Na tabela ASCII, 99 é o valor decimal do caracter c. 
 </code></pre>
+<h3 id="lendo-e-imprimindo-valores-de-variáveis">
+  Lendo e imprimindo valores de variáveis
+  <a class="anchor" href="#lendo-e-imprimindo-valores-de-vari%c3%a1veis">#</a>
+</h3>
+<p>Nós já aprendemos a imprimir textos na tela com o comando <em>printf()</em>. Também utilizamos o <em>printf()</em> para imprimir valores de variáveis. Para isso, o comando requer a sinalização do tipo de variável que será impresso. A linguagem C utiliza uma <em>sequência de caracteres</em> para fazer essa sinalização, e cada tipo de variável tem um sinalizador diferente. Exemplos de sequências são:</p>
+<table>
+<thead>
+<tr>
+<th>Caracteres</th>
+<th>Tipo de variável</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%d</td>
+<td>int</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>float</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>char</td>
+</tr>
+</tbody>
+</table>
+<p>Exemplos de comandos com impressão de variáveis com <em>printf()</em>:</p>
+<pre><code>int var_int = 10;
+float var_float = 10.5;
+char var_char = 'A';
+
+printf(&quot;%d&quot;, var_int);
+printf(&quot;%f&quot;, var_float);
+printf(&quot;%c&quot;, var_char);
+</code></pre>
+<p>Podemos concatenar valores de variáveis com textos que serão impressos na tela. Por exemplo:</p>
+<pre><code>int var_int = 10;
+float var_float = 10.5;
+char var_char = 'A';
+
+printf(&quot;O valor da variável tipo int é: %d.&quot;, var_int);
+printf(&quot;O valor %f pertence à variável do tipo float.&quot;, var_float);
+printf(&quot;%c é o conteúdo da variável var_char.&quot;, var_char);
+
+printf(&quot;Os valores das variáveis são: %d, %f, %c&quot;, var_int, var_float, var_char);
+</code></pre>
+<p>Para permitir que o usuário insira valores no programa, podemos ler informações digitadas no teclado com o comando <em>scanf()</em>. Seguem exemplos de utilização:</p>
+<pre><code>int var_int;
+float var_float;
+char var_char;
+
+printf(&quot;Digite um valor inteiro:&quot;);
+scanf(&quot;%d&quot;, &amp;var_int);      // Observe que adicionamos &amp; ao nome da variável!
+
+printf(&quot;Digite um valor fracionado:&quot;);
+scanf(&quot;%f&quot;, &amp;var_float);      // Observe que adicionamos &amp; ao nome da variável!
+
+printf(&quot;Digite um caractere:&quot;);
+scanf(&quot;%c&quot;, &amp;var_char);      // Observe que adicionamos &amp; ao nome da variável!
+
+printf(&quot;Os valores digitados são: %d, %f, %c&quot;, var_int, var_float, var_char);
+</code></pre>
+<p>Falaremos mais sobre o comando <em>scanf()</em> ao longo do curso.</p>
 <h3 id="operadores-aritméticos-binários">
   Operadores aritméticos binários
   <a class="anchor" href="#operadores-aritm%c3%a9ticos-bin%c3%a1rios">#</a>
@@ -787,7 +815,7 @@ w = !(x == y);  // w recebe o valor 1, como resultado de !(0)
 <pre><code>if (condição)
     instrução;
 </code></pre>
-<p>Por exemplo: (Leia-se: <strong>SE</strong> <em>x for maior que zero</em>, <strong>ENTÃO</strong> <em>imprima na tela o texto &ldquo;O valor de x é positivo&rdquo;</em>. )</p>
+<p>Por exemplo, considere uma variável <em>x</em>, cujo valor será inserido pelo usuário: (Leia-se: <strong>SE</strong> <em>x for maior que zero</em>, <strong>ENTÃO</strong> <em>imprima na tela o texto &ldquo;O valor de x é positivo&rdquo;</em>. )</p>
 <pre><code>if (x &gt; 0)
     printf(&quot;O valor de x é positivo.&quot;);
 </code></pre>
@@ -828,20 +856,6 @@ else
     w = x; 
 }
 </code></pre>
-
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>Mais exemplos</span>
-      <span>...</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      TODO
-    </div>
-  </label>
-</div>
-
 <p>É possível fazer o aninhamento da estrutura IF-ELSE.</p>
 <pre><code>if (condição_01){
     instrução_01;
@@ -863,7 +877,12 @@ else
     }
 </code></pre>
 <p>Podemos fazer quantos aninhamentos quisermos, por exemplo:</p>
-<pre><code>if (lados == 3) {
+<pre><code>int lados = 0;
+
+printf(&quot;Digite o número de lados do seu polígono:&quot;);
+scanf(&quot;%d&quot;, &amp;lados);      // O usuário informará algum valor, não sabemos qual será.
+
+if (lados == 3) {
     printf(&quot;O polígono é um triângulo.&quot;); 
 
 } else if (lados == 4) { 
@@ -921,8 +940,28 @@ else if (lados == 4)
         instruções;
 }
 </code></pre>
-<p>Por exemplo:</p>
-<pre><code>switch(lados){
+<p>Vamos entender:</p>
+<ul>
+<li>A <em>variável</em> dentro do <em>switch()</em> poderá ser do tipo <em>int</em> ou <em>char</em>;</li>
+<li>O switch é composto por blocos <em>case</em>. Cada bloco <em>case</em> é um teste para saber se o valor da variável é igual ao valor declarado após o nome <em>case</em> (valor_1, no exemplo do primeiro bloco case). Caso seja igual, as instruções pertencentes ao bloco serão executadas. Caso seja diferente, o próximo bloco <em>case</em> será testado. Podemos ler a estrutura acima dessa forma:
+<ul>
+<li>&ldquo;Caso o valor de <em>variável</em> seja igual a <em>valor_1</em>, execute as instruções do primeiro bloco case, pule todas as outras, e finalize a execução do switch. Caso seja diferente:
+<ul>
+<li>Execute o mesmo teste para os blocos <em>case</em> sequintes com seus respectivos valores.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>O último bloco é o <em>default</em>. Se o valor de <em>variável</em> for diferente de todos os valores declarados nos blocos case, as instruções do bloco <em>default</em> serão executadas. Esse bloco é opcional.</li>
+<li>Perceba que o último comando de cada bloco <em>case</em> é o <em>break</em>. Este comando é o responsável pelo comportamento de &ldquo;pular todos os outros&rdquo; blocos <em>case</em> após encontrar o valor correspondente em um bloco corrente.</li>
+</ul>
+<p>Vejamos um código exemplo de SWITCH-CASE:</p>
+<pre><code>int lados = 0;
+
+printf(&quot;Digite o número de lados do seu polígono:&quot;);
+scanf(&quot;%d&quot;, &amp;lados);      // O usuário informará algum valor, não sabemos qual será.
+
+switch(lados){
     case 3:
         printf(&quot;O polígono é um triângulo.&quot;); 
         break;
@@ -942,20 +981,72 @@ else if (lados == 4)
         printf(&quot;Valor não identificado.&quot;);
 }
 </code></pre>
-<p>Vamos entender:</p>
-<p>&hellip;</p>
-<h3 id="condição--verdadeiro--falso">
-  <em>Condição</em> ? <em>verdadeiro</em> : <em>falso</em>
-  <a class="anchor" href="#condi%c3%a7%c3%a3o--verdadeiro--falso">#</a>
-</h3>
+<p>Caso o usuário digite <em>3</em>, o programa imprimirá na tela apenas <em>O polígono é um triângulo.</em>. Se o usuário digitar um valor que não está declarado em nenhum bloco case, por exemplo, <em>10</em>, o programa imprimirá: <em>Valor não identificado.</em>.</p>
+<p>O comando <em>break</em> é opcional, porém, o SWITCH-CASE funciona de forma diferente se não o utilizarmos. Após encontrar o valor correspondente em um bloco case, todos os outros blocos sequintes serão executados também. Por exemplo, considere o mesmo código sem os comandos <em>break</em>:</p>
+<pre><code>int lados = 0;
+
+printf(&quot;Digite o número de lados do seu polígono:&quot;);
+scanf(&quot;%d&quot;, &amp;lados);      // O usuário informará algum valor, não sabemos qual será.
+
+switch(lados){
+    case 3:
+        printf(&quot;O polígono é um triângulo.&quot;); 
+    case 4:
+        printf(&quot;O polígono é um quadrilátero.&quot;);
+    case 5:
+        printf(&quot;O polígono é um pentágono.&quot;);
+    case 6:
+        printf(&quot;O polígono é um hexágono.&quot;);
+   case 7:
+        printf(&quot;O polígono é um heptágono.&quot;);
+    default:            
+        printf(&quot;Valor não identificado.&quot;);
+}
+</code></pre>
+<p>Neste caso, se o usuário digitar <em>3</em>, o programa imprimirá na tela: <em>O polígono é um triângulo. O polígono é um quadrilátero. O polígono é um pentágono. O polígono é um hexágono. O polígono é um heptágono. Valor não identificado.</em>.</p>
+<p>Da mesma forma, se o usuário digitar <em>5</em>, o programa imprimirá: <em>O polígono é um pentágono. O polígono é um hexágono. O polígono é um heptágono. Valor não identificado.</em>.</p>
+<!-- raw HTML omitted -->
 <h2 id="comandos-de-repetição">
   Comandos de repetição
   <a class="anchor" href="#comandos-de-repeti%c3%a7%c3%a3o">#</a>
 </h2>
+<p>As estruturas condicionais estudadas acima executam um bloco de intruções quando uma determinada condição é satisfeita. O bloco é executado apenas uma vez, e o programa prossegue executando as próximas instruções de código, caso existam. As vezes, alguns algorítmos requerem a repetição da execução do mesmo bloco de instruções <strong>enquanto</strong> uma condição continua sendo satisfeita. Para isso, utilizamos comandos de repetição. A linguagem C possui três formas de estruturas de repetição: FOR, WHILE, e DO WHILE. Veremos a seguir:</p>
 <h3 id="for">
   FOR
   <a class="anchor" href="#for">#</a>
 </h3>
+<p>A sintaxe do comando <em>for</em> é:</p>
+<pre><code>for(variável_de_inicialização; condição; incremento){
+    bloco de instruções;
+}
+</code></pre>
+<p>Vamos entender:</p>
+<ul>
+<li><em>variável_de_inicialização</em> normalmente contém a declaração e/ou a atribuição de um valor à uma variável que será utilizada como um <em>contador</em> de repetições.</li>
+<li><em>condição</em> normalmente contém uma expressão boleana envolvendo a <em>variável_de_inicialização</em>.</li>
+<li><em>incremento</em> normalmente contém a adição ou subtração da <em>variável_de_inicialização</em>.</li>
+</ul>
+<p>O comando <em>for</em> funciona da seguinte forma:</p>
+<ul>
+<li>Primeiro a instrução em <em>variável_de_inicalização</em> é executada;</li>
+<li>Em seguida, a <em>condição</em> é testada. Se o resultado for verdadeiro, o bloco de instruções é executado.</li>
+<li>Ao final da execução do bloco, o comando em <em>incremento</em> é executado.</li>
+<li>Então, a <em>condição</em> é testada novamente, e o bloco de instruções será executado novamente caso o resultado seja verdadeiro.</li>
+<li>Executa-se o comando em <em>incremento</em> novamente, e a repetição entre <em>testar condição -&gt; executar bloco de instruções -&gt; executar incremento</em> continua até que a condição não seja satisfeita, ou seja, retorne falso.</li>
+</ul>
+<p>Um exemplo de código:</p>
+<pre><code>for(int i = 1; i &lt; 5; i++){
+    printf(&quot;Repetição %d. &quot;, i);
+}
+</code></pre>
+<p>A saída do código será: <em>Repetição 1. Repetição 2. Repetição 3. Repetição 4.</em>.</p>
+<p>Outro exemplo:</p>
+<pre><code>for(int i = 4; i &gt; 0; i--){
+    printf(&quot;Repetição %d. &quot;, i);
+}
+</code></pre>
+<p>A saída do código será: <em>Repetição 4. Repetição 3. Repetição 2. Repetição 1.</em>.</p>
+<p>Existem variações na estrutura do comando <em>for</em>, mas não trabalharemos com as variações neste momento.</p>
 <h3 id="while">
   WHILE
   <a class="anchor" href="#while">#</a>
@@ -1058,6 +1149,7 @@ else if (lados == 4)
         <li><a href="#ponto-e-vírgula">Ponto e vírgula</a></li>
         <li><a href="#variáveis">Variáveis</a></li>
         <li><a href="#operador-de-atribuição">Operador de atribuição</a></li>
+        <li><a href="#lendo-e-imprimindo-valores-de-variáveis">Lendo e imprimindo valores de variáveis</a></li>
         <li><a href="#operadores-aritméticos-binários">Operadores aritméticos binários</a></li>
         <li><a href="#operadores-aritméticos-unários">Operadores aritméticos unários</a></li>
         <li><a href="#operadores-relacionais">Operadores relacionais</a></li>
@@ -1068,7 +1160,6 @@ else if (lados == 4)
       <ul>
         <li><a href="#if-else">IF-ELSE</a></li>
         <li><a href="#switch-case">SWITCH-CASE</a></li>
-        <li><a href="#condição--verdadeiro--falso"><em>Condição</em> ? <em>verdadeiro</em> : <em>falso</em></a></li>
       </ul>
     </li>
     <li><a href="#comandos-de-repetição">Comandos de repetição</a>

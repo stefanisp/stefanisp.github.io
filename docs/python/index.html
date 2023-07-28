@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Em breve.">
+<meta name="description" content="Programação com Python # Neste curso utilizaremos a linguagem de programação Python para nos comunicarmos com o computador.
+A linguagem Python # Assim como C, Python é uma linguagem de propósito geral. Isso quer dizer que ela pode ser utilizada para escrever programas para várias àreas diferentes. Da mesma forma, Python permite a decomposição de programas em módulos separados que podem ser reutilizados.
+É uma linguagem interpretada, &hellip;variáveis não precisam ser declaradas">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Curso: Programação com Python" />
 <meta property="og:description" content="" />
@@ -14,7 +16,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.e1e36664cebd53d7e97b9246076c3d40767be79d299104a1bd26ab85124e71c3.js" integrity="sha256-4eNmZM69U9fpe5JGB2w9QHZ7550pkQShvSarhRJOccM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.5c5111973e8b866ef801f80b5b8c2c5194bed13cdbbe888c897a98aedea2a691.js" integrity="sha256-XFERlz6Lhm74AfgLW4wsUZS&#43;0TzbvoiMiXqYrt6ippE=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://stefanisp.github.io/docs/python/index.xml" title="stefanisp.github.io" />
 <!--
 Made with Book Theme
@@ -83,42 +85,6 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
-      
-        <li class="book-section-flat" >
-          
-  
-  
-
-  
-    <a href="/docs/python/" class="active">Curso: Programação com Python</a>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li class="book-section-flat" >
-          
-  
-  
-
-  
-    <a href="/docs/redes/" class="">Curso: Redes de Computadores</a>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
   </ul>
 
 
@@ -169,7 +135,54 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#a-linguagem-python">A linguagem Python</a></li>
+    <li><a href="#configurando-o-ambiente-de-programação">Configurando o ambiente de programação</a></li>
+    <li><a href="#primeiro-programa-em-python">Primeiro programa em Python</a></li>
+    <li><a href="#básico-da-linguagem-python">Básico da Linguagem Python</a>
+      <ul>
+        <li><a href="#comentários">Comentários</a></li>
+        <li><a href="#ponto-e-vírgula">Ponto e vírgula</a></li>
+        <li><a href="#variáveis">Variáveis</a></li>
+        <li><a href="#operador-de-atribuição">Operador de atribuição</a></li>
+        <li><a href="#lendo-e-imprimindo-valores-de-variáveis">Lendo e imprimindo valores de variáveis</a></li>
+        <li><a href="#operadores-aritméticos-binários">Operadores aritméticos binários</a></li>
+        <li><a href="#operadores-aritméticos-unários">Operadores aritméticos unários</a></li>
+        <li><a href="#operadores-relacionais">Operadores relacionais</a></li>
+        <li><a href="#operadores-lógicos">Operadores lógicos</a></li>
+      </ul>
+    </li>
+    <li><a href="#comandos-condicionais">Comandos condicionais</a>
+      <ul>
+        <li><a href="#if-else">IF-ELSE</a></li>
+        <li><a href="#switch-case">SWITCH-CASE</a></li>
+        <li><a href="#condição--verdadeiro--falso"><em>Condição</em> ? <em>verdadeiro</em> : <em>falso</em></a></li>
+      </ul>
+    </li>
+    <li><a href="#comandos-de-repetição">Comandos de repetição</a>
+      <ul>
+        <li><a href="#for">FOR</a></li>
+        <li><a href="#while">WHILE</a></li>
+        <li><a href="#do-while">DO WHILE</a></li>
+      </ul>
+    </li>
+    <li><a href="#comandos-goto-e-continue">Comandos goto e continue</a></li>
+    <li><a href="#funções">Funções</a></li>
+    <li><a href="#mais-sobre-variáveis">Mais sobre variáveis</a>
+      <ul>
+        <li><a href="#escopo-de-variáveis">Escopo de variáveis</a></li>
+        <li><a href="#modificadores-de-variáveis">Modificadores de variáveis</a></li>
+        <li><a href="#constantes">Constantes</a></li>
+        <li><a href="#conversão-de-tipos">Conversão de tipos</a></li>
+        <li><a href="#definição-de-tipos">Definição de tipos</a></li>
+      </ul>
+    </li>
+    <li><a href="#arrays-e-matrizes">Arrays e Matrizes</a></li>
+    <li><a href="#strings">Strings</a></li>
+    <li><a href="#ponteiros">Ponteiros</a></li>
+  </ul>
+</nav>
 
 
 
@@ -180,7 +193,750 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><p>Em breve.</p>
+  <article class="markdown"><h1 id="programação-com-python">
+  Programação com Python
+  <a class="anchor" href="#programa%c3%a7%c3%a3o-com-python">#</a>
+</h1>
+<p>Neste curso utilizaremos a linguagem de programação <strong>Python</strong> para nos comunicarmos com o computador.</p>
+<h2 id="a-linguagem-python">
+  A linguagem Python
+  <a class="anchor" href="#a-linguagem-python">#</a>
+</h2>
+<p>Assim como C, Python é uma linguagem de propósito geral. Isso quer dizer que ela pode ser utilizada para escrever programas para várias àreas diferentes. Da mesma forma, Python permite a decomposição de programas em módulos separados que podem ser reutilizados.</p>
+<p>É uma linguagem interpretada,
+&hellip;variáveis não precisam ser declaradas</p>
+<p>&hellip; Mais informações no site: <a href="https://www.python.org">https://www.python.org</a></p>
+<p><img src="python-logo.png" alt="python" /></p>
+<p>Como toda linguagem de programação, Python possui um conjuto de <strong>palavras reservadas</strong> que são utilizadas para a criação das <strong>instruções</strong> que comporão um programa. A palavras reservadas em Python são:</p>
+<p><img src="python-keywords.png" alt="teste" title="Fonte: Python 3.11.4 Documentation – (https://docs.python.org/3.11/reference/lexical_analysis.html#keywords)"/></p>
+<h2 id="configurando-o-ambiente-de-programação">
+  Configurando o ambiente de programação
+  <a class="anchor" href="#configurando-o-ambiente-de-programa%c3%a7%c3%a3o">#</a>
+</h2>
+<p>(Atividade desenvolvida no laboratório) - (será detalhado na página em breve)</p>
+<p>Until there, see <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>.</p>
+<h2 id="primeiro-programa-em-python">
+  Primeiro programa em Python
+  <a class="anchor" href="#primeiro-programa-em-python">#</a>
+</h2>
+<p>Agora vamos executar o primeiro código em Python. Ao ser executado, o programa irá imprimir na tela a mensagem <em>&ldquo;Olá, mundo lindo!&rdquo;</em>. Digite o seguinte texto (código-fonte) em um arquivo chamado <strong>primeiro_programa.py</strong>:</p>
+<pre><code>print(&quot;Olá, mundo lindo!&quot;)
+</code></pre>
+<p>Vamos entender:</p>
+<ul>
+<li>
+<p>Você criará muitos arquivos com códigos em Python daqui pra frente, e existem regras para a nomeação desses arquivos. As regras são:</p>
+<ul>
+<li>O arquivo deve ter a extensão <strong>.py</strong>.</li>
+<li>O nome do arquivo pode conter qualquer caractere alfa-numérico (A-z e 0-9) e o caractere sublinhado (_).</li>
+<li>Deve começar com uma letra ou o sublinhado.</li>
+<li>Não podem haver espaços no nome do arquivo. Por exemplo: <em>&ldquo;primeiro programa.py&rdquo;</em>.</li>
+</ul>
+</li>
+<li>
+<p>O interpretador Python que está instalado na sua máquina possui procedimentos (funções) que já foram programados previamente e podem ser reutilizados. Por exemplo, <em>print</em> é uma função definida no arquivo <em>&hellip;&hellip;.</em> para impressão de textos na tela. O texto que será impresso deve ser colocado entre aspas.</p>
+</li>
+<li>
+<p>Em sala, veremos que este código também pode ser executado no <em>modo interativo</em>, sem a necessidade da criação de um arquivo. No modo interativo, as linhas de código são executadas à medida que vamos escrevendo em um <em>terminal</em> interativo, a partir da chamada ao interpretador python. Por exemplo, ao digitar <em>python3.11</em> no terminal do computador, estamos iniciando o modo interativo do interpretador python (versão 3.11), e a saída será:</p>
+<p><img src="python-modo-interativo-1.png" alt="interativo" /></p>
+<p>Após digitarmos o comando <em>print(&ldquo;Olá, mundo lindo!&rdquo;)</em> e apertarmos <em>enter</em>, podemos ver a saída em tela, e o interpretador continua ativo esperando a próxima instrução.</p>
+<p><img src="python-modo-interativo-2.png" alt="interativo" /></p>
+<p>Este modo é útil para testes rápidos, mas volátil, ou seja, todo o código é apagado da memória do computador quando saímos do modo interativo. Uma forma de sairmos é digitar <em>exit()</em>, que é uma função presente no interpretador para finalizar a execução de um programa.</p>
+</li>
+</ul>
+<h2 id="básico-da-linguagem-python">
+  Básico da Linguagem Python
+  <a class="anchor" href="#b%c3%a1sico-da-linguagem-python">#</a>
+</h2>
+<p>Estudaremos primeiro o que considero funcionalidades básicas da linguagem.</p>
+<h3 id="comentários">
+  Comentários
+  <a class="anchor" href="#coment%c3%a1rios">#</a>
+</h3>
+<p>Além de instruções, o seu programa pode conter comentários para auxiliar o entendimento do código. É uma boa prática de programação documentar o seu código com comentários informativos e instrutivos para auxiliar a manutenção do código. Existem dois tipos de comentários em C: de linha e de bloco. Ambos são ignorados pelo compilador na criação do arquivo executável do programa.</p>
+<p>O comentário de linha se inicia com duas barras (//) e seu escopo finaliza ao final de uma linha:</p>
+<pre><code>//Este é um comentário de linha.
+
+//Este é outro comentário de linha.
+</code></pre>
+<p>O comentário de bloco é delimitado pelos símbolos /* para abertura e */ para fechamento do bloco. Todas as linhas dentro do bloco fazem parte do mesmo comentário.</p>
+<pre><code>/* Este é um 
+   comentário 
+   de bloco  */
+
+/* Este também é um comentário de bloco */
+</code></pre>
+<h3 id="ponto-e-vírgula">
+  Ponto e vírgula
+  <a class="anchor" href="#ponto-e-v%c3%adrgula">#</a>
+</h3>
+<p>C utiliza ponto e vírgula como delimitador de instruções. É a forma que o compilador utiliza para saber como ler e separar as instruções no código. Note que, no nosso exemplo, temos duas instruções que são finalizadas com ponto e vírgula:</p>
+<pre><code>    printf(&quot;Olá mundo lindo!&quot;);
+    return 0;
+</code></pre>
+<p>Algumas instruções já possuem o próprio delimitador, e não precisam de ponto e vírgula. Será fácil identificá-las quando você avançar no curso.</p>
+<h3 id="variáveis">
+  Variáveis
+  <a class="anchor" href="#vari%c3%a1veis">#</a>
+</h3>
+<p>Os dados que criamos e manipulamos em nosso programa precisam ser armazenados na memória do computador para que possam ser referenciados e utilizados no código. Linguagens de programação utilizam <em>variáveis</em> para este propósito. Em C, uma variável deve ser declarada no código com o seu <strong>tipo</strong> e um <strong>nome</strong>.</p>
+<pre><code>//Sintaxe de instrução para criação de variável
+tipo nome;
+</code></pre>
+<p>Os tipos são convenções definidas na linguagem, para que o compilador saiba a quantidade de memória máxima que será reservada para armazenar dados na variável. Os tipos básicos em C são:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Tamanho</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>char</td>
+<td>8 bits</td>
+<td>Armazena códigos correspondentes a um caracter da tabela ASCII.</td>
+</tr>
+<tr>
+<td>int</td>
+<td>16 bits ou 32 bits</td>
+<td>Armazena números inteiros (positivos e negativos).</td>
+</tr>
+<tr>
+<td>float</td>
+<td>32 bits</td>
+<td>Armazena números fracionários, com precisão de até sete dígitos.</td>
+</tr>
+<tr>
+<td>double</td>
+<td>64 bits</td>
+<td>Armazena números fracionários, com precisão de até 15 dígitos.</td>
+</tr>
+</tbody>
+</table>
+<p>Estudaremos mais sobre os tipos de variáveis e como podem ser modificados ao longo do curso.</p>
+<p>Exemplo de declaração de variáveis de cada tipo:</p>
+<pre><code>int x;     
+float y;   
+char z;   
+double k;  
+</code></pre>
+<p>Variáveis do mesmo tipo podem ser declaradas na mesma linha, separadas por vírgula. Exemplo:</p>
+<pre><code>int x, w, q;  //declaração de três variáveis do tipo int
+</code></pre>
+<p>O nome da variável pode ser utilizado em diferentes partes do código para acessarmos o conteúdo presente na posição de memória correspondente.</p>
+<p>Existem regras para a nomeação das variáveis. São estas:</p>
+<ul>
+<li>Podem utilizar letras maiúsculas, letras minúsculas, números e o caracter sublinhado;</li>
+<li>Não podem ser <em>iniciados</em> com números;</li>
+<li>Não podem ser idênticos às palavras reservadas da linguagem.</li>
+</ul>
+<p>Exemplos de nomes válidos e inválidos:</p>
+<pre><code>//Exemplos de nomes válidos
+int nomeValido01;
+float nome_valido_02;
+char _nomeValido_03;
+
+//Exemplos de nomes inválidos
+int int;
+int 2nome_invalido;
+</code></pre>
+<h3 id="operador-de-atribuição">
+  Operador de atribuição
+  <a class="anchor" href="#operador-de-atribui%c3%a7%c3%a3o">#</a>
+</h3>
+<p>Como na matemática, atribuimos valor às variáveis com o símbolo de atribuição <strong>=</strong>. Podemos atribuir valor à uma variável em sua declaração, ou em outras partes do código após a sua declaração. Exemplos:</p>
+<pre><code>//Atribuição de valores em conjunto com a declaração da variável
+int x = 10;      //leia-se: x recebe o valor 10
+float y = 10.123;
+char z = 'a';
+
+//Atribuição de valores após a criação das variáveis
+x = 12;
+z = 15.0;
+z = 'b';
+</code></pre>
+<p>Podemos atribuir valor à mesma variável quantas vezes quisermos no mesmo programa, o valor da variável sempre é apagado da memória e substituido pelo valor mais recente que for atribuido.</p>
+<p>Uma variável também pode receber o valor de outra variável na atribuição, por exemplo:</p>
+<pre><code>int x, y;
+x = 10;
+y = x;  // Atribuímos o valor 10 da variável x à variável y. Equivale à y = 10; 
+</code></pre>
+<p>Podemos também concatenar as atribuições de valores, por exemplo:</p>
+<pre><code>//Atribuição na declaração concatenada de variáveis do mesmo tipo
+int x = 1, y = 2, z = 3;
+
+//Atribuição do mesmo valor à mais de uma variável.
+x = y = z = 4;
+</code></pre>
+<p>Ao tipo <em>char</em> podem ser atribuídos o caracter envolto em aspas simples, como nos exemplos acima, ou o número inteiro correspondente da tabela ASCII. Exemplo:</p>
+<pre><code>z = 'c'; 
+z = 99;   //Na tabela ASCII, 99 é o valor decimal do caracter c. 
+</code></pre>
+<h3 id="lendo-e-imprimindo-valores-de-variáveis">
+  Lendo e imprimindo valores de variáveis
+  <a class="anchor" href="#lendo-e-imprimindo-valores-de-vari%c3%a1veis">#</a>
+</h3>
+<p>(TODO)</p>
+<h3 id="operadores-aritméticos-binários">
+  Operadores aritméticos binários
+  <a class="anchor" href="#operadores-aritm%c3%a9ticos-bin%c3%a1rios">#</a>
+</h3>
+<p>Variáveis numéricas podem compor expressões aritméticas no código. Os operadores aplicados em C são:</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Descrição</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>soma</td>
+<td>z = x + y;</td>
+</tr>
+<tr>
+<td>-</td>
+<td>subtração</td>
+<td>z = x - y;</td>
+</tr>
+<tr>
+<td>*</td>
+<td>multiplicação</td>
+<td>z = x <em>+</em> y;</td>
+</tr>
+<tr>
+<td>/</td>
+<td>divisão</td>
+<td>z = x / y;</td>
+</tr>
+<tr>
+<td>%</td>
+<td>resto da divisão</td>
+<td>z = x % y;</td>
+</tr>
+</tbody>
+</table>
+<p>Da mesma forma que na matemática, a multiplicação e a divisão têm precedência à soma e à subtração. Para entender a execução de expressões com operadores de mesma precedência, saiba que a linguagem executará as operações da esquerda para a direita.  Os parênteses também podem ser utilizados para organização de precedência na execução.</p>
+<p>Os operadores exemplificados acima são binários. Isto quer dizer que requerem dois elementos para realizar a operação. Nos exemplos da tabela temos <em>x</em> e <em>y</em>. Outros exemplos válidos são:</p>
+<pre><code>y = 1 + 2;
+x = x + x;
+x = x - 1;
+z = 10 * y;
+</code></pre>
+<h3 id="operadores-aritméticos-unários">
+  Operadores aritméticos unários
+  <a class="anchor" href="#operadores-aritm%c3%a9ticos-un%c3%a1rios">#</a>
+</h3>
+<p>Os operadores de <em>adição</em> e <em>subtração</em> também podem ser utilizados com uma única variável para incremento ou decremento do valor da variável. Neste caso, dizemos que o operador é unário. A sintaxe é diferente, pois duplicamos o operador. Veja os exemplos:</p>
+<pre><code>x++;  // equivale a x = x + 1;
+y--;  // equivale a y = y - 1;
+</code></pre>
+<p>Nos exemplos acima, o novo valor da variável será acessível a partir da próxima linha de código. Existe ainda a possibilidade de anteciparmos o acesso ao novo valor para a mesma linha da instrução que altera a variável. Para isso, mudamos a ordem dos operadores para:</p>
+<pre><code>++x;   // também incrementa 1 ao valor de x;
+--y;   // também decrementa 1 ao valor de y;
+</code></pre>
+<p>O operador de <em>subtração</em> também pode ser utilizado de forma unária para a declaração de números negativos. Exemplo:</p>
+<pre><code>x = -1;
+y = - 10;
+</code></pre>
+<h3 id="operadores-relacionais">
+  Operadores relacionais
+  <a class="anchor" href="#operadores-relacionais">#</a>
+</h3>
+<p>Operadores relacionais são utilizados para formar expressões que comparam dois ou mais elementos, para obter o resultado verdadeiro ou falso. Os operadores relacionais em C são:</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Descrição</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt;</td>
+<td>maior que</td>
+<td>x &gt; y</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>menor que</td>
+<td>x &lt; y</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>maior ou igual</td>
+<td>x &gt;= y</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>menor ou igual</td>
+<td>x &lt;= y</td>
+</tr>
+<tr>
+<td>==</td>
+<td>igual a</td>
+<td>x == y</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>diferente de</td>
+<td>x != y</td>
+</tr>
+</tbody>
+</table>
+<p>Em C, as expressões relacionais retornam o valor <strong>0</strong> para informar que a expressão é <strong>falsa</strong>, e o valor <strong>1</strong> se o resultado da expressão for <strong>verdadeiro</strong>. Por exemplo:</p>
+<pre><code>int x = 1, y = 2, z;
+z = x &lt; y;  // z recebe o valor 1, pois a expressão (1 é menor que 2) é verdadeira
+z = x == y;  // z recebe o valor 0, pois a expressão (1 é igual a 2) é falsa
+</code></pre>
+<h3 id="operadores-lógicos">
+  Operadores lógicos
+  <a class="anchor" href="#operadores-l%c3%b3gicos">#</a>
+</h3>
+<p>A lógica boleana é frequentemente utilizada quando programamos. Com a lógica boleana, podemos compor expressões utilizando os operadores binários <strong>E</strong> e <strong>OU</strong>, e o operador unário de negação <strong>NÃO</strong>. Os resultados das expressões serão sempre verdadeiros ou falsos. A semântica dos operadores está resumida nas tabelas abaixo:</p>
+<p>Tabela do operador <strong>E</strong> (Lemos assim: verdadeiro e verdadeiro, é igual a verdadeiro):</p>
+<table>
+<thead>
+<tr>
+<th>Operando</th>
+<th>Operador</th>
+<th>Operando</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>verdadeiro</td>
+<td>E</td>
+<td>verdadeiro</td>
+<td>verdadeiro</td>
+</tr>
+<tr>
+<td>verdadeiro</td>
+<td>E</td>
+<td>falso</td>
+<td>falso</td>
+</tr>
+<tr>
+<td>falso</td>
+<td>E</td>
+<td>verdadeiro</td>
+<td>falso</td>
+</tr>
+<tr>
+<td>falso</td>
+<td>E</td>
+<td>falso</td>
+<td>falso</td>
+</tr>
+</tbody>
+</table>
+<p>Tabela do operador <strong>OU</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Operando</th>
+<th>Operador</th>
+<th>Operando</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>verdadeiro</td>
+<td>OU</td>
+<td>verdadeiro</td>
+<td>verdadeiro</td>
+</tr>
+<tr>
+<td>verdadeiro</td>
+<td>OU</td>
+<td>falso</td>
+<td>verdadeiro</td>
+</tr>
+<tr>
+<td>falso</td>
+<td>OU</td>
+<td>verdadeiro</td>
+<td>verdadeiro</td>
+</tr>
+<tr>
+<td>falso</td>
+<td>OU</td>
+<td>falso</td>
+<td>falso</td>
+</tr>
+</tbody>
+</table>
+<p>A tabela do operador de negação é mais simples. Vamos inverter a ordem do operador, para ler assim: &ldquo;Não verdadeiro, é igual a falso.&rdquo;:</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Operando</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NÃO</td>
+<td>verdadeiro</td>
+<td>falso</td>
+</tr>
+<tr>
+<td>NÃO</td>
+<td>falso</td>
+<td>verdadeiro</td>
+</tr>
+</tbody>
+</table>
+<p>Em C, a sintaxe dos operadores boleanos <strong>E</strong> e <strong>OU</strong> é, respectivamente, <strong>&amp;&amp;</strong> e <strong>||</strong>. A sintaxe do operador <strong>NÃO</strong> é o símbolo de exclamação <strong>!</strong>. Lembremos que, como resultado de expressões, o <em>0</em> representa <em>falso</em> e <em>1</em> representa <em>verdadeiro</em>. Dessa forma, utilizando a sintaxe em C, as tabelas são:</p>
+<p>Operador &amp;&amp; (E):</p>
+<table>
+<thead>
+<tr>
+<th>Operando</th>
+<th>Operador</th>
+<th>Operando</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>&amp;&amp;</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>&amp;&amp;</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>&amp;&amp;</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>&amp;&amp;</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Operador <strong>||</strong> (OU):</p>
+<table>
+<thead>
+<tr>
+<th>Operando</th>
+<th>Operador</th>
+<th>Operando</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>||</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>||</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>||</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>||</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Operador de negação <strong>!</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Operando</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>!</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>!</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Os operadores lógicos são comumente utilizados em conjunto com outros operadores, por exemplo:</p>
+<pre><code>int x = 1, y = 2, z = 3, w;
+
+w = (x &lt; y) &amp;&amp; (x &lt; z); // w recebe o valor 1, como resultado de (1) &amp;&amp; (1)
+w = (x == y) &amp;&amp; (x &lt; z); // w recebe o valor 0, como resultado de (0) &amp;&amp; (1)
+    
+w = (x &gt;= y) || (x &lt; z); // w recebe o valor 1, como resultado de (0) || (1)
+w = (x == y) || (x == z); // w recebe o valor 0, como resultado de (0) || (0)
+
+w = !(x == y);  // w recebe o valor 1, como resultado de !(0)
+</code></pre>
+<h2 id="comandos-condicionais">
+  Comandos condicionais
+  <a class="anchor" href="#comandos-condicionais">#</a>
+</h2>
+<p>Podemos adicionar avaliação de condições no código para decidir se um conjunto de instruções deverá ser executado. Condições são expressões cujo resultado será verdadeiro ou falso. Uma vez verdadeiro, o código associado à estrutura condicional será executado. A linguagem C possui três formas de estruturas condicionais: <em>IF-ELSE</em>, <em>SWITCH-CASE</em>, e a estrutura <em>condição</em> <strong>?</strong> <em>verdadeiro</em> <strong>:</strong> <em>falso</em>.</p>
+<h3 id="if-else">
+  IF-ELSE
+  <a class="anchor" href="#if-else">#</a>
+</h3>
+<p>Vamos começar entendo a estrutura de código condicional utilizando apenas o comando IF. A sintaxe do comando é: (Leia-se: <strong>SE</strong> <em>condição</em> for verdadeira, <strong>ENTÃO</strong> a <em>instrução</em> seguinte será executada. )</p>
+<pre><code>if (condição)
+    instrução;
+</code></pre>
+<p>Por exemplo: (Leia-se: <strong>SE</strong> <em>x for maior que zero</em>, <strong>ENTÃO</strong> <em>imprima na tela o texto &ldquo;O valor de x é positivo&rdquo;</em>. )</p>
+<pre><code>if (x &gt; 0)
+    printf(&quot;O valor de x é positivo.&quot;);
+</code></pre>
+<p>A sintaxe acima funciona apenas para avaliação condicional de uma única linha de instrução. Para incluir mais linhas de instrução, devemos adicionar um par de chaves {} para iniciar e fechar um <em>bloco de instruções</em>. Dessa forma, todas as instruções dentro do bloco serão executadas apenas se a condição for verdadeira.</p>
+<pre><code>if (condição){  // inicio do bloco de instruções;
+    instrução_01;
+    instrução_02;
+    ...
+    instrução_N;
+} // final do bloco de instruções;
+</code></pre>
+<p>Exemplo:</p>
+<pre><code>if (x &gt; 0){
+    printf(&quot;O valor de x é positivo.&quot;); 
+    x = x + 1;
+    z = x;
+}
+</code></pre>
+<p>Podemos também escrever instruções que deverão ser executadas caso a condição seja falsa. Para isso, complementamos a estrutura do IF com o ELSE. A sintaxe é:  (Leia-se: <strong>SE</strong> <em>condição</em> for verdadeira, <strong>ENTÃO</strong> <em>instrução_se_condição_verdadeira</em> será executada, <strong>SE NÃO</strong>, <em>instrução_se_condição_falsa</em> será executada. )</p>
+<pre><code>if (condição)
+    instrução_se_condição_verdadeira;
+else
+    instrução_se_condição_falsa;
+</code></pre>
+<p>Por exemplo: (Leia-se: <strong>SE</strong> <em>x for maior que zero</em>, <strong>ENTÃO</strong> <em>imprima na tela o texto &ldquo;O valor de x é positivo&rdquo;</em>, <strong>SE NÃO</strong>, imprima na tela o texto &ldquo;<em>O valor de x é negativo ou igual a zero</em>&rdquo;. )</p>
+<pre><code>if (x &gt; 0)
+    printf(&quot;O valor de x é positivo.&quot;);
+else
+    printf(&quot;O valor de x é negativo ou igual a zero.&quot;);
+</code></pre>
+<p>Da mesma forma, podemos criar blocos de instruções a partir do <em>else</em>. Por exemplo:</p>
+<pre><code>if (x &gt; 0){
+    printf(&quot;O valor de x é positivo.&quot;); 
+    x = x + 1;
+    z = x;
+} else { 
+    printf(&quot;O valor de x é negativo ou igual a zero.&quot;);
+    w = x; 
+}
+</code></pre>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Mais exemplos</span>
+      <span>...</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      TODO
+    </div>
+  </label>
+</div>
+
+<p>É possível fazer o aninhamento da estrutura IF-ELSE.</p>
+<pre><code>if (condição_01){
+    instrução_01;
+} else if (condição_02){
+    instrução_02;
+    } else {
+        instrução_03;
+        }
+</code></pre>
+<p>Exemplo:</p>
+<pre><code>if (x &gt; 0) {
+    printf(&quot;O valor de x é positivo.&quot;); 
+
+} else if (x &lt; 0) { 
+    printf(&quot;O valor de x é negativo.&quot;);
+    
+    } else{
+        printf(&quot;O valor de x é zero.&quot;);
+    }
+</code></pre>
+<p>Podemos fazer quantos aninhamentos quisermos, por exemplo:</p>
+<pre><code>if (lados == 3) {
+    printf(&quot;O polígono é um triângulo.&quot;); 
+
+} else if (lados == 4) { 
+    printf(&quot;O polígono é um quadrilátero.&quot;);
+    
+    } else if (lados == 5) { 
+        printf(&quot;O polígono é um pentágono.&quot;);
+    
+        } else if (lados == 6) { 
+            printf(&quot;O polígono é um hexágono.&quot;);
+    
+            } else if (lados == 7) { 
+                printf(&quot;O polígono é um heptágono.&quot;);
+    
+                } else{
+                    printf(&quot;Valor não identificado.&quot;);
+                }  
+</code></pre>
+<p>Como temos uma única linha de instrução para cada condição, poderíamos reescrever o código acima dessa forma:</p>
+<pre><code>if (lados == 3)
+    printf(&quot;O polígono é um triângulo.&quot;); 
+
+else if (lados == 4) 
+    printf(&quot;O polígono é um quadrilátero.&quot;);
+    
+    else if (lados == 5)
+        printf(&quot;O polígono é um pentágono.&quot;);
+    
+        else if (lados == 6) 
+            printf(&quot;O polígono é um hexágono.&quot;);
+    
+            else if (lados == 7) 
+                printf(&quot;O polígono é um heptágono.&quot;);
+    
+                else
+                    printf(&quot;Valor não identificado.&quot;);
+</code></pre>
+<h3 id="switch-case">
+  SWITCH-CASE
+  <a class="anchor" href="#switch-case">#</a>
+</h3>
+<p>Blocos de códigos condicionais também podem ser criados com a estrutura SWITCH-CASE. A sintaxe é:</p>
+<pre><code>switch(variável){
+    case valor_1:
+        instruções; //podem ser várias linhas de instruções
+        break;
+    case valor_2:
+        instruções;
+        break;
+    ...
+    case valor_m:
+        instruções;
+        break;
+    default:            
+        instruções;
+}
+</code></pre>
+<p>Por exemplo:</p>
+<pre><code>switch(lados){
+    case 3:
+        printf(&quot;O polígono é um triângulo.&quot;); 
+        break;
+    case 4:
+        printf(&quot;O polígono é um quadrilátero.&quot;);
+        break;
+    case 5:
+        printf(&quot;O polígono é um pentágono.&quot;);
+        break;
+    case 6:
+        printf(&quot;O polígono é um hexágono.&quot;);
+        break;
+   case 7:
+        printf(&quot;O polígono é um heptágono.&quot;);
+        break;
+    default:            
+        printf(&quot;Valor não identificado.&quot;);
+}
+</code></pre>
+<p>Vamos entender:</p>
+<p>&hellip;</p>
+<h3 id="condição--verdadeiro--falso">
+  <em>Condição</em> ? <em>verdadeiro</em> : <em>falso</em>
+  <a class="anchor" href="#condi%c3%a7%c3%a3o--verdadeiro--falso">#</a>
+</h3>
+<h2 id="comandos-de-repetição">
+  Comandos de repetição
+  <a class="anchor" href="#comandos-de-repeti%c3%a7%c3%a3o">#</a>
+</h2>
+<h3 id="for">
+  FOR
+  <a class="anchor" href="#for">#</a>
+</h3>
+<h3 id="while">
+  WHILE
+  <a class="anchor" href="#while">#</a>
+</h3>
+<h3 id="do-while">
+  DO WHILE
+  <a class="anchor" href="#do-while">#</a>
+</h3>
+<h2 id="comandos-goto-e-continue">
+  Comandos goto e continue
+  <a class="anchor" href="#comandos-goto-e-continue">#</a>
+</h2>
+<h2 id="funções">
+  Funções
+  <a class="anchor" href="#fun%c3%a7%c3%b5es">#</a>
+</h2>
+<h2 id="mais-sobre-variáveis">
+  Mais sobre variáveis
+  <a class="anchor" href="#mais-sobre-vari%c3%a1veis">#</a>
+</h2>
+<h3 id="escopo-de-variáveis">
+  Escopo de variáveis
+  <a class="anchor" href="#escopo-de-vari%c3%a1veis">#</a>
+</h3>
+<h3 id="modificadores-de-variáveis">
+  Modificadores de variáveis
+  <a class="anchor" href="#modificadores-de-vari%c3%a1veis">#</a>
+</h3>
+<h3 id="constantes">
+  Constantes
+  <a class="anchor" href="#constantes">#</a>
+</h3>
+<h3 id="conversão-de-tipos">
+  Conversão de tipos
+  <a class="anchor" href="#convers%c3%a3o-de-tipos">#</a>
+</h3>
+<h3 id="definição-de-tipos">
+  Definição de tipos
+  <a class="anchor" href="#defini%c3%a7%c3%a3o-de-tipos">#</a>
+</h3>
+<h2 id="arrays-e-matrizes">
+  Arrays e Matrizes
+  <a class="anchor" href="#arrays-e-matrizes">#</a>
+</h2>
+<h2 id="strings">
+  Strings
+  <a class="anchor" href="#strings">#</a>
+</h2>
+<h2 id="ponteiros">
+  Ponteiros
+  <a class="anchor" href="#ponteiros">#</a>
+</h2>
 </article>
  
       
@@ -220,7 +976,54 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#a-linguagem-python">A linguagem Python</a></li>
+    <li><a href="#configurando-o-ambiente-de-programação">Configurando o ambiente de programação</a></li>
+    <li><a href="#primeiro-programa-em-python">Primeiro programa em Python</a></li>
+    <li><a href="#básico-da-linguagem-python">Básico da Linguagem Python</a>
+      <ul>
+        <li><a href="#comentários">Comentários</a></li>
+        <li><a href="#ponto-e-vírgula">Ponto e vírgula</a></li>
+        <li><a href="#variáveis">Variáveis</a></li>
+        <li><a href="#operador-de-atribuição">Operador de atribuição</a></li>
+        <li><a href="#lendo-e-imprimindo-valores-de-variáveis">Lendo e imprimindo valores de variáveis</a></li>
+        <li><a href="#operadores-aritméticos-binários">Operadores aritméticos binários</a></li>
+        <li><a href="#operadores-aritméticos-unários">Operadores aritméticos unários</a></li>
+        <li><a href="#operadores-relacionais">Operadores relacionais</a></li>
+        <li><a href="#operadores-lógicos">Operadores lógicos</a></li>
+      </ul>
+    </li>
+    <li><a href="#comandos-condicionais">Comandos condicionais</a>
+      <ul>
+        <li><a href="#if-else">IF-ELSE</a></li>
+        <li><a href="#switch-case">SWITCH-CASE</a></li>
+        <li><a href="#condição--verdadeiro--falso"><em>Condição</em> ? <em>verdadeiro</em> : <em>falso</em></a></li>
+      </ul>
+    </li>
+    <li><a href="#comandos-de-repetição">Comandos de repetição</a>
+      <ul>
+        <li><a href="#for">FOR</a></li>
+        <li><a href="#while">WHILE</a></li>
+        <li><a href="#do-while">DO WHILE</a></li>
+      </ul>
+    </li>
+    <li><a href="#comandos-goto-e-continue">Comandos goto e continue</a></li>
+    <li><a href="#funções">Funções</a></li>
+    <li><a href="#mais-sobre-variáveis">Mais sobre variáveis</a>
+      <ul>
+        <li><a href="#escopo-de-variáveis">Escopo de variáveis</a></li>
+        <li><a href="#modificadores-de-variáveis">Modificadores de variáveis</a></li>
+        <li><a href="#constantes">Constantes</a></li>
+        <li><a href="#conversão-de-tipos">Conversão de tipos</a></li>
+        <li><a href="#definição-de-tipos">Definição de tipos</a></li>
+      </ul>
+    </li>
+    <li><a href="#arrays-e-matrizes">Arrays e Matrizes</a></li>
+    <li><a href="#strings">Strings</a></li>
+    <li><a href="#ponteiros">Ponteiros</a></li>
+  </ul>
+</nav>
 
 
  
