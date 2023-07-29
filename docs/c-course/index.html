@@ -15,7 +15,7 @@ Programar é a tarefa de se comunicar com o computador através da escrita de um
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.5c5111973e8b866ef801f80b5b8c2c5194bed13cdbbe888c897a98aedea2a691.js" integrity="sha256-XFERlz6Lhm74AfgLW4wsUZS&#43;0TzbvoiMiXqYrt6ippE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.52129d6fe242e11a29219c3801aebd9db4612c2c7b422ed7ba55aae189b1a059.js" integrity="sha256-UhKdb&#43;JC4RopIZw4Aa69nbRhLCx7Qi7XulWq4YmxoFk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://stefanisp.github.io/docs/c-course/index.xml" title="stefanisp.github.io" />
 <!--
 Made with Book Theme
@@ -165,7 +165,10 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#do-while">DO WHILE</a></li>
       </ul>
     </li>
-    <li><a href="#comandos-goto-e-continue">Comandos goto e continue</a></li>
+    <li><a href="#comando-break">Comando break</a></li>
+    <li><a href="#comando-continue">Comando continue</a></li>
+    <li><a href="#arrays-e-matrizes">Arrays e Matrizes</a></li>
+    <li><a href="#strings">Strings</a></li>
     <li><a href="#funções">Funções</a></li>
     <li><a href="#mais-sobre-variáveis">Mais sobre variáveis</a>
       <ul>
@@ -176,8 +179,6 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#definição-de-tipos">Definição de tipos</a></li>
       </ul>
     </li>
-    <li><a href="#arrays-e-matrizes">Arrays e Matrizes</a></li>
-    <li><a href="#strings">Strings</a></li>
     <li><a href="#ponteiros">Ponteiros</a></li>
   </ul>
 </nav>
@@ -418,7 +419,7 @@ z = 99;   //Na tabela ASCII, 99 é o valor decimal do caracter c.
   Lendo e imprimindo valores de variáveis
   <a class="anchor" href="#lendo-e-imprimindo-valores-de-vari%c3%a1veis">#</a>
 </h3>
-<p>Nós já aprendemos a imprimir textos na tela com o comando <em>printf()</em>. Também utilizamos o <em>printf()</em> para imprimir valores de variáveis. Para isso, o comando requer a sinalização do tipo de variável que será impresso. A linguagem C utiliza uma <em>sequência de caracteres</em> para fazer essa sinalização, e cada tipo de variável tem um sinalizador diferente. Exemplos de sequências são:</p>
+<p>Nós já aprendemos a imprimir textos na tela com o comando <em>printf()</em>. Também utilizamos o <em>printf()</em> para imprimir valores de variáveis. Para isso, o comando requer a sinalização do tipo de variável que será impressa. A linguagem C utiliza uma <em>sequência de caracteres</em> para fazer essa sinalização, e cada tipo de variável tem um sinalizador diferente. Exemplos de sequências são:</p>
 <table>
 <thead>
 <tr>
@@ -441,7 +442,7 @@ z = 99;   //Na tabela ASCII, 99 é o valor decimal do caracter c.
 </tr>
 </tbody>
 </table>
-<p>Exemplos de comandos com impressão de variáveis com <em>printf()</em>:</p>
+<p>Exemplos de comandos com impressão de variáveis:</p>
 <pre><code>int var_int = 10;
 float var_float = 10.5;
 char var_char = 'A';
@@ -981,7 +982,7 @@ switch(lados){
         printf(&quot;Valor não identificado.&quot;);
 }
 </code></pre>
-<p>Caso o usuário digite <em>3</em>, o programa imprimirá na tela apenas <em>O polígono é um triângulo.</em>. Se o usuário digitar um valor que não está declarado em nenhum bloco case, por exemplo, <em>10</em>, o programa imprimirá: <em>Valor não identificado.</em>.</p>
+<p>Caso o usuário digite <em>3</em>, o programa imprimirá na tela apenas <em>O polígono é um triângulo.</em>. Se o usuário digitar um valor que não está declarado em nenhum bloco case, por exemplo, <em>10</em>, o programa imprimirá: <em>Valor não identificado.</em></p>
 <p>O comando <em>break</em> é opcional, porém, o SWITCH-CASE funciona de forma diferente se não o utilizarmos. Após encontrar o valor correspondente em um bloco case, todos os outros blocos sequintes serão executados também. Por exemplo, considere o mesmo código sem os comandos <em>break</em>:</p>
 <pre><code>int lados = 0;
 
@@ -1004,7 +1005,7 @@ switch(lados){
 }
 </code></pre>
 <p>Neste caso, se o usuário digitar <em>3</em>, o programa imprimirá na tela: <em>O polígono é um triângulo. O polígono é um quadrilátero. O polígono é um pentágono. O polígono é um hexágono. O polígono é um heptágono. Valor não identificado.</em>.</p>
-<p>Da mesma forma, se o usuário digitar <em>5</em>, o programa imprimirá: <em>O polígono é um pentágono. O polígono é um hexágono. O polígono é um heptágono. Valor não identificado.</em>.</p>
+<p>Da mesma forma, se o usuário digitar <em>5</em>, o programa imprimirá: <em>O polígono é um pentágono. O polígono é um hexágono. O polígono é um heptágono. Valor não identificado.</em></p>
 <!-- raw HTML omitted -->
 <h2 id="comandos-de-repetição">
   Comandos de repetição
@@ -1015,9 +1016,9 @@ switch(lados){
   FOR
   <a class="anchor" href="#for">#</a>
 </h3>
-<p>A sintaxe do comando <em>for</em> é:</p>
-<pre><code>for(variável_de_inicialização; condição; incremento){
-    bloco de instruções;
+<p>O comando <em>for</em> permite a repetição de um bloco de instruções enquanto uma <em>condição</em> for satisfeita. A sintaxe do comando <em>for</em> é:</p>
+<pre><code>for (variável_de_inicialização; condição; incremento){
+    instruções;
 }
 </code></pre>
 <p>Vamos entender:</p>
@@ -1035,29 +1036,162 @@ switch(lados){
 <li>Executa-se o comando em <em>incremento</em> novamente, e a repetição entre <em>testar condição -&gt; executar bloco de instruções -&gt; executar incremento</em> continua até que a condição não seja satisfeita, ou seja, retorne falso.</li>
 </ul>
 <p>Um exemplo de código:</p>
-<pre><code>for(int i = 1; i &lt; 5; i++){
+<pre><code>for (int i = 1; i &lt; 5; i++){
     printf(&quot;Repetição %d. &quot;, i);
 }
 </code></pre>
-<p>A saída do código será: <em>Repetição 1. Repetição 2. Repetição 3. Repetição 4.</em>.</p>
+<p>A saída do código será: <em>Repetição 1. Repetição 2. Repetição 3. Repetição 4.</em></p>
 <p>Outro exemplo:</p>
-<pre><code>for(int i = 4; i &gt; 0; i--){
+<pre><code>for (int i = 4; i &gt; 0; i--){
     printf(&quot;Repetição %d. &quot;, i);
 }
 </code></pre>
-<p>A saída do código será: <em>Repetição 4. Repetição 3. Repetição 2. Repetição 1.</em>.</p>
+<p>A saída do código será: <em>Repetição 4. Repetição 3. Repetição 2. Repetição 1.</em></p>
 <p>Existem variações na estrutura do comando <em>for</em>, mas não trabalharemos com as variações neste momento.</p>
 <h3 id="while">
   WHILE
   <a class="anchor" href="#while">#</a>
 </h3>
+<p>Outra estrutura de repetição é a do comando WHILE. A sintaxe é:
+(Leia-se: <strong>Enquanto</strong> <em>condição</em> for verdadeira, execute o bloco de instruções.)</p>
+<pre><code>while (condição) {
+    instruções;
+}
+</code></pre>
+<p>Com uma sintaxe mais simples, o <em>while</em> define a condição para que uma sequência de instruções seja executada. O comando testa a condição repetidamente após finalizar a execução de todas as instruções definidas em seu bloco (entre <em>{ }</em>). No momento em que a condição não for mais satisfeita, o bloco de instrucões não será mais executado, e a próxima instrução no código será executada, caso exista.</p>
+<p>Podemos conseguir o mesmo efeito do código com a estrutura <em>for</em> anterior, por exemplo:</p>
+<pre><code>int i = 1;
+
+while(i &lt; 5) {
+    printf(&quot;Repetição %d. &quot;, i);
+    i++;
+}
+</code></pre>
+<p>A saída do código será: <em>Repetição 1. Repetição 2. Repetição 3. Repetição 4.</em></p>
 <h3 id="do-while">
   DO WHILE
   <a class="anchor" href="#do-while">#</a>
 </h3>
-<h2 id="comandos-goto-e-continue">
-  Comandos goto e continue
-  <a class="anchor" href="#comandos-goto-e-continue">#</a>
+<p>Uma estrutura semelhante à do WHILE é a DO WHILE. A sintaxe é:
+(Leia-se: <strong>Faça</strong> a execução do bloco de instruções, <strong>enquanto</strong> <em>condição</em> for verdadeira.)</p>
+<pre><code>do {        
+    instruções
+
+} while(condição)
+</code></pre>
+<p>A diferença desse comando para o <em>while</em> anterior é que o bloco de instruções é executado a primeira vez sem que a condição seja testada. Ao final da primeira execução a condição é avaliada, e se verdadeira, o compilador retorna para o início do bloco novamente, e o mesmo ciclo de repetições acontece até que a condição não seja mais satisfeita.</p>
+<p>Exemplo de código:</p>
+<pre><code>int i = 1;
+
+do {
+    printf(&quot;Repetição %d. &quot;, i);
+    i++;
+} while(i &lt; 5)
+</code></pre>
+<p>A saída do código também será: <em>Repetição 1. Repetição 2. Repetição 3. Repetição 4.</em></p>
+<h2 id="comando-break">
+  Comando break
+  <a class="anchor" href="#comando-break">#</a>
+</h2>
+<p>Vimos anteriormente a utilização do comando <em>break</em> em conjunto com o SWITCH-CASE. Porém, o comando break também pode ser utilizado dentro de blocos de intruções de estruturas de repetição. Neste caso, o comando interrompe toda a execução do laço de petição, finalizando a execução da estrutura de repetição ao qual se encontra. Por exemplo:</p>
+<pre><code>int i = 1, j = 0;
+printf(&quot;Digite um número de 1 a 4: &quot;);
+scanf(&quot;%d&quot;, &amp;j);
+
+while(i &lt; 5) {
+    
+    if(i == j){
+        break;
+    }
+
+    printf(&quot;Repetição %d. &quot;, i);
+    i++;
+}
+</code></pre>
+<p>No código acima, incluímos uma variável <em>j</em> cujo valor será inserido pelo usuário na execução do programa. Incluímos, também, uma condição <em>if</em> dentro do <em>while</em>, que compara o valor da variável <em>i</em> com <em>j</em>. Caso sejam iguais, o comando <em>break</em> é executado, e todo o comando <em>while</em> será finalizado (isso inclui todas as instruções após o bloco do <em>if</em>).</p>
+<p>Caso o usuário digite <em>3</em>, a saída será: <em>Repetição 1. Repetição 2.</em></p>
+<h2 id="comando-continue">
+  Comando continue
+  <a class="anchor" href="#comando-continue">#</a>
+</h2>
+<p>Assim como o comando <em>break</em>, o comando <em>continue</em> pode ser utilizado dentro de blocos de instruções de estruturas de repetição. Porém, ao invés de finalizar toda a execução da estrutura de repetição, o <em>continue</em> finaliza apenas a execução da repetição corrente, e a próxima repetição poderá ser executada (caso a <em>condição</em> continue sendo verdadeira). Por exemplo:</p>
+<pre><code>int i = 1, j = 0;
+printf(&quot;Digite um número de 1 a 4: &quot;);
+scanf(&quot;%d&quot;, &amp;j);
+
+while(i &lt; 5) {
+
+    if(i == j){
+        i++;
+        continue;
+    }
+    i++;
+    printf(&quot;Repetição %d. &quot;, i);
+
+}
+</code></pre>
+<p>Neste caso, se o usuário digitar <em>3</em>, a saída será: <em>Repetição 1. Repetição <strong>2</strong>. Repetição <strong>4</strong>.</em></p>
+<p>Observe que, na repetição à qual <em>i</em> assumiu o valor <em>3</em>, a condição <em>i == j</em> passou a ser verdadeira, e o comando <em>continue</em> foi executado. Sendo assim, as instruções seguintes dentro do bloco <em>while</em> foram <em>puladas</em>, e a <em>condição</em> do <em>while</em> voltou a ser testada para uma nova repetição do seu bloco de instruções. Observe também que incluí o incremento da variável <em>i</em> dentro do bloco <em>if</em>. Consegue me explicar o porquê? Me conte na próxima aula!</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="arrays-e-matrizes">
+  Arrays e Matrizes
+  <a class="anchor" href="#arrays-e-matrizes">#</a>
+</h2>
+<p>Até agora trabalhamos com variáveis que comportavam um único valor, por exemplo, um número ou um caractere. A linguagem também permite criarmos variáveis que comportem um conjunto de valores, como uma lista de valores. Começaremos entendendo o que são arrays.</p>
+<p>Arrays são variáveis que representam uma lista de valores do mesmo tipo, e podemos acessar cada valor da lista <strong>indexando</strong> a variável com as posições dos elementos na lista. A sintaxe da declaração é:</p>
+<pre><code>tipo nome_da_variavel[tamanho_da_lista];
+</code></pre>
+<p>Por exemplo:</p>
+<pre><code>int numeros[5]; //uma variável que comporta 5 números inteiros diferentes.
+</code></pre>
+<p>Conseguimos atribuir valores ou acessar cada um dos 5 números da variável <em>números</em> através de índices ordenados. Indices em arrays são números inteiros positivos, e começam do valor <strong>zero</strong>. Na declaração da variável <em>números</em>, temos 5 posições de memória que podem ser acessadas com os índices <em>0, 1, 2, 3 e 4</em>. Vejamos no código:</p>
+<pre><code>int numeros[5];
+
+numeros[0] = 10;
+numeros[1] = 11;
+numeros[2] = 12;
+numeros[3] = 13;
+numeros[4] = 14;
+
+for(int i = 0; i &lt; 5; i++){
+    printf(&quot;%d &quot;, numeros[i]);
+}
+</code></pre>
+<p>No código acima, estamos primeiro atribuindo valores à cada uma das posições da variável <em>numeros</em>, e em sequida estamos <em>percorrendo</em> toda a variável com a estrutura de repetição <em>for</em> para imprimir os valores de cada posição na tela. Note que, <strong>não existe a posição numeros[5]</strong>, esta representaria um sexto elemento e extrapolaria o tamanho declarado da variável.</p>
+<p>A saída do programa será: <em>10 11 12 13 14 15</em></p>
+<p>Da mesma forma que fizemos com as variáveis &ldquo;simples&rdquo;, também podemos inicializar a variável em sua declaração. Exemplo:</p>
+<pre><code>int numeros[5] = {10, 11, 12, 13, 14};
+
+for(int i = 0; i &lt; 5; i++){
+    printf(&quot;%d &quot;, numeros[i]);
+}
+</code></pre>
+<p>Arrays possuem uma única dimensão. Eventualmente precisamos organizar várias listas de valores associados. Para isso, podemos utilizar <strong>matrizes</strong>. Matrizes são arrays que podem ter várias dimensões, mas neste curso entederemos matrizes com duas dimensões. Como na matemática, podemos chamar a primeira dimensão de <strong>linha</strong> e a segunda de <strong>coluna</strong>. A sintaxe da declaração é:</p>
+<pre><code>tipo nome_da_variável[numero_de_linhas][numero_de_colunas];
+</code></pre>
+<p>Exemplo de código:</p>
+<pre><code>// Declaração de uma matriz com duas linhas linhas e três colunas
+int numeros[2][3];  //uma variável que comporta 6 elementos
+
+numeros[0][0] = 10; 
+numeros[0][1] = 11;
+numeros[0][2] = 12;
+
+numeros[1][0] = 13;
+numeros[1][1] = 14;
+numeros[1][2] = 15;
+
+for(int i = 0; i &lt; 2; i++){
+    for(int j = 0; j &lt; 3; j++){
+        printf(&quot;%d &quot;, numeros[i][j]);
+    }
+    printf(&quot;\n&quot;);
+}
+</code></pre>
+<h2 id="strings">
+  Strings
+  <a class="anchor" href="#strings">#</a>
 </h2>
 <h2 id="funções">
   Funções
@@ -1087,14 +1221,6 @@ switch(lados){
   Definição de tipos
   <a class="anchor" href="#defini%c3%a7%c3%a3o-de-tipos">#</a>
 </h3>
-<h2 id="arrays-e-matrizes">
-  Arrays e Matrizes
-  <a class="anchor" href="#arrays-e-matrizes">#</a>
-</h2>
-<h2 id="strings">
-  Strings
-  <a class="anchor" href="#strings">#</a>
-</h2>
 <h2 id="ponteiros">
   Ponteiros
   <a class="anchor" href="#ponteiros">#</a>
@@ -1169,7 +1295,10 @@ switch(lados){
         <li><a href="#do-while">DO WHILE</a></li>
       </ul>
     </li>
-    <li><a href="#comandos-goto-e-continue">Comandos goto e continue</a></li>
+    <li><a href="#comando-break">Comando break</a></li>
+    <li><a href="#comando-continue">Comando continue</a></li>
+    <li><a href="#arrays-e-matrizes">Arrays e Matrizes</a></li>
+    <li><a href="#strings">Strings</a></li>
     <li><a href="#funções">Funções</a></li>
     <li><a href="#mais-sobre-variáveis">Mais sobre variáveis</a>
       <ul>
@@ -1180,8 +1309,6 @@ switch(lados){
         <li><a href="#definição-de-tipos">Definição de tipos</a></li>
       </ul>
     </li>
-    <li><a href="#arrays-e-matrizes">Arrays e Matrizes</a></li>
-    <li><a href="#strings">Strings</a></li>
     <li><a href="#ponteiros">Ponteiros</a></li>
   </ul>
 </nav>
