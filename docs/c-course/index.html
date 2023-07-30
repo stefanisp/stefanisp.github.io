@@ -15,7 +15,7 @@ Programar é a tarefa de se comunicar com o computador através da escrita de um
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.f9a1050eb9b3d5c46309aeffa4e24dc153f21da6afa4990d68427c7e7c506a82.js" integrity="sha256-&#43;aEFDrmz1cRjCa7/pOJNwVPyHaavpJkNaEJ8fnxQaoI=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.ea667d314d589219a6065d46ffc023d0ee2191c58c623dca5904c006918c50fd.js" integrity="sha256-6mZ9MU1YkhmmBl1G/8Aj0O4hkcWMYj3KWQTABpGMUP0=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://stefanisp.github.io/docs/c-course/index.xml" title="stefanisp.github.io" />
 <!--
 Made with Book Theme
@@ -170,6 +170,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#arrays-e-matrizes">Arrays e Matrizes</a></li>
     <li><a href="#strings">Strings</a></li>
     <li><a href="#funções">Funções</a></li>
+    <li><a href="#ponteiros">Ponteiros</a></li>
     <li><a href="#mais-sobre-variáveis">Mais sobre variáveis</a>
       <ul>
         <li><a href="#escopo-de-variáveis">Escopo de variáveis</a></li>
@@ -179,7 +180,6 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#definição-de-tipos">Definição de tipos</a></li>
       </ul>
     </li>
-    <li><a href="#ponteiros">Ponteiros</a></li>
   </ul>
 </nav>
 
@@ -1197,10 +1197,121 @@ for(int i = 0; i &lt; 2; i++){
   Strings
   <a class="anchor" href="#strings">#</a>
 </h2>
-<!-- raw HTML omitted -->
+<p>Strings são sequências de caracteres. Em C, uma sequência de caracteres nada mais é do que um <em>array</em> do tipo <strong>char</strong>. Podemos criar arrays de char da mesma forma que fizemos com os outros tipos anteriormente. Além disso, aos arrays de char também podem ser atribuídos textos diretamente. Vejamos exemplos de declaração de strings:</p>
+<pre><code>// Inicialização com caracteres
+char string_1[7] = {'S', 't', 'r', 'i', 'n', 'g', '\n'};
+
+// Inicialização com texto
+char string_2[7] = &quot;String&quot;;
+
+char string_3[7];
+
+string_3 = &quot;String&quot;
+
+printf(&quot;%s&quot;, string_1);
+printf(&quot;%s&quot;, string_2);
+printf(&quot;%s&quot;, string_3);
+</code></pre>
+<p>As strings em C possuem um <strong>\n</strong> ao final para representar o final da string. Observe que na declaração de <em>string_1</em> adicionamos explicitamente o <em>\n</em>. Na inicialização com texto, isso já é feito pelo compilador de forma implícita. Observe, também, que devemos contabilizar esse último caractere na definição do tamanho do array. Outra novidade é o indicador do tipo de variável no <em>printf</em>, passou a ser <strong>%s</strong>.</p>
 <h2 id="funções">
   Funções
   <a class="anchor" href="#fun%c3%a7%c3%b5es">#</a>
+</h2>
+<p>Podemos organizar o código em blocos que delimitam um escopo próprio para a realização de uma tarefa específica, e que podem ser reaproveitados em diferentes pontos do código. Fazemos isso através de <em>funções</em>. A sintaxe da declaração de uma função é:</p>
+<pre><code>tipo_de_retorno nome_da_função(tipo_de_parametro_de_entrada nome_parametro_de_entrada){
+    instruções;
+    return valor_de_retorno;
+}
+</code></pre>
+<p>Vamos entender</p>
+<ul>
+<li>
+<p>Uma função pode receber <strong>parâmetros de entrada</strong> para utilizar os valores dos parâmetros na realização de alguma tarefa. Para especificar um parâmetro de entrada da função, devemos declarar o seu tipo em <strong>tipo_de_parametro_de_entrada</strong> seguido do nome que utilizaremos para acessar o parâmetro dentro da função, declarado em <strong>nome_parametro_de_entrada</strong>.</p>
+<ul>
+<li>Parâmetros de entrada são opcionais.</li>
+<li>Podemos ter vários parâmetros de entrada separados por vírgula, cada um com sua declaração completa (tipo e nome).</li>
+</ul>
+</li>
+<li>
+<p>Uma função pode retornar algum valor, e definimos o tipo do valor na sua declaração em <strong>tipo_de_retorno</strong>. Neste caso, após realizar sua atividade, a função deverá retornar um valor do tipo declado utilizando a palavra reservada <strong>return</strong>.</p>
+<ul>
+<li>Caso a função não precise retornar valor algum, utilizamos a palavra <strong>void</strong> na declaração, e o <em>return</em> será desnecessário.</li>
+<li>Podemos utilizar <em>return</em> em qualquer ponto do corpo da função.</li>
+</ul>
+</li>
+<li>
+<p>Acessaremos a função através do seu nome, declarado em <strong>nome_da_função</strong>.</p>
+</li>
+</ul>
+<p>Vejamos exemplos:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+// Função sem parâmetros de entrada e sem retorno.
+void funcao_1(){ 
+    printf(&quot;Execução da função 1.\n&quot;);
+}
+
+// Função com dois parâmetros de entrada, e que retorna um número inteiro. 
+int funcao_2(int a, int b){
+    printf(&quot;\nExecução da função 2, com os valores de entrada %d e %d.\n&quot;, a, b);
+    return a+b;
+}
+
+int main(){
+    printf(&quot;Iniciando a execução do programa.\n&quot;);
+
+    funcao_1(); //Instanciando funcao_1
+
+    int valor = funcao_2(1, 2); //Instanciando funcao_2
+    printf(&quot;A soma de 1 e 2 é %d&quot;, valor);
+
+    //Instanciando funcao_2 novamente
+    printf(&quot;A soma de 10 e 11 é %d&quot;, funcao_2(10, 11)); 
+
+    return 0;
+}
+</code></pre>
+<p>Vamos entender:</p>
+<ul>
+<li>
+<p>O códido começa a ser executado no escopo principal <strong>main()</strong>, e toda vez que há a chamada de uma função, o fluxo de execução <em>&ldquo;pula&rdquo;</em> para o escopo da função e executa todo o código da função. Ao finalizar a execução da função, o fluxo de execução do programa retorna para o escopo <em>main()</em> e a próxima linha de código após a chamada da função é executada.</p>
+</li>
+<li>
+<p>As funções são declaradas antes de serem chamadas. Perceba que elas foram declaradas antes do inicio do escopo <em>main()</em>.</p>
+</li>
+<li>
+<p><strong>funcao_1()</strong> é a forma chamamos <em>funcao_1</em> para ser executada.</p>
+</li>
+<li>
+<p>A <em>funcao_2</em> possui dois parâmetros de entrada, dessa forma precisamos passar valores de tipos equivalentes na sua chamada. Na chamada <strong>funcao_2(1, 2)</strong> passamos os valores <em>1</em> e <em>2</em>, que serão atribuídos aos parâmetros <strong>a</strong> e <strong>b</strong> da função.</p>
+</li>
+</ul>
+<p>Nas chamadas de <em>funcao_2</em> do código acima, passamos valores diretamente para serem atribuídos aos parâmetros de entrada da função. Poderíamos, também, passar variáveis como parâmetros. Neste caso, os valores atribuídos previamente às variáveis serão <em>copiados</em> para os parâmetros de entrada da função. Vejamos um exemplo:</p>
+<pre><code> #include &lt;stdio.h&gt;
+
+// Função com um parâmetro de entrada, e que retorna um número fracionado.
+float funcao_3(int num){
+    float resultado; 
+
+    if(num == 0){
+        return 0;
+    }
+    resultado = 10 / num;
+    
+    return resultado;
+}
+
+int main(){
+    int numero = 10;
+    float resultado = funcao_3(numero);
+
+    printf(&quot;A função 3 teve como retorno o valor: %f&quot;, resultado );
+}
+</code></pre>
+<p>No exemplo, a variável <em>numero</em> foi inicalizada com o valor 10, e passamos a variável como parâmetro da chamada de <em>funcao_3</em>. Isso quer dizer que o valor 10 será copiado para o parâmetro de entrada <em>num</em> da função.</p>
+<h2 id="ponteiros">
+  Ponteiros
+  <a class="anchor" href="#ponteiros">#</a>
 </h2>
 <h2 id="mais-sobre-variáveis">
   Mais sobre variáveis
@@ -1226,10 +1337,6 @@ for(int i = 0; i &lt; 2; i++){
   Definição de tipos
   <a class="anchor" href="#defini%c3%a7%c3%a3o-de-tipos">#</a>
 </h3>
-<h2 id="ponteiros">
-  Ponteiros
-  <a class="anchor" href="#ponteiros">#</a>
-</h2>
 </article>
  
       
@@ -1305,6 +1412,7 @@ for(int i = 0; i &lt; 2; i++){
     <li><a href="#arrays-e-matrizes">Arrays e Matrizes</a></li>
     <li><a href="#strings">Strings</a></li>
     <li><a href="#funções">Funções</a></li>
+    <li><a href="#ponteiros">Ponteiros</a></li>
     <li><a href="#mais-sobre-variáveis">Mais sobre variáveis</a>
       <ul>
         <li><a href="#escopo-de-variáveis">Escopo de variáveis</a></li>
@@ -1314,7 +1422,6 @@ for(int i = 0; i &lt; 2; i++){
         <li><a href="#definição-de-tipos">Definição de tipos</a></li>
       </ul>
     </li>
-    <li><a href="#ponteiros">Ponteiros</a></li>
   </ul>
 </nav>
 
