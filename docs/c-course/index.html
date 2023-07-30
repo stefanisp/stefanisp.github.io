@@ -15,7 +15,7 @@ Programar é a tarefa de se comunicar com o computador através da escrita de um
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.52129d6fe242e11a29219c3801aebd9db4612c2c7b422ed7ba55aae189b1a059.js" integrity="sha256-UhKdb&#43;JC4RopIZw4Aa69nbRhLCx7Qi7XulWq4YmxoFk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f9a1050eb9b3d5c46309aeffa4e24dc153f21da6afa4990d68427c7e7c506a82.js" integrity="sha256-&#43;aEFDrmz1cRjCa7/pOJNwVPyHaavpJkNaEJ8fnxQaoI=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://stefanisp.github.io/docs/c-course/index.xml" title="stefanisp.github.io" />
 <!--
 Made with Book Theme
@@ -217,6 +217,7 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 <p>Agora vamos executar o primeiro código em C. Ao ser executado, o programa irá imprimir na tela a mensagem <em>&ldquo;Olá, mundo lindo!&rdquo;</em>. Digite o seguinte texto (código-fonte) em um arquivo chamado <strong>primeiro_programa.c</strong>:</p>
 <pre><code>#include &lt;stdio.h&gt;
+
 int main() {
     printf(&quot;Olá, mundo lindo!&quot;);
     return 0;
@@ -242,49 +243,24 @@ int main() {
 </ul>
 </li>
 </ul>
-
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>Mais exemplos</span>
-      <span>...</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      <pre><code>#include &lt;stdio.h&gt;
+<p>Mais um exemplo de código:</p>
+<pre><code>#include &lt;stdio.h&gt;
 
 int main()
 {
-    printf(&quot;Programação requer prática.&quot;);
-    printf(&quot;Pratique!&quot;);
-    printf(&quot;Pratique!&quot;);
+    printf(&quot;Programação requer prática. \n Pratique!&quot;);
+    printf(&quot;\n Pratique!&quot;);
     
     return 0;
 }
 </code></pre>
-
-    </div>
-  </label>
-</div>
-
-
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>Exercício de programação</span>
-      <span>...</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      <h2 id="todo">
-  TODO
-  <a class="anchor" href="#todo">#</a>
-</h2>
-<p>Adicionar exercícios.
-    </div>
-  </label>
-</div>
-
+<p>Neste exemplo acrescentamos ao texto dentro do <em>printf</em> uma <strong>sequência de escape</strong>. Perceba que tem um <strong>\n</strong> no meio do texto do primeiro <em>printf</em>, e no inicio do texto do segundo <em>printf</em>. Sequencias de escape são utilizados em textos para a inserção de caracteres especiais. O <em>\n</em> representa quebra de linha, como um <em>enter</em> do teclado. Dessa forma, a saída do programa será:</p>
+<pre><code>Programação requer prática.
+ Pratique!
+ Pratique!
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="básico-da-linguagem-c">
   Básico da Linguagem C
   <a class="anchor" href="#b%c3%a1sico-da-linguagem-c">#</a>
@@ -1159,7 +1135,7 @@ for(int i = 0; i &lt; 5; i++){
 }
 </code></pre>
 <p>No código acima, estamos primeiro atribuindo valores à cada uma das posições da variável <em>numeros</em>, e em sequida estamos <em>percorrendo</em> toda a variável com a estrutura de repetição <em>for</em> para imprimir os valores de cada posição na tela. Note que, <strong>não existe a posição numeros[5]</strong>, esta representaria um sexto elemento e extrapolaria o tamanho declarado da variável.</p>
-<p>A saída do programa será: <em>10 11 12 13 14 15</em></p>
+<p>A saída do programa será: <em>10 11 12 13 14</em></p>
 <p>Da mesma forma que fizemos com as variáveis &ldquo;simples&rdquo;, também podemos inicializar a variável em sua declaração. Exemplo:</p>
 <pre><code>int numeros[5] = {10, 11, 12, 13, 14};
 
@@ -1189,10 +1165,39 @@ for(int i = 0; i &lt; 2; i++){
     printf(&quot;\n&quot;);
 }
 </code></pre>
+<p>Perceba que agora precisamos usar indexadores diferentes para cada dimensão, um para acessar a posição da linha e outro para a coluna. O par de indexadores representa o acesso a um único elemento na matriz. Por exemplo, <em>numeros[0][0]</em> acessa o primeiro elemento da matriz, que está na linha zero e coluna zero. Da mesma forma, para percorrer a matriz e imprimir seus elementos precisamos de duas estruturas de repetição, uma para cada dimensão. Cada estrutura define um indexador diferente. No código de exemplo, utilizamos os inteiros <strong>i</strong> e <strong>j</strong> para indexar linhas e colunas, respectivamente. Perceba que acrescentei um <em>printf(&quot;\n&rdquo;)</em> após a finalização do <em>for</em> que percorre as colunas. Dessa forma, após a impressão de cada coluna completa, pularemos uma linha para iniciar a impressão da próxima coluna. A saída do programa será:</p>
+<pre><code>10 11 12
+13 14 15
+</code></pre>
+<p>Uma matriz também pode ser inicializada em sua declaração, como fizemos com arrays. A linguagem C permite duas sintaxes diferentes, vejamos o exemplo:</p>
+<pre><code>//Inicalização com todos os elementos em sequência. 
+int numeros_1[2][3] = {10, 11, 12, 13, 14, 15}; 
+
+//Inicialização com um par de {} interno para cada coluna da matriz
+int numeros_2[2][3] = {{10, 11, 12}, {13, 14, 15}}; 
+
+printf(&quot;A matriz numeros_1 é: \n&quot;);
+for(int i = 0; i &lt; 2; i++){
+    for(int j = 0; j &lt; 3; j++){
+        printf(&quot;%d &quot;, numeros_1[i][j]);
+    }
+    printf(&quot;\n&quot;);
+}
+
+printf(&quot;\nA matriz numeros_2 é: \n&quot;);
+for(int i = 0; i &lt; 2; i++){
+    for(int j = 0; j &lt; 3; j++){
+        printf(&quot;%d &quot;, numeros_2[i][j]);
+    }
+    printf(&quot;\n&quot;);
+}
+</code></pre>
+<p>No exemplo, <em>numeros_1</em> e <em>numeros_2</em> são duas matrizes diferentes. Utilizamos uma sintaxe de inicalização diferente para elas, mas as duas foram inicializadas com os mesmos valores. Dessa forma, na impressão da tela as duas matrizes serão iguais.</p>
 <h2 id="strings">
   Strings
   <a class="anchor" href="#strings">#</a>
 </h2>
+<!-- raw HTML omitted -->
 <h2 id="funções">
   Funções
   <a class="anchor" href="#fun%c3%a7%c3%b5es">#</a>
