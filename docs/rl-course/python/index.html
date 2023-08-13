@@ -24,7 +24,7 @@ O arquivo deve ter a extensão .py. O nome do arquivo pode conter qualquer carac
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.0607368f36993dbca6b542c4f6afd2aca69561852a94f3989fb308abb604bebf.js" integrity="sha256-Bgc2jzaZPbymtULE9q/SrKaVYYUqlPOYn7MIq7YEvr8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.bcf59c9ce1c16b40c2660f7c41757dc785859bebe7d46bcf3850710d16c56e38.js" integrity="sha256-vPWcnOHBa0DCZg98QXV9x4WFm&#43;vn1GvPOFBxDRbFbjg=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -182,7 +182,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#modo-interativo">Modo interativo</a></li>
       </ul>
     </li>
-    <li><a href="#sintaxe">Sintaxe</a>
+    <li><a href="#sintaxe-básica">Sintaxe básica</a>
       <ul>
         <li><a href="#comentários">Comentários</a></li>
         <li><a href="#indentação">Indentação</a></li>
@@ -198,6 +198,11 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#comando-de-repetição-while">Comando de repetição: while</a></li>
         <li><a href="#variáveis-de-tipos-de-sequências">Variáveis de tipos de sequências</a></li>
         <li><a href="#funções">Funções</a></li>
+      </ul>
+    </li>
+    <li><a href="#bibliotecas">Bibliotecas</a>
+      <ul>
+        <li><a href="#numpy">NumPy</a></li>
       </ul>
     </li>
   </ul>
@@ -248,9 +253,9 @@ https://github.com/alex-shpak/hugo-book
 <p>Em sala, veremos que o código visto anteriormente também pode ser executado no <em>modo interativo</em> do interpretador Python, sem a necessidade da criação de um arquivo. No modo interativo, as linhas de código são executadas à medida que vamos escrevendo em um <em>terminal</em> interativo, a partir da chamada ao interpretador python. Por exemplo, ao digitar <em>python3.11</em> no terminal do computador, estamos iniciando o modo interativo do interpretador python (versão 3.11).</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<h2 id="sintaxe">
-  Sintaxe
-  <a class="anchor" href="#sintaxe">#</a>
+<h2 id="sintaxe-básica">
+  Sintaxe básica
+  <a class="anchor" href="#sintaxe-b%c3%a1sica">#</a>
 </h2>
 <h3 id="comentários">
   Comentários
@@ -648,6 +653,12 @@ else:
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> x:
 </span></span><span style="display:flex;"><span>    print(i) 
+</span></span></code></pre></div><p>Podemos ter listas de listas, gerando estruturas com mais de uma dimensão, por exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Uma lista de duas dimensões, como uma matriz</span>
+</span></span><span style="display:flex;"><span>lista <span style="color:#f92672">=</span> [ [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>] ] 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(lista[<span style="color:#ae81ff">0</span>]) <span style="color:#75715e"># Imprime: [0, 1, 2]</span>
+</span></span><span style="display:flex;"><span>print(lista[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]) <span style="color:#75715e"># Imprime: 1</span>
 </span></span></code></pre></div><h4 id="tuplas">
   Tuplas
   <a class="anchor" href="#tuplas">#</a>
@@ -693,7 +704,7 @@ else:
 </span></span><span style="display:flex;"><span>c <span style="color:#f92672">=</span> funcao_2(a, b) <span style="color:#75715e"># chamada da funcao_2 com passagem de variáveis</span>
 </span></span></code></pre></div><p>Podemos declarar funções com número variável de parâmetros de entrada, para isso, declaramos a função com um parâmetro de entrada, e acrescentamos o símbolo <strong>*</strong> ao seu nome. Neste caso, a linguagem trata o parâmetro como uma <strong>tupla</strong>. Exemplo:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">funcao</span>( <span style="color:#f92672">*</span>x ):
-</span></span><span style="display:flex;"><span>    print(type(x)) <span style="color:#75715e"># A saída será &lt;class &#39;tuple&#39;&gt;</span>
+</span></span><span style="display:flex;"><span>    print(type(x)) <span style="color:#75715e"># Imprime: &lt;class &#39;tuple&#39;&gt;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> x:
 </span></span><span style="display:flex;"><span>        print(i)
@@ -702,6 +713,110 @@ else:
 </span></span><span style="display:flex;"><span>funcao()
 </span></span><span style="display:flex;"><span>funcao(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>)
 </span></span><span style="display:flex;"><span>funcao(<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>, <span style="color:#e6db74">&#34;d&#34;</span>)
+</span></span></code></pre></div><h2 id="bibliotecas">
+  Bibliotecas
+  <a class="anchor" href="#bibliotecas">#</a>
+</h2>
+<h3 id="numpy">
+  NumPy
+  <a class="anchor" href="#numpy">#</a>
+</h3>
+<p>Documentação do NumPy: <a href="https://numpy.org/doc/stable/">https://numpy.org/doc/stable/</a></p>
+<p>NumPy (Numerical Python) é uma biblioteca muito utizada para computação ciêntífica. Permite a criação de arrays multidimensionais de alta-performance, e uma série de ferramentas úteis para trabalhar com uma grande quantidade de dados.</p>
+<p>Os arrays são do tipo <strong>ndarray</strong>. (<strong>n d</strong>imensional <strong>arrays</strong>), e os tipos de dados também são próprios da bilioteca, por exemplo, <strong>int64</strong> e <strong>float64</strong>.</p>
+<p>Arrays de uma dimensão são semelhantes às listas da bilioteca padrão de Python, e podemos passar listas como atributos na inicialização do array. A lista será convertida para um <strong>ndarray</strong>.
+Vejamos exemplos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Importação da biblioteca e atribuição de um &#34;apelido&#34; para acessar seus métodos  </span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lista <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>array_1 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array(lista)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>array_2 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(array_1) <span style="color:#75715e"># Imprime: [1 2 3] </span>
+</span></span><span style="display:flex;"><span>print(array_2) <span style="color:#75715e"># Imprime: [1 2 3] </span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(type(array_1)) <span style="color:#75715e"># Imprime: &lt;class &#39;numpy.ndarray&#39;&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Acessando elementos pelo índice. </span>
+</span></span><span style="display:flex;"><span>print(array_1[<span style="color:#ae81ff">0</span>]) <span style="color:#75715e"># Imprime: 1</span>
+</span></span><span style="display:flex;"><span>print(type(array_1[<span style="color:#ae81ff">0</span>])) <span style="color:#75715e"># Imprime: &lt;class &#39;numpy.int64&#39;&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Como em listas, elementos podem ser alterados</span>
+</span></span><span style="display:flex;"><span>array_1[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>array_1[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>array_1[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(array_1) <span style="color:#75715e"># Imprime: [10 20 30]</span>
+</span></span></code></pre></div><p>O número de dimensões de <em>ndarray</em> é chamado de <strong>rank</strong> e o tamanho das dimensões é chamado de <strong>shape</strong>. <em>Shape</em> é um atributo de <em>ndarray</em>, e podemos consultar seu valor:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]) <span style="color:#75715e"># rank = 1 dimensão</span>
+</span></span><span style="display:flex;"><span>print(x<span style="color:#f92672">.</span>shape) <span style="color:#75715e">#Imprime: (3,) </span>
+</span></span></code></pre></div><p>Arrays de duas dimensões são vistos como matrizes. Vejamos exemplos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array( [[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>], [<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>]] ) <span style="color:#75715e"># rank = 2 dimensões</span>
+</span></span><span style="display:flex;"><span>print(x) <span style="color:#75715e"># Imprime [[1 2 3]</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#75715e">#          [4 5 6]</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#75715e">#          [7 8 9]]</span>
+</span></span><span style="display:flex;"><span>print(x<span style="color:#f92672">.</span>shape) <span style="color:#75715e"># Imprime (3,3)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Acessamos com índices para cada dimensão</span>
+</span></span><span style="display:flex;"><span>print(x[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>]) <span style="color:#75715e">#Imprime 1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>x[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> 
+</span></span><span style="display:flex;"><span>print(x[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>]) <span style="color:#75715e">#Imprime 10</span>
+</span></span></code></pre></div><p>Numpy também contém métodos úteis para criação de arrays. Vejamos exemplos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># NP.ZEROS</span>
+</span></span><span style="display:flex;"><span>z <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros(<span style="color:#ae81ff">3</span>) <span style="color:#75715e"># Cria um array de uma dimensão com todos os valores zero.</span>
+</span></span><span style="display:flex;"><span>print(z) <span style="color:#75715e"># Imprime: [0. 0. 0.]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>z <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros((<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>)) <span style="color:#75715e"># Cria uma matriz 2x2 com todos os valores zero.</span>
+</span></span><span style="display:flex;"><span>print(z) <span style="color:#75715e"># Imprime: [[0. 0.]</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#75715e">#           [0. 0.]]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># NP.ONES</span>
+</span></span><span style="display:flex;"><span>n <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>ones(<span style="color:#ae81ff">3</span>) <span style="color:#75715e"># Cria um array de uma dimensão com os valores 1.</span>
+</span></span><span style="display:flex;"><span>print(n) <span style="color:#75715e"># Imprime: [1. 1. 1.]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>n <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>ones((<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>)) <span style="color:#75715e"># Cria uma matriz 2x2 com todos os valores 1.</span>
+</span></span><span style="display:flex;"><span>print(n) <span style="color:#75715e"># Imprime: [[1. 1.]</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#75715e">#           [1. 1.]]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># NP.FULL</span>
+</span></span><span style="display:flex;"><span>f <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>full((<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>), <span style="color:#ae81ff">10</span>) <span style="color:#75715e"># Cria uma matriz 2x2 com todos os valores 10.</span>
+</span></span><span style="display:flex;"><span>print(f) <span style="color:#75715e"># Imprime: [[10. 10.]</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#75715e">#           [10. 10.]]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># NP.ARRANGE</span>
+</span></span><span style="display:flex;"><span>n <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">10</span>) <span style="color:#75715e"># Cria um array com valores incrementais a partir do 0 até o 9 </span>
+</span></span><span style="display:flex;"><span>print(n) <span style="color:#75715e"># Imprime: [0 1 2 3 4 5 6 7 8 9]</span>
+</span></span></code></pre></div><p>Também podemos criar arrays com valores randômicos, utilizando o método <strong>random</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Cria uma matriz 2x2 com valores randômicos fracionados</span>
+</span></span><span style="display:flex;"><span>r <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>random((<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>)) 
+</span></span><span style="display:flex;"><span>print(r) <span style="color:#75715e"># Imprime, por exemplo: [[0.23307038 0.94085973]</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#75715e">#                        [0.36262991 0.31839375]] </span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cria uma matriz 2x2 com valores randômicos inteiros de 0 a 100</span>
+</span></span><span style="display:flex;"><span>r <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">100</span>, size<span style="color:#f92672">=</span>(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>)) 
+</span></span><span style="display:flex;"><span>print(r) <span style="color:#75715e"># Imprime, por exemplo: [[ 8 67]</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#75715e">#                        [48 27]]</span>
+</span></span></code></pre></div><p>Com <strong>random</strong>, também podemos criar arrays que seguem alguma distribuição matemática. Por exemplo, a <strong>distribuição normal</strong>, conhecida como distribuição Gausiana:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>media <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>desvioPadrao <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cria um array de 3 elementos com valores randômicos,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  derivados de uma distribuição normal, cuja média é 0 e desvio padrão 1.</span>
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(media, desvioPadrao, <span style="color:#ae81ff">3</span> )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(x) <span style="color:#75715e"># Imprime, por exemplo: </span>
+</span></span><span style="display:flex;"><span>         <span style="color:#75715e"># [-0.070929   -0.54941909  0.6866655]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cria uma matriz 2x3, com valores randômicos,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  derivados de uma distribuição normal, cuja média é 0 e desvio padrão 1.</span>
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>, (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>))
+</span></span><span style="display:flex;"><span>print(x) <span style="color:#75715e"># Imprime, por exemplo:</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#75715e"># [[-1.2662116   0.2800333   0.41657951]</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#75715e">#  [-0.55011022 -0.99752399 -0.87655478]]</span>
 </span></span></code></pre></div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 </article>
@@ -752,7 +867,7 @@ else:
         <li><a href="#modo-interativo">Modo interativo</a></li>
       </ul>
     </li>
-    <li><a href="#sintaxe">Sintaxe</a>
+    <li><a href="#sintaxe-básica">Sintaxe básica</a>
       <ul>
         <li><a href="#comentários">Comentários</a></li>
         <li><a href="#indentação">Indentação</a></li>
@@ -768,6 +883,11 @@ else:
         <li><a href="#comando-de-repetição-while">Comando de repetição: while</a></li>
         <li><a href="#variáveis-de-tipos-de-sequências">Variáveis de tipos de sequências</a></li>
         <li><a href="#funções">Funções</a></li>
+      </ul>
+    </li>
+    <li><a href="#bibliotecas">Bibliotecas</a>
+      <ul>
+        <li><a href="#numpy">NumPy</a></li>
       </ul>
     </li>
   </ul>
