@@ -15,7 +15,7 @@ Programar é a tarefa de se comunicar com o computador através da escrita de um
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.bcf59c9ce1c16b40c2660f7c41757dc785859bebe7d46bcf3850710d16c56e38.js" integrity="sha256-vPWcnOHBa0DCZg98QXV9x4WFm&#43;vn1GvPOFBxDRbFbjg=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.64a79290f6ca9fce03c942945946e3abf6401e79bd78c119f54c32a5fb2d7de9.js" integrity="sha256-ZKeSkPbKn84DyUKUWUbjq/ZAHnm9eMEZ9Uwypfstfek=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://stefanisp.github.io/docs/c-course/index.xml" title="stefanisp.github.io" />
 <!--
 Made with Book Theme
@@ -1297,13 +1297,13 @@ else
 <p>As funções são declaradas antes de serem chamadas. Perceba que elas foram declaradas antes do inicio do escopo <em>main()</em>.</p>
 </li>
 <li>
-<p><strong>funcao_1()</strong> é a forma chamamos <em>funcao_1</em> para ser executada.</p>
+<p><strong>funcao_1()</strong> é a forma que chamamos <em>funcao_1</em> para ser executada.</p>
 </li>
 <li>
 <p>A <em>funcao_2</em> possui dois parâmetros de entrada, dessa forma precisamos passar valores de tipos equivalentes na sua chamada. Na chamada <strong>funcao_2(1, 2)</strong> passamos os valores <em>1</em> e <em>2</em>, que serão atribuídos aos parâmetros <strong>a</strong> e <strong>b</strong> da função.</p>
 </li>
 </ul>
-<p>Nas chamadas de <em>funcao_2</em> do código acima, passamos valores diretamente para serem atribuídos aos parâmetros de entrada da função. Poderíamos, também, passar variáveis como parâmetros. Neste caso, os valores atribuídos previamente às variáveis serão <em>copiados</em> para os parâmetros de entrada da função. Vejamos um exemplo:</p>
+<p>Nas chamadas de <em>funcao_2</em> do código acima, passamos valores diretamente para serem atribuídos aos parâmetros de entrada da função. Poderíamos, também, passar variáveis como parâmetros. Neste caso, os valores atribuídos previamente às variáveis serão <em>copiados</em> para os parâmetros de entrada da função. Em C, chamamos a esse comportamento de <em>passagem de parâmetro <strong>por valor</strong></em>. Vejamos um exemplo:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Função com um parâmetro de entrada, e que retorna um número fracionado.
@@ -1325,6 +1325,7 @@ else
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;A função 3 teve como retorno o valor: %f&#34;</span>, resultado );
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>No exemplo, a variável <em>numero</em> foi inicalizada com o valor 10, e passamos a variável como parâmetro da chamada de <em>funcao_3</em>. Isso quer dizer que o valor 10 será copiado para o parâmetro de entrada <em>num</em> da função.</p>
+<p>Na seção <em>Funções (parte 02)</em>, veremos que existe outra forma de passar parâmetros para as funções, chamada de <em>passagem <strong>por referência</strong></em>. Antes, estudaremos o que são <em>ponteiros</em> para entender melhor esse conceito.</p>
 <h2 id="ponteiros">
   Ponteiros
   <a class="anchor" href="#ponteiros">#</a>
@@ -1468,6 +1469,61 @@ Variável pointInt:
   Funções (parte 02)
   <a class="anchor" href="#fun%c3%a7%c3%b5es-parte-02">#</a>
 </h2>
+<p>Na seção <em>Funções (parte 01)</em>, vimos que a passagem de parâmetros <strong>por valor</strong> é o comportamento padrão quando passamos variáveis como parâmetros de entrada de funções. Na passagem por valor, o conteúdo da variável é copiado para a função, e a função não terá acesso à variável.</p>
+<p>Quando desejamos que uma função tenha acesso direto à variável, podendo alterar seu conteúdo, devemos utilizar a passagem de parâmetros por <strong>referência</strong>. Utilizarmos ponteiros para implementar a <em>passagem por referência</em>.</p>
+<p>A forma de implementar é:</p>
+<ol>
+<li>Na declaração da função, o parâmetro de entrada deverá ser declarado como um ponteiro.</li>
+<li>Ao operar com a variável dentro da função, devemos lembrar de utilizar o ponteiro para o conteúdo apontado (ex. *pointInt).</li>
+<li>Na chamada da função, devemos passar o endereço de memória da variável que queremos passar como parâmetro.</li>
+</ol>
+<p>Vejamos um exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 1. Declaramos os parâmetros de entrada da função como ponteiros
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">funcao_passagem_referencia</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>b){
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">*</span>a <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">// 2. Utilizamos o ponteiro para o conteúdo apontado
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">*</span>b <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>;  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>, y <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Valores antes da chamada da função: x = %d  e y = %d&#34;</span>, x,y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">funcao_passagem_referencia</span>(<span style="color:#f92672">&amp;</span>x, <span style="color:#f92672">&amp;</span>y); <span style="color:#75715e">// 3. Passamos os endereços de memória 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Valores após a chamada da função: x = %d  e y = %d&#34;</span>, x,y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída do programa será:</p>
+<pre><code>Valores antes da chamada da função: x = 10  e y = 10
+Valores após a chamada da função: x = 11  e y = 9
+</code></pre>
+<p>Os valores de <em>x</em> e <em>y</em> foram modificados. Uma função com passagem de parâmetros por valor não alteraria os valores de <em>x</em> e <em>y</em>. Vejamos um exemplo equivalente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">funcao_passagem_valor</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b){
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>; 
+</span></span><span style="display:flex;"><span>    b <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>;  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>, y <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Valores antes da chamada da função: x = %d  e y = %d&#34;</span>, x,y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">funcao_passagem_valor</span>(x, y); 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Valores após a chamada da função: x = %d  e y = %d&#34;</span>, x,y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída do programa será:</p>
+<pre><code>Valores antes da chamada da função: x = 10  e y = 10
+Valores após a chamada da função: x = 10  e y = 10
+</code></pre>
 <h2 id="mais-sobre-variáveis">
   Mais sobre variáveis
   <a class="anchor" href="#mais-sobre-vari%c3%a1veis">#</a>
