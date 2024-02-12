@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://stefanisp.github.io/docs/c-course/basic/</loc>
+    <loc>https://stefanisp.github.io/docs/c-course/01-sintax/</loc>
   </url><url>
     <loc>https://stefanisp.github.io/docs/c-course/</loc>
   </url><url>
@@ -11,6 +11,8 @@
     <loc>https://stefanisp.github.io/docs/c-course/intermediate/</loc>
   </url><url>
     <loc>https://stefanisp.github.io/docs/rl-course/</loc>
+  </url><url>
+    <loc>https://stefanisp.github.io/docs/c-course/02-code/</loc>
   </url><url>
     <loc>https://stefanisp.github.io/docs/temp/</loc>
   </url><url>
