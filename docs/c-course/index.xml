@@ -31,8 +31,7 @@ Programar é a tarefa de se comunicar com o computador através da escrita de um
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://stefanisp.github.io/docs/c-course/02-code/</guid>
-      <description>Introdução à Programação com a Linguagem C # Exercícios de programação # Lista 01 # Escreva um programa que declara três números inteiros e imprime a soma dos números na tela.
-Escreva um programa que lê três números inteiros (fornecidos pelo usuário) e imprime a soma dos números na tela.
+      <description>Introdução à Programação com a Linguagem C # Exercícios de programação # Lista 01 - Básico # Escreva um programa que declara três números inteiros e imprime a soma dos números na tela.
 Escreva um programa que lê três números fracionados fornecidos pelo usuário e imprime a soma dos números.
 Escreva um programa que lê dois números inteiros e imprime a soma, a diferença, o produto e a divisão entre esses números.</description>
     </item>

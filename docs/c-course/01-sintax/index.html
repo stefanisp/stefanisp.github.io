@@ -18,7 +18,7 @@ Programar é a tarefa de se comunicar com o computador através da escrita de um
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.8b9d6e5ae2004e79362eb4af55f014ab3438e8dedeb6788589e5a6b0dfc624e2.js" integrity="sha256-i51uWuIATnk2LrSvVfAUqzQ46N7etniFieWmsN/GJOI=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.ab59d11609c4249ed9befd0ba888063b05154179cc050a671200f50d87d9dc19.js" integrity="sha256-q1nRFgnEJJ7Zvv0LqIgGOwUVQXnMBQpnEgD1DYfZ3Bk=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -190,18 +190,17 @@ https://github.com/alex-shpak/hugo-book
     </li>
     <li><a href="#comando-break">Comando break</a></li>
     <li><a href="#comando-continue">Comando continue</a></li>
-    <li><a href="#arrays-e-matrizes">Arrays e Matrizes</a></li>
-    <li><a href="#strings">Strings</a></li>
-    <li><a href="#funções-parte-01">Funções (parte 01)</a></li>
-    <li><a href="#ponteiros">Ponteiros</a></li>
-    <li><a href="#funções-parte-02">Funções (parte 02)</a></li>
-    <li><a href="#mais-sobre-variáveis">Mais sobre variáveis</a>
+    <li><a href="#arrays">Arrays</a>
       <ul>
-        <li><a href="#escopo-de-variáveis">Escopo de variáveis</a></li>
-        <li><a href="#modificadores-de-variáveis">Modificadores de variáveis</a></li>
-        <li><a href="#constantes">Constantes</a></li>
-        <li><a href="#conversão-de-tipos">Conversão de tipos</a></li>
-        <li><a href="#definição-de-tipos">Definição de tipos</a></li>
+        <li><a href="#atribuição">Atribuição</a></li>
+        <li><a href="#matrizes">Matrizes</a></li>
+      </ul>
+    </li>
+    <li><a href="#ponteiros">Ponteiros</a></li>
+    <li><a href="#funções">Funções</a></li>
+    <li><a href="#strings">Strings</a>
+      <ul>
+        <li><a href="#leitura-de-strings">Leitura de strings</a></li>
       </ul>
     </li>
   </ul>
@@ -460,7 +459,7 @@ tipo nome;
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%c&#34;</span>, <span style="color:#f92672">&amp;</span>var_char);      <span style="color:#75715e">// Observe que adicionamos &amp; ao nome da variável!
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Os valores digitados são: %d, %f, %c&#34;</span>, var_int, var_float, var_char);
-</span></span></code></pre></div><p>Falaremos mais sobre o comando <em>scanf()</em> ao longo do curso.</p>
+</span></span></code></pre></div><p>Assim como o <em>printf</em>, o <em>scanf</em> é uma função definida na biblioteca padrão da linguagem C, presente no arquivo <em>stdio.h</em>.</p>
 <h3 id="operadores-aritméticos-binários">
   Operadores aritméticos binários
   <a class="anchor" href="#operadores-aritm%c3%a9ticos-bin%c3%a1rios">#</a>
@@ -1119,18 +1118,17 @@ else
 <p>Observe que, na repetição à qual <em>i</em> assumiu o valor <em>3</em>, a condição <em>i == j</em> passou a ser verdadeira, e o comando <em>continue</em> foi executado. Sendo assim, as instruções seguintes dentro do bloco <em>while</em> foram <em>puladas</em>, e a <em>condição</em> do <em>while</em> voltou a ser testada para uma nova repetição do seu bloco de instruções. Observe também que incluí o incremento da variável <em>i</em> dentro do bloco <em>if</em>. Consegue me explicar o porquê? Me conte na próxima aula!</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<h2 id="arrays-e-matrizes">
-  Arrays e Matrizes
-  <a class="anchor" href="#arrays-e-matrizes">#</a>
+<h2 id="arrays">
+  Arrays
+  <a class="anchor" href="#arrays">#</a>
 </h2>
 <p>Até agora trabalhamos com variáveis que comportavam um único valor, por exemplo, um número ou um caractere. A linguagem também permite criarmos variáveis que comportem um conjunto de valores, como uma lista de valores. Começaremos entendendo o que são arrays.</p>
 <p>Arrays são variáveis que representam uma lista de valores do mesmo tipo, e podemos acessar cada valor da lista <strong>indexando</strong> a variável com as posições dos elementos na lista. A sintaxe da declaração é:</p>
 <pre><code>tipo nome_da_variavel[tamanho_da_lista];
 </code></pre>
 <p>Por exemplo:</p>
-<pre><code>int numeros[5]; //uma variável que comporta 5 números inteiros diferentes.
-</code></pre>
-<p>Conseguimos atribuir valores ou acessar cada um dos 5 números da variável <em>números</em> através de índices ordenados. Indices em arrays são números inteiros positivos, e começam do valor <strong>zero</strong>. Na declaração da variável <em>números</em>, temos 5 posições de memória que podem ser acessadas com os índices <em>0, 1, 2, 3 e 4</em>. Vejamos no código:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> numeros[<span style="color:#ae81ff">5</span>]; <span style="color:#75715e">//uma variável que comporta 5 números inteiros diferentes.
+</span></span></span></code></pre></div><p>Conseguimos atribuir valores ou acessar cada um dos 5 números da variável <em>numeros</em> através de índices ordenados. Indices em arrays são números inteiros positivos, e começam do valor <strong>zero</strong>. Na declaração da variável <em>numeros</em>, temos 5 posições de memória que podem ser acessadas com os índices <em>0, 1, 2, 3 e 4</em>. Vejamos no código:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> numeros[<span style="color:#ae81ff">5</span>];
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>numeros[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
@@ -1145,13 +1143,37 @@ else
 </span></span></code></pre></div><p>No código acima, estamos primeiro atribuindo valores à cada uma das posições da variável <em>numeros</em>. Em seguida, estamos <em>percorrendo</em> toda a variável com a estrutura de repetição <em>for</em> para imprimir os valores de cada posição na tela. Note que, <strong>não existe a posição numeros[5]</strong>, esta representaria um sexto elemento e extrapolaria o tamanho declarado da variável. A saída do programa será:</p>
 <pre><code>10 11 12 13 14
 </code></pre>
-<p>Da mesma forma que fizemos com as variáveis &ldquo;simples&rdquo;, também podemos inicializar a variável em sua declaração. Exemplo:</p>
+<p>Da mesma forma que fizemos com as variáveis &ldquo;simples&rdquo;, também podemos inicializar um array em sua declaração. Exemplo:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> numeros[<span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">13</span>, <span style="color:#ae81ff">14</span>};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; i<span style="color:#f92672">++</span>){
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d &#34;</span>, numeros[i]);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Arrays possuem uma única dimensão. Eventualmente precisamos organizar várias listas de valores associados. Para isso, podemos utilizar <strong>matrizes</strong>. Matrizes são arrays que podem ter várias dimensões, mas neste curso entederemos matrizes com duas dimensões. Como na matemática, podemos chamar a primeira dimensão de <strong>linha</strong> e a segunda de <strong>coluna</strong>. A sintaxe da declaração é:</p>
+</span></span></code></pre></div><h3 id="atribuição">
+  Atribuição
+  <a class="anchor" href="#atribui%c3%a7%c3%a3o">#</a>
+</h3>
+<p>A linguagem C não permite a atribuição de arrays. Ou seja, não é possível copiar o valor de um array para outro com uma simples atribuição de variáveis. Para copiar, precisamos percorrer todo o array. Exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> numeros_1[<span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">13</span>, <span style="color:#ae81ff">14</span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> numeros_2[<span style="color:#ae81ff">5</span>];
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Copiar os valores de numeros_1 para numeros_2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>    numeros_2[i] <span style="color:#f92672">=</span> numeros_1[i];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Imprimir os valores de numeros_2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d &#34;</span>, numeros_2[i]);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="matrizes">
+  Matrizes
+  <a class="anchor" href="#matrizes">#</a>
+</h3>
+<p>Arrays possuem uma única dimensão.</p>
+<p>Eventualmente, precisamos organizar várias listas de valores associados. Para isso, podemos utilizar <strong>matrizes</strong>.</p>
+<p>Matrizes são arrays que podem ter várias dimensões!</p>
+<p>Neste curso, estudaremos as matrizes com duas dimensões. Assim como na matemática, podemos chamar a primeira dimensão de <strong>linha</strong> e a segunda de <strong>coluna</strong>. A sintaxe da declaração é:</p>
 <pre><code>tipo nome_da_variável[numero_de_linhas][numero_de_colunas];
 </code></pre>
 <p>Exemplo de código:</p>
@@ -1199,120 +1221,6 @@ else
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>No exemplo, <em>numeros_1</em> e <em>numeros_2</em> são duas matrizes diferentes. Utilizamos uma sintaxe de inicalização diferente para elas, mas as duas foram inicializadas com os mesmos valores. Dessa forma, na impressão da tela as duas matrizes serão iguais.</p>
-<h2 id="strings">
-  Strings
-  <a class="anchor" href="#strings">#</a>
-</h2>
-<p>Strings são sequências de caracteres. Em C, uma sequência de caracteres nada mais é do que um <em>array</em> do tipo <strong>char</strong>. Podemos criar arrays de char da mesma forma que fizemos com os outros tipos anteriormente. Além disso, aos arrays de char também podem ser atribuídos textos diretamente. Vejamos exemplos de declaração de strings:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// Inicialização com caracteres
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">char</span> string_1[<span style="color:#ae81ff">7</span>] <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;S&#39;</span>, <span style="color:#e6db74">&#39;t&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>, <span style="color:#e6db74">&#39;i&#39;</span>, <span style="color:#e6db74">&#39;n&#39;</span>, <span style="color:#e6db74">&#39;g&#39;</span>, <span style="color:#e6db74">&#39;\n&#39;</span>};
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Inicialização com texto
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">char</span> string_2[<span style="color:#ae81ff">7</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;String&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> string_3[<span style="color:#ae81ff">7</span>];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>string_3 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;String&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, string_1);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, string_2);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, string_3);
-</span></span></code></pre></div><p>As strings em C possuem um <strong>\n</strong> ao final para representar o final da string. Observe que na declaração de <em>string_1</em> adicionamos explicitamente o <em>\n</em>. Na inicialização com texto, isso já é feito pelo compilador de forma implícita. Observe, também, que devemos contabilizar esse último caractere na definição do tamanho do array. Outra novidade é o indicador do tipo de variável no <em>printf</em>, passou a ser <strong>%s</strong>.</p>
-<h2 id="funções-parte-01">
-  Funções (parte 01)
-  <a class="anchor" href="#fun%c3%a7%c3%b5es-parte-01">#</a>
-</h2>
-<p>Podemos organizar o código em blocos que delimitam um escopo próprio para a realização de uma tarefa específica, e que podem ser reaproveitados em diferentes pontos do código. Fazemos isso através de <em>funções</em>. A sintaxe da declaração de uma função é:</p>
-<pre><code>tipo_de_retorno nome_da_função(tipo_de_parametro_de_entrada nome_parametro_de_entrada){
-    instruções;
-    return valor_de_retorno;
-}
-</code></pre>
-<p>Vamos entender</p>
-<ul>
-<li>
-<p>Uma função pode receber <strong>parâmetros de entrada</strong> para utilizar os valores dos parâmetros na realização de alguma tarefa. Para especificar um parâmetro de entrada da função, devemos declarar o seu tipo em <strong>tipo_de_parametro_de_entrada</strong> seguido do nome que utilizaremos para acessar o parâmetro dentro da função, declarado em <strong>nome_parametro_de_entrada</strong>.</p>
-<ul>
-<li>Parâmetros de entrada são opcionais.</li>
-<li>Podemos ter vários parâmetros de entrada separados por vírgula, cada um com sua declaração completa (tipo e nome).</li>
-</ul>
-</li>
-<li>
-<p>Uma função pode retornar algum valor, e definimos o tipo do valor na sua declaração em <strong>tipo_de_retorno</strong>. Neste caso, após realizar sua atividade, a função deverá retornar um valor do tipo declado utilizando a palavra reservada <strong>return</strong>.</p>
-<ul>
-<li>Caso a função não precise retornar valor algum, utilizamos a palavra <strong>void</strong> na declaração, e o <em>return</em> será desnecessário.</li>
-<li>Podemos utilizar <em>return</em> em qualquer ponto do corpo da função.</li>
-</ul>
-</li>
-<li>
-<p>Acessaremos a função através do seu nome, declarado em <strong>nome_da_função</strong>.</p>
-</li>
-</ul>
-<p>Vejamos exemplos:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Função sem parâmetros de entrada e sem retorno.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">funcao_1</span>(){ 
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Execução da função 1.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Função com dois parâmetros de entrada, e que retorna um número inteiro. 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">funcao_2</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b){
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Execução da função 2, com os valores de entrada %d e %d.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, a, b);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a<span style="color:#f92672">+</span>b;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Iniciando a execução do programa.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">funcao_1</span>(); <span style="color:#75715e">//Instanciando funcao_1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> valor <span style="color:#f92672">=</span> <span style="color:#a6e22e">funcao_2</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>); <span style="color:#75715e">//Instanciando funcao_2
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;A soma de 1 e 2 é %d&#34;</span>, valor);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Instanciando funcao_2 novamente
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;A soma de 10 e 11 é %d&#34;</span>, <span style="color:#a6e22e">funcao_2</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">11</span>)); 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Vamos entender:</p>
-<ul>
-<li>
-<p>O códido começa a ser executado no escopo principal <strong>main()</strong>, e toda vez que há a chamada de uma função, o fluxo de execução <em>&ldquo;pula&rdquo;</em> para o escopo da função e executa todo o código da função. Ao finalizar a execução da função, o fluxo de execução do programa retorna para o escopo <em>main()</em> e a próxima linha de código após a chamada da função é executada.</p>
-</li>
-<li>
-<p>As funções são declaradas antes de serem chamadas. Perceba que elas foram declaradas antes do inicio do escopo <em>main()</em>.</p>
-</li>
-<li>
-<p><strong>funcao_1()</strong> é a forma que chamamos <em>funcao_1</em> para ser executada.</p>
-</li>
-<li>
-<p>A <em>funcao_2</em> possui dois parâmetros de entrada, dessa forma precisamos passar valores de tipos equivalentes na sua chamada. Na chamada <strong>funcao_2(1, 2)</strong> passamos os valores <em>1</em> e <em>2</em>, que serão atribuídos aos parâmetros <strong>a</strong> e <strong>b</strong> da função.</p>
-</li>
-</ul>
-<p>Nas chamadas de <em>funcao_2</em> do código acima, passamos valores diretamente para serem atribuídos aos parâmetros de entrada da função. Poderíamos, também, passar variáveis como parâmetros. Neste caso, os valores atribuídos previamente às variáveis serão <em>copiados</em> para os parâmetros de entrada da função. Em C, chamamos a esse comportamento de <em>passagem de parâmetro <strong>por valor</strong></em>. Vejamos um exemplo:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Função com um parâmetro de entrada, e que retorna um número fracionado.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">float</span> <span style="color:#a6e22e">funcao_3</span>(<span style="color:#66d9ef">int</span> num){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> resultado; 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(num <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    resultado <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">/</span> num;
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> resultado;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> numero <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> resultado <span style="color:#f92672">=</span> <span style="color:#a6e22e">funcao_3</span>(numero);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;A função 3 teve como retorno o valor: %f&#34;</span>, resultado );
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>No exemplo, a variável <em>numero</em> foi inicalizada com o valor 10, e passamos a variável como parâmetro da chamada de <em>funcao_3</em>. Isso quer dizer que o valor 10 será copiado para o parâmetro de entrada <em>num</em> da função.</p>
-<p>Na seção <em>Funções (parte 02)</em>, veremos que existe outra forma de passar parâmetros para as funções, chamada de <em>passagem <strong>por referência</strong></em>. Antes, estudaremos o que são <em>ponteiros</em> para entendermos melhor esse conceito.</p>
 <h2 id="ponteiros">
   Ponteiros
   <a class="anchor" href="#ponteiros">#</a>
@@ -1452,12 +1360,105 @@ Variável pointInt:
   - Valor armazenado: (em hexadecimal) 0x7ff7bf0a93c8 (em decimal) -1089825848
   - Conteudo da posicao apontada: 10 
 </code></pre>
-<h2 id="funções-parte-02">
-  Funções (parte 02)
-  <a class="anchor" href="#fun%c3%a7%c3%b5es-parte-02">#</a>
+<h2 id="funções">
+  Funções
+  <a class="anchor" href="#fun%c3%a7%c3%b5es">#</a>
 </h2>
-<p>Na seção <em>Funções (parte 01)</em>, vimos que a passagem de parâmetros <strong>por valor</strong> é o comportamento padrão quando passamos variáveis como parâmetros de entrada de funções. Na passagem por valor, o conteúdo da variável é copiado para a função, e a função não terá acesso à variável.</p>
-<p>Quando desejamos que uma função tenha acesso direto à variável, podendo alterar seu conteúdo, devemos utilizar a passagem de parâmetros por <strong>referência</strong>. Utilizarmos ponteiros para implementar a <em>passagem por referência</em>.</p>
+<p>Podemos organizar o código em blocos que delimitam um escopo próprio para a realização de uma tarefa específica, e que podem ser reaproveitados em diferentes pontos do código. Fazemos isso através de <em>funções</em>. A sintaxe da declaração de uma função é:</p>
+<pre><code>tipo_de_retorno nome_da_função(tipo_de_parametro_de_entrada nome_parametro_de_entrada){
+    instruções;
+    return valor_de_retorno;
+}
+</code></pre>
+<p>Vamos entender</p>
+<ul>
+<li>
+<p>Uma função pode receber <strong>parâmetros de entrada</strong> para utilizar os valores dos parâmetros na realização de alguma tarefa. Para especificar um parâmetro de entrada da função, devemos declarar o seu tipo em <strong>tipo_de_parametro_de_entrada</strong> seguido do nome que utilizaremos para acessar o parâmetro dentro da função, declarado em <strong>nome_parametro_de_entrada</strong>.</p>
+<ul>
+<li>Parâmetros de entrada são opcionais.</li>
+<li>Podemos ter vários parâmetros de entrada separados por vírgula, cada um com sua declaração completa (tipo e nome).</li>
+</ul>
+</li>
+<li>
+<p>Uma função pode retornar algum valor, e definimos o tipo do valor na sua declaração em <strong>tipo_de_retorno</strong>. Neste caso, após realizar sua atividade, a função deverá retornar um valor do tipo declado utilizando a palavra reservada <strong>return</strong>.</p>
+<ul>
+<li>Caso a função não precise retornar valor algum, utilizamos a palavra <strong>void</strong> na declaração, e o <em>return</em> será desnecessário.</li>
+<li>Podemos utilizar <em>return</em> em qualquer ponto do corpo da função.</li>
+</ul>
+</li>
+<li>
+<p>Acessaremos a função através do seu nome, declarado em <strong>nome_da_função</strong>.</p>
+</li>
+</ul>
+<p>Vejamos exemplos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Função sem parâmetros de entrada e sem retorno.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">funcao_1</span>(){ 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Execução da função 1.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Função com dois parâmetros de entrada, e que retorna um número inteiro. 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">funcao_2</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Execução da função 2, com os valores de entrada %d e %d.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, a, b);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a<span style="color:#f92672">+</span>b;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Iniciando a execução do programa.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">funcao_1</span>(); <span style="color:#75715e">//Instanciando funcao_1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> valor <span style="color:#f92672">=</span> <span style="color:#a6e22e">funcao_2</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>); <span style="color:#75715e">//Instanciando funcao_2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;A soma de 1 e 2 é %d&#34;</span>, valor);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Instanciando funcao_2 novamente
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;A soma de 10 e 11 é %d&#34;</span>, <span style="color:#a6e22e">funcao_2</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">11</span>)); 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Vamos entender:</p>
+<ul>
+<li>
+<p>O códido começa a ser executado no escopo principal <strong>main()</strong>, e toda vez que há a chamada de uma função, o fluxo de execução <em>&ldquo;pula&rdquo;</em> para o escopo da função e executa todo o código da função. Ao finalizar a execução da função, o fluxo de execução do programa retorna para o escopo <em>main()</em> e a próxima linha de código após a chamada da função é executada.</p>
+</li>
+<li>
+<p>As funções são declaradas antes de serem chamadas. Perceba que elas foram declaradas antes do inicio do escopo <em>main()</em>.</p>
+</li>
+<li>
+<p><strong>funcao_1()</strong> é a forma que chamamos <em>funcao_1</em> para ser executada.</p>
+</li>
+<li>
+<p>A <em>funcao_2</em> possui dois parâmetros de entrada, dessa forma precisamos passar valores de tipos equivalentes na sua chamada. Na chamada <strong>funcao_2(1, 2)</strong> passamos os valores <em>1</em> e <em>2</em>, que serão atribuídos aos parâmetros <strong>a</strong> e <strong>b</strong> da função.</p>
+</li>
+</ul>
+<p>Nas chamadas de <em>funcao_2</em> do código acima, passamos valores diretamente para serem atribuídos aos parâmetros de entrada da função. Poderíamos, também, passar variáveis como parâmetros. Neste caso, os valores atribuídos previamente às variáveis serão <em>copiados</em> para os parâmetros de entrada da função. Em C, chamamos esse comportamento de <em>passagem de parâmetro <strong>por valor</strong></em>. Vejamos um exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Função com um parâmetro de entrada, e que retorna um número fracionado.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">float</span> <span style="color:#a6e22e">funcao_3</span>(<span style="color:#66d9ef">int</span> num){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> resultado; 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(num <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    resultado <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">/</span> num;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> resultado;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> numero <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> resultado <span style="color:#f92672">=</span> <span style="color:#a6e22e">funcao_3</span>(numero);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;A função 3 teve como retorno o valor: %f&#34;</span>, resultado );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>No exemplo, a variável <em>numero</em> foi inicalizada com o valor 10, e passamos a variável como parâmetro da chamada de <em>funcao_3</em>. Isso quer dizer que o valor 10 será copiado para o parâmetro de entrada <em>num</em> da função.</p>
+<p>A passagem de parâmetros <strong>por valor</strong> é o comportamento padrão quando passamos variáveis como parâmetros de entrada de funções. Na passagem por valor, o conteúdo da variável é copiado para a função, e a função não terá acesso à variável.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Existe outra forma de passar parâmetros para as funções, chamada de <em>passagem <strong>por referência</strong></em>.</p>
+<p>Quando desejamos que uma função tenha acesso direto à variável, podendo alterar seu conteúdo, devemos utilizar a passagem de parâmetros por referência. Utilizarmos ponteiros para implementar a passagem por referência.</p>
 <p>A forma de implementar é:</p>
 <ol>
 <li>Na declaração da função, o parâmetro de entrada deverá ser declarado como um ponteiro.</li>
@@ -1511,30 +1512,58 @@ Valores após a chamada da função: x = 11  e y = 9
 <pre><code>Valores antes da chamada da função: x = 10  e y = 10
 Valores após a chamada da função: x = 10  e y = 10
 </code></pre>
-<h2 id="mais-sobre-variáveis">
-  Mais sobre variáveis
-  <a class="anchor" href="#mais-sobre-vari%c3%a1veis">#</a>
+<!-- raw HTML omitted -->
+<h2 id="strings">
+  Strings
+  <a class="anchor" href="#strings">#</a>
 </h2>
-<h3 id="escopo-de-variáveis">
-  Escopo de variáveis
-  <a class="anchor" href="#escopo-de-vari%c3%a1veis">#</a>
+<p>Strings são sequências de caracteres. Em C, uma sequência de caracteres nada mais é do que um <em>array</em> do tipo <strong>char</strong>. Podemos criar arrays de char da mesma forma que fizemos com os outros tipos anteriormente. Além disso, aos arrays de char também podem ser atribuídos textos diretamente. Vejamos exemplos de declaração de strings:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// Inicialização com caracteres
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">char</span> string_1[<span style="color:#ae81ff">7</span>] <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;S&#39;</span>, <span style="color:#e6db74">&#39;t&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>, <span style="color:#e6db74">&#39;i&#39;</span>, <span style="color:#e6db74">&#39;n&#39;</span>, <span style="color:#e6db74">&#39;g&#39;</span>, <span style="color:#e6db74">&#39;\0&#39;</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Inicialização com texto
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">char</span> string_2[<span style="color:#ae81ff">7</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;String&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> string_3[<span style="color:#ae81ff">7</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>string_3 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;String&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, string_1);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, string_2);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, string_3);
+</span></span></code></pre></div><p>As strings em C possuem um <strong>\0</strong> ao final para representar o final da string. Observe que na declaração de <em>string_1</em> adicionamos explicitamente o <em>\0</em>. Na inicialização com texto, isso já é feito pelo compilador de forma implícita. Observe, também, que devemos contabilizar esse último caractere na definição do tamanho do array.</p>
+<p>Outra novidade é o indicador do tipo de variável no <em>printf</em>, que passou a ser <strong>%s</strong>.</p>
+<h3 id="leitura-de-strings">
+  Leitura de strings
+  <a class="anchor" href="#leitura-de-strings">#</a>
 </h3>
-<h3 id="modificadores-de-variáveis">
-  Modificadores de variáveis
-  <a class="anchor" href="#modificadores-de-vari%c3%a1veis">#</a>
-</h3>
-<h3 id="constantes">
-  Constantes
-  <a class="anchor" href="#constantes">#</a>
-</h3>
-<h3 id="conversão-de-tipos">
-  Conversão de tipos
-  <a class="anchor" href="#convers%c3%a3o-de-tipos">#</a>
-</h3>
-<h3 id="definição-de-tipos">
-  Definição de tipos
-  <a class="anchor" href="#defini%c3%a7%c3%a3o-de-tipos">#</a>
-</h3>
+<p>Podemos utilizar o comando <em>scanf</em> para a leitura de strings, com a seguinte sintaxe:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> nome[<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Digite um nome:&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, nome);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s &#34;</span>, nome);
+</span></span></code></pre></div><p>Observe que utilizamos o <strong>%s</strong> no scanf e não adicionamos o símbolo <strong>&amp;</strong> à variável associada, como fizemos na leitura de variáveis nos exemplos vistos anteriormente.</p>
+<p><strong>Importante</strong>: A leitura de strings com o <em>scanf</em> é interrompida ao ser encontrado o primeiro espaço em branco digitado. Dessa forma, se o usuário digitar, por exemplo, <em>Ana Maria</em>, no nosso exemplo, apenas o <em>Ana</em> será atribuído à variável <em>nome</em>.</p>
+<p>Alternativamente, podemos utilizar a função <strong>gets()</strong>. Esta támbém é uma função presente na bilioteca padrão da linguagem C, e é possível ler frases inteiras com espaços em brancos. A leitura é finalizada ao ser encontrado o caracteter que representa uma quebra de linha (<em>\n</em>), ou seja, quando o usuário digitar <em>enter</em>. Vejamos exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> frase[<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Digite uma frase:&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gets</span>(frase);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s &#34;</span>, frase);
+</span></span></code></pre></div><p><strong>Troubleshooting:</strong> Já presenciei alguns erros reportados pelos alunos nas aulas de laboratório, utilizando essas funções de leitura de strings. Um erro comum era o retorno de caracteres errados. Uma possível solução é realizar a limpeza da memória <em>buffer</em> do teclado antes de realizar a leitura. Para isso, utilizamos a função <strong>setbuf</strong> com a configuração <strong>setbuf(stdin, NULL)</strong>. Exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> frase[<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Limpeza do buffer - Atribui o valor NULL à
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">setbuf</span>(stdin, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Digite uma frase:&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gets</span>(frase);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s &#34;</span>, frase);
+</span></span></code></pre></div><p>O nome <em>stdin</em> representa o buffer de entrada padrão do sistema, e o exemplo atribui o valor <em>NULL</em> a ele.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 </article>
@@ -1609,18 +1638,17 @@ Valores após a chamada da função: x = 10  e y = 10
     </li>
     <li><a href="#comando-break">Comando break</a></li>
     <li><a href="#comando-continue">Comando continue</a></li>
-    <li><a href="#arrays-e-matrizes">Arrays e Matrizes</a></li>
-    <li><a href="#strings">Strings</a></li>
-    <li><a href="#funções-parte-01">Funções (parte 01)</a></li>
-    <li><a href="#ponteiros">Ponteiros</a></li>
-    <li><a href="#funções-parte-02">Funções (parte 02)</a></li>
-    <li><a href="#mais-sobre-variáveis">Mais sobre variáveis</a>
+    <li><a href="#arrays">Arrays</a>
       <ul>
-        <li><a href="#escopo-de-variáveis">Escopo de variáveis</a></li>
-        <li><a href="#modificadores-de-variáveis">Modificadores de variáveis</a></li>
-        <li><a href="#constantes">Constantes</a></li>
-        <li><a href="#conversão-de-tipos">Conversão de tipos</a></li>
-        <li><a href="#definição-de-tipos">Definição de tipos</a></li>
+        <li><a href="#atribuição">Atribuição</a></li>
+        <li><a href="#matrizes">Matrizes</a></li>
+      </ul>
+    </li>
+    <li><a href="#ponteiros">Ponteiros</a></li>
+    <li><a href="#funções">Funções</a></li>
+    <li><a href="#strings">Strings</a>
+      <ul>
+        <li><a href="#leitura-de-strings">Leitura de strings</a></li>
       </ul>
     </li>
   </ul>
