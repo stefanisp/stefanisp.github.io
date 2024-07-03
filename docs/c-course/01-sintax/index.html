@@ -18,7 +18,7 @@ Programar é a tarefa de se comunicar com o computador através da escrita de um
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.ab59d11609c4249ed9befd0ba888063b05154179cc050a671200f50d87d9dc19.js" integrity="sha256-q1nRFgnEJJ7Zvv0LqIgGOwUVQXnMBQpnEgD1DYfZ3Bk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.3784cd31b2d6036219ae18fe53a643df0b8fb33b7bae63957d5b65049b87262e.js" integrity="sha256-N4TNMbLWA2IZrhj&#43;U6ZD3wuPszt7rmOVfVtlBJuHJi4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -201,8 +201,25 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#strings">Strings</a>
       <ul>
         <li><a href="#leitura-de-strings">Leitura de strings</a></li>
+        <li><a href="#biblioteca-stringh">Biblioteca &lt;string.h&gt;</a></li>
       </ul>
     </li>
+    <li><a href="#mais-sobre-variáveis">Mais sobre variáveis</a>
+      <ul>
+        <li><a href="#modificadores">Modificadores</a></li>
+        <li><a href="#constantes">Constantes</a></li>
+        <li><a href="#enumerações">Enumerações</a></li>
+        <li><a href="#tipos-definidos-pelo-programador">Tipos definidos pelo programador</a></li>
+        <li><a href="#escopo-de-variáveis">Escopo de variáveis</a></li>
+      </ul>
+    </li>
+    <li><a href="#mais-sobre-operadores">Mais sobre operadores</a>
+      <ul>
+        <li><a href="#conversões">Conversões</a></li>
+        <li><a href="#operador-sizeof">Operador sizeof</a></li>
+      </ul>
+    </li>
+    <li><a href="#arquivos">Arquivos</a></li>
   </ul>
 </nav>
 
@@ -252,7 +269,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li>
-<p>A maioria dos arquivos começará com instruções <strong>#include &lt; &hellip; &gt;</strong>, chamadas de cabeçalho do programa. <em>#include</em> é uma instrução utilizada para adicionarmos procedimentos (funções) que já foram programados previamente. No exemplo, estamos adicionando ao nosso programa um arquivo presente no compilador C que foi instalado na sua máquina. O arquivo <em>stdio.h</em> contém código C (entederemos mais à frente a extensão .h) com procedimentos que permitem a entrada e saída de textos na tela.</p>
+<p>A maioria dos arquivos começará com instruções <strong>#include &lt; &hellip; &gt;</strong>, chamadas de cabeçalho do programa. <em>#include</em> é uma instrução utilizada para adicionarmos procedimentos (funções) que já foram programados previamente. No exemplo, estamos adicionando ao nosso programa um arquivo presente no compilador C que foi instalado na sua máquina. O arquivo <em>stdio.h</em> contém código C (entederemos mais à frente a extensão .h) com procedimentos que permitem a entrada e saída de textos na tela. <em>stdio</em> é uma abreviação de <em>&ldquo;standard input/output&rdquo;</em>.</p>
 </li>
 <li>
 <p><strong>int main (){ &hellip; }</strong> é uma sintaxe mandatória que identifica o ponto inicial de <em>execução</em> do seu código. Quando executado, o seu programa começará a executar as instruções criadas dentro desse <em>bloco</em> delimitado pelas chaves <em>{ }</em>. Entenderemos melhor essa estrutura quando estudarmos a declaração de <em>funções</em> em C. No exemplo, temos duas instruções dentro do <em>bloco main</em>:</p>
@@ -1531,7 +1548,7 @@ Valores após a chamada da função: x = 10  e y = 10
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, string_1);
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, string_2);
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, string_3);
-</span></span></code></pre></div><p>As strings em C possuem um <strong>\0</strong> ao final para representar o final da string. Observe que na declaração de <em>string_1</em> adicionamos explicitamente o <em>\0</em>. Na inicialização com texto, isso já é feito pelo compilador de forma implícita. Observe, também, que devemos contabilizar esse último caractere na definição do tamanho do array.</p>
+</span></span></code></pre></div><p>Os strings em C possuem um <strong>\0</strong> ao final para representar o final do string. Observe que na declaração de <em>string_1</em> adicionamos explicitamente o <em>\0</em>. Na inicialização com texto, isso já é feito pelo compilador de forma implícita. Observe, também, que devemos contabilizar esse último caractere na definição do tamanho do array.</p>
 <p>Outra novidade é o indicador do tipo de variável no <em>printf</em>, que passou a ser <strong>%s</strong>.</p>
 <h3 id="leitura-de-strings">
   Leitura de strings
@@ -1564,6 +1581,120 @@ Valores após a chamada da função: x = 10  e y = 10
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s &#34;</span>, frase);
 </span></span></code></pre></div><p>O nome <em>stdin</em> representa o buffer de entrada padrão do sistema, e o exemplo atribui o valor <em>NULL</em> a ele.</p>
+<h3 id="biblioteca-stringh">
+  Biblioteca &lt;string.h&gt;
+  <a class="anchor" href="#biblioteca-stringh">#</a>
+</h3>
+<p>A biblioteca padrão da linguagem C possui um conjunto de funções para manipulação de strings. Para utilizá-las, é necessário adicionar a biblioteca <em>string.h</em> no cabeçalho do programa:</p>
+<pre><code>#include &lt;string.h&gt;
+</code></pre>
+<p>Vejamos exemplos de funções:</p>
+<h4 id="comprimento-do-string">
+  Comprimento do string
+  <a class="anchor" href="#comprimento-do-string">#</a>
+</h4>
+<p>A função <strong>strlen()</strong> recebe um string como parâmetro de entrada e retorna o número de caracteres não nulos do string:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> palavra[<span style="color:#ae81ff">20</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;livro&#34;</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> tamanho <span style="color:#f92672">=</span> <span style="color:#a6e22e">strlen</span>(palavra);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;A palavra tem %d letras.&#34;</span>, tamanho); 
+</span></span><span style="display:flex;"><span>}    
+</span></span></code></pre></div><p>A saída do código acima será o número de caracteres da palavra <em>livro</em>:</p>
+<pre><code>A palavra tem 5 letras.
+</code></pre>
+<h4 id="comparação-de-strings">
+  Comparação de strings
+  <a class="anchor" href="#compara%c3%a7%c3%a3o-de-strings">#</a>
+</h4>
+<p>A função <strong>strcmp()</strong> recebe dois strings como parâmetros de entrada e retorna:</p>
+<ul>
+<li><em>0</em> quando os strings são exatamente iguais.</li>
+<li>um valor diferente de <em>0</em> quando os strings são diferentes.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> palavra_1[<span style="color:#ae81ff">20</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;livro&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> palavra_2[<span style="color:#ae81ff">20</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;LIVRO&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> resultado_1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">strcmp</span>(palavra_1, <span style="color:#e6db74">&#34;livro&#34;</span>); <span style="color:#75715e">//retornará zero
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> resultado_2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">strcmp</span>(palavra_1, palavra_2); <span style="color:#75715e">//retornará valor diferente de zero
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Comparação 01: %d&#34;</span>, resultado_1); 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> Comparação 02: %d&#34;</span>, resultado_2); 
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Um exemplo de saída é:</p>
+<pre><code>Comparação 01: 0
+Comparação 02: 32
+</code></pre>
+<h4 id="concatenação-de-string">
+  Concatenação de string
+  <a class="anchor" href="#concatena%c3%a7%c3%a3o-de-string">#</a>
+</h4>
+<p>A função <strong>strcat()</strong> recebe dois strings como parâmetros de entrada e concatena o segundo string ao primeiro. Dessa forma, apenas o primeiro string é alterado. O caractere de finalização <em>(\n)</em> do primeiro string é substituído pelo primeiro caractere do segundo string.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> palavra_1[<span style="color:#ae81ff">20</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bons &#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> palavra_2[<span style="color:#ae81ff">20</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;estudos!&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">strcat</span>(palavra_1, palavra_2); <span style="color:#75715e">//retornará zero
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;palavra_1: %s&#34;</span>, palavra_1);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída será:</p>
+<pre><code>Bons estudos!
+</code></pre>
+<h2 id="mais-sobre-variáveis">
+  Mais sobre variáveis
+  <a class="anchor" href="#mais-sobre-vari%c3%a1veis">#</a>
+</h2>
+<h3 id="modificadores">
+  Modificadores
+  <a class="anchor" href="#modificadores">#</a>
+</h3>
+<h3 id="constantes">
+  Constantes
+  <a class="anchor" href="#constantes">#</a>
+</h3>
+<h3 id="enumerações">
+  Enumerações
+  <a class="anchor" href="#enumera%c3%a7%c3%b5es">#</a>
+</h3>
+<h3 id="tipos-definidos-pelo-programador">
+  Tipos definidos pelo programador
+  <a class="anchor" href="#tipos-definidos-pelo-programador">#</a>
+</h3>
+<h3 id="escopo-de-variáveis">
+  Escopo de variáveis
+  <a class="anchor" href="#escopo-de-vari%c3%a1veis">#</a>
+</h3>
+<h2 id="mais-sobre-operadores">
+  Mais sobre operadores
+  <a class="anchor" href="#mais-sobre-operadores">#</a>
+</h2>
+<h3 id="conversões">
+  Conversões
+  <a class="anchor" href="#convers%c3%b5es">#</a>
+</h3>
+<h3 id="operador-sizeof">
+  Operador sizeof
+  <a class="anchor" href="#operador-sizeof">#</a>
+</h3>
+<h2 id="arquivos">
+  Arquivos
+  <a class="anchor" href="#arquivos">#</a>
+</h2>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 </article>
@@ -1649,8 +1780,25 @@ Valores após a chamada da função: x = 10  e y = 10
     <li><a href="#strings">Strings</a>
       <ul>
         <li><a href="#leitura-de-strings">Leitura de strings</a></li>
+        <li><a href="#biblioteca-stringh">Biblioteca &lt;string.h&gt;</a></li>
       </ul>
     </li>
+    <li><a href="#mais-sobre-variáveis">Mais sobre variáveis</a>
+      <ul>
+        <li><a href="#modificadores">Modificadores</a></li>
+        <li><a href="#constantes">Constantes</a></li>
+        <li><a href="#enumerações">Enumerações</a></li>
+        <li><a href="#tipos-definidos-pelo-programador">Tipos definidos pelo programador</a></li>
+        <li><a href="#escopo-de-variáveis">Escopo de variáveis</a></li>
+      </ul>
+    </li>
+    <li><a href="#mais-sobre-operadores">Mais sobre operadores</a>
+      <ul>
+        <li><a href="#conversões">Conversões</a></li>
+        <li><a href="#operador-sizeof">Operador sizeof</a></li>
+      </ul>
+    </li>
+    <li><a href="#arquivos">Arquivos</a></li>
   </ul>
 </nav>
 

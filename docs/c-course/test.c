@@ -1,19 +1,14 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
+    char palavra_1[20] = "Bons ";
+    char palavra_2[20] = "estudos!";
 
-    char frase[20];
-    setbuf(stdin, NULL);
-printf("Digite uma frase:");
-gets(frase);
+     strcat(palavra_1, palavra_2); //retornará zero
     
-    for(int i=0; i< sizeof frase; i++){
-        printf("%d ", i);
-    }
-
-printf("%s ", frase);
-    
+    printf("palavra_1: %s", palavra_1);
 
 /*
     char string_1[10] = "Bom dia!";
