@@ -20,7 +20,7 @@ Escreva um programa que lê dois números inteiros e imprime a soma, a diferenç
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.7a4f211b64432939e6b0e02367e5269ebeaaab422d86c8d9ddee001550d4fcfb.js" integrity="sha256-ek8hG2RDKTnmsOAjZ&#43;Umnr6qq0IthsjZ3e4AFVDU/Ps=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.9aa02f95089484aa0c8e9f729f33d41da4794e85a92379707e14bba2ee401d52.js" integrity="sha256-mqAvlQiUhKoMjp9ynzPUHaR5ToWpI3lwfhS7ou5AHVI=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -166,6 +166,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#lista-01---leitura-de-dados-expressões-aritméticas">Lista 01 - Leitura de dados, expressões aritméticas</a></li>
         <li><a href="#lista-02---comandos-condicionais-expressões-relacionais-e-lógicas">Lista 02 - Comandos condicionais, expressões relacionais e lógicas</a></li>
         <li><a href="#lista-03---comandos-de-repetição-expressões-relacionais-e-lógicas">Lista 03 - Comandos de repetição, expressões relacionais e lógicas</a></li>
+        <li><a href="#lista-04---arrays-e-matrizes">Lista 04 - Arrays e matrizes</a></li>
       </ul>
     </li>
   </ul>
@@ -280,7 +281,7 @@ https://github.com/alex-shpak/hugo-book
 <p>O programa deve ainda apresentar mensagens de erro correspondentes a entradas fora do intervalo de valores permitido. Em qualquer outro aspecto, você pode assumir que as entradas são corretas.</p>
 </li>
 <li>
-<p>Escreva um programa que solicite ao usuário para introduzir <em>n</em> valores inteiros, lê esses números e apresenta o menor, o maior, e a média dos valores introduzidos. O valor <em>n</em> deve ser o primeiro dado introduzido pelo usuário. Exemplo de interação com o programa:</p>
+<p>Escreva um programa que solicita a introdução <em>n</em> valores inteiros, lê esses números, e apresenta o menor, o maior, e a média dos valores introduzidos. O valor <em>n</em> deve ser o primeiro dado introduzido pelo usuário. Exemplo de interação com o programa:</p>
 <pre><code>  Quantos números você irá introduzir? 3
   Introduza o próximo número: 5
   Introduza o próximo número: -2
@@ -290,6 +291,73 @@ https://github.com/alex-shpak/hugo-book
   Maior valor introduzido: 5
   Média dos valores introduzidos: 1.0
 </code></pre>
+</li>
+<li>
+<p>Escreva um programa que leia 3 valores de ponto flutuante A, B, e C, e ordene-os em ordem decrescente, de modo que o lado A representa o maior dos 3 lados. A seguir, determine o tipo de triângulo que estes três lados formam, com base nos seguintes casos, sempre escrevendo uma mensagem adequada:</p>
+<pre><code>  •se A ≥ B+C, apresente a mensagem: NAO FORMA TRIANGULO
+  •se A2 = B2 + C2, apresente a mensagem: TRIANGULO RETANGULO
+  •se A2 &gt; B2 + C2, apresente a mensagem: TRIANGULO OBTUSANGULO
+  •se A2 &lt; B2 + C2, apresente a mensagem: TRIANGULO ACUTANGULO
+  •se os três lados forem iguais, apresente a mensagem: TRIANGULO EQUILATERO
+  •se apenas dois dos lados forem iguais, apresente a mensagem: TRIANGULO ISOSCELES
+</code></pre>
+</li>
+<li>
+<p>Uma empresa resolveu conceder um aumento de salários a seus funcionários de acordo com os valores abaixo:</p>
+<pre><code>  Salário	          Percentual de Reajuste
+  0.0 a 400.00               15%
+  400.01 a 800.00            12%
+  800.01 a 1200.00           10%
+  1200.01 a 2000.00          7%
+  Acima de 2000.00           4%
+</code></pre>
+<p>Leia o salário do funcionário e calcule e mostre o novo salário, bem como o valor de reajuste ganho e o índice reajustado, em percentual.</p>
+</li>
+<li>
+<p>Faça um programa para o cálculo de uma folha de pagamento, sabendo que os descontos são do Imposto de Renda, que depende do salário bruto (conforme tabela abaixo) e 3% para o Sindicato e que o FGTS corresponde a 11% do <em>Salário Bruto</em>, mas não é descontado (é a empresa que deposita). O <em>Salário Líquido</em> corresponde ao <em>Salário Bruto</em> menos os descontos. O programa deverá pedir ao usuário o valor da sua hora e a quantidade de horas trabalhadas no mês.</p>
+<ol>
+<li>Desconto do IR:</li>
+<li>Salário Bruto até 900 (inclusive) - isento</li>
+<li>Salário Bruto até 1500 (inclusive) - desconto de 5%</li>
+<li>Salário Bruto até 2500 (inclusive) - desconto de 10%</li>
+<li>Salário Bruto acima de 2500 - desconto de 20%</li>
+</ol>
+<p>Imprima na tela as informações, dispostas conforme o exemplo abaixo.( No exemplo, o valor da hora = 5 e quantidade de horas = 220)</p>
+<pre><code>  Salário Bruto: (5 * 220)        : R$ 1100,00
+  (-) IR (5%)                     : R$   55,00  
+  (-) INSS ( 10%)                 : R$  110,00
+  FGTS (11%)                      : R$  121,00
+  Total de descontos              : R$  165,00
+  Salário Liquido                 : R$  935,00
+</code></pre>
+</li>
+</ul>
+<h3 id="lista-03---comandos-de-repetição-expressões-relacionais-e-lógicas">
+  Lista 03 - Comandos de repetição, expressões relacionais e lógicas
+  <a class="anchor" href="#lista-03---comandos-de-repeti%c3%a7%c3%a3o-express%c3%b5es-relacionais-e-l%c3%b3gicas">#</a>
+</h3>
+<ul>
+<li>
+<p>Escreva um programa que imprima o valor do somatório dos números inteiros de 1 a 100.</p>
+</li>
+<li>
+<p>Escreva um algoritmo que leia <em>n</em> números inteiros e imprima, para cada número, o seu dobro.</p>
+</li>
+<li>
+<p>Escreva um programa que lê um caractere e um numero <em>n</em>, e imprime uma linha com <em>n</em> vezes o caractere lido. Por exemplo, se for lido &lsquo;<em>&rsquo; e &lsquo;3&rsquo;, o procedimento deve imprimir &lsquo;</em>**&rsquo;. O programa deve verificar se o numero introduzido eh valido.</p>
+</li>
+<li>
+<p>Escreva um programa que lê dez caracteres e imprime uma linha com cada caractere repetido dez vezes. Cada linha deve comecar com um espaco (i.e., caractere &rsquo; &lsquo;) após a linha anterior.</p>
+</li>
+<li>
+<p>Um determinado material radioativo perde metade de sua massa a cada 50 segundos.
+Dada a massa inicial, em gramas, escreva um programa que determine o tempo
+necessario para que essa massa se torne menor do que 0.5 gramas. Exiba a massa
+inicial, a massa final e o tempo calculado em horas, minutos e segundos.</p>
+</li>
+<li>
+<p>Escreva um programa que forneça os primeiros <em>n</em> numeros primos, onde <em>n</em> deve ser
+um valor inteiro introduzido pelo usuario.</p>
 </li>
 <li>
 <p>Escreva um programa que solicite ao usuário para introduzir uma série de valores inteiros positivos e lê estes números até que o usuário introduza o valor 0. Então, o programa deve apresentar o menor, o maior e a média dos valores introduzidos (sem levar em consideração o 0). Caso o usuário introduza um número negativo, o programa deve informá-lo que o valor não é válido e não deve levar este valor em consideração. Exemplo de interação com o programa:</p>
@@ -306,27 +374,119 @@ https://github.com/alex-shpak/hugo-book
   Média dos valores introduzidos: 4.0
 </code></pre>
 </li>
+<li>
+<p>Imprima os seguintes padrões (O seu algoritmo deve permitir que o padrão possa ser escalado.):</p>
+<p>Padrão 01:</p>
+<pre><code>  ************
+  *          *
+  *          *
+  *          *
+  *          *
+  ************  
+</code></pre>
+<p>Padrão 02:</p>
+<pre><code>  1 
+  2 3 
+  4 5 6 
+  7 8 9 10 
+  11 12 13 14 15 
+  16 17 18 19 20 21 
+</code></pre>
+<p>Padrão 03:</p>
+<pre><code>  1 
+  1 2 
+  1 2 3 
+  1 2 3 4 
+  1 2 3 4 5 
+  1 2 3 4 5 6 
+</code></pre>
+<p>Padrão 04:</p>
+<pre><code>  1 2 3 4 5 6 
+  1 2 3 4 5 
+  1 2 3 4 
+  1 2 3 
+  1 2 
+  1
+</code></pre>
+<p>Padrão 05:</p>
+<pre><code>  1 
+  0 1 
+  1 0 1 
+  0 1 0 1 
+  1 0 1 0 1 
+  0 1 0 1 0 1 
+</code></pre>
+<p>Padrão 06:</p>
+<pre><code>       1 
+      2 2 
+     3 3 3 
+    4 4 4 4 
+   5 5 5 5 5 
+  6 6 6 6 6 6 
+</code></pre>
+<p>Padrão 07:</p>
+<pre><code>            1 
+          2 1 2 
+        3 2 1 2 3 
+      4 3 2 1 2 3 4 
+    5 4 3 2 1 2 3 4 5 
+  6 5 4 3 2 1 2 3 4 5 6 
+</code></pre>
+</li>
 </ul>
-<h3 id="lista-03---comandos-de-repetição-expressões-relacionais-e-lógicas">
-  Lista 03 - Comandos de repetição, expressões relacionais e lógicas
-  <a class="anchor" href="#lista-03---comandos-de-repeti%c3%a7%c3%a3o-express%c3%b5es-relacionais-e-l%c3%b3gicas">#</a>
+<h3 id="lista-04---arrays-e-matrizes">
+  Lista 04 - Arrays e matrizes
+  <a class="anchor" href="#lista-04---arrays-e-matrizes">#</a>
 </h3>
 <ul>
 <li>
-<p>Escreva um programa que lê um caractere e um numero <em>n</em>, e imprime uma linha com <em>n</em> vezes o caractere lido. Por exemplo, se for lido &lsquo;<em>&rsquo; e &lsquo;3&rsquo;, o procedimento deve imprimir &lsquo;</em>**&rsquo;. O programa deve verificar se o numero introduzido eh valido.</p>
+<p>Escreva um programa que leia um array com 10 números inteiros, calcule e mostre a soma dos quadrados dos elementos do array.</p>
 </li>
 <li>
-<p>Escreva um programa que lê dez caracteres e imprime uma linha com cada caractere repetido dez vezes. Cada linha deve comecar com um espaco (i.e., caractere &rsquo; &lsquo;) após a linha anterior.</p>
+<p>Escreva um programa que leia dois arrays de 10 números cada, e intercale os elementos desses dois arrays em uma nova variável. Imprima os dois arrays iniciais e o array resultante.</p>
 </li>
 <li>
-<p>Um determinado material radioativo perde metade de sua massa a cada 50 segundos.
-Dada a massa inicial, em gramas, escreva um programa que determine o tempo
-necessario para que essa massa se torne menor do que 0.5 gramas. Exiba a massa
-inicial, a massa final e o tempo calculado em horas, minutos e segundos.</p>
+<p>Escreva um programa que leia um array X, com N elementos, e um valor Z, e informe a posição de Z no array. Caso o valor não seja encontrado, informar a mensagem “O valor Z está fora do conjunto X”.</p>
 </li>
 <li>
-<p>Escreva um programa que forneça os primeiros <em>n</em> numeros primos, onde <em>n</em> deve ser
-um valor inteiro introduzido pelo usuario.</p>
+<p>Escreva um algoritmo que leia dois arrays de 10 elementos cada e realize a multiplicação dos elementos de mesmo índice, gravando o resultado em um terceiro array. Exiba os três arrays.</p>
+</li>
+<li>
+<p>Imprima uma matriz 5x5 onde cada elemento deve ser a soma dos índices de sua posição dentro da matriz. Exemplo: <em>matriz[1][1] = 2 matriz[2][3] = 5 matriz[3][5] = 8</em>.</p>
+</li>
+<li>
+<p>Escreva um algoritmo que preencha uma matriz 4x3 de números fracionados e depois exiba o elemento armazenado numa linha <em>L</em> e uma coluna <em>C</em> informados pelo usuário.</p>
+</li>
+<li>
+<p>Leia duas matrizes A e B, ambas 4 x 4, e crie uma terceira matriz C contendo a soma dos valores de A e B. Ex: elemento (0,0) da matriz C deve conter a soma dos elementos (0,0) de A e B. Ao final, imprima as três matrizes.</p>
+</li>
+<li>
+<p>Leia uma matriz 4 x 4 e troque os valores da 1ª linha pelos da 4ª coluna, vice-e-versa. Imprima a matriz obtida.</p>
+</li>
+<li>
+<p>Declare uma matriz 5 x 5. Preencha com 1 a diagonal principal e com 0 os demais elementos. Seu algoritmo deve permitir que a matriz possa ser escalada. Imprima a matriz obtida.</p>
+</li>
+<li>
+<p>Escreva um algoritmo para ler valores e armazená-los em uma matriz 5 x 5. O algoritmo deverá calcular a soma dos valores que compõem a diagonal principal e a diagonal secundária da matriz.</p>
+</li>
+<li>
+<p>Escreva um programa que leia uma matriz A, de dimensão M x N fornecidas pelo usuário, com M &lt;=20 e N &lt;=30. Imprima a matriz A e a sua matriz transposta (T).</p>
+</li>
+<li>
+<p>Considere uma matriz de distância entre cidades 6 x 6:</p>
+<pre><code>          Cid_1   Cid_2   Cid_3   Cid_4   Cid_5   Cid_6
+  Cidade_1   -     63      210     190      -      190
+  Cidade_2   63     -      160     150     95      -
+  Cidade_3   210   160     -       10       -      -
+  Cidade_4   190   150     10      -        -      -
+  Cidade_5   -     95      -       -        -      80
+  Cidade_6   190   -       -       -        80     -
+</code></pre>
+<p>Considere também um vetor de viagem indo de uma cidade a outra. Por exemplo, o vetor abaixo mostra uma viagem da Cidade_3 até Cidade_1, passando por outras cidades com a seguinte rota:</p>
+<pre><code>  Índice	1	2	3	4	5	6
+  Cidade	3	4	2	5	6	1
+</code></pre>
+<p>Faça um programa que leia a matriz e o vetor e calcule a distância percorrida durante a viagem. Observação: o vetor com a rota da viagem pode variar em tamanho e cidades.</p>
 </li>
 </ul>
 <!-- raw HTML omitted -->
@@ -377,6 +537,7 @@ um valor inteiro introduzido pelo usuario.</p>
         <li><a href="#lista-01---leitura-de-dados-expressões-aritméticas">Lista 01 - Leitura de dados, expressões aritméticas</a></li>
         <li><a href="#lista-02---comandos-condicionais-expressões-relacionais-e-lógicas">Lista 02 - Comandos condicionais, expressões relacionais e lógicas</a></li>
         <li><a href="#lista-03---comandos-de-repetição-expressões-relacionais-e-lógicas">Lista 03 - Comandos de repetição, expressões relacionais e lógicas</a></li>
+        <li><a href="#lista-04---arrays-e-matrizes">Lista 04 - Arrays e matrizes</a></li>
       </ul>
     </li>
   </ul>
