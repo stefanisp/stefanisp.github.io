@@ -18,7 +18,7 @@ Programar é a tarefa de se comunicar com o computador através da escrita de um
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.9aa02f95089484aa0c8e9f729f33d41da4794e85a92379707e14bba2ee401d52.js" integrity="sha256-mqAvlQiUhKoMjp9ynzPUHaR5ToWpI3lwfhS7ou5AHVI=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4c4e5d6fc33e183afae9e7a28ecdb874f002ec2aef9dddd7369817384af3965b.js" integrity="sha256-TE5db8M&#43;GDr66eeijs24dPAC7Crvnd3XNpgXOErzlls=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1437,7 +1437,7 @@ Variável pointInt:
 </span></span></code></pre></div><p>Vamos entender:</p>
 <ul>
 <li>
-<p>O códido começa a ser executado no escopo principal <strong>main()</strong>, e toda vez que há a chamada de uma função, o fluxo de execução <em>&ldquo;pula&rdquo;</em> para o escopo da função e executa todo o código da função. Ao finalizar a execução da função, o fluxo de execução do programa retorna para o escopo <em>main()</em> e a próxima linha de código após a chamada da função é executada.</p>
+<p>O código começa a ser executado no escopo principal <strong>main()</strong>, e toda vez que há a chamada de uma função, o fluxo de execução <em>&ldquo;pula&rdquo;</em> para o escopo da função e executa todo o código da função. Ao finalizar a execução da função, o fluxo de execução do programa retorna para o escopo <em>main()</em> e a próxima linha de código após a chamada da função é executada.</p>
 </li>
 <li>
 <p>As funções são declaradas antes de serem chamadas. Perceba que elas foram declaradas antes do inicio do escopo <em>main()</em>.</p>
@@ -1563,7 +1563,7 @@ Valores após a chamada da função: x = 10  e y = 10
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s &#34;</span>, nome);
 </span></span></code></pre></div><p>Observe que utilizamos o <strong>%s</strong> no scanf e não adicionamos o símbolo <strong>&amp;</strong> à variável associada, como fizemos na leitura de variáveis nos exemplos vistos anteriormente.</p>
 <p><strong>Importante</strong>: A leitura de strings com o <em>scanf</em> é interrompida ao ser encontrado o primeiro espaço em branco digitado. Dessa forma, se o usuário digitar, por exemplo, <em>Ana Maria</em>, no nosso exemplo, apenas o <em>Ana</em> será atribuído à variável <em>nome</em>.</p>
-<p>Alternativamente, podemos utilizar a função <strong>gets()</strong>. Esta támbém é uma função presente na bilioteca padrão da linguagem C, e é possível ler frases inteiras com espaços em brancos. A leitura é finalizada ao ser encontrado o caracteter que representa uma quebra de linha (<em>\n</em>), ou seja, quando o usuário digitar <em>enter</em>. Vejamos exemplo:</p>
+<p>Alternativamente, podemos utilizar a função <strong>gets()</strong>. Esta támbém é uma função presente na biblioteca padrão da linguagem C, e é possível ler frases inteiras com espaços em brancos. A leitura é finalizada ao ser encontrado o caractere que representa uma quebra de linha (<em>\n</em>), ou seja, quando o usuário digitar <em>enter</em>. Vejamos exemplo:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> frase[<span style="color:#ae81ff">20</span>];
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Digite uma frase:&#34;</span>);
