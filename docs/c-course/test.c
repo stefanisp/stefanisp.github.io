@@ -1,14 +1,45 @@
 #include <stdio.h>
 #include <string.h>
 
+enum DiaDaSemana {
+    DOMINGO,   
+    SEGUNDA,   
+    TERCA,     
+    QUARTA,    
+    QUINTA,    
+    SEXTA,     
+    SÁBADO     
+};
+#define ABC "ABCDE!"
+#define QUADRADO(x) ((x) * (x))
+#define QUADRADO2(x) x * x
+
 int main(void)
 {
-    char palavra_1[20] = "Bons ";
-    char palavra_2[20] = "estudos!";
 
-     strcat(palavra_1, palavra_2); //retornará zero
-    
-    printf("palavra_1: %s", palavra_1);
+    char* palavra[100];
+    char* palavra2[] = "palavra 2";
+
+    #define MAX_VALUE 100
+    const char* abc_2 = "abcde!";
+
+    enum DiaDaSemana hoje = 0;
+    enum {AZUL, VERMELHO, BRANCO, PRETO} cores;
+
+    printf("define = %s.\n", ABC);
+    printf("define = %d.\n", QUADRADO2(2));
+
+    printf("const = %s.\n", abc_2);
+
+    cores = VERMELHO;
+    if (cores == VERMELHO) {
+        printf("Hoje é quinta-feira.\n");
+    } else {
+        printf("Hoje não é quinta-feira.\n");
+    }
+
+     
+
 
 /*
     char string_1[10] = "Bom dia!";

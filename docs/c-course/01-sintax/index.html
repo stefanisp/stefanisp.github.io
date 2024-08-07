@@ -18,7 +18,7 @@ Programar é a tarefa de se comunicar com o computador através da escrita de um
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4c4e5d6fc33e183afae9e7a28ecdb874f002ec2aef9dddd7369817384af3965b.js" integrity="sha256-TE5db8M&#43;GDr66eeijs24dPAC7Crvnd3XNpgXOErzlls=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.52ff78380a9cde6bba39c36531a5a9b4389408f1fdad7902da7a731e779062fd.js" integrity="sha256-Uv94OAqc3mu6OcNlMaWptDiUCPH9rXkC2npzHneQYv0=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -207,8 +207,8 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#mais-sobre-variáveis">Mais sobre variáveis</a>
       <ul>
         <li><a href="#modificadores">Modificadores</a></li>
-        <li><a href="#constantes">Constantes</a></li>
         <li><a href="#enumerações">Enumerações</a></li>
+        <li><a href="#constantes">Constantes</a></li>
         <li><a href="#tipos-definidos-pelo-programador">Tipos definidos pelo programador</a></li>
         <li><a href="#escopo-de-variáveis">Escopo de variáveis</a></li>
       </ul>
@@ -219,7 +219,6 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#operador-sizeof">Operador sizeof</a></li>
       </ul>
     </li>
-    <li><a href="#arquivos">Arquivos</a></li>
   </ul>
 </nav>
 
@@ -1663,26 +1662,241 @@ Comparação 02: 32
   Modificadores
   <a class="anchor" href="#modificadores">#</a>
 </h3>
-<h3 id="constantes">
-  Constantes
-  <a class="anchor" href="#constantes">#</a>
-</h3>
+<p>Na linguagem C, modificadores de variáveis são palavras reservadas que alteram a forma como as variáveis são armazenadas e tratadas pelo compilador. Eles permitem especificar características adicionais para variáveis. Vamos explorar os principais modificadores de variáveis em C:</p>
+<h4 id="signed-e-unsigned">
+  signed e unsigned
+  <a class="anchor" href="#signed-e-unsigned">#</a>
+</h4>
+<ul>
+<li>
+<p><em>signed</em>: Indica que uma variável pode armazenar valores positivos e negativos. O modificador <em>signed</em> é o padrão para variáveis caso o mofificador não seja espeficicado. Podem ser utilizados para mofificar os tipos <em>int</em> e <em>char</em>.</p>
+</li>
+<li>
+<p><em>unsigned</em>: Indica que uma variável só pode armazenar valores positivos e zero. É frequentemente usado para variáveis que não precisam representar números negativos, como contadores.</p>
+</li>
+</ul>
+<p>A qualificação de um tipo é feita antepondo-se o qualificador ao nome do tipo. Por exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">signed</span> <span style="color:#66d9ef">int</span> num_01 <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>; <span style="color:#75715e">// Permite valores negativos e positivos
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> num_02 <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>; <span style="color:#75715e">// Apenas valores não negativos
+</span></span></span></code></pre></div><h4 id="short-e-long">
+  short e long
+  <a class="anchor" href="#short-e-long">#</a>
+</h4>
+<ul>
+<li>
+<p><em>short</em>: Utilizado para reduzir o tamanho da variável. Em muitos sistemas, um <em>short</em> é um <em>int</em> de 16 bits.</p>
+</li>
+<li>
+<p><em>long</em>: Utilizado para aumentar o tamanho da variável. Em muitos sistemas, um <em>long</em> é um <em>int</em> de 32 bits ou 64 bits, dependendo da arquitetura.</p>
+</li>
+</ul>
+<p>Exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">short</span> <span style="color:#66d9ef">int</span> num_01 <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>; <span style="color:#75715e">// Tipicamente 16 bits
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">long</span> <span style="color:#66d9ef">int</span> num_02 <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>; <span style="color:#75715e">// Tipicamente 32 bits ou 64 bits
+</span></span></span></code></pre></div><p>A tabela a seguir apresenta intervalos típicos de valores dos tipos atitméticos.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Tamanho (em bytes)</th>
+<th>Intervalo de Valores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>4</td>
+<td>-2ˆ31 a 2ˆ31 - 1</td>
+</tr>
+<tr>
+<td>short int</td>
+<td>2</td>
+<td>-2ˆ15 a 2ˆ15 - 1</td>
+</tr>
+<tr>
+<td>long int</td>
+<td>4</td>
+<td>-2ˆ31 a 2ˆ31 - 1</td>
+</tr>
+<tr>
+<td>unsigned int</td>
+<td>4</td>
+<td>0 a 2ˆ32 - 1</td>
+</tr>
+<tr>
+<td>unsigned short int</td>
+<td>2</td>
+<td>0 a 2ˆ16 - 1</td>
+</tr>
+<tr>
+<td>unsigned long int</td>
+<td>4</td>
+<td>0 a 2ˆ32 - 1</td>
+</tr>
+<tr>
+<td>signed char</td>
+<td>1</td>
+<td>-2ˆ7 a 2ˆ7 - 1</td>
+</tr>
+<tr>
+<td>unsigned char</td>
+<td>1</td>
+<td>0 a 2ˆ8 - 1</td>
+</tr>
+</tbody>
+</table>
+<p>A seguir, mais um exemplo de utilização de modificadores de tipos de variáveis. Observe que, para imprimir a variável <em>unsigned</em>, utilizamos o <em>%u</em> ao invés de <em>%d</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> u <span style="color:#f92672">=</span> <span style="color:#ae81ff">4294967295</span>; <span style="color:#75715e">// O maior valor que um unsigned int pode armazenar
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">signed</span> <span style="color:#66d9ef">int</span> s <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2147483648</span>;  <span style="color:#75715e">// O menor valor que um signed int pode armazenar
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">short</span> <span style="color:#66d9ef">int</span> si <span style="color:#f92672">=</span> <span style="color:#ae81ff">32767</span>;         <span style="color:#75715e">// O maior valor que um short int pode armazenar
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;unsigned int: %u</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, u);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;signed int: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, s);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;short int: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, si);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="long-long">
+  long long
+  <a class="anchor" href="#long-long">#</a>
+</h4>
+<p>O modificador <em>long long</em> em C é utilizado para declarar variáveis inteiras que necessitam de uma maior capacidade de armazenamento em comparação com os tipos de dados inteiros padrão. É uma extensão do tipo <em>long</em> e é garantido que tenha pelo menos 64 bits de largura. Exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">int</span> bigNumber <span style="color:#f92672">=</span> <span style="color:#ae81ff">9223372036854775807</span>; <span style="color:#75715e">// Maior capacidade de armazenamento para valores inteiros
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">int</span> bigNumber_2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">9223372036854775807LL</span>; <span style="color:#75715e">// Adicionamos um sufixo LL
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">int</span> bigUnsignedNumber <span style="color:#f92672">=</span> <span style="color:#ae81ff">18446744073709551615ULL</span>; <span style="color:#75715e">// Valor máximo para unsigned long long
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Signed long long: %lld</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, bigNumber_2);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Unsigned long long: %llu</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, bigUnsignedNumber);
+</span></span></code></pre></div><p>No exemplo, adicionamos os sufixos <strong>LL</strong> e <strong>ULL</strong> ao valor das variáveis para garantir que o valor literal seja tratado como <em>long long</em> e <em>unsigned long long</em>, respectivamente.</p>
+<p>Observe, também, que utilizamos especificadores de formato apropriados para imprimir as variáveis:</p>
+<ul>
+<li><strong>%lld</strong> para <em>signed long long</em></li>
+<li><strong>%llu</strong> para <em>unsigned long long</em></li>
+</ul>
+<h4 id="volative">
+  volative
+  <a class="anchor" href="#volative">#</a>
+</h4>
+<p>(em breve)</p>
 <h3 id="enumerações">
   Enumerações
   <a class="anchor" href="#enumera%c3%a7%c3%b5es">#</a>
 </h3>
-<h3 id="tipos-definidos-pelo-programador">
+<p>Uma enumeração é um tipo de dado definido pelo usuário que consiste em um conjunto de constantes inteiras nomeadas. Elas são úteis para representar um grupo de valores relacionados de forma legível e organizada.</p>
+<p>Definimos uma enumeração usando a palavra reservada <strong>enum</strong>, seguida por um nome para a enumeração e uma lista de identificadores (nomes) para os valores possíveis. Vejamos um exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">enum</span> DiaDaSemana {
+</span></span><span style="display:flex;"><span>    DOMINGO,   <span style="color:#75715e">// 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    SEGUNDA,   <span style="color:#75715e">// 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    TERCA,     <span style="color:#75715e">// 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    QUARTA,    <span style="color:#75715e">// 3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    QUINTA,    <span style="color:#75715e">// 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    SEXTA,     <span style="color:#75715e">// 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    SABADO     <span style="color:#75715e">// 6
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span></code></pre></div><p>Neste exemplo, <em>enum DiaDaSemana</em> define uma enumeração chamada <em>DiaDaSemana</em> com sete valores possíveis. Por padrão, o primeiro valor (DOMINGO) é associado ao número 0, o segundo (SEGUNDA) é 1, e assim por diante.</p>
+<p>Também é possível atribuir valores explícitos para os elementos da enumeração. Por exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">enum</span> Status {
+</span></span><span style="display:flex;"><span>    PENDENTE <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    EM_ANDAMENTO <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span>    CONCLUIDO <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>Se o valor de uma dada constante na enumeração não for definido explicitamente, seu valor será o valor da constante anterior na seqüência acrescido de 1.</p>
+<p>Vejamos um exemplo completo de utilização da enumeração:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">enum</span> DiaDaSemana {
+</span></span><span style="display:flex;"><span>    DOMINGO,   
+</span></span><span style="display:flex;"><span>    SEGUNDA,   
+</span></span><span style="display:flex;"><span>    TERCA,     
+</span></span><span style="display:flex;"><span>    QUARTA,    
+</span></span><span style="display:flex;"><span>    QUINTA,    
+</span></span><span style="display:flex;"><span>    SEXTA,     
+</span></span><span style="display:flex;"><span>    SABADO     
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">enum</span> DiaDaSemana hoje <span style="color:#f92672">=</span> DOMINGO;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (hoje <span style="color:#f92672">==</span> DOMINGO) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Hoje é domingo.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Hoje não é doming.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Perceba que a variável <em>hoje</em> é do tipo <em>enum DiaDaSemana</em> e a ela é atribuído o valor DOMINGO. O que aconteceria se atribuíssemos um valor diferente dos valores definidos na enumeração? Faça alterações no código para testar.</p>
+<h3 id="constantes">
+  Constantes
+  <a class="anchor" href="#constantes">#</a>
+</h3>
+<p>Até agora estudamos variáveis que poderiam ser alteradas em diferentes pontos do código após a sua declaração. A linguagem também permite a definição de valores <em>constantes</em>, isto é, que não podem ser alterados durante a execução do programa. Constantes são úteis para representar dados fixos e imutáveis de maneira eficiente, evitando redundâncias no código.</p>
+<h4 id="constantes-definidas-com-const">
+  Constantes definidas com const
+  <a class="anchor" href="#constantes-definidas-com-const">#</a>
+</h4>
+<p>O modificador <strong>const</strong> pode ser usado para definir variáveis que não podem ser alteradas após sua inicialização. Isso cria uma constante com verificação de tipo pelo compilador:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> max_value <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>; <span style="color:#75715e">// max_value não pode ser alterado após ser definido
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">float</span> taxaImposto <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.15</span>;
+</span></span></code></pre></div><p>Segue exemplo de utilização:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">float</span> taxaDesconto <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.10</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> precoOriginal <span style="color:#f92672">=</span> <span style="color:#ae81ff">100.0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> desconto <span style="color:#f92672">=</span> precoOriginal <span style="color:#f92672">*</span> taxaDesconto;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Desconto: %.2f</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, desconto);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Tentativa de modificar a constante
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// taxaDesconto = 0.15; // Isso causaria um erro de compilação
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="constantes-simbólicas-com-define">
+  Constantes simbólicas com #define
+  <a class="anchor" href="#constantes-simb%c3%b3licas-com-define">#</a>
+</h4>
+<p>Também é possível definir valores constantes utilizando <strong>#define</strong>. Essa é uma diretiva de pré-processador que permite definir constantes que são substituídas por valores fixos durante a compilação. Ou seja, quando você usa <em>#define</em>, o pré-processador do compilador substitui todas as ocorrências do identificador pelo valor associado antes da compilação do código. Não é necessário especificar o tipo da constante:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#define PI 3.14159
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define MAX_VALUE 100
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define ABC &#34;ABCDE!&#34;
+</span></span></span></code></pre></div><p>Segue exemplo de utilização:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Definições de constantes usando #define
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define PI 3.14159
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define RAIO_MAXIMO 10
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Cálculo da área de um círculo com raio máximo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">float</span> area <span style="color:#f92672">=</span> PI <span style="color:#f92672">*</span> RAIO_MAXIMO <span style="color:#f92672">*</span> RAIO_MAXIMO;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Área do círculo com raio %d: %.2f</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, RAIO_MAXIMO, area);
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="tipos-definidos-pelo-programador">
   Tipos definidos pelo programador
   <a class="anchor" href="#tipos-definidos-pelo-programador">#</a>
 </h3>
+<!-- raw HTML omitted -->
 <h3 id="escopo-de-variáveis">
   Escopo de variáveis
   <a class="anchor" href="#escopo-de-vari%c3%a1veis">#</a>
 </h3>
+<!-- raw HTML omitted -->
 <h2 id="mais-sobre-operadores">
   Mais sobre operadores
   <a class="anchor" href="#mais-sobre-operadores">#</a>
 </h2>
+<!-- raw HTML omitted -->
 <h3 id="conversões">
   Conversões
   <a class="anchor" href="#convers%c3%b5es">#</a>
@@ -1691,10 +1905,6 @@ Comparação 02: 32
   Operador sizeof
   <a class="anchor" href="#operador-sizeof">#</a>
 </h3>
-<h2 id="arquivos">
-  Arquivos
-  <a class="anchor" href="#arquivos">#</a>
-</h2>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 </article>
@@ -1786,8 +1996,8 @@ Comparação 02: 32
     <li><a href="#mais-sobre-variáveis">Mais sobre variáveis</a>
       <ul>
         <li><a href="#modificadores">Modificadores</a></li>
-        <li><a href="#constantes">Constantes</a></li>
         <li><a href="#enumerações">Enumerações</a></li>
+        <li><a href="#constantes">Constantes</a></li>
         <li><a href="#tipos-definidos-pelo-programador">Tipos definidos pelo programador</a></li>
         <li><a href="#escopo-de-variáveis">Escopo de variáveis</a></li>
       </ul>
@@ -1798,7 +2008,6 @@ Comparação 02: 32
         <li><a href="#operador-sizeof">Operador sizeof</a></li>
       </ul>
     </li>
-    <li><a href="#arquivos">Arquivos</a></li>
   </ul>
 </nav>
 
