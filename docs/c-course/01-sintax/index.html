@@ -18,7 +18,7 @@ Programar é a tarefa de se comunicar com o computador através da escrita de um
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.9ad91f7d025fc7db5b86e8990461d18d78af98bb0609f703e4df6b117f12ead6.js" integrity="sha256-mtkffQJfx9tbhuiZBGHRjXivmLsGCfcD5N9rEX8S6tY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.35d4ccbb15c2b367b1d0225285df2ace5eb2022ae72b89cf3f51180c93dc0d3c.js" integrity="sha256-NdTMuxXCs2ex0CJShd8qzl6yAirnK4nPP1EYDJPcDTw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -196,14 +196,19 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#matrizes">Matrizes</a></li>
       </ul>
     </li>
-    <li><a href="#ponteiros">Ponteiros</a></li>
-    <li><a href="#funções">Funções</a></li>
     <li><a href="#strings">Strings</a>
       <ul>
         <li><a href="#leitura-de-strings">Leitura de strings</a></li>
         <li><a href="#biblioteca-stringh">Biblioteca &lt;string.h&gt;</a></li>
       </ul>
     </li>
+    <li><a href="#ponteiros">Ponteiros</a>
+      <ul>
+        <li><a href="#aritmética-de-ponteiros">Aritmética de ponteiros</a></li>
+        <li><a href="#relação-entre-ponteiros-e-arrays">Relação entre ponteiros e arrays</a></li>
+      </ul>
+    </li>
+    <li><a href="#funções">Funções</a></li>
     <li><a href="#mais-sobre-variáveis">Mais sobre variáveis</a>
       <ul>
         <li><a href="#modificadores">Modificadores</a></li>
@@ -1237,6 +1242,131 @@ else
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>No exemplo, <em>numeros_1</em> e <em>numeros_2</em> são duas matrizes diferentes. Utilizamos uma sintaxe de inicalização diferente para elas, mas as duas foram inicializadas com os mesmos valores. Dessa forma, na impressão da tela as duas matrizes serão iguais.</p>
+<h2 id="strings">
+  Strings
+  <a class="anchor" href="#strings">#</a>
+</h2>
+<p>Strings são sequências de caracteres. Em C, uma sequência de caracteres nada mais é do que um <em>array</em> do tipo <strong>char</strong>. Podemos criar arrays de char da mesma forma que fizemos com os outros tipos anteriormente. Além disso, aos arrays de char também podem ser atribuídos textos diretamente. Vejamos exemplos de declaração de strings:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// Inicialização com caracteres
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">char</span> string_1[<span style="color:#ae81ff">7</span>] <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;S&#39;</span>, <span style="color:#e6db74">&#39;t&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>, <span style="color:#e6db74">&#39;i&#39;</span>, <span style="color:#e6db74">&#39;n&#39;</span>, <span style="color:#e6db74">&#39;g&#39;</span>, <span style="color:#e6db74">&#39;\0&#39;</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Inicialização com texto
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">char</span> string_2[<span style="color:#ae81ff">7</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;String&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> string_3[<span style="color:#ae81ff">7</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>string_3 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;String&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, string_1);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, string_2);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, string_3);
+</span></span></code></pre></div><p>Os strings em C possuem um <strong>\0</strong> ao final para representar o final do string. Observe que na declaração de <em>string_1</em> adicionamos explicitamente o <em>\0</em>. Na inicialização com texto, isso já é feito pelo compilador de forma implícita. Observe, também, que devemos contabilizar esse último caractere na definição do tamanho do array.</p>
+<p>Outra novidade é o indicador do tipo de variável no <em>printf</em>, que passou a ser <strong>%s</strong>.</p>
+<h3 id="leitura-de-strings">
+  Leitura de strings
+  <a class="anchor" href="#leitura-de-strings">#</a>
+</h3>
+<p>Podemos utilizar o comando <em>scanf</em> para a leitura de strings, com a seguinte sintaxe:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> nome[<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Digite um nome:&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, nome);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s &#34;</span>, nome);
+</span></span></code></pre></div><p>Observe que utilizamos o <strong>%s</strong> no scanf e não adicionamos o símbolo <strong>&amp;</strong> à variável associada, como fizemos na leitura de variáveis nos exemplos vistos anteriormente.</p>
+<p><strong>Importante</strong>: A leitura de strings com o <em>scanf</em> é interrompida ao ser encontrado o primeiro espaço em branco digitado. Dessa forma, se o usuário digitar, por exemplo, <em>Ana Maria</em>, no nosso exemplo, apenas o <em>Ana</em> será atribuído à variável <em>nome</em>.</p>
+<p>Alternativamente, podemos utilizar a função <strong>gets()</strong>. Esta támbém é uma função presente na biblioteca padrão da linguagem C, e é possível ler frases inteiras com espaços em brancos. A leitura é finalizada ao ser encontrado o caractere que representa uma quebra de linha (<em>\n</em>), ou seja, quando o usuário digitar <em>enter</em>. Vejamos exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> frase[<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Digite uma frase:&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gets</span>(frase);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s &#34;</span>, frase);
+</span></span></code></pre></div><p><strong>Troubleshooting:</strong> Já presenciei alguns erros reportados pelos alunos nas aulas de laboratório, utilizando essas funções de leitura de strings. Um erro comum era o retorno de caracteres errados. Uma possível solução é realizar a limpeza da memória <em>buffer</em> do teclado antes de realizar a leitura. Para isso, utilizamos a função <strong>setbuf</strong> com a configuração <strong>setbuf(stdin, NULL)</strong>. Exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> frase[<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Limpeza do buffer - Atribui o valor NULL à
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">setbuf</span>(stdin, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Digite uma frase:&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gets</span>(frase);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s &#34;</span>, frase);
+</span></span></code></pre></div><p>O nome <em>stdin</em> representa o buffer de entrada padrão do sistema, e o exemplo atribui o valor <em>NULL</em> a ele.</p>
+<h3 id="biblioteca-stringh">
+  Biblioteca &lt;string.h&gt;
+  <a class="anchor" href="#biblioteca-stringh">#</a>
+</h3>
+<p>A biblioteca padrão da linguagem C possui um conjunto de funções para manipulação de strings. Para utilizá-las, é necessário adicionar a biblioteca <em>string.h</em> no cabeçalho do programa:</p>
+<pre><code>#include &lt;string.h&gt;
+</code></pre>
+<p>Vejamos exemplos de funções:</p>
+<h4 id="comprimento-do-string">
+  Comprimento do string
+  <a class="anchor" href="#comprimento-do-string">#</a>
+</h4>
+<p>A função <strong>strlen()</strong> recebe um string como parâmetro de entrada e retorna o número de caracteres não nulos do string:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> palavra[<span style="color:#ae81ff">20</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;livro&#34;</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> tamanho <span style="color:#f92672">=</span> <span style="color:#a6e22e">strlen</span>(palavra);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;A palavra tem %d letras.&#34;</span>, tamanho); 
+</span></span><span style="display:flex;"><span>}    
+</span></span></code></pre></div><p>A saída do código acima será o número de caracteres da palavra <em>livro</em>:</p>
+<pre><code>A palavra tem 5 letras.
+</code></pre>
+<h4 id="comparação-de-strings">
+  Comparação de strings
+  <a class="anchor" href="#compara%c3%a7%c3%a3o-de-strings">#</a>
+</h4>
+<p>A função <strong>strcmp()</strong> recebe dois strings como parâmetros de entrada e retorna:</p>
+<ul>
+<li><em>0</em> quando os strings são exatamente iguais.</li>
+<li>um valor diferente de <em>0</em> quando os strings são diferentes.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> palavra_1[<span style="color:#ae81ff">20</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;livro&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> palavra_2[<span style="color:#ae81ff">20</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;LIVRO&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> resultado_1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">strcmp</span>(palavra_1, <span style="color:#e6db74">&#34;livro&#34;</span>); <span style="color:#75715e">//retornará zero
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> resultado_2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">strcmp</span>(palavra_1, palavra_2); <span style="color:#75715e">//retornará valor diferente de zero
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Comparação 01: %d&#34;</span>, resultado_1); 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> Comparação 02: %d&#34;</span>, resultado_2); 
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Um exemplo de saída é:</p>
+<pre><code>Comparação 01: 0
+Comparação 02: 32
+</code></pre>
+<h4 id="concatenação-de-string">
+  Concatenação de string
+  <a class="anchor" href="#concatena%c3%a7%c3%a3o-de-string">#</a>
+</h4>
+<p>A função <strong>strcat()</strong> recebe dois strings como parâmetros de entrada e concatena o segundo string ao primeiro. Dessa forma, apenas o primeiro string é alterado. O caractere de finalização <em>(\n)</em> do primeiro string é substituído pelo primeiro caractere do segundo string.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> palavra_1[<span style="color:#ae81ff">20</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bons &#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> palavra_2[<span style="color:#ae81ff">20</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;estudos!&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">strcat</span>(palavra_1, palavra_2); <span style="color:#75715e">//retornará zero
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;palavra_1: %s&#34;</span>, palavra_1);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída será:</p>
+<pre><code>Bons estudos!
+</code></pre>
 <h2 id="ponteiros">
   Ponteiros
   <a class="anchor" href="#ponteiros">#</a>
@@ -1336,9 +1466,9 @@ pointInt: 10
 <li>O comando <em>pointInt = &amp;varInt</em> atribui o endereço de <em>varInt</em> à variável <em>pointInt</em>. Lembre-se, ponteiros armazenam endereços de memória.
 <ul>
 <li>Ou seja, <em>pointInt</em> está &ldquo;apontando&rdquo; para <em>varInt</em>.</li>
-<li>Sendo assim, podemos acessar o valor de <em>varInt</em> através do seu ponteiro <em>pointInt</em>. A sintaxe para acesso é: <strong>*pointInt</strong>.</li>
 </ul>
 </li>
+<li>Sendo assim, podemos acessar o valor de <em>varInt</em> através do seu ponteiro <em>pointInt</em>. A sintaxe para acesso é: <strong>*pointInt</strong>.</li>
 </ul>
 <p>Em resumo,</p>
 <ul>
@@ -1376,6 +1506,98 @@ Variável pointInt:
   - Valor armazenado: (em hexadecimal) 0x7ff7bf0a93c8 (em decimal) -1089825848
   - Conteudo da posicao apontada: 10 
 </code></pre>
+<h3 id="aritmética-de-ponteiros">
+  Aritmética de ponteiros
+  <a class="anchor" href="#aritm%c3%a9tica-de-ponteiros">#</a>
+</h3>
+<p>A aritmética de ponteiros refere-se às operações matemáticas que você pode realizar com ponteiros. Essas operações são baseadas no tipo de dado para o qual o ponteiro está apontando. A linguagem C permite adição e subtração entre ponteiros e inteiros, e permite a subtração entre ponteiros entre si.</p>
+<p>Por exemplo, se você tem um ponteiro <em>p</em> e o incrementa com 3 <em>(p + 3)</em>, você obterá o avanço de três blocos de memória do tipo ao qual o ponteiro está apontando. Vejamos.</p>
+<p>Considere o ponteiro <em>p</em>:</p>
+<pre><code>int *p;
+</code></pre>
+<p>A expressão de adição</p>
+<pre><code>p + 3
+</code></pre>
+<p>é válida. Signica que você terá acesso ao endereço da posição de memória que está três objetos adiante do endereço do objeto para o qual <em>p</em> aponta. Como <em>p</em> é um endereço, <em>p + 3</em> também resultará em um endereço. O compilador ajustará o endereço de acordo com o tamanho do tipo. Isso é feito multiplicando o valor a ser adicionado pelo tamanho do tipo de dado para o qual <em>p</em> aponta.</p>
+<p>Por exemplo, se o endereço atual contido em <em>p</em> é 1000, e considerando que o tipo <em>int</em> ocupa 4 bytes, então, <em>p + 3</em> significa 1000 + 3*4, que é igual ao endereço 1012.</p>
+<ul>
+<li>
+<p>Por outro lado, se <em>p</em> fosse um ponteiro para <em>char</em>, com a declaração *char <em>p</em>, então p + 3 significaria 1003.</p>
+</li>
+<li>
+<p>Portanto, p + 3 sempre significa o endereço do terceiro objeto após p, independentemente do tipo de objeto para o qual p aponta.</p>
+</li>
+</ul>
+<p>Seguem exemplos de expressões legais e ilegais utilizando aritmética de ponteiros:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>p1, <span style="color:#f92672">*</span>p2; 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> p3; 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">long</span> j;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//EXPRESSÕES VÁLIDAS
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>p1<span style="color:#f92672">++</span>; <span style="color:#75715e">// Avança para o próximo elemento int
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>p2<span style="color:#f92672">--</span>; <span style="color:#75715e">// Retrocede um elemento int
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>p3 <span style="color:#f92672">=</span> p3 <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span>; <span style="color:#75715e">// Avança 5 bytes a partir do endereço de p3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>p1 <span style="color:#f92672">=</span> p1 <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// Retrocede 2 elementos int
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>p1 <span style="color:#f92672">=</span> p1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span>; <span style="color:#75715e">// Avança 3 elementos int (supondo que p1 é para int)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>j <span style="color:#f92672">=</span> p2 <span style="color:#f92672">-</span> p1; <span style="color:#75715e">// Calcula o número de elementos int entre p1 e p2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//EXPRESSÕES ILEGAIS
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>p3 <span style="color:#f92672">=</span> p1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// Ilegal: ponteiros para tipos diferentes
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>p1 <span style="color:#f92672">=</span> p3 <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">// Ilegal: ponteiros para tipos diferentes
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>j <span style="color:#f92672">=</span> p3 <span style="color:#f92672">-</span> p2; <span style="color:#75715e">// Ilegal: ponteiros para tipos diferentes
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>p1 <span style="color:#f92672">=</span> p1 <span style="color:#f92672">+</span> p2; <span style="color:#75715e">// Ilegal: não é permitido adicionar dois ponteiros
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>p3 <span style="color:#f92672">=</span> p1 <span style="color:#f92672">-</span> p2; <span style="color:#75715e">// Ilegal: resultado da subtração de ponteiros não pode ser usado como um ponteiro
+</span></span></span></code></pre></div><p>Aritmética de ponteiros é especialmente útil quando você está trabalhando com arrays, pois um array é basicamente um bloco contíguo de memória que armazena uma sequência de elementos do mesmo tipo. A seguir, veremos a relação entre ponteiros e arrays, e como podemos utilizar aritmética de ponteiros para manipulação de arrays.</p>
+<h3 id="relação-entre-ponteiros-e-arrays">
+  Relação entre ponteiros e arrays
+  <a class="anchor" href="#rela%c3%a7%c3%a3o-entre-ponteiros-e-arrays">#</a>
+</h3>
+<p>Em C, arrays e ponteiros estão intimamente relacionados. Quando você usa o nome de um array em uma expressão, ele é convertido para um ponteiro para o seu primeiro elemento.</p>
+<p>Por exemplo, considere o seguinte array:</p>
+<pre><code>int numeros[5] = {1, 2, 3, 4, 5};
+</code></pre>
+<p>Aqui, <em>numeros</em> é o nome do array, mas em muitas expressões, é tratado como um ponteiro para o primeiro elemento do array.</p>
+<ul>
+<li>Isso significa que <strong>numeros</strong> é equivalente a <strong>&amp;numeros[0]</strong>.</li>
+</ul>
+<p>Portanto, se você fizer:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> numeros[<span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span> numeros; <span style="color:#75715e">// p aponta para arr[0]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d &#34;</span>, <span style="color:#f92672">*</span>p); <span style="color:#75715e">//imprime o conteúdo de numero[0]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">%d &#34;</span>, numeros[<span style="color:#ae81ff">0</span>]); <span style="color:#75715e">//também, imprime o mesmo conteúdo 
+</span></span></span></code></pre></div><p>A saída do código será:</p>
+<pre><code>    1
+    1
+</code></pre>
+<p>No exemplo acima, <em>p</em> é um ponteiro que aponta para o primeiro elemento de <em>numeros</em>. Você pode acessar os elementos do array usando esse ponteiro da mesma forma que acessaria os elementos do array diretamente, utilizando aritmética de ponteiros. Exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> numeros[<span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span> numeros; <span style="color:#75715e">// p aponta para arr[0]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">*</span>(p <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>)); <span style="color:#75715e">// Imprime o terceiro elemento do array, que é 3
+</span></span></span></code></pre></div><p>A saída do código será:</p>
+<pre><code>    3
+</code></pre>
+<p>Segue outro exemplo de manipulação de <em>array</em> utilizando ponteiros:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> array[<span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">40</span>, <span style="color:#ae81ff">50</span>};  <span style="color:#75715e">// Declaração e inicialização do array
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>ptr <span style="color:#f92672">=</span> array;  <span style="color:#75715e">// Ponteiro que aponta para o início do array
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Acesso e impressão dos elementos usando aritmética de ponteiro
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Elemento %d: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, i, <span style="color:#f92672">*</span>(ptr <span style="color:#f92672">+</span> i));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="funções">
   Funções
   <a class="anchor" href="#fun%c3%a7%c3%b5es">#</a>
@@ -1529,131 +1751,7 @@ Valores após a chamada da função: x = 11  e y = 9
 Valores após a chamada da função: x = 10  e y = 10
 </code></pre>
 <!-- raw HTML omitted -->
-<h2 id="strings">
-  Strings
-  <a class="anchor" href="#strings">#</a>
-</h2>
-<p>Strings são sequências de caracteres. Em C, uma sequência de caracteres nada mais é do que um <em>array</em> do tipo <strong>char</strong>. Podemos criar arrays de char da mesma forma que fizemos com os outros tipos anteriormente. Além disso, aos arrays de char também podem ser atribuídos textos diretamente. Vejamos exemplos de declaração de strings:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// Inicialização com caracteres
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">char</span> string_1[<span style="color:#ae81ff">7</span>] <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;S&#39;</span>, <span style="color:#e6db74">&#39;t&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>, <span style="color:#e6db74">&#39;i&#39;</span>, <span style="color:#e6db74">&#39;n&#39;</span>, <span style="color:#e6db74">&#39;g&#39;</span>, <span style="color:#e6db74">&#39;\0&#39;</span>};
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Inicialização com texto
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">char</span> string_2[<span style="color:#ae81ff">7</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;String&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> string_3[<span style="color:#ae81ff">7</span>];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>string_3 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;String&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, string_1);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, string_2);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, string_3);
-</span></span></code></pre></div><p>Os strings em C possuem um <strong>\0</strong> ao final para representar o final do string. Observe que na declaração de <em>string_1</em> adicionamos explicitamente o <em>\0</em>. Na inicialização com texto, isso já é feito pelo compilador de forma implícita. Observe, também, que devemos contabilizar esse último caractere na definição do tamanho do array.</p>
-<p>Outra novidade é o indicador do tipo de variável no <em>printf</em>, que passou a ser <strong>%s</strong>.</p>
-<h3 id="leitura-de-strings">
-  Leitura de strings
-  <a class="anchor" href="#leitura-de-strings">#</a>
-</h3>
-<p>Podemos utilizar o comando <em>scanf</em> para a leitura de strings, com a seguinte sintaxe:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> nome[<span style="color:#ae81ff">20</span>];
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Digite um nome:&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, nome);
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s &#34;</span>, nome);
-</span></span></code></pre></div><p>Observe que utilizamos o <strong>%s</strong> no scanf e não adicionamos o símbolo <strong>&amp;</strong> à variável associada, como fizemos na leitura de variáveis nos exemplos vistos anteriormente.</p>
-<p><strong>Importante</strong>: A leitura de strings com o <em>scanf</em> é interrompida ao ser encontrado o primeiro espaço em branco digitado. Dessa forma, se o usuário digitar, por exemplo, <em>Ana Maria</em>, no nosso exemplo, apenas o <em>Ana</em> será atribuído à variável <em>nome</em>.</p>
-<p>Alternativamente, podemos utilizar a função <strong>gets()</strong>. Esta támbém é uma função presente na biblioteca padrão da linguagem C, e é possível ler frases inteiras com espaços em brancos. A leitura é finalizada ao ser encontrado o caractere que representa uma quebra de linha (<em>\n</em>), ou seja, quando o usuário digitar <em>enter</em>. Vejamos exemplo:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> frase[<span style="color:#ae81ff">20</span>];
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Digite uma frase:&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gets</span>(frase);
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s &#34;</span>, frase);
-</span></span></code></pre></div><p><strong>Troubleshooting:</strong> Já presenciei alguns erros reportados pelos alunos nas aulas de laboratório, utilizando essas funções de leitura de strings. Um erro comum era o retorno de caracteres errados. Uma possível solução é realizar a limpeza da memória <em>buffer</em> do teclado antes de realizar a leitura. Para isso, utilizamos a função <strong>setbuf</strong> com a configuração <strong>setbuf(stdin, NULL)</strong>. Exemplo:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> frase[<span style="color:#ae81ff">20</span>];
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Limpeza do buffer - Atribui o valor NULL à
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">setbuf</span>(stdin, NULL);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Digite uma frase:&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gets</span>(frase);
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s &#34;</span>, frase);
-</span></span></code></pre></div><p>O nome <em>stdin</em> representa o buffer de entrada padrão do sistema, e o exemplo atribui o valor <em>NULL</em> a ele.</p>
-<h3 id="biblioteca-stringh">
-  Biblioteca &lt;string.h&gt;
-  <a class="anchor" href="#biblioteca-stringh">#</a>
-</h3>
-<p>A biblioteca padrão da linguagem C possui um conjunto de funções para manipulação de strings. Para utilizá-las, é necessário adicionar a biblioteca <em>string.h</em> no cabeçalho do programa:</p>
-<pre><code>#include &lt;string.h&gt;
-</code></pre>
-<p>Vejamos exemplos de funções:</p>
-<h4 id="comprimento-do-string">
-  Comprimento do string
-  <a class="anchor" href="#comprimento-do-string">#</a>
-</h4>
-<p>A função <strong>strlen()</strong> recebe um string como parâmetro de entrada e retorna o número de caracteres não nulos do string:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> palavra[<span style="color:#ae81ff">20</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;livro&#34;</span>;
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> tamanho <span style="color:#f92672">=</span> <span style="color:#a6e22e">strlen</span>(palavra);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;A palavra tem %d letras.&#34;</span>, tamanho); 
-</span></span><span style="display:flex;"><span>}    
-</span></span></code></pre></div><p>A saída do código acima será o número de caracteres da palavra <em>livro</em>:</p>
-<pre><code>A palavra tem 5 letras.
-</code></pre>
-<h4 id="comparação-de-strings">
-  Comparação de strings
-  <a class="anchor" href="#compara%c3%a7%c3%a3o-de-strings">#</a>
-</h4>
-<p>A função <strong>strcmp()</strong> recebe dois strings como parâmetros de entrada e retorna:</p>
-<ul>
-<li><em>0</em> quando os strings são exatamente iguais.</li>
-<li>um valor diferente de <em>0</em> quando os strings são diferentes.</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> palavra_1[<span style="color:#ae81ff">20</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;livro&#34;</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> palavra_2[<span style="color:#ae81ff">20</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;LIVRO&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> resultado_1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">strcmp</span>(palavra_1, <span style="color:#e6db74">&#34;livro&#34;</span>); <span style="color:#75715e">//retornará zero
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> resultado_2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">strcmp</span>(palavra_1, palavra_2); <span style="color:#75715e">//retornará valor diferente de zero
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Comparação 01: %d&#34;</span>, resultado_1); 
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> Comparação 02: %d&#34;</span>, resultado_2); 
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Um exemplo de saída é:</p>
-<pre><code>Comparação 01: 0
-Comparação 02: 32
-</code></pre>
-<h4 id="concatenação-de-string">
-  Concatenação de string
-  <a class="anchor" href="#concatena%c3%a7%c3%a3o-de-string">#</a>
-</h4>
-<p>A função <strong>strcat()</strong> recebe dois strings como parâmetros de entrada e concatena o segundo string ao primeiro. Dessa forma, apenas o primeiro string é alterado. O caractere de finalização <em>(\n)</em> do primeiro string é substituído pelo primeiro caractere do segundo string.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> palavra_1[<span style="color:#ae81ff">20</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bons &#34;</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> palavra_2[<span style="color:#ae81ff">20</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;estudos!&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">strcat</span>(palavra_1, palavra_2); <span style="color:#75715e">//retornará zero
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;palavra_1: %s&#34;</span>, palavra_1);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>A saída será:</p>
-<pre><code>Bons estudos!
-</code></pre>
+<!-- raw HTML omitted -->
 <h2 id="mais-sobre-variáveis">
   Mais sobre variáveis
   <a class="anchor" href="#mais-sobre-vari%c3%a1veis">#</a>
@@ -1986,14 +2084,19 @@ Comparação 02: 32
         <li><a href="#matrizes">Matrizes</a></li>
       </ul>
     </li>
-    <li><a href="#ponteiros">Ponteiros</a></li>
-    <li><a href="#funções">Funções</a></li>
     <li><a href="#strings">Strings</a>
       <ul>
         <li><a href="#leitura-de-strings">Leitura de strings</a></li>
         <li><a href="#biblioteca-stringh">Biblioteca &lt;string.h&gt;</a></li>
       </ul>
     </li>
+    <li><a href="#ponteiros">Ponteiros</a>
+      <ul>
+        <li><a href="#aritmética-de-ponteiros">Aritmética de ponteiros</a></li>
+        <li><a href="#relação-entre-ponteiros-e-arrays">Relação entre ponteiros e arrays</a></li>
+      </ul>
+    </li>
+    <li><a href="#funções">Funções</a></li>
     <li><a href="#mais-sobre-variáveis">Mais sobre variáveis</a>
       <ul>
         <li><a href="#modificadores">Modificadores</a></li>

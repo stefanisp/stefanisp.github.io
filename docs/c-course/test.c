@@ -1,4 +1,79 @@
 #include <stdio.h>
+
+int main() {
+
+    int numeros[5] = {3, 2, 3, 4, 5};
+
+int *p = numeros; // p aponta para arr[0]
+
+printf("\n%d ", p); //imprime o conteúde de arr[0]
+
+    printf("\n%d ", &numeros[0]);
+
+    /* BUBLLE SORT
+    int arr[] = {64, 34, 25, 12, 22, 11, 90}; // Array de exemplo
+    int n = sizeof(arr)/sizeof(arr[0]);       // Número de elementos no array
+    int i, j, temp;
+
+    // Implementação do algoritmo Bubble Sort
+    for (i = 0; i < n-1; i++) {
+        int swapped = 0; // Flag para verificar se houve troca
+
+        for (j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                // Trocar os elementos se estiverem na ordem errada
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+                swapped = 1;
+            }
+        }
+
+        // Se nenhum elemento foi trocado, a lista já está ordenada
+        if (swapped == 0) {
+            break;
+        }
+    }
+
+    // Impressão do array ordenado
+    printf("Array ordenado:\n");
+    for (i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    #define TRUE 1
+    #define FALSE 0
+    int lista[] = {64, 34, 25, 12, 22, 11, 90};
+    unsigned ordenada = FALSE; int aux;
+
+    while (!ordenada){
+        ordenada = TRUE; // Supõe que a lista está ordenada
+        for (int i = 0; i < n - 1; i++){
+            if (lista[i] > lista[i+1]){ // Compara elementos adjacentes 
+                ordenada = FALSE;//Pelo menos um elemento esta fora de ordem 
+                aux = lista[i];
+                lista[i] = lista[i+1];
+                lista[i+1] = aux;
+            }  // final do if 
+        } // final do for 
+    } // final do while 
+
+     // Impressão do array ordenado
+    printf("Array ordenado:\n");
+    for (i = 0; i < n; i++) {
+        printf("%d ", lista[i]);
+    }
+    printf("\n");
+
+*/
+
+    return 0;
+}
+
+
+
+/* #include <stdio.h>
 #include <string.h>
 
 enum DiaDaSemana {
@@ -39,7 +114,7 @@ int main(void)
     }
 
      
-
+*/
 
 /*
     char string_1[10] = "Bom dia!";
@@ -65,5 +140,7 @@ int main(void)
 // //microsleep(190);
 // scanf("%d", &teste);
 // printf("%d\n", rand());
-return 0;
-}
+
+
+//return 0;
+//}
