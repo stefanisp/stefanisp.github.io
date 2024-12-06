@@ -18,15 +18,14 @@ Programar é a tarefa de se comunicar com o computador através da escrita de um
     
     <item>
       <title>Sumário de Python</title>
-      <link>https://stefanisp.github.io/docs/rl-course/python/</link>
+      <link>https://stefanisp.github.io/docs/py-course/01-python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://stefanisp.github.io/docs/rl-course/python/</guid>
-      <description>Sumário de Python # Website oficial # Para download: https://www.python.org
-Primeiro comando em Python # Utilizamos a função print() para imprimir textos na tela:
-print(&amp;#34;Olá, mundo lindo!&amp;#34;) Criação de arquivos .py # Executamos código Python em arquivos com extensão .py. Por exemplo: primeiro_programa.py:
-As regras para nomeação de arquivos são:
-O arquivo deve ter a extensão .py. O nome do arquivo pode conter qualquer caractere alfa-numérico (A-z e 0-9) e o caractere sublinhado (_).</description>
+      <guid>https://stefanisp.github.io/docs/py-course/01-python/</guid>
+      <description>Sumário de Python # Python é uma linguagem de programação de alto nível, amplamente utilizada devido à sua simplicidade e versatilidade. Sua sintaxe clara e legível a torna ideal para iniciantes.
+Apresento aqui um material complementar às aulas ministradas em sala, para revisão da sintaxe da linguagem e auxílio nos estudos.
+Website oficial # Para download: https://www.python.org
+Criação de arquivos .py # Executamos código Python em arquivos com extensão .</description>
     </item>
     
     <item>
