@@ -2,29 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Curso: Introdução à Programação com a Linguagem C on stefanisp.github.io</title>
-    <link>http://example.org/docs/c-course/</link>
+    <link>https://stefanisp.github.io/docs/c-course/</link>
     <description>Recent content in Curso: Introdução à Programação com a Linguagem C on stefanisp.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/docs/c-course/index.xml" rel="self" type="application/rss+xml" />
+    <language>pt-br</language><atom:link href="https://stefanisp.github.io/docs/c-course/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Básico</title>
-      <link>http://example.org/docs/c-course/basic/</link>
+      <title>A Linguagem C</title>
+      <link>https://stefanisp.github.io/docs/c-course/01-sintax/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/c-course/basic/</guid>
-      <description> Básico da Linguagem C # Estudaremos primeiro o que considero funcionalidades básicas da linguagem.
-Variáveis primitivas # As váriáveis básicas em C são &amp;hellip;
-Operador de atribuição # O operador de atribuição é ..
-Operadores aritméticos # Operadores relacionais # Operadores lógicos # Comandos condicionais # IF ELSE # SWITCH CASE # Comandos de repetição # FOR # WHILE # DO WHILE # Funções # Strings # Arrays e Matrizes # </description>
+      <guid>https://stefanisp.github.io/docs/c-course/01-sintax/</guid>
+      <description>Introdução à Programação com a Linguagem C # Programação é o método que utilizamos para criar sistemas computacionais, como jogos, websites, aplicativos de celular, e todos os sistemas de computador que encontramos em bancos, farmácias e supermercados.
+Programar é a tarefa de se comunicar com o computador através da escrita de uma sequência de tarefas (instruções) que desejamos que seja executada. Toda comunicação requer uma linguagem comum entre as entidades que se comunicam, neste caso entre o humano (o programador) e o computador.</description>
     </item>
     
     <item>
-      <title>Intermediário</title>
-      <link>http://example.org/docs/c-course/intermediate/</link>
+      <title>2023 - Atividades</title>
+      <link>https://stefanisp.github.io/docs/c-course/intermediate/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/c-course/intermediate/</guid>
-      <description> Intermediário # </description>
+      <guid>https://stefanisp.github.io/docs/c-course/intermediate/</guid>
+      <description> Atividades # </description>
+    </item>
+    
+    <item>
+      <title>Exercícios</title>
+      <link>https://stefanisp.github.io/docs/c-course/02-code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stefanisp.github.io/docs/c-course/02-code/</guid>
+      <description>Exercícios de programação # Lista 01 - Leitura de dados, expressões aritméticas # Escreva um programa que declara três números inteiros e imprime a soma dos números na tela.
+Escreva um programa que lê três números fracionados fornecidos pelo usuário e imprime a soma dos números.
+Escreva um programa que lê dois números inteiros e imprime a soma, a diferença, o produto e a divisão entre esses números.
+Escreva um programa que lê um número inteiro e imprime seu antecessor e seu sucessor.</description>
     </item>
     
   </channel>
