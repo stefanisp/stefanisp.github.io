@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CURSO: Informática com C&#43;&#43; on stefanisp.github.io</title>
+    <link>https://stefanisp.github.io/docs/04-c&#43;&#43;/</link>
+    <description>Recent content in CURSO: Informática com C&#43;&#43; on stefanisp.github.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language><atom:link href="https://stefanisp.github.io/docs/04-c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Módulo 01</title>
+      <link>https://stefanisp.github.io/docs/04-c&#43;&#43;/01-basico/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stefanisp.github.io/docs/04-c&#43;&#43;/01-basico/</guid>
+      <description>PROGRAMAÇÃO COM C++ # Neste curso aprederemos a programar utilizando uma linguagem de programação bem robusta, de alto desempenho, chamada C++.
+C++ é uma linguagem de programação de propósito geral que surgiu como uma extensão da linguagem C, adicionando novos recursos, mas mantendo a compatibilidade com o código já existente em C.
+É uma linguagem multiparadigma, o que significa que permite que o código seja escrito de acordo com diferentes paradigmas de programação, ou seja, &amp;ldquo;estilos&amp;rdquo; de como o código é organizado e estruturado.</description>
+    </item>
+    
+    <item>
+      <title>2023 - Atividades</title>
+      <link>https://stefanisp.github.io/docs/04-c&#43;&#43;/intermediate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stefanisp.github.io/docs/04-c&#43;&#43;/intermediate/</guid>
+      <description>Um compilador é um programa de computador que traduz o código que você escreve em uma linguagem de programação (como C ou C++) para uma linguagem que o computador realmente entende: código de máquina.
+C é uma linguagem de propósito geral. Isso quer dizer que ela pode ser utilizada para escrever programas para várias àreas diferentes. Sua linguagem segue um padrão procedural, permitindo a decomposição de problemas grande e complexos em procedimentos (módulos) separados e mais simples.</description>
+    </item>
+    
+  </channel>
+</rss>

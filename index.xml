@@ -7,46 +7,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language><atom:link href="https://stefanisp.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>A Linguagem C</title>
-      <link>https://stefanisp.github.io/docs/c-course/01-sintax/</link>
+      <title>Módulo 01</title>
+      <link>https://stefanisp.github.io/docs/04-c&#43;&#43;/01-basico/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://stefanisp.github.io/docs/c-course/01-sintax/</guid>
-      <description>Introdução à Programação com a Linguagem C # Programação é o método que utilizamos para criar sistemas computacionais, como jogos, websites, aplicativos de celular, e todos os sistemas de computador que encontramos em bancos, farmácias e supermercados.
-Programar é a tarefa de se comunicar com o computador através da escrita de uma sequência de tarefas (instruções) que desejamos que seja executada. Toda comunicação requer uma linguagem comum entre as entidades que se comunicam, neste caso entre o humano (o programador) e o computador.</description>
-    </item>
-    
-    <item>
-      <title>Sumário de Python</title>
-      <link>https://stefanisp.github.io/docs/py-course/01-python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://stefanisp.github.io/docs/py-course/01-python/</guid>
-      <description>Sumário de Python # Python é uma linguagem de programação de alto nível, amplamente utilizada devido à sua simplicidade e versatilidade. Sua sintaxe clara e legível a torna ideal para iniciantes.
-Apresento aqui um material complementar às aulas ministradas em sala, para revisão da sintaxe da linguagem e auxílio nos estudos.
-Website oficial # Para download: https://www.python.org
-Criação de arquivos .py # Executamos código Python em arquivos com extensão .</description>
+      <guid>https://stefanisp.github.io/docs/04-c&#43;&#43;/01-basico/</guid>
+      <description>PROGRAMAÇÃO COM C++ # Neste curso aprederemos a programar utilizando uma linguagem de programação bem robusta, de alto desempenho, chamada C++.
+C++ é uma linguagem de programação de propósito geral que surgiu como uma extensão da linguagem C, adicionando novos recursos, mas mantendo a compatibilidade com o código já existente em C.
+É uma linguagem multiparadigma, o que significa que permite que o código seja escrito de acordo com diferentes paradigmas de programação, ou seja, &amp;ldquo;estilos&amp;rdquo; de como o código é organizado e estruturado.</description>
     </item>
     
     <item>
       <title>2023 - Atividades</title>
-      <link>https://stefanisp.github.io/docs/c-course/intermediate/</link>
+      <link>https://stefanisp.github.io/docs/03-c-course/intermediate/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://stefanisp.github.io/docs/c-course/intermediate/</guid>
+      <guid>https://stefanisp.github.io/docs/03-c-course/intermediate/</guid>
       <description> Atividades # </description>
     </item>
     
     <item>
-      <title>Exercícios</title>
-      <link>https://stefanisp.github.io/docs/c-course/02-code/</link>
+      <title>2023 - Atividades</title>
+      <link>https://stefanisp.github.io/docs/04-c&#43;&#43;/intermediate/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://stefanisp.github.io/docs/c-course/02-code/</guid>
-      <description>Exercícios de programação # Lista 01 - Leitura de dados, expressões aritméticas # Escreva um programa que declara três números inteiros e imprime a soma dos números na tela.
-Escreva um programa que lê três números fracionados fornecidos pelo usuário e imprime a soma dos números.
-Escreva um programa que lê dois números inteiros e imprime a soma, a diferença, o produto e a divisão entre esses números.
-Escreva um programa que lê um número inteiro e imprime seu antecessor e seu sucessor.</description>
+      <guid>https://stefanisp.github.io/docs/04-c&#43;&#43;/intermediate/</guid>
+      <description>Um compilador é um programa de computador que traduz o código que você escreve em uma linguagem de programação (como C ou C++) para uma linguagem que o computador realmente entende: código de máquina.
+C é uma linguagem de propósito geral. Isso quer dizer que ela pode ser utilizada para escrever programas para várias àreas diferentes. Sua linguagem segue um padrão procedural, permitindo a decomposição de problemas grande e complexos em procedimentos (módulos) separados e mais simples.</description>
     </item>
     
     <item>
