@@ -20,7 +20,7 @@ C&#43;&#43; é uma linguagem de programação de propósito geral que surgiu com
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.6a54ac680d2fca88fdf66c9366b329cb40f7f3c5c4d256a605cd1fb9b56b9083.js" integrity="sha256-alSsaA0vyoj99myTZrMpy0D388XE0lamBc0fubVrkIM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.719393418c147e8de2d7673f390f8488dde4f88fef52b93b406b3338c27f6729.js" integrity="sha256-cZOTQYwUfo3i12c/OQ&#43;EiN3k&#43;I/vUrk7QGszOMJ/Zyk=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -209,6 +209,14 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#exemplo-com-entrada-de-dados">Exemplo com entrada de dados</a></li>
       </ul>
     </li>
+    <li><a href="#namespace-std">Namespace std</a></li>
+    <li><a href="#comentários">Comentários</a>
+      <ul>
+        <li><a href="#comentário-de-linha">Comentário de Linha</a></li>
+        <li><a href="#comentário-de-bloco">Comentário de Bloco</a></li>
+      </ul>
+    </li>
+    <li><a href="#variáveis-e-tipos-básicos">Variáveis e tipos básicos</a></li>
   </ul>
 </nav>
 
@@ -358,10 +366,193 @@ Bem vindo, Maria
 </code></pre>
 </li>
 </ul>
-<p>&hellip;</p>
+<h2 id="namespace-std">
+  Namespace std
+  <a class="anchor" href="#namespace-std">#</a>
+</h2>
+<p>Repare que algumas das intruções que utilizamos até agora possuem a notação <strong>std::</strong> como um prefixo. Vimos até agora em:</p>
+<pre><code>std::cout
+std::cin
+std::endl
+std::string
+</code></pre>
+<p>O prefixo <strong>std::</strong> é uma abreviação da palavra inglesa <em><strong>standard</strong></em>, e é utilizada para indicar que esses recursos pertencem a um &ldquo;espaço de nomes&rdquo; da biblioteca <strong>padrão</strong> do C++ (<strong>standard-library namespace</strong>). Sem o prefixo <strong>std::</strong>, o compilador não saberia onde procurar esses recursos.</p>
+<p>&ldquo;Espaço de nomes&rdquo; (ou <em>namespace</em>) é um recurso da linguagem muito útil para garantir organização e segurança no desenvolvimento de projetos grandes. Ele funciona como uma &ldquo;etiqueta&rdquo; que indica de onde o comando está vindo, evitando confusões caso existam nomes iguais em outras partes do programa.</p>
+<p>Estudaremos a criação e utilização de <em>namespace</em> em módulos seguintes. Nesse primeiro módulo, utilizaremos a diretiva <strong>using namespace std;</strong> no início do código para simplificar a escrita e evitar repetição. Com essa diretiva, não é mais necessário escrever o prefixo <strong>std::</strong> em cada uso. Vejamos um exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() { 
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Iniciando a execução do programa.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Bem vindo ao curso de C++. &#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Programar é divertido!&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="comentários">
+  Comentários
+  <a class="anchor" href="#coment%c3%a1rios">#</a>
+</h2>
+<p>As linguagens de programação normalmente permitem que o programador adicione comentários ao código. Comentários são trechos de texto inseridos no código com o objetivo de documentar e explicar a lógica implementada, sem serem executados pelo compilador. Comentários podem até servir para desativar temporariamente alguma parte do código durante o processo de desenvolvimento.</p>
+<p>Existem duas sintaxes de comentários em C++: de linha e de bloco.</p>
+<h3 id="comentário-de-linha">
+  Comentário de Linha
+  <a class="anchor" href="#coment%c3%a1rio-de-linha">#</a>
+</h3>
+<p>Utilizamos <strong>//</strong> para iniciar uma linha de comentário. Todo o conteúdo após as barras será ignorado pelo compilador. Ex:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Este é um comentário de linha
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() { 
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Este é outro comentário de linha
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Aprendendo sobre comentários!&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="comentário-de-bloco">
+  Comentário de Bloco
+  <a class="anchor" href="#coment%c3%a1rio-de-bloco">#</a>
+</h3>
+<p>Utilizamos /* para iniciar um bloco de comentário e  */ para finalizar, independente da linha ao qual se encontra. Todo o conteúdo entre /*  e  */ será ignorado pelo compilador. Ex:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> Este é um comentário de bloco.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> Comentário de bloco pode conter múltiplas linhas.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() { 
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* Este é outro comentário de bloco.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Comentários são úteis para documentar o código! */</span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Aprendendo sobre comentários!&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="variáveis-e-tipos-básicos">
+  Variáveis e tipos básicos
+  <a class="anchor" href="#vari%c3%a1veis-e-tipos-b%c3%a1sicos">#</a>
+</h2>
+<p>Variáveis são espaços de memória reservados pelo programa para armazenar dados que podem ser utilizados e manipulados durante a execução. Uma variável precisa ser declarada com um <strong>nome</strong>, escolhido pelo programador, e um <strong>tipo</strong>. O tipo indica que tipo de informação pode ser armazenada, quais operações podem ser realizadas com a variável, e quanto de memória será usada para armazená-la.</p>
+<p>Tipos de variáveis em C++ incluem:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Descrição</th>
+<th>Exemplos de declaração</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>int</strong></td>
+<td>Números inteiros</td>
+<td><code>int idade;</code> <br> <code>int numero_1 = 5;</code> <br> <code>int x = 5483;</code></td>
+</tr>
+<tr>
+<td><strong>float</strong></td>
+<td>Números fracionados</td>
+<td><code>float nota; </code> <br> <code>float media = 19.7;</code> <br> <code>float pi = 3.14159;</code></td>
+</tr>
+<tr>
+<td><strong>bool</strong></td>
+<td>Valor booleano, como verdadeiro ou falso.</td>
+<td><code>bool primeiro_acesso; </code> <br> <code>bool aprovado = 1;</code> <br> <code>boll estaAtivo = true;</code></td>
+</tr>
+<tr>
+<td><strong>char</strong></td>
+<td>Um único caracter</td>
+<td><code>char simbolo; </code><br> <code>char letra = 'A';</code> <br> <code>char resposta = 's';</code></td>
+</tr>
+<tr>
+<td><strong>string</strong></td>
+<td>Sequencia de caracteres</td>
+<td><code>string nome; </code><br> <code>string curso = &quot;Informática&quot;</code> <br> <code>string conteudo = &quot;Material de estudos para a curso de informática.&quot;;</code></td>
+</tr>
+</tbody>
+</table>
+<p>Notas:</p>
+<ul>
+<li><strong>bool</strong>: Em C++, variáveis do tipo <strong>bool</strong> possuem o valor numérico <strong>1</strong> para representar <strong>verdadeiro</strong> e o valor <strong>0</strong> para representar falso. A linguagem permite o uso das palavras <strong>true</strong> e <strong>false</strong> no código para facilitar a leitura, mas internamente os valores numéricos equivalentes (<strong>1</strong> e <strong>0</strong>) é que serão armazenados na memória.</li>
+<li><strong>char</strong>: O valor de uma variável do tipo char deve estar entre aspas simples.</li>
+<li><strong>string</strong>: O valor de uma variável do tipo string deve estar entre aspas duplas.</li>
+</ul>
+<p>Segue um exemplo de código com declaração de variáveis e seus valores:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() { 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Variáveis do estudante
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    string nome <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Maria&#34;</span>;       <span style="color:#75715e">// nome do estudante
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> idade <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;            <span style="color:#75715e">// idade do estudante
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">float</span> notaMedia <span style="color:#f92672">=</span> <span style="color:#ae81ff">9.5</span>;     <span style="color:#75715e">// nota média do estudante
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">char</span> turma <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;B&#39;</span>;           <span style="color:#75715e">// turma do estudante
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">bool</span> aprovado <span style="color:#f92672">=</span> true;      <span style="color:#75715e">// status de aprovação
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Exibindo as informações do estudante
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Dados do estudante: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; Primeiro Nome: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> nome <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; Idade: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> idade <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; Nota Média: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> notaMedia <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; Turma: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> turma <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; Aprovado? &#34;</span> <span style="color:#f92672">&lt;&lt;</span> aprovado <span style="color:#f92672">&lt;&lt;</span> endl;  <span style="color:#75715e">// true será mostrado como 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída será:</p>
+<pre><code>Dados do estudante: 
+ Primeiro Nome: Maria
+ Idade: 20
+ Nota Média: 8.5
+ Turma: B
+ Aprovado? 1
+</code></pre>
+<p>Nós já aprendemos a ler informações do usuário utilizando o teclado como entrada de dados. Vejamos, então, um exemplo equivalente, no qual o usuário poderá fornecer as informações do aluno:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() { 
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Declaração das variáveis sem valores iniciais
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    string nome;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> idade;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> notaMedia;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> turma;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">bool</span> aprovado;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Solicitando os dados ao usuário
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Digite o primeiro nome do estudante: &#34;</span>;
+</span></span><span style="display:flex;"><span>    cin <span style="color:#f92672">&gt;&gt;</span> nome;  
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Digite a idade: &#34;</span>;
+</span></span><span style="display:flex;"><span>    cin <span style="color:#f92672">&gt;&gt;</span> idade;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Digite a nota média: &#34;</span>;
+</span></span><span style="display:flex;"><span>    cin <span style="color:#f92672">&gt;&gt;</span> notaMedia;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Digite a turma (uma letra): &#34;</span>;
+</span></span><span style="display:flex;"><span>    cin <span style="color:#f92672">&gt;&gt;</span> turma;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;O estudante foi aprovado? (1 = sim, 0 = não): &#34;</span>;
+</span></span><span style="display:flex;"><span>    cin <span style="color:#f92672">&gt;&gt;</span> aprovado;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Exibindo os dados coletados
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Dados do estudante: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Primeiro Nome: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> nome <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Idade: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> idade <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Nota Média: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> notaMedia <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Turma: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> turma <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Aprovado? &#34;</span> <span style="color:#f92672">&lt;&lt;</span> aprovado <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>&hellip;</p>
 <p>(EM DESENVOLVIMENTO)</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+...
+-->
 </article>
  
       
@@ -410,6 +601,14 @@ Bem vindo, Maria
         <li><a href="#exemplo-com-entrada-de-dados">Exemplo com entrada de dados</a></li>
       </ul>
     </li>
+    <li><a href="#namespace-std">Namespace std</a></li>
+    <li><a href="#comentários">Comentários</a>
+      <ul>
+        <li><a href="#comentário-de-linha">Comentário de Linha</a></li>
+        <li><a href="#comentário-de-bloco">Comentário de Bloco</a></li>
+      </ul>
+    </li>
+    <li><a href="#variáveis-e-tipos-básicos">Variáveis e tipos básicos</a></li>
   </ul>
 </nav>
 

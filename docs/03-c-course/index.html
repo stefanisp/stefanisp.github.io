@@ -15,7 +15,7 @@ Programar é a tarefa de se comunicar com o computador através da escrita de um
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.6a54ac680d2fca88fdf66c9366b329cb40f7f3c5c4d256a605cd1fb9b56b9083.js" integrity="sha256-alSsaA0vyoj99myTZrMpy0D388XE0lamBc0fubVrkIM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.719393418c147e8de2d7673f390f8488dde4f88fef52b93b406b3338c27f6729.js" integrity="sha256-cZOTQYwUfo3i12c/OQ&#43;EiN3k&#43;I/vUrk7QGszOMJ/Zyk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://stefanisp.github.io/docs/03-c-course/index.xml" title="stefanisp.github.io" />
 <!--
 Made with Book Theme
@@ -290,7 +290,7 @@ https://github.com/alex-shpak/hugo-book
 <p>Como toda linguagem de programação, C possui um conjuto de <strong>palavras reservadas</strong> que são utilizadas para a criação das <strong>instruções</strong> que comporão um programa. Essa é uma lista de palavras reservadas em C:</p>
 <p><img src="/figure_c11-keywords.png" alt="Keywords C11" title="Fonte: C11 – Draft version (N1570) (http://port70.net/~nsz/c/c11/n1570.html)"/></p>
 <p>(Fonte: C11 – Draft version (N1570) - <a href="http://port70.net/~nsz/c/c11/n1570.html">http://port70.net/~nsz/c/c11/n1570.html</a>)</p>
-<!-- raw HTML omitted -->
+<!-- For more references: https://en.cppreference.com/w/c/keyword -->
 <h2 id="primeiro-programa-em-c">
   Primeiro programa em C
   <a class="anchor" href="#primeiro-programa-em-c">#</a>
@@ -337,8 +337,50 @@ https://github.com/alex-shpak/hugo-book
  Pratique!
  Pratique!
 </code></pre>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+ <!-- 
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Mais exemplos</span>
+      <span>...</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <pre><code>#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf(&quot;Programação requer prática.&quot;);
+    printf(&quot;Pratique!&quot;);
+    printf(&quot;Pratique!&quot;);
+    
+    return 0;
+}
+</code></pre>
+
+    </div>
+  </label>
+</div>
+
+
+ 
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Exercício de programação</span>
+      <span>...</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <h2 id="todo">
+  TODO
+  <a class="anchor" href="#todo">#</a>
+</h2>
+<p>Adicionar exercícios.
+    </div>
+  </label>
+</div>
+ -->
 <h2 id="básico-da-linguagem-c">
   Básico da Linguagem C
   <a class="anchor" href="#b%c3%a1sico-da-linguagem-c">#</a>
@@ -1176,8 +1218,21 @@ else
 <pre><code>Repetição 1. Repetição 2. Repetição 4.
 </code></pre>
 <p>Observe que, na repetição à qual <em>i</em> assumiu o valor <em>3</em>, a condição <em>i == j</em> passou a ser verdadeira, e o comando <em>continue</em> foi executado. Sendo assim, as instruções seguintes dentro do bloco <em>while</em> foram <em>puladas</em>, e a <em>condição</em> do <em>while</em> voltou a ser testada para uma nova repetição do seu bloco de instruções. Observe também que incluí o incremento da variável <em>i</em> dentro do bloco <em>if</em>. Consegue me explicar o porquê? Me conte na próxima aula!</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--## Comando goto
+
+O comando *goto* é utilizado em conjunto com um **label**. Um *label* é uma palavra definida no código que funciona como a marcação de uma posição específica, e podemos "pular" para essa posição a qualquer momento utilizando o comando *goto*. A sintaxe é:
+
+    label:
+    
+    goto label;
+
+Ou:
+
+    goto label;
+    
+    label:
+
+Vejamos exemplos: -->
 <h2 id="arrays">
   Arrays
   <a class="anchor" href="#arrays">#</a>
@@ -1635,8 +1690,15 @@ Variável pointInt:
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</span></span></code></pre></div><!--
+### Ponteiros e strings
+Uso de Strings com Ponteiros
+Em C, strings são representadas como arrays de caracteres terminados por um caractere nulo ('\0'). Por exemplo:
+
+char str[] = "Hello";
+
+Aqui, str é um array de caracteres, mas você também pode tratá-lo como um ponteiro para o primeiro caractere da string. Isso é útil em funções que manipulam strings, onde você pode usar ponteiros para acessar e modificar a string.
+-->
 <h2 id="funções">
   Funções
   <a class="anchor" href="#fun%c3%a7%c3%b5es">#</a>
@@ -1732,8 +1794,13 @@ Variável pointInt:
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>No exemplo, a variável <em>numero</em> foi inicalizada com o valor 10, e passamos a variável como parâmetro da chamada de <em>funcao_3</em>. Isso quer dizer que o valor 10 será copiado para o parâmetro de entrada <em>num</em> da função.</p>
 <p>A passagem de parâmetros <strong>por valor</strong> é o comportamento padrão quando passamos variáveis como parâmetros de entrada de funções. Na passagem por valor, o conteúdo da variável é copiado para a função, e a função não terá acesso à variável.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+Na seção *Funções (parte 02)*, veremos que existe outra forma de passar parâmetros para as funções, chamada de *passagem **por referência***. Antes, estudaremos o que são *ponteiros* para entendermos melhor esse conceito. 
+
+
+ ## Funções (parte 02)
+
+Na seção *Funções (parte 01)*, vimos que a passagem de parâmetros **por valor** é o comportamento padrão quando passamos variáveis como parâmetros de entrada de funções. Na passagem por valor, o conteúdo da variável é copiado para a função, e a função não terá acesso à variável. -->
 <p>Existe outra forma de passar parâmetros para as funções, chamada de <em>passagem <strong>por referência</strong></em>.</p>
 <p>Quando desejamos que uma função tenha acesso direto à variável, podendo alterar seu conteúdo, devemos utilizar a passagem de parâmetros por referência. Utilizarmos ponteiros para implementar a passagem por referência.</p>
 <p>A forma de implementar é:</p>
@@ -1789,8 +1856,59 @@ Valores após a chamada da função: x = 11  e y = 9
 <pre><code>Valores antes da chamada da função: x = 10  e y = 10
 Valores após a chamada da função: x = 10  e y = 10
 </code></pre>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+### Passagem de arrays/strings como parâmetro de função
+
+
+Uso de Strings com Ponteiros
+Em C, strings são representadas como arrays de caracteres terminados por um caractere nulo ('\0'). Por exemplo:
+char str[] = "Hello";
+
+Aqui, str é um array de caracteres, mas você também pode tratá-lo como um ponteiro para o primeiro caractere da string. Isso é útil em funções que manipulam strings, onde você pode usar ponteiros para acessar e modificar a string.
+Por exemplo:
+```c
+void printString(char *s) {
+    while (*s) {
+        putchar(*s++);
+    }
+    putchar('\n');
+}
+
+int main() {
+    char str[] = "Hello";
+    printString(str); // Passa a string como um ponteiro
+    return 0;
+}
+
+```
+No código acima, printString recebe um ponteiro para o primeiro caractere da string. O loop while (*s) continua enquanto o caractere apontado por s não for o caractere nulo ('\0'), imprimindo cada caractere até o fim da string.
+
+Passagem de Arrays para Funções
+
+Quando você passa um array para uma função, você está passando um ponteiro para o primeiro elemento do array. Isso significa que a função pode modificar o conteúdo do array original. Veja um exemplo:
+
+```c
+void incrementArray(int *arr, int size) {
+    for (int i = 0; i < size; i++) {
+        arr[i]++;
+    }
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    incrementArray(arr, 5);
+    // Agora arr contém {2, 3, 4, 5, 6}
+    return 0;
+}
+
+```
+
+### Retorno de arrays/strings
+
+  TODO FUNCOES QUE RETORNAM PONTEIROS
+Retorno de Arrays de Funções
+
+Em C, você não pode retornar diretamente um array de uma função. No entanto, você pode retornar um ponteiro para um array alocado dinamicamente ou manipular arrays usando ponteiros. Por exemplo: -->
 <h2 id="mais-sobre-variáveis">
   Mais sobre variáveis
   <a class="anchor" href="#mais-sobre-vari%c3%a1veis">#</a>
@@ -2024,17 +2142,17 @@ Valores após a chamada da função: x = 10  e y = 10
   Tipos definidos pelo programador
   <a class="anchor" href="#tipos-definidos-pelo-programador">#</a>
 </h3>
-<!-- raw HTML omitted -->
+<!-- CH 02 -->
 <h3 id="escopo-de-variáveis">
   Escopo de variáveis
   <a class="anchor" href="#escopo-de-vari%c3%a1veis">#</a>
 </h3>
-<!-- raw HTML omitted -->
+<!-- CH 02 -->
 <h2 id="mais-sobre-operadores">
   Mais sobre operadores
   <a class="anchor" href="#mais-sobre-operadores">#</a>
 </h2>
-<!-- raw HTML omitted -->
+<!-- CP 01 - operadores-->
 <h3 id="conversões">
   Conversões
   <a class="anchor" href="#convers%c3%b5es">#</a>
@@ -2043,9 +2161,48 @@ Valores após a chamada da função: x = 10  e y = 10
   Operador sizeof
   <a class="anchor" href="#operador-sizeof">#</a>
 </h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-</article>
+<!--
+
+## Arquivos
+### Escopo de variáveis
+
+### Conversão de tipos
+### Definição de tipos
+Typedef
+struct 
+
+Mais funcoes legais:
+rand() - <stdlib.h>
+time() - (#include <time.h>
+
+LIVRO:
+CH 01
+Aspectos fundamentais
+    - Tipos de dados elementares
+        (modificadores short long signed...)
+    - Constantes
+    - Constantes simbólicas 
+        (# define )
+    - Enumerações
+        (enum {a, b, c} cidades);
+    -     
+- Operadores
+    - conversões
+    - operador sizeof
+
+CH 02 
+Escopo de variáveis
+Tipos definidos pelo programador - typedef
+
+CH 03 - Arranjos e ponteiros
+    -Strings
+CH 04 - Estruturas e uniÕes
+    - struct
+CH 05 - Arquivos
+
+Bibliotecas .h
+
+--></article>
  
       
 

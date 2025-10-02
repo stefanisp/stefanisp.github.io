@@ -17,7 +17,7 @@ Criação de arquivos .py # Executamos código Python em arquivos com extensão 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.6a54ac680d2fca88fdf66c9366b329cb40f7f3c5c4d256a605cd1fb9b56b9083.js" integrity="sha256-alSsaA0vyoj99myTZrMpy0D388XE0lamBc0fubVrkIM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.719393418c147e8de2d7673f390f8488dde4f88fef52b93b406b3338c27f6729.js" integrity="sha256-cZOTQYwUfo3i12c/OQ&#43;EiN3k&#43;I/vUrk7QGszOMJ/Zyk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://stefanisp.github.io/docs/02-py-course/index.xml" title="stefanisp.github.io" />
 <!--
 Made with Book Theme
@@ -249,8 +249,19 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#website-oficial">#</a>
 </h2>
 <p>Para download: <a href="https://www.python.org">https://www.python.org</a></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- 
+![python-logo](python-logo.png)
+## Palavras reservadas
+
+A palavras reservadas em Python são:
+
+![some](python-keywords.png)
+
+![python-keywords](python-keywords.png "Fonte: Python 3.11.4 Documentation – (https://docs.python.org/3.11/reference/lexical_analysis.html#keywords)")
+
+Fonte: Python 3.11.4 Documentation – (https://docs.python.org/3.11/reference/lexical_analysis.html#keywords)
+
+-->
 <h2 id="criação-de-arquivos-py">
   Criação de arquivos .py
   <a class="anchor" href="#cria%c3%a7%c3%a3o-de-arquivos-py">#</a>
@@ -263,8 +274,20 @@ https://github.com/alex-shpak/hugo-book
 <li>Deve começar com uma letra ou o sublinhado.</li>
 <li>Não podem haver espaços no nome do arquivo. Por exemplo: <em>&ldquo;primeiro programa.py&rdquo;</em>.</li>
 </ul>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--  ### Modo interativo
+
+Em sala, veremos que o código visto anteriormente também pode ser executado no *modo interativo* do interpretador Python, sem a necessidade da criação de um arquivo. No modo interativo, as linhas de código são executadas à medida que vamos escrevendo em um *terminal* interativo, a partir da chamada ao interpretador python. Por exemplo, ao digitar *python3.11* no terminal do computador, estamos iniciando o modo interativo do interpretador python (versão 3.11).
+
+ e a saída será: 
+
+![interativo](python-modo-interativo-1.png)
+
+Após digitarmos o comando *print("Olá, mundo lindo!")* e apertarmos *enter*, podemos ver a saída em tela, e o interpretador continua ativo esperando a próxima instrução.
+
+![interativo](python-modo-interativo-2.png)
+ 
+Este modo é útil para testes rápidos, mas volátil, ou seja, todo o código é apagado da memória do computador quando saímos do modo interativo. Uma forma de sairmos é digitar *exit()*, que é uma função presente no interpretador para finalizar a execução de um programa. 
+-->
 <h2 id="sintaxe-básica">
   Sintaxe básica
   <a class="anchor" href="#sintaxe-b%c3%a1sica">#</a>
@@ -319,8 +342,23 @@ https://github.com/alex-shpak/hugo-book
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x, y, z <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>w <span style="color:#f92672">=</span> y <span style="color:#f92672">=</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</span></span></code></pre></div><!--
+Text Type:	str
+Numeric Types:	int, float, complex
+Sequence Types:	list, tuple, range
+Mapping Type:	dict
+Set Types:	set, frozenset
+Boolean Type:	bool
+Binary Types:	bytes, bytearray, memoryview
+None Type:	NoneType
+
+x = ["apple", "banana", "cherry"]	list	
+x = ("apple", "banana", "cherry")	tuple	
+x = range(6)	                    range	
+x = {"name" : "John", "age" : 36}	dict	
+x = {"apple", "banana", "cherry"}	set
+
+-->
 <h3 id="imprimindo-variáveis">
   Imprimindo variáveis
   <a class="anchor" href="#imprimindo-vari%c3%a1veis">#</a>
@@ -697,8 +735,15 @@ else:
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>) <span style="color:#75715e"># tupla de inteiros</span>
 </span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;text1&#34;</span>, <span style="color:#e6db74">&#34;text2&#34;</span>, <span style="color:#e6db74">&#34;text3&#34;</span> <span style="color:#75715e"># tupla de strings</span>
 </span></span><span style="display:flex;"><span>z <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;text1&#34;</span>, <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;text2&#34;</span>) <span style="color:#75715e"># tupla de inteiros e strings </span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</span></span></code></pre></div><!--
+Sequence Types:	list, tuple, range
+
+x = ["apple", "banana", "cherry"]	list
+x = ("apple", "banana", "cherry")	tuple	
+x = range(6)	                    range	
+
+right = [('KeyEvent', 'ArrowUp', True), ('KeyEvent', 'ArrowLeft', False),('KeyEvent', 'ArrowRight', True)]
+-->
 <h3 id="funções">
   Funções
   <a class="anchor" href="#fun%c3%a7%c3%b5es">#</a>
@@ -837,10 +882,144 @@ else:
 </span></span><span style="display:flex;"><span>A <span style="color:#f92672">=</span> P <span style="color:#f92672">*</span> math<span style="color:#f92672">.</span>exp(r <span style="color:#f92672">*</span> t)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;O valor final após&#34;</span>, t, <span style="color:#e6db74">&#34;anos é: R$ &#34;</span>, A)
-</span></span></code></pre></div><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</span></span></code></pre></div><!-- 
+### Matplotlib
+
+
+### NumPy
+
+Documentação do NumPy: https://numpy.org/doc/stable/
+
+NumPy (Numerical Python) é uma biblioteca muito utizada para computação ciêntífica. Permite a criação de arrays multidimensionais de alta-performance, e uma série de ferramentas úteis para trabalhar com uma grande quantidade de dados. 
+
+Os arrays são do tipo **ndarray**. (**n d**imensional **arrays**), e os tipos de dados também são próprios da bilioteca, por exemplo, **int64** e **float64**.
+
+Arrays de uma dimensão são semelhantes às listas da bilioteca padrão de Python, e podemos passar listas como atributos na inicialização do array. A lista será convertida para um **ndarray**. 
+Vejamos exemplos:
+
+```python
+# Importação da biblioteca e atribuição de um "apelido" para acessar seus métodos  
+import numpy as np  
+
+lista = [1, 2, 3]
+array_1 = np.array(lista)
+
+array_2 = np.array([1, 2, 3])
+
+print(array_1) # Imprime: [1 2 3] 
+print(array_2) # Imprime: [1 2 3] 
+
+print(type(array_1)) # Imprime: <class 'numpy.ndarray'>
+
+# Acessando elementos pelo índice. 
+print(array_1[0]) # Imprime: 1
+print(type(array_1[0])) # Imprime: <class 'numpy.int64'>
+
+# Como em listas, elementos podem ser alterados
+array_1[0] = 10
+array_1[1] = 20
+array_1[2] = 30
+
+print(array_1) # Imprime: [10 20 30]
+```
+
+O número de dimensões de *ndarray* é chamado de **rank** e o tamanho das dimensões é chamado de **shape**. *Shape* é um atributo de *ndarray*, e podemos consultar seu valor:
+
+```python
+x = np.array([1, 2, 3]) # rank = 1 dimensão
+print(x.shape) #Imprime: (3,) 
+```
+
+Arrays de duas dimensões são vistos como matrizes. Vejamos exemplos:
+
+```python
+x = np.array( [[1, 2, 3], [4, 5, 6], [7, 8, 9]] ) # rank = 2 dimensões
+print(x) # Imprime [[1 2 3]
+         #          [4 5 6]
+         #          [7 8 9]]
+print(x.shape) # Imprime (3,3)
+
+#Acessamos com índices para cada dimensão
+print(x[0,0]) #Imprime 1
+
+x[0,0] = 10 
+print(x[0,0]) #Imprime 10
+```
+
+Numpy também contém métodos úteis para criação de arrays. Vejamos exemplos:
+
+```python
+# NP.ZEROS
+z = np.zeros(3) # Cria um array de uma dimensão com todos os valores zero.
+print(z) # Imprime: [0. 0. 0.]
+
+z = np.zeros((2,2)) # Cria uma matriz 2x2 com todos os valores zero.
+print(z) # Imprime: [[0. 0.]
+         #           [0. 0.]]
+
+# NP.ONES
+n = np.ones(3) # Cria um array de uma dimensão com os valores 1.
+print(n) # Imprime: [1. 1. 1.]
+
+n = np.ones((2,2)) # Cria uma matriz 2x2 com todos os valores 1.
+print(n) # Imprime: [[1. 1.]
+         #           [1. 1.]]
+
+# NP.FULL
+f = np.full((2,2), 10) # Cria uma matriz 2x2 com todos os valores 10.
+print(f) # Imprime: [[10. 10.]
+         #           [10. 10.]]
+
+# NP.ARRANGE
+n = np.arange(0,10) # Cria um array com valores incrementais a partir do 0 até o 9 
+print(n) # Imprime: [0 1 2 3 4 5 6 7 8 9]
+```
+
+Também podemos criar arrays com valores randômicos, utilizando o método **random**:
+
+```python
+# Cria uma matriz 2x2 com valores randômicos fracionados
+r = np.random.random((2,2)) 
+print(r) # Imprime, por exemplo: [[0.23307038 0.94085973]
+         #                        [0.36262991 0.31839375]] 
+
+# Cria uma matriz 2x2 com valores randômicos inteiros de 0 a 100
+r = np.random.randint(100, size=(2,2)) 
+print(r) # Imprime, por exemplo: [[ 8 67]
+         #                        [48 27]]
+
+```
+
+Com **random**, também podemos criar arrays que seguem alguma distribuição matemática. Por exemplo, a **distribuição normal**, conhecida como distribuição Gausiana:
+
+```python
+
+media = 0
+desvioPadrao = 1
+
+# Cria um array de 3 elementos com valores randômicos,
+#  derivados de uma distribuição normal, cuja média é 0 e desvio padrão 1.
+x = np.random.normal(media, desvioPadrao, 3 )
+
+print(x) # Imprime, por exemplo: 
+         # [-0.070929   -0.54941909  0.6866655]
+
+# Cria uma matriz 2x3, com valores randômicos,
+#  derivados de uma distribuição normal, cuja média é 0 e desvio padrão 1.
+x = np.random.normal(0,1, (2, 3))
+print(x) # Imprime, por exemplo:
+         # [[-1.2662116   0.2800333   0.41657951]
+         #  [-0.55011022 -0.99752399 -0.87655478]]
+```
+-->
+<!-- 
+
+SciPy
+
+scikit-learn = built in NumPy, SciPy, and matplotlib
+
+
+-->
 </article>
  
       
