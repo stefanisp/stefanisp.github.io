@@ -20,7 +20,7 @@ C&#43;&#43; é uma linguagem de programação de propósito geral que surgiu com
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.719393418c147e8de2d7673f390f8488dde4f88fef52b93b406b3338c27f6729.js" integrity="sha256-cZOTQYwUfo3i12c/OQ&#43;EiN3k&#43;I/vUrk7QGszOMJ/Zyk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.7879a50ba9b12145b0ec815c39d524a121ac2cbf5f6e415913c9cdb4aef17908.js" integrity="sha256-eHmlC6mxIUWw7IFcOdUkoSGsLL9fbkFZE8nNtK7xeQg=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -217,6 +217,15 @@ https://github.com/alex-shpak/hugo-book
       </ul>
     </li>
     <li><a href="#variáveis-e-tipos-básicos">Variáveis e tipos básicos</a></li>
+    <li><a href="#operadores">Operadores</a>
+      <ul>
+        <li><a href="#operadores-aritméticos">Operadores aritméticos</a></li>
+        <li><a href="#operadores-relacionais">Operadores relacionais</a></li>
+        <li><a href="#operadores-lógicos">Operadores lógicos</a></li>
+        <li><a href="#exemplo-de-uso">Exemplo de uso</a></li>
+      </ul>
+    </li>
+    <li><a href="#estrutura-condicional-if-else">Estrutura condicional: if else</a></li>
   </ul>
 </nav>
 
@@ -548,11 +557,270 @@ std::string
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>&hellip;</p>
-<p>(EM DESENVOLVIMENTO)</p>
-<!--
-...
+</span></span></code></pre></div><h2 id="operadores">
+  Operadores
+  <a class="anchor" href="#operadores">#</a>
+</h2>
+<p>Operadores são símbolos especiais usados para realizar operações sobre variáveis e valores.
+Eles permitem executar cálculos, comparar dados e tomar decisões dentro do programa.
+Os principais grupos de operadores que veremos a seguir são:</p>
+<ul>
+<li>Operadores aritméticos</li>
+<li>Operadores relacionais</li>
+<li>Operadores lógicos</li>
+</ul>
+<h3 id="operadores-aritméticos">
+  Operadores aritméticos
+  <a class="anchor" href="#operadores-aritm%c3%a9ticos">#</a>
+</h3>
+<p>Esses operadores são usados para realizar cálculos matemáticos. Eles funcionam com variáveis numéricas, como <strong>int</strong> e <strong>float</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Operação</th>
+<th>Exemplo de uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>Adição</td>
+<td><code>resultado = a + b</code></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>Subtração</td>
+<td><code>resultado = a - b</code></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Multiplicação</td>
+<td><code>resultado = a * b</code></td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>Divisão</td>
+<td><code>resultado = a / b</code></td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>Resto da divisão (módulo)</td>
+<td><code>resto = a % b</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="operadores-relacionais">
+  Operadores relacionais
+  <a class="anchor" href="#operadores-relacionais">#</a>
+</h3>
+<p>São usados para comparar valores. O resultado dessas comparações é sempre verdadeiro (<em>true</em>) ou falso (<em>false</em>).</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Operação</th>
+<th>Exemplo de uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>==</code></td>
+<td>Igual a</td>
+<td><code>resultado = (a == b)</code></td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>Diferente de</td>
+<td><code>resultado = (a != b)</code></td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Maior que</td>
+<td><code>resultado = (a &gt; b)</code></td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Menor que</td>
+<td><code>resultado = (a &lt; b)</code></td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>Maior ou igual a</td>
+<td><code>resultado = (a &gt;= b)</code></td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>Menor ou igual a</td>
+<td><code>resultado = (a &lt;= b)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="operadores-lógicos">
+  Operadores lógicos
+  <a class="anchor" href="#operadores-l%c3%b3gicos">#</a>
+</h3>
+<p>São utilizados para combinar expressões lógicas (condições). O resultado também é sempre <em>true</em> ou <em>false</em>.</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Operação</th>
+<th>Exemplo de uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td><strong>E</strong> lógico <br>(verdadeiro se ambas as condições forem verdadeiras)</td>
+<td><code>resultado = (a &gt; b &amp;&amp; b &lt; c)</code></td>
+</tr>
+<tr>
+<td><code>||</code></td>
+<td><strong>OU</strong> lógico <br>(verdadeiro se pelo menos uma condição for verdadeira)</td>
+<td><code>resultado = (a &gt; b </code>||<code> b &lt; c)</code></td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td><strong>NÃO</strong> lógico <br>(inverte o valor lógico da expressão)</td>
+<td><code>resultado = !(a &gt; b)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="exemplo-de-uso">
+  Exemplo de uso
+  <a class="anchor" href="#exemplo-de-uso">#</a>
+</h3>
+<p>Segue exemplo mais completo de utilização dos operadores:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>using namespace std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>, b <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Operadores aritméticos
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Soma: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> a <span style="color:#f92672">+</span> b <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Subtração: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> a <span style="color:#f92672">-</span> b <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Multiplicação: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> a <span style="color:#f92672">*</span> b <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Divisão: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> a <span style="color:#f92672">/</span> b <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Resto: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> a <span style="color:#f92672">%</span> b <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Operadores relacionais
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;a é igual a b? &#34;</span> <span style="color:#f92672">&lt;&lt;</span> (a <span style="color:#f92672">==</span> b) <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;a é maior que b? &#34;</span> <span style="color:#f92672">&lt;&lt;</span> (a <span style="color:#f92672">&gt;</span> b) <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Operadores lógicos
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;a &gt; 5 e b &lt; 5? &#34;</span> <span style="color:#f92672">&lt;&lt;</span> (a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">&amp;&amp;</span> b <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>) <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;a &gt; 5 ou b &gt; 5? &#34;</span> <span style="color:#f92672">&lt;&lt;</span> (a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">||</span> b <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>) <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;a não é menor que b? &#34;</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">!</span>(a <span style="color:#f92672">&lt;</span> b) <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída esperada é:</p>
+<pre><code>Soma: 13
+Subtração: 7
+Multiplicação: 30
+Divisão: 3
+Resto: 1
+a é igual a b? 0
+a é maior que b? 1
+a &gt; 5 e b &lt; 5? 1
+a &gt; 5 ou b &gt; 5? 1
+a não é menor que b? 0
+</code></pre>
+<p>Na saída dos exemplos com operadores lógicos e/ou relacionais, lembre-se que <strong>1</strong> significa verdadeiro e <strong>0</strong> significa falso.</p>
+<h2 id="estrutura-condicional-if-else">
+  Estrutura condicional: if else
+  <a class="anchor" href="#estrutura-condicional-if-else">#</a>
+</h2>
+<p>Utilizamos estruturas condicionais para permitir que o programa tome decisões sobre qual parte do código será executado com base em alguma condição.
+A forma geral da estruutra é:</p>
+<pre><code>if (condição) {
+    // bloco de código executado se a condição for verdadeira
+} else {
+    // bloco de código executado se a condição for falsa
+}
+</code></pre>
+<p>A estrutura <code>if</code> (do inglês, &ldquo;se&rdquo;) é usada para executar um bloco de código apenas se uma condição for <strong>verdadeira</strong>. A estrutura <code>else</code> (do inglês, &ldquo;senão&rdquo;) é opcional, e permite definir um bloco alternativo de instruções, que será executado caso a condição seja <strong>falsa</strong>.</p>
+<p>A <em>condição</em> é uma expressão que deve resutlar em um valor booleano (verdadeiro ou falso). Para isso, utilizamos operadores relacionais (como <code>==</code>, <code>&gt;</code>, <code>&lt;</code>, <code>!=</code>) e lógicos (como <code>&amp;&amp;</code>, <code>||</code>, <code>!</code>), conforme já estudado.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>using namespace std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> nota;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Digite a nota do aluno: &#34;</span>;
+</span></span><span style="display:flex;"><span>    cin <span style="color:#f92672">&gt;&gt;</span> nota;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (nota <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">7.0</span>) {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Aluno aprovado!&#34;</span>;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Aluno reprovado!&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Estruturas condicionais também podem ser aninhadas, permitindo testar condições em sequência. Por exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>using namespace std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> temperatura;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Digite a temperatura em graus Celsius: &#34;</span>;
+</span></span><span style="display:flex;"><span>    cin <span style="color:#f92672">&gt;&gt;</span> temperatura;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (temperatura <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">35.0</span>) {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Clima quente!&#34;</span>;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (temperatura <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">25.0</span>) {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Clima agradável.&#34;</span>;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (temperatura <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">15.0</span>) {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Clima ameno.&#34;</span>;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Clima frio.&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Vejamos mais um exemplo, no qual a comparação da estrutura condicional é feita com variável do tipo <strong>string</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>using namespace std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    string turno;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Digite o turno em que você estuda (manha, tarde ou noite): &#34;</span>;
+</span></span><span style="display:flex;"><span>    cin <span style="color:#f92672">&gt;&gt;</span> turno;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (turno <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;manha&#34;</span>) {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Bom dia!&#34;</span>;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (turno <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;tarde&#34;</span>) {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Boa tarde!&#34;</span>;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (turno <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;noite&#34;</span>) {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Boa noite!&#34;</span>;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Turno inválido. Verifique o valor digitado.&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><!--
+## Estrutura de repetição: while
+
+## Estrutura de repetição: for
+
+## Funções
+
+## Listas
+
+
 -->
+<p>&hellip;</p>
+<p>(EM DESENVOLVIMENTO)</p>
+<p>&hellip;</p>
 </article>
  
       
@@ -609,6 +877,15 @@ std::string
       </ul>
     </li>
     <li><a href="#variáveis-e-tipos-básicos">Variáveis e tipos básicos</a></li>
+    <li><a href="#operadores">Operadores</a>
+      <ul>
+        <li><a href="#operadores-aritméticos">Operadores aritméticos</a></li>
+        <li><a href="#operadores-relacionais">Operadores relacionais</a></li>
+        <li><a href="#operadores-lógicos">Operadores lógicos</a></li>
+        <li><a href="#exemplo-de-uso">Exemplo de uso</a></li>
+      </ul>
+    </li>
+    <li><a href="#estrutura-condicional-if-else">Estrutura condicional: if else</a></li>
   </ul>
 </nav>
 

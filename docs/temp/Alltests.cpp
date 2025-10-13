@@ -1,34 +1,16 @@
 #include <iostream>
+#include <string>
+#include <algorithm> // std::transform
+#include <cctype>    // std::tolower
 
 using namespace std;
 int main() { 
-    
-    // Declaração das variáveis sem valores iniciais
-    string nome;
-    int idade;
-    float notaMedia;
-    char turma;
-    bool aprovado;
+    string texto = "TARDE";
 
-    // Solicitando os dados ao usuário
-    cout << "Digite o nome do estudante: ";
-    cin >> nome;  
-    cout << "Digite a idade: ";
-    cin >> idade;
-    cout << "Digite a nota média: ";
-    cin >> notaMedia;
-    cout << "Digite a turma (uma letra): ";
-    cin >> turma;
-    cout << "O estudante foi aprovado? (1 = sim, 0 = não): ";
-    cin >> aprovado;
+    transform(texto.begin(), texto.end(), texto.begin(), [](unsigned char c){ return tolower(c); });
 
-    // Exibindo os dados coletados
-    cout << "Dados do estudante: " << endl;
-    cout << "Nome: " << nome << endl;
-    cout << "Idade: " << idade << endl;
-    cout << "Nota Média: " << notaMedia << endl;
-    cout << "Turma: " << turma << endl;
-    cout << "Aprovado? " << aprovado << endl;
+    cout << texto; // saída: tarde
     
+
      return 0;
 }
