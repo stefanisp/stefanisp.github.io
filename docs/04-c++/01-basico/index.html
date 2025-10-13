@@ -20,7 +20,7 @@ C&#43;&#43; é uma linguagem de programação de propósito geral que surgiu com
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.7879a50ba9b12145b0ec815c39d524a121ac2cbf5f6e415913c9cdb4aef17908.js" integrity="sha256-eHmlC6mxIUWw7IFcOdUkoSGsLL9fbkFZE8nNtK7xeQg=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.436e98f9d0f3554df415ccc45a04ec88d834f94b119673173b87763512eb4eea.js" integrity="sha256-Q26Y&#43;dDzVU30FczEWgTsiNg0&#43;UsRlnMXO4d2NRLrTuo=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -226,6 +226,7 @@ https://github.com/alex-shpak/hugo-book
       </ul>
     </li>
     <li><a href="#estrutura-condicional-if-else">Estrutura condicional: if else</a></li>
+    <li><a href="#estrutura-de-repetição-for">Estrutura de repetição: for</a></li>
   </ul>
 </nav>
 
@@ -608,8 +609,23 @@ Os principais grupos de operadores que veremos a seguir são:</p>
 <td>Resto da divisão (módulo)</td>
 <td><code>resto = a % b</code></td>
 </tr>
+<tr>
+<td><code>++</code></td>
+<td>Incremento (aumenta o valor da variável em 1)</td>
+<td><code>a++</code> ou <code>++a</code></td>
+</tr>
+<tr>
+<td><code>--</code></td>
+<td>Decremento (reduz o valor da variável em 1)</td>
+<td><code>b--</code> ou <code>--b</code></td>
+</tr>
 </tbody>
 </table>
+<p>Os operadores de incremento (++) e decremento (- -) podem ser usados antes ou depois da variável. O modo é chamado de pré-fixado ou pós-fixado:</p>
+<ul>
+<li>No pré-fixado (<code>++a</code>, <code>--b</code>), a variável é atualizada <strong>antes</strong> de ser usada na expressão.</li>
+<li>No pós-fixado (<code>a++</code>, <code>b--</code>), a variável é usada primeiro, e só <strong>depois</strong> é atualizada, ou seja, na próxima linha de instrução.</li>
+</ul>
 <h3 id="operadores-relacionais">
   Operadores relacionais
   <a class="anchor" href="#operadores-relacionais">#</a>
@@ -697,7 +713,7 @@ Os principais grupos de operadores que veremos a seguir são:</p>
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>using namespace std;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>, b <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>, b <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>, c <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Operadores aritméticos
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Soma: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> a <span style="color:#f92672">+</span> b <span style="color:#f92672">&lt;&lt;</span> endl;
@@ -715,6 +731,12 @@ Os principais grupos de operadores que veremos a seguir são:</p>
 </span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;a &gt; 5 ou b &gt; 5? &#34;</span> <span style="color:#f92672">&lt;&lt;</span> (a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">||</span> b <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>) <span style="color:#f92672">&lt;&lt;</span> endl;
 </span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;a não é menor que b? &#34;</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">!</span>(a <span style="color:#f92672">&lt;</span> b) <span style="color:#f92672">&lt;&lt;</span> endl;
 </span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Operadores unários de incremento e decremento
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Incremento pré-fixado: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">++</span>c <span style="color:#f92672">&lt;&lt;</span> endl; <span style="color:#75715e">// imprime 6
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    c <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Incremento pós-fixado: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> c<span style="color:#f92672">++</span> <span style="color:#f92672">&lt;&lt;</span> endl; <span style="color:#75715e">// imprime 5, mas depois &#39;c&#39; passa a valer 6
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>A saída esperada é:</p>
@@ -727,7 +749,9 @@ a é igual a b? 0
 a é maior que b? 1
 a &gt; 5 e b &lt; 5? 1
 a &gt; 5 ou b &gt; 5? 1
-a não é menor que b? 0
+a não é menor que b? 1
+Incremento pré-fixado: 6
+Incremento pré-fixado: 5
 </code></pre>
 <p>Na saída dos exemplos com operadores lógicos e/ou relacionais, lembre-se que <strong>1</strong> significa verdadeiro e <strong>0</strong> significa falso.</p>
 <h2 id="estrutura-condicional-if-else">
@@ -807,10 +831,42 @@ A forma geral da estruutra é:</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><!--
+</span></span></code></pre></div><h2 id="estrutura-de-repetição-for">
+  Estrutura de repetição: for
+  <a class="anchor" href="#estrutura-de-repeti%c3%a7%c3%a3o-for">#</a>
+</h2>
+<p>A estrutura de repetição (ou laço) <strong>for</strong> permite que um bloco de código seja executado várias vezes, enquanto uma condição específica for verdadeira. A sintaxe geral é:</p>
+<pre><code>for (inicialização; condição; incremento) {
+    // bloco de código que será repetido
+}
+</code></pre>
+<p>No qual:</p>
+<ul>
+<li><strong>inicialização</strong>: define e inicializa uma variável de controle do laço de repetição. Ex. ``ìnt i = 0```.</li>
+<li><strong>condição</strong>: é uma expressão lógica que é verificada <em>antes de cada repetição</em>. Enquanto for verdadeira, o bloco será executado. Ex. <code>i &lt; 5</code>.</li>
+<li><strong>incremento/decremento</strong>: atualiza a variável de controle a cada repetição. Ex. <code>i++</code>.</li>
+</ul>
+<p>Exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">5</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Número: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> i <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída será:</p>
+<pre><code>Número: 1
+Número: 2
+Número: 3
+Número: 4
+Número: 5
+</code></pre>
+<!--
 ## Estrutura de repetição: while
 
-## Estrutura de repetição: for
+
 
 ## Funções
 
@@ -886,6 +942,7 @@ A forma geral da estruutra é:</p>
       </ul>
     </li>
     <li><a href="#estrutura-condicional-if-else">Estrutura condicional: if else</a></li>
+    <li><a href="#estrutura-de-repetição-for">Estrutura de repetição: for</a></li>
   </ul>
 </nav>
 
