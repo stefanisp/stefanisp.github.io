@@ -20,7 +20,7 @@ C&#43;&#43; é uma linguagem de programação de propósito geral que surgiu com
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.436e98f9d0f3554df415ccc45a04ec88d834f94b119673173b87763512eb4eea.js" integrity="sha256-Q26Y&#43;dDzVU30FczEWgTsiNg0&#43;UsRlnMXO4d2NRLrTuo=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.5d9e245fb26901be32a9c95ad0312969aa47face421f90b00cd372714d4a07b8.js" integrity="sha256-XZ4kX7JpAb4yqcla0DEpaapH&#43;s5CH5CwDNNycU1KB7g=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -846,6 +846,7 @@ A forma geral da estruutra é:</p>
 <li><strong>condição</strong>: é uma expressão lógica que é verificada <em>antes de cada repetição</em>. Enquanto for verdadeira, o bloco será executado. Ex. <code>i &lt; 5</code>.</li>
 <li><strong>incremento/decremento</strong>: atualiza a variável de controle a cada repetição. Ex. <code>i++</code>.</li>
 </ul>
+<p>Com essas três <em>etapas</em>, o comando <strong>for</strong> repete o bloco de código delimitado por <code>{ }</code> enquanto a condição permanecer verdadeira. Normalente, a mudança de estado dessa condição - de verdadeiro pra falso - ocorre graças à atualização da variável de controle, feita por meio de um incremento ou decremento a cada repetição.</p>
 <p>Exemplo:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
@@ -863,8 +864,54 @@ Número: 3
 Número: 4
 Número: 5
 </code></pre>
+<p>Vejamos um exemplo semelhante, mas com decremento da variável de controle:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>; i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1</span>; i<span style="color:#f92672">--</span>) {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Número: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> i <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída será:</p>
+<pre><code>Número: 5
+Número: 4
+Número: 3
+Número: 2
+Número: 1
+</code></pre>
+<p>Segue mais um exemplo, agora, com leitura de dados dentro da estrutura de repetição. No exemplo, o algoritmo lê o valor de uma nota a cada repetição, e calcula incrementalmente a média das notas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C++" data-lang="C++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> nota, soma <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> quantidade <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> quantidade; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Digite a nota &#34;</span> <span style="color:#f92672">&lt;&lt;</span> i <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;: &#34;</span>;
+</span></span><span style="display:flex;"><span>        cin <span style="color:#f92672">&gt;&gt;</span> nota;
+</span></span><span style="display:flex;"><span>        soma <span style="color:#f92672">+=</span> nota; <span style="color:#75715e">// soma = soma + nota
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> media <span style="color:#f92672">=</span> soma <span style="color:#f92672">/</span> quantidade;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;A média das notas é: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> media <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Um exemplo de saída é:</p>
+<pre><code>Digite a nota 1: 8
+Digite a nota 2: 7
+Digite a nota 3: 9
+Digite a nota 4: 6
+Digite a nota 5: 8
+A média das notas é: 7.6
+</code></pre>
 <!--
 ## Estrutura de repetição: while
+
+
 
 
 
