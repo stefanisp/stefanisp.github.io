@@ -20,7 +20,7 @@ C&#43;&#43; é uma linguagem de programação de propósito geral que surgiu com
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.5d9e245fb26901be32a9c95ad0312969aa47face421f90b00cd372714d4a07b8.js" integrity="sha256-XZ4kX7JpAb4yqcla0DEpaapH&#43;s5CH5CwDNNycU1KB7g=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4291cdc9637792094f5311335ccb2316775c718462f26c9af12cc1287c6ecace.js" integrity="sha256-QpHNyWN3kglPUxEzXMsjFndccYRi8mya8SzBKHxuys4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -227,6 +227,13 @@ https://github.com/alex-shpak/hugo-book
     </li>
     <li><a href="#estrutura-condicional-if-else">Estrutura condicional: if else</a></li>
     <li><a href="#estrutura-de-repetição-for">Estrutura de repetição: for</a></li>
+    <li><a href="#estrutura-de-repetição-while">Estrutura de repetição: while</a></li>
+    <li><a href="#funções">Funções</a>
+      <ul>
+        <li><a href="#com-tipo-de-retorno">Com tipo de retorno</a></li>
+        <li><a href="#com-parâmetros-de-entrada">Com parâmetros de entrada</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -908,16 +915,159 @@ Digite a nota 4: 6
 Digite a nota 5: 8
 A média das notas é: 7.6
 </code></pre>
+<h2 id="estrutura-de-repetição-while">
+  Estrutura de repetição: while
+  <a class="anchor" href="#estrutura-de-repeti%c3%a7%c3%a3o-while">#</a>
+</h2>
+<p>A estutura <strong>while</strong>, semelhante à estrutura <strong>for</strong>, também é utilizada para repetir um bloco de código enquanto uma condição for verdadeira. A sintaxe geral é:</p>
+<pre><code>while (condição){
+    //bloco de código que será repetido
+
+}
+</code></pre>
+<p>Perceba que a estrutura do <strong>while</strong> não inclui, em sua própria sintaxe, a <em>inicialização</em> nem o <em>incremento</em> da variável de controle, como vimos no <strong>for</strong>. Por isso, esses comandos precisam ser escritos separadamente no código: a inicialização antes do início do laço, e o incremento dentro do bloco de repetição.</p>
+<p>Vejamos um exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">// Inicializa a variável de controle
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (i <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">5</span>) {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Número: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> i <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>        i<span style="color:#f92672">++</span>; <span style="color:#75715e">// Incrementa a variável de controle
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída será:</p>
+<pre><code>Número: 1
+Número: 2
+Número: 3
+Número: 4
+Número: 5
+</code></pre>
+<p>Segue uma versão do algoritmo para cálculo de média de notas informadas pelo usuário (visto na seção da estrutura <em>for</em>), utilizando a estrutura <strong>while</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> nota, soma <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> quantidade <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (i <span style="color:#f92672">&lt;=</span> quantidade) {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Digite a nota &#34;</span> <span style="color:#f92672">&lt;&lt;</span> i <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;: &#34;</span>;
+</span></span><span style="display:flex;"><span>        cin <span style="color:#f92672">&gt;&gt;</span> nota;
+</span></span><span style="display:flex;"><span>        soma <span style="color:#f92672">+=</span> nota; <span style="color:#75715e">// soma = soma + nota
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        i<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> media <span style="color:#f92672">=</span> soma <span style="color:#f92672">/</span> quantidade;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;A média das notas é: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> media <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="funções">
+  Funções
+  <a class="anchor" href="#fun%c3%a7%c3%b5es">#</a>
+</h2>
+<p>Em programação, uma <em>função</em> é um bloco de código reutilizável que executa uma tarefa específica. O uso de funções deixa o código mais organizado, pois separa as partes do programa em blocos menores e mais compreensíveis.</p>
+<p>Uma função pode, opcionalmente, receber valores de <em>entrada</em>, e também pode retornar um resultado como <em>saída</em> da função. Chamados de <strong>parâmetros de entrada</strong> e <strong>parâmetro de saída</strong>.</p>
+<p>Vejamos, primeiro, a estrutura básica de uma função sem parâmetros de entrada e de saída:</p>
+<pre><code>void nome_da_função ( ) {
+    //Bloco de código da função
+}
+</code></pre>
+<p>Assim como nome de variáveis, nomes de funções são escolhidos pelo programador, e seguem as mesmas regras de nomeação de variáveis (podem conter letras, números e o caracterer sublinhado (_), devendo começar com uma letra ou sublinhado).</p>
+<p>Segue um exemplo de declaração e chamada de uma função:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">mensagemBoasVindas</span>() {
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Bem-vindo ao curso de C++!&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    mensagemBoasVindas(); <span style="color:#75715e">// chamada da função
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída será:</p>
+<pre><code>Bem-vindo ao curso de C++!
+</code></pre>
+<p>Vamos entender:</p>
+<ul>
+<li>O nome da função é <em>mensagemBoasVindas</em>. Ela foi declarada antes do bloco da função <code>main()</code>.</li>
+<li><strong>void</strong> indica que a função não terá retorno.</li>
+<li>Para que a função seja executada, ela precisa ser <em>chamada</em> em algum ponto do código. Nesse exemplo, chamamos a função dentro do bloco <code>main()</code> com a instrução <code>mensagemBoasVindas();</code>.</li>
+<li>O código começa a ser executado a partir do bloco <code>main()</code>. Nesse exemplo, a primeiro instrução do bloco é a chamada da função. Dessa forma, o fluxo de execução é redirecionado para o bloco de instruções da função. Ao finalizar o bloco da função, o fluxo de execução retorna para a próxima instrução do bloco <code>main()</code>.</li>
+</ul>
+<p>Vejamos outro exemplo, com declaração de duas funções:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Primeira função
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">primeiraFuncao</span>() {
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Mensagem da primeira função.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Segunda função
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">segundaFuncao</span>() {
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Mensagem da segunda função.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Início do programa no main.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    primeiraFuncao(); <span style="color:#75715e">// chama a primeira função
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;De volta ao main, depois da primeira função.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    segundaFuncao(); <span style="color:#75715e">// chama a segunda função
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Final do programa no main.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída será:</p>
+<pre><code>Início do programa no main.
+Mensagem da primeira função.
+De volta ao main, depois da primeira função.
+Mensagem da segunda função.
+Final do programa no main.
+</code></pre>
+<h3 id="com-tipo-de-retorno">
+  Com tipo de retorno
+  <a class="anchor" href="#com-tipo-de-retorno">#</a>
+</h3>
+<p>&hellip;</p>
+<h3 id="com-parâmetros-de-entrada">
+  Com parâmetros de entrada
+  <a class="anchor" href="#com-par%c3%a2metros-de-entrada">#</a>
+</h3>
 <!--
-## Estrutura de repetição: while
 
 
+2: Sintaxe geral para funções com tipo de retorno: 
 
+    tipo_de_retorno nome_da_função () {
+        
+        //Bloco de código da função
 
+    }
 
-## Funções
+3: Sintaxe geral para funções com parâmetros de entrada: 
+
+    tipo_de_retorno nome_da_função ( tipo_parametro1 nome_parametro1, tipo_parametro2 nome_parametro2 ) {
+        
+        //Bloco de código da função
+
+    }
 
 ## Listas
+## 
+
+
 
 
 -->
@@ -990,6 +1140,13 @@ A média das notas é: 7.6
     </li>
     <li><a href="#estrutura-condicional-if-else">Estrutura condicional: if else</a></li>
     <li><a href="#estrutura-de-repetição-for">Estrutura de repetição: for</a></li>
+    <li><a href="#estrutura-de-repetição-while">Estrutura de repetição: while</a></li>
+    <li><a href="#funções">Funções</a>
+      <ul>
+        <li><a href="#com-tipo-de-retorno">Com tipo de retorno</a></li>
+        <li><a href="#com-parâmetros-de-entrada">Com parâmetros de entrada</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
