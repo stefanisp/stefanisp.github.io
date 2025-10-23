@@ -20,7 +20,7 @@ C&#43;&#43; é uma linguagem de programação de propósito geral que surgiu com
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4291cdc9637792094f5311335ccb2316775c718462f26c9af12cc1287c6ecace.js" integrity="sha256-QpHNyWN3kglPUxEzXMsjFndccYRi8mya8SzBKHxuys4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.6cc330bcc0fa56b88520bfc30d185c665da72350528911620d4bd52127a0c0fc.js" integrity="sha256-bMMwvMD6VriFIL/DDRhcZl2nI1BSiRFiDUvVISegwPw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -230,8 +230,9 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#estrutura-de-repetição-while">Estrutura de repetição: while</a></li>
     <li><a href="#funções">Funções</a>
       <ul>
-        <li><a href="#com-tipo-de-retorno">Com tipo de retorno</a></li>
+        <li><a href="#com-retorno">Com retorno</a></li>
         <li><a href="#com-parâmetros-de-entrada">Com parâmetros de entrada</a></li>
+        <li><a href="#com-múltiplos-retornos">Com múltiplos retornos</a></li>
       </ul>
     </li>
   </ul>
@@ -975,11 +976,10 @@ Número: 5
 <p>Em programação, uma <em>função</em> é um bloco de código reutilizável que executa uma tarefa específica. O uso de funções deixa o código mais organizado, pois separa as partes do programa em blocos menores e mais compreensíveis.</p>
 <p>Uma função pode, opcionalmente, receber valores de <em>entrada</em>, e também pode retornar um resultado como <em>saída</em> da função. Chamados de <strong>parâmetros de entrada</strong> e <strong>parâmetro de saída</strong>.</p>
 <p>Vejamos, primeiro, a estrutura básica de uma função sem parâmetros de entrada e de saída:</p>
-<pre><code>void nome_da_função ( ) {
+<pre><code>void nome_da_função() {
     //Bloco de código da função
 }
 </code></pre>
-<p>Assim como nome de variáveis, nomes de funções são escolhidos pelo programador, e seguem as mesmas regras de nomeação de variáveis (podem conter letras, números e o caracterer sublinhado (_), devendo começar com uma letra ou sublinhado).</p>
 <p>Segue um exemplo de declaração e chamada de uma função:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
@@ -990,13 +990,15 @@ Número: 5
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
 </span></span><span style="display:flex;"><span>    mensagemBoasVindas(); <span style="color:#75715e">// chamada da função
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>A saída será:</p>
 <pre><code>Bem-vindo ao curso de C++!
 </code></pre>
 <p>Vamos entender:</p>
 <ul>
+<li>Assim como nome de variáveis, nomes de funções são escolhidos pelo programador, e seguem as mesmas regras de nomeação de variáveis (podem conter letras, números e o caracterer sublinhado (_), devendo começar com uma letra ou sublinhado).</li>
 <li>O nome da função é <em>mensagemBoasVindas</em>. Ela foi declarada antes do bloco da função <code>main()</code>.</li>
 <li><strong>void</strong> indica que a função não terá retorno.</li>
 <li>Para que a função seja executada, ela precisa ser <em>chamada</em> em algum ponto do código. Nesse exemplo, chamamos a função dentro do bloco <code>main()</code> com a instrução <code>mensagemBoasVindas();</code>.</li>
@@ -1036,33 +1038,180 @@ De volta ao main, depois da primeira função.
 Mensagem da segunda função.
 Final do programa no main.
 </code></pre>
-<h3 id="com-tipo-de-retorno">
-  Com tipo de retorno
-  <a class="anchor" href="#com-tipo-de-retorno">#</a>
+<h3 id="com-retorno">
+  Com retorno
+  <a class="anchor" href="#com-retorno">#</a>
 </h3>
-<p>&hellip;</p>
-<h3 id="com-parâmetros-de-entrada">
+<p>A estrutura básica para declarar uma função com tipo de retorno é:</p>
+<pre><code>tipo_de_retorno nome_da_função() {
+    //Bloco de código da função
+
+    return valor;
+}
+</code></pre>
+<p>O <em>tipo_de_retorno</em> indica o tipo de dado que a função entregará de volta após ser executada. Esse tipo pode ser, por exemplo, <code>int</code>, <code>float</code>, <code>str</code>, <code>string</code>, entre outros. Quando a função não precisa devolver nenhum valor, como vimos na seção anterior, utiliza-se o <em>tipo</em> <code>void</code>.
+Para retornar um valor ao ponto do programa onde a função foi chamada, utilizamos a instrução <code>return</code>, seguida do valor compatível com o tipo de retorno definido. Exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Função que retorna um número inteiro
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">somar</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">+</span> b; <span style="color:#75715e">// Retorna o resultado da soma
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> resultado <span style="color:#f92672">=</span> somar(); <span style="color:#75715e">// Recebe o valor retornado pela função
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;O resultado da soma é: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> resultado <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>No exemplo acima, a função <code>somar()</code> realiza uma operação e retorna o valor da soma para o ponto onde foi chamada. O valor é então armazenado na variável <code>resultado</code> dentro do main().</p>
+<p>Poderíamos, também, retornar um valor diretamente, ou uma variável, como no exemplo a seguir:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Função que retorna um número inteiro
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">somar</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> soma <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> b
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> soma; <span style="color:#75715e">// Retorna a variável com o resultado da soma
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> resultado <span style="color:#f92672">=</span> somar(); <span style="color:#75715e">// Recebe o valor retornado pela função
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;O resultado da soma é: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> resultado <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="com-parâmetros-de-entrada">
   Com parâmetros de entrada
   <a class="anchor" href="#com-par%c3%a2metros-de-entrada">#</a>
 </h3>
-<!--
+<p>Uma função com parâmetros de entrada não depende apenas de valores fixos dentro dela. Ela trabalha com valores fornecidos pelo programa no momento da chamada, através dos parâmetros de entrada.</p>
+<p>A estrutura básica é:</p>
+<pre><code>// Com um parâmetro de entrada
+tipo_de_retorno nome_da_função(tipo_do_parametro parametro) {
+    //Bloco de código da função
 
+    return valor;
+}
 
-2: Sintaxe geral para funções com tipo de retorno: 
+// Com mais de um parâmetro de entrada:
+tipo_de_retorno nome_da_função(tipo1 parametro1, tipo2 parametro2, ...) {
+    //Bloco de código da função
 
-    tipo_de_retorno nome_da_função () {
-        
-        //Bloco de código da função
-
-    }
-
-3: Sintaxe geral para funções com parâmetros de entrada: 
-
-    tipo_de_retorno nome_da_função ( tipo_parametro1 nome_parametro1, tipo_parametro2 nome_parametro2 ) {
-        
-        //Bloco de código da função
-
-    }
+    return valor;
+}
+</code></pre>
+<p>Lembrando que o retorno da função é opcional e não depende dos parâmetros de entrada. Se não tiver um retorno, utilizamos o <code>void</code> na declaração da função.</p>
+<p>Segue um exemplo da função <code>somar()</code>, visto na seção anterior, mas agora com parâmetros de entrada:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Função que retorna um número inteiro
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">somar</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">+</span> b; <span style="color:#75715e">// Retorna o resultado da soma
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> valor_1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> valor_2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> resultado <span style="color:#f92672">=</span> somar(valor_1, valor_2); <span style="color:#75715e">// Recebe o valor retornado pela função
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;O resultado da soma é: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> resultado <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Nesse exemplo, a função <code>somar()</code> recebe dois parâmetros de entrada (<code>a</code> e <code>b</code>), cujos valores são passados na chamada da função através de variáveis que foram declaradas no bloco <code>main()</code>. As variáveis <code>valor_1</code>e <code>valor_2</code> não fazem parte da função <code>somar()</code> e não podem ser alteradas pela função, apenas os seus valores serão copiados.</p>
+<p>Vejamos mais alguns exemplos de chamada de função:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Função que retorna um número inteiro
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">somar</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">+</span> b; <span style="color:#75715e">// Retorna o resultado da soma
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> valor_1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> valor_2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> resultado <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Digite o valor 1: &#34;</span>;
+</span></span><span style="display:flex;"><span>    cin <span style="color:#f92672">&gt;&gt;</span> valor_1;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Digite o valor 2: &#34;</span>;
+</span></span><span style="display:flex;"><span>    cin <span style="color:#f92672">&gt;&gt;</span> valor_2; 
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    resultado <span style="color:#f92672">=</span> somar(valor_1, valor_2); 
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;O resultado da soma é: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> resultado <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Chamada diretamente com valores
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    resultado <span style="color:#f92672">=</span> somar(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">9</span>);
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;O novo resultado da soma é: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> resultado <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Segue mais um exemplo de função:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Função que recebe duas notas e calcula a média
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">float</span> <span style="color:#a6e22e">calcularMedia</span>(<span style="color:#66d9ef">float</span> n1, <span style="color:#66d9ef">float</span> n2) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> media <span style="color:#f92672">=</span> (n1 <span style="color:#f92672">+</span> n2) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (media <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">7.0</span>)
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Aluno aprovado!&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Aluno reprovado!&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> media;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> nota1, nota2;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Digite as duas notas do aluno: &#34;</span>;
+</span></span><span style="display:flex;"><span>    cin <span style="color:#f92672">&gt;&gt;</span> nota1 <span style="color:#f92672">&gt;&gt;</span> nota2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> m <span style="color:#f92672">=</span> calcularMedia(nota1, nota2);
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;A média final foi: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> m <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="com-múltiplos-retornos">
+  Com múltiplos retornos
+  <a class="anchor" href="#com-m%c3%baltiplos-retornos">#</a>
+</h3>
+<p>Uma função pode ter mais de um comando <code>return</code> dentro de seu bloco de código. O <code>return</code> não apenas envia um valor de volta ao programa chamador, mas também encerra imediatamente a execução da função, e nada depois dele é executado. Isso significa que a execução da função pode terminar em diferentes momentos, dependendo das condições verificadas.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Função que avalia a média e retorna uma mensagem
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>string <span style="color:#a6e22e">verificarSituacao</span>(<span style="color:#66d9ef">float</span> media) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (media <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">7.0</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Aprovado!&#34;</span>;
+</span></span><span style="display:flex;"><span>    } 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (media <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">3.0</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Em recuperação.&#34;</span>;
+</span></span><span style="display:flex;"><span>    } 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Reprovado.&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> nota;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Digite a média do aluno: &#34;</span>;
+</span></span><span style="display:flex;"><span>    cin <span style="color:#f92672">&gt;&gt;</span> nota;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    string resultado <span style="color:#f92672">=</span> verificarSituacao(nota);
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Situação do aluno: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> resultado <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><!--
 
 ## Listas
 ## 
@@ -1143,8 +1292,9 @@ Final do programa no main.
     <li><a href="#estrutura-de-repetição-while">Estrutura de repetição: while</a></li>
     <li><a href="#funções">Funções</a>
       <ul>
-        <li><a href="#com-tipo-de-retorno">Com tipo de retorno</a></li>
+        <li><a href="#com-retorno">Com retorno</a></li>
         <li><a href="#com-parâmetros-de-entrada">Com parâmetros de entrada</a></li>
+        <li><a href="#com-múltiplos-retornos">Com múltiplos retornos</a></li>
       </ul>
     </li>
   </ul>

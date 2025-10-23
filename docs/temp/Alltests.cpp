@@ -1,20 +1,26 @@
 #include <iostream>
 using namespace std;
 
+// Primeira função
+void primeiraFuncao() {
+    cout << "Mensagem da primeira função." << endl;
+}
+
+// Segunda função
+void segundaFuncao() {
+    cout << "Mensagem da segunda função." << endl;
+}
+
 int main() {
-    float nota, soma = 0;
-    int quantidade = 5;
-    int i = 0; 
+    cout << "Início do programa no main." << endl;
 
-    while (i <= quantidade) {
-        cout << "Digite a nota " << i << ": ";
-        cin >> nota;
-        soma += nota; // soma = soma + nota
-        i++;
-    }
+    primeiraFuncao(); // chama a primeira função
 
-    float media = soma / quantidade;
-    cout << "A média das notas é: " << media << endl;
+    cout << "De volta ao main, depois da primeira função." << endl;
+
+    segundaFuncao(); // chama a segunda função
+
+    cout << "Final do programa no main." << endl;
 
     return 0;
 }
