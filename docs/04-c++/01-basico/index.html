@@ -20,7 +20,7 @@ C&#43;&#43; é uma linguagem de programação de propósito geral que surgiu com
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.6cc330bcc0fa56b88520bfc30d185c665da72350528911620d4bd52127a0c0fc.js" integrity="sha256-bMMwvMD6VriFIL/DDRhcZl2nI1BSiRFiDUvVISegwPw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.d5619dc1bff3077ad812ec0a1ae0705bf5befa195b0c5ab0fbadc4e41373b968.js" integrity="sha256-1WGdwb/zB3rYEuwKGuBwW/W&#43;&#43;hlbDFqw&#43;63E5BNzuWg=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -235,6 +235,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#com-múltiplos-retornos">Com múltiplos retornos</a></li>
       </ul>
     </li>
+    <li><a href="#vetores">Vetores</a></li>
   </ul>
 </nav>
 
@@ -292,7 +293,11 @@ https://github.com/alex-shpak/hugo-book
 </code></pre>
 <p>Vamos entender:</p>
 <ul>
-<li><strong>#include &lt; iostream &gt;</strong> inclui ao seu arquivo a biblioteca padrão de C++ presente no compilador, permitindo o uso de recursos prontos de entrada e saída de dados, como leitura do teclado e exibição de informações na tela.</li>
+<li><strong>#include &lt; iostream &gt;</strong> inclui ao seu arquivo a <em>biblioteca</em> padrão de C++ presente no compilador, permitindo o uso de recursos prontos de entrada e saída de dados, como leitura do teclado e exibição de informações na tela.
+<ul>
+<li>Em programação, uma biblioteca é um conjunto de códigos prontos criados para facilitar o desenvolvimento de programas. Funcionam como extensões da linguagem, oferecendo recursos adicionais que podem ser reaproveitados no criação de novos programas.</li>
+</ul>
+</li>
 <li><strong>std::cout</strong> é o recurso da biblioteca padrão <em>iostream</em> utilizado para exibir mensagens na tela.</li>
 <li><strong>&laquo;</strong> é o operador que envia o que vem à direita para o <em>cout</em> à esquerda.</li>
 <li><strong>&ldquo;Bem vindo!&rdquo;</strong> é a nossa mensagem. Você pode alterar a mensagem, mas ela sempre deverá estar entre as aspas.</li>
@@ -1211,13 +1216,163 @@ tipo_de_retorno nome_da_função(tipo1 parametro1, tipo2 parametro2, ...) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><!--
+</span></span></code></pre></div><h2 id="vetores">
+  Vetores
+  <a class="anchor" href="#vetores">#</a>
+</h2>
+<p>Até agora, quando queríamos armazenar alguma informação dentro do programa — ou seja, guardar dados temporariamente na memória do computador — utilizamos variáveis, e cada variável era capaz de guardar apenas um único valor por vez, como um número, uma letra ou um texto.</p>
+<p>Porém, em muitos casos precisamos lidar com vários valores do mesmo tipo ao mesmo tempo: por exemplo, uma lista de notas de alunos, uma coleção de números sorteados, ou uma sequência de nomes cadastrados. Criar dezenas ou centenas de variáveis diferentes para isso seria inviável e confuso.</p>
+<p>Surge então a necessidade de uma <strong>estrutura de dados</strong> que agrupe vários valores sob um mesmo nome, permitindo acessá-los e manipulá-los facilmente. Existem várias estruturas de dados práticas e modernas, e nesse primeiro módulo aprenderemos o <strong>vector</strong> (vetores).</p>
+<p>Em C++, vetores são estruturas utilizadas para armezenar uma sequência de elementos do mesmo tipo, funcionando como uma lista dinâmica capaz de crescer ou diminuir conforme a necessidade do programa.</p>
+<p>Antes de usar um vetor, é necessário incluir a <strong>biblioteca vector</strong> no cabeçalho do arquivo, com a instrução:</p>
+<pre><code>#include &lt;vector&gt;
+</code></pre>
+<p>Essa biblioteca faz parte da STL (Standard Template Library) do C++, e foi criada para facilitar o trabalho com listas dinâmicas de elementos. Dentro da biblioteca estão definidos diversos métodos e funcionalidades que permitem, por exemplo, inserir, remover, acessar, buscar, e percorrer elementos em um vetor.</p>
+<p>Vejamos um exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Vetor de nomes (strings)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> nomes <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;Ana&#34;</span>, <span style="color:#e6db74">&#34;João&#34;</span>, <span style="color:#e6db74">&#34;José&#34;</span>, <span style="color:#e6db74">&#34;Maria&#34;</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Vetor de notas (números reais)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">float</span><span style="color:#f92672">&gt;</span> notas <span style="color:#f92672">=</span> {<span style="color:#ae81ff">8.5</span>, <span style="color:#ae81ff">7.2</span>, <span style="color:#ae81ff">9.0</span>, <span style="color:#ae81ff">7.8</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Lista de alunos e suas notas:&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Exibindo os dois vetores juntos
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> nomes.size(); i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> nomes[i] <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; - &#34;</span> <span style="color:#f92672">&lt;&lt;</span> notas[i] <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída do programa será:</p>
+<pre><code>Lista de alunos e suas notas:
+Ana - 8.5
+João - 7.2
+José - 9
+Maria - 7.8
+</code></pre>
+<p>Vamos entender:</p>
+<ul>
+<li>
+<p><code>vector&lt;string&gt; nomes = {&quot;Ana&quot;, &quot;João&quot;, &quot;José&quot;, &quot;Maria&quot;};</code> cria um vetor chamado <strong>nomes</strong>, que armazena valores do tipo <strong>string</strong>. O vetor é inicializado com os valores indicados na ordem de declaração, e cada valor é associado a um <em>índice</em>. Os índices começam a contar do zero, e são incrementados em 1 a cada posição no vetor. Por exemplo, após essa instrução, teremos esse conteúdo na memória:</p>
+<table>
+<thead>
+<tr>
+<th>Índice</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Ana</td>
+</tr>
+<tr>
+<td>1</td>
+<td>João</td>
+</tr>
+<tr>
+<td>2</td>
+<td>José</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Maria</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Da mesma forma, <code>vector&lt;float&gt; notas = {8.5, 7.2, 9.0, 7.8};</code>cria um vetor chamado <strong>notas</strong> que armazena valores do tipo <em><strong>float</strong></em>. Após essa instrução, teremos esse conteúdo na memória:</p>
+<table>
+<thead>
+<tr>
+<th>Índice</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>8.5</td>
+</tr>
+<tr>
+<td>1</td>
+<td>7.2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7.8</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>A estrutura de repetição <strong>for</strong> está percorrendo os dois vetores ao mesmo tempo, e imprimindo cada par de elementos correspondentes. Isso ocorre pois <code>nomes[i]</code> acessa o conteúdo que está armazenado na posição <strong>i</strong> do vetor <code>nomes</code>, da mesma forma que <code>notas[i]</code> também acessa o conteúdo que está armazenado na posição <strong>i</strong> do vetor <code>notas</code>.</p>
+</li>
+<li>
+<p><code>nomes.size()</code> acessa o método <code>size()</code> da biblioteca <em>vector</em> que retorna o número de elementos presentes no vetor.</p>
+</li>
+</ul>
+<!--
+Vetores também podem ser declarados sem nenhum elemento inicial. Vejamos exemplos de declarações válidas:
 
-## Listas
-## 
+```c++
+vector<string> cores;
+
+````
+
+
+### Inserção
+
+### Remoção
+
+
+Principais operaçÕes
+
+| Operação             | Descrição                                |
+| -------------------- | ---------------------------------------- |
+| `push_back(valor)`   | Insere no final                          |
+| `insert(pos, valor)` | Insere em posição específica             |
+| `pop_back()`         | Remove o último                          |
+| `erase(pos)`         | Remove em posição específica             |
+| `clear()`            | Remove todos os elementos                |
+| `size()`             | Retorna o tamanho atual                  |
+| `at(i)` / `[i]`      | Acessa um elemento                       |
+| `begin()` / `end()`  | Retorna iteradores para o início e o fim |
 
 
 
+
+## Biblioteca string
+
+manipulação básica: concatenação, tamanho, comparação ...
+
+Leitura com getLine()
+
+### FUNÇÕES - Escopo das variáveis
+
+Variáveis declaradas dentro de funções só existem durante a execução da função...
+
+Conceito de variáveis locais e globais...
+
+Exemplo simples mostrando conflito de nomes ou comportamento de escopo.
+
+
+MODULO 2
+
+## Constantes
+
+<TODO>
 
 -->
 <p>&hellip;</p>
@@ -1297,6 +1452,7 @@ tipo_de_retorno nome_da_função(tipo1 parametro1, tipo2 parametro2, ...) {
         <li><a href="#com-múltiplos-retornos">Com múltiplos retornos</a></li>
       </ul>
     </li>
+    <li><a href="#vetores">Vetores</a></li>
   </ul>
 </nav>
 
