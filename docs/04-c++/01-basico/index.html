@@ -20,7 +20,7 @@ C&#43;&#43; é uma linguagem de programação de propósito geral que surgiu com
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.d5619dc1bff3077ad812ec0a1ae0705bf5befa195b0c5ab0fbadc4e41373b968.js" integrity="sha256-1WGdwb/zB3rYEuwKGuBwW/W&#43;&#43;hlbDFqw&#43;63E5BNzuWg=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.93129f3c7336f37e5938e6bcb8d390f41ef5a9bf0443ca0401ceb8cb2adb8776.js" integrity="sha256-kxKfPHM2835ZOOa8uNOQ9B71qb8EQ8oEAc64yyrbh3Y=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -235,7 +235,11 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#com-múltiplos-retornos">Com múltiplos retornos</a></li>
       </ul>
     </li>
-    <li><a href="#vetores">Vetores</a></li>
+    <li><a href="#vetores">Vetores</a>
+      <ul>
+        <li><a href="#principais-operações">Principais operações</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -1228,6 +1232,13 @@ tipo_de_retorno nome_da_função(tipo1 parametro1, tipo2 parametro2, ...) {
 <pre><code>#include &lt;vector&gt;
 </code></pre>
 <p>Essa biblioteca faz parte da STL (Standard Template Library) do C++, e foi criada para facilitar o trabalho com listas dinâmicas de elementos. Dentro da biblioteca estão definidos diversos métodos e funcionalidades que permitem, por exemplo, inserir, remover, acessar, buscar, e percorrer elementos em um vetor.</p>
+<p>Podemos declarar um vetor vazio, ou já contendo elementos. As sintaxes são:</p>
+<pre><code>// Vetor vazio
+vector&lt;tipo_do_conteúdo&gt; nome;
+
+// Vetor com N elementos
+vector&lt;tipo_do_conteúdo&gt; nome = {valor_1, valor_2, ..., valor_N};
+</code></pre>
 <p>Vejamos um exemplo:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
@@ -1235,7 +1246,7 @@ tipo_de_retorno nome_da_função(tipo1 parametro1, tipo2 parametro2, ...) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Vetor de nomes (strings)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> nomes <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;Ana&#34;</span>, <span style="color:#e6db74">&#34;João&#34;</span>, <span style="color:#e6db74">&#34;José&#34;</span>, <span style="color:#e6db74">&#34;Maria&#34;</span>};
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> alunos <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;Ana&#34;</span>, <span style="color:#e6db74">&#34;João&#34;</span>, <span style="color:#e6db74">&#34;José&#34;</span>, <span style="color:#e6db74">&#34;Maria&#34;</span>};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Vetor de notas (números reais)
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">float</span><span style="color:#f92672">&gt;</span> notas <span style="color:#f92672">=</span> {<span style="color:#ae81ff">8.5</span>, <span style="color:#ae81ff">7.2</span>, <span style="color:#ae81ff">9.0</span>, <span style="color:#ae81ff">7.8</span>};
@@ -1243,8 +1254,8 @@ tipo_de_retorno nome_da_função(tipo1 parametro1, tipo2 parametro2, ...) {
 </span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Lista de alunos e suas notas:&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Exibindo os dois vetores juntos
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> nomes.size(); i<span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> nomes[i] <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; - &#34;</span> <span style="color:#f92672">&lt;&lt;</span> notas[i] <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> alunos.size(); i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> alunos[i] <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; - &#34;</span> <span style="color:#f92672">&lt;&lt;</span> notas[i] <span style="color:#f92672">&lt;&lt;</span> endl;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
@@ -1259,7 +1270,7 @@ Maria - 7.8
 <p>Vamos entender:</p>
 <ul>
 <li>
-<p><code>vector&lt;string&gt; nomes = {&quot;Ana&quot;, &quot;João&quot;, &quot;José&quot;, &quot;Maria&quot;};</code> cria um vetor chamado <strong>nomes</strong>, que armazena valores do tipo <strong>string</strong>. O vetor é inicializado com os valores indicados na ordem de declaração, e cada valor é associado a um <em>índice</em>. Os índices começam a contar do zero, e são incrementados em 1 a cada posição no vetor. Por exemplo, após essa instrução, teremos esse conteúdo na memória:</p>
+<p><code>vector&lt;string&gt; alunos = {&quot;Ana&quot;, &quot;João&quot;, &quot;José&quot;, &quot;Maria&quot;};</code> cria um vetor chamado <strong>alunos</strong>, que armazena valores do tipo <strong>string</strong>. O vetor é inicializado com os valores indicados na ordem de declaração, e cada valor é associado a um <em>índice</em>. Os índices começam a contar do zero, e são incrementados em 1 a cada posição no vetor. Por exemplo, após essa instrução, teremos esse conteúdo na memória:</p>
 <table>
 <thead>
 <tr>
@@ -1317,42 +1328,61 @@ Maria - 7.8
 </table>
 </li>
 <li>
-<p>A estrutura de repetição <strong>for</strong> está percorrendo os dois vetores ao mesmo tempo, e imprimindo cada par de elementos correspondentes. Isso ocorre pois <code>nomes[i]</code> acessa o conteúdo que está armazenado na posição <strong>i</strong> do vetor <code>nomes</code>, da mesma forma que <code>notas[i]</code> também acessa o conteúdo que está armazenado na posição <strong>i</strong> do vetor <code>notas</code>.</p>
+<p>A estrutura de repetição <strong>for</strong> está percorrendo os dois vetores ao mesmo tempo, e imprimindo cada par de elementos correspondentes. Isso ocorre pois <code>alunos[i]</code> acessa o conteúdo que está armazenado na posição <strong>i</strong> do vetor <code>alunos</code>, da mesma forma que <code>notas[i]</code> também acessa o conteúdo que está armazenado na posição <strong>i</strong> do vetor <code>notas</code>.</p>
 </li>
 <li>
-<p><code>nomes.size()</code> acessa o método <code>size()</code> da biblioteca <em>vector</em> que retorna o número de elementos presentes no vetor.</p>
+<p><code>alunos.size()</code> acessa o método <code>size()</code> da biblioteca <em>vector</em> que retorna o número de elementos presentes no vetor.</p>
 </li>
 </ul>
+<h3 id="principais-operações">
+  Principais operações
+  <a class="anchor" href="#principais-opera%c3%a7%c3%b5es">#</a>
+</h3>
+<p>A tabela abaixo sumariza as principais operações que podemos fazer com vetores:</p>
+<table>
+<thead>
+<tr>
+<th>Operação</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>push_back(valor)</code></td>
+<td>Insere no final do vetor.</td>
+</tr>
+<tr>
+<td><code>insert(pos, valor)</code></td>
+<td>Insere em posição específica.</td>
+</tr>
+<tr>
+<td><code>pop_back()</code></td>
+<td>Remove o último elemento do vetor.</td>
+</tr>
+<tr>
+<td><code>erase(pos)</code></td>
+<td>Remove em posição específica.</td>
+</tr>
+<tr>
+<td><code>clear()</code></td>
+<td>Remove todos os elementos.</td>
+</tr>
+<tr>
+<td><code>size()</code></td>
+<td>Retorna o tamanho atual.</td>
+</tr>
+<tr>
+<td><code>at(i)</code> / <code>[i]</code></td>
+<td>Acessa um elemento.</td>
+</tr>
+<tr>
+<td><code>begin()</code> / <code>end()</code></td>
+<td>Retorna iteradores para o início e o fim.</td>
+</tr>
+</tbody>
+</table>
+<p>Vejamos exemplos de aplicações:</p>
 <!--
-Vetores também podem ser declarados sem nenhum elemento inicial. Vejamos exemplos de declarações válidas:
-
-```c++
-vector<string> cores;
-
-````
-
-
-### Inserção
-
-### Remoção
-
-
-Principais operaçÕes
-
-| Operação             | Descrição                                |
-| -------------------- | ---------------------------------------- |
-| `push_back(valor)`   | Insere no final                          |
-| `insert(pos, valor)` | Insere em posição específica             |
-| `pop_back()`         | Remove o último                          |
-| `erase(pos)`         | Remove em posição específica             |
-| `clear()`            | Remove todos os elementos                |
-| `size()`             | Retorna o tamanho atual                  |
-| `at(i)` / `[i]`      | Acessa um elemento                       |
-| `begin()` / `end()`  | Retorna iteradores para o início e o fim |
-
-
-
-
 ## Biblioteca string
 
 manipulação básica: concatenação, tamanho, comparação ...
@@ -1452,7 +1482,11 @@ MODULO 2
         <li><a href="#com-múltiplos-retornos">Com múltiplos retornos</a></li>
       </ul>
     </li>
-    <li><a href="#vetores">Vetores</a></li>
+    <li><a href="#vetores">Vetores</a>
+      <ul>
+        <li><a href="#principais-operações">Principais operações</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
