@@ -20,7 +20,7 @@ C&#43;&#43; é uma linguagem de programação de propósito geral que surgiu com
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.93129f3c7336f37e5938e6bcb8d390f41ef5a9bf0443ca0401ceb8cb2adb8776.js" integrity="sha256-kxKfPHM2835ZOOa8uNOQ9B71qb8EQ8oEAc64yyrbh3Y=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.9297664c774a719412494eda7d0f5d7d2d40eebfb0a7a3481caf61c852cece5c.js" integrity="sha256-kpdmTHdKcZQSSU7afQ9dfS1A7r&#43;wp6NIHK9hyFLOzlw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -237,7 +237,12 @@ https://github.com/alex-shpak/hugo-book
     </li>
     <li><a href="#vetores">Vetores</a>
       <ul>
-        <li><a href="#principais-operações">Principais operações</a></li>
+        <li><a href="#resumo-das-principais-operações">Resumo das principais operações</a></li>
+        <li><a href="#inserindo-no-final-do-vetor">Inserindo no final do vetor</a></li>
+        <li><a href="#inserindo-no-iniciomeio">Inserindo no inicio/meio</a></li>
+        <li><a href="#acessando-elementos">Acessando elementos</a></li>
+        <li><a href="#atualizando-valores">Atualizando valores</a></li>
+        <li><a href="#removendo-elementos">Removendo elementos</a></li>
       </ul>
     </li>
   </ul>
@@ -1270,7 +1275,7 @@ Maria - 7.8
 <p>Vamos entender:</p>
 <ul>
 <li>
-<p><code>vector&lt;string&gt; alunos = {&quot;Ana&quot;, &quot;João&quot;, &quot;José&quot;, &quot;Maria&quot;};</code> cria um vetor chamado <strong>alunos</strong>, que armazena valores do tipo <strong>string</strong>. O vetor é inicializado com os valores indicados na ordem de declaração, e cada valor é associado a um <em>índice</em>. Os índices começam a contar do zero, e são incrementados em 1 a cada posição no vetor. Por exemplo, após essa instrução, teremos esse conteúdo na memória:</p>
+<p><code>vector&lt;string&gt; alunos = {&quot;Ana&quot;, &quot;João&quot;, &quot;José&quot;, &quot;Maria&quot;};</code> cria um vetor chamado <strong>alunos</strong>, que armazena valores do tipo <strong>string</strong>. O vetor é inicializado com os valores indicados na ordem de declaração, e cada valor é associado a um <em>índice</em>. Os índices começam a contar do zero, e são incrementados em 1 a cada posição no vetor. No exemplo, após essa instrução, teremos o seguinte conteúdo na memória:</p>
 <table>
 <thead>
 <tr>
@@ -1299,7 +1304,7 @@ Maria - 7.8
 </table>
 </li>
 <li>
-<p>Da mesma forma, <code>vector&lt;float&gt; notas = {8.5, 7.2, 9.0, 7.8};</code>cria um vetor chamado <strong>notas</strong> que armazena valores do tipo <em><strong>float</strong></em>. Após essa instrução, teremos esse conteúdo na memória:</p>
+<p>Da mesma forma, <code>vector&lt;float&gt; notas = {8.5, 7.2, 9.0, 7.8};</code> cria um vetor chamado <strong>notas</strong> que armazena valores do tipo <em><strong>float</strong></em>. Após essa instrução, teremos esse conteúdo na memória:</p>
 <table>
 <thead>
 <tr>
@@ -1334,9 +1339,9 @@ Maria - 7.8
 <p><code>alunos.size()</code> acessa o método <code>size()</code> da biblioteca <em>vector</em> que retorna o número de elementos presentes no vetor.</p>
 </li>
 </ul>
-<h3 id="principais-operações">
-  Principais operações
-  <a class="anchor" href="#principais-opera%c3%a7%c3%b5es">#</a>
+<h3 id="resumo-das-principais-operações">
+  Resumo das principais operações
+  <a class="anchor" href="#resumo-das-principais-opera%c3%a7%c3%b5es">#</a>
 </h3>
 <p>A tabela abaixo sumariza as principais operações que podemos fazer com vetores:</p>
 <table>
@@ -1368,6 +1373,10 @@ Maria - 7.8
 <td>Remove todos os elementos.</td>
 </tr>
 <tr>
+<td><code>empty()</code></td>
+<td>Verifica se o vetor está vazio</td>
+</tr>
+<tr>
 <td><code>size()</code></td>
 <td>Retorna o tamanho atual.</td>
 </tr>
@@ -1381,8 +1390,143 @@ Maria - 7.8
 </tr>
 </tbody>
 </table>
-<p>Vejamos exemplos de aplicações:</p>
+<p>Vejamos exemplos de aplicações por operação nas seções seguintes.</p>
+<h3 id="inserindo-no-final-do-vetor">
+  Inserindo no final do vetor
+  <a class="anchor" href="#inserindo-no-final-do-vetor">#</a>
+</h3>
+<p>Utilizamos o comando <strong>push_back(valor)</strong> para inserir o conteúdo <em>valor</em> no final de um vetor. Exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> cores;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cores.push_back(<span style="color:#e6db74">&#34;branco&#34;</span>);
+</span></span><span style="display:flex;"><span>    cores.push_back(<span style="color:#e6db74">&#34;azul&#34;</span>);
+</span></span><span style="display:flex;"><span>    cores.push_back(<span style="color:#e6db74">&#34;verde&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> cores.size(); i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> cores[i] <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída será</p>
+<pre><code>branco
+azul
+verde
+</code></pre>
+<h3 id="inserindo-no-iniciomeio">
+  Inserindo no inicio/meio
+  <a class="anchor" href="#inserindo-no-iniciomeio">#</a>
+</h3>
+<p>Para inserir elementos em posições específicas dentro de um vetor, utilizamos o método <strong>insert(posição, valor)</strong>, no qual o primeiro parâmetro deve ser um <em>iterador</em> que indica o ponto de inserção. Em geral, criamos esse iterador usando o comando:</p>
+<p><code>nome_do_vetor.begin() + número_inteiro</code></p>
+<p>O método <code>begin()</code> retorna um iterador que aponta para o primeiro elemento do vetor, ou seja, a <strong>posição 0</strong>. A partir dele, podemos deslocar o ponto de inserção somando um número inteiro. Assim:</p>
+<ul>
+<li><code>begin() + 1</code> significa <strong>posição 1</strong> do vetor;</li>
+<li><code>begin() + 2</code> significa <strong>posição 2</strong> do vetor;</li>
+<li>&hellip; e assim por diante.</li>
+</ul>
+<p>Exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> cores <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;branco&#34;</span>,<span style="color:#e6db74">&#34;azul&#34;</span>,<span style="color:#e6db74">&#34;verde&#34;</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cores.insert(cores.begin() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;amarelo&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> cores.size(); i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> cores[i] <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída será</p>
+<pre><code>branco
+amarelo
+azul
+verde
+</code></pre>
+<h3 id="acessando-elementos">
+  Acessando elementos
+  <a class="anchor" href="#acessando-elementos">#</a>
+</h3>
+<p>Como vimos no primeiro exemplo de vetores, acessamos os elementos em um vetor com a sintaxe:</p>
+<pre><code>nome_do_vetor[numero_posição];
+</code></pre>
+<p>Por exemplo, o trecho de código abaixo imprimiria as cores <em>branco e verde</em>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> cores <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;branco&#34;</span>, <span style="color:#e6db74">&#34;azul&#34;</span>, <span style="color:#e6db74">&#34;verde&#34;</span>};
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>cout <span style="color:#f92672">&lt;&lt;</span> cores[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; e &#34;</span> <span style="color:#f92672">&lt;&lt;</span> cores[<span style="color:#ae81ff">2</span>];   
+</span></span></code></pre></div><h3 id="atualizando-valores">
+  Atualizando valores
+  <a class="anchor" href="#atualizando-valores">#</a>
+</h3>
+<p>Para alterar o valor de um elemento, basta acessar a posição desejada com a sintaxe:</p>
+<pre><code>nome_do_vetor[numero_posição] = novo_valor
+</code></pre>
+<p>Exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> cores <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;branco&#34;</span>, <span style="color:#e6db74">&#34;azul&#34;</span>, <span style="color:#e6db74">&#34;verde&#34;</span>};
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>cores[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;amarelo&#34;</span>;   <span style="color:#75715e">//Atualização do valor
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> cores.size(); i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> cores[i] <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída será:</p>
+<pre><code>branco
+amarelo
+azul
+</code></pre>
+<h3 id="removendo-elementos">
+  Removendo elementos
+  <a class="anchor" href="#removendo-elementos">#</a>
+</h3>
+<p>Podemos remover o último elemento com o comando <strong>pop_back()</strong> ou remover um elemento em posição específica com o comando <strong>erase()</strong>. As sintaxes são:</p>
+<pre><code>//Remove o último elemento
+nome_do_vetor.pop_back();
+
+//Remove em posição específica
+nome_do_vetor.erase(nome_do_vetor.begin() + número_inteiro);
+</code></pre>
+<p>Vejamos um exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> cores <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;rosa&#34;</span>, <span style="color:#e6db74">&#34;branco&#34;</span>, <span style="color:#e6db74">&#34;azul&#34;</span>, <span style="color:#e6db74">&#34;verde&#34;</span>};
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>cores.pop_back(); <span style="color:#75715e">// remove o verde
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>cores.erase(cores.begin()); <span style="color:#75715e">//remove o rosa
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> cores.size(); i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> cores[i] <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída será:</p>
+<pre><code>branco
+azul
+</code></pre>
+<p>Também é possível remover todos os elementos do vetor de uma só vez utilizando o comando <strong>clear()</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> cores <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;rosa&#34;</span>, <span style="color:#e6db74">&#34;branco&#34;</span>, <span style="color:#e6db74">&#34;azul&#34;</span>, <span style="color:#e6db74">&#34;verde&#34;</span>};
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(cores.empty()){
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;O vetor já está vazio.&#34;</span>;    
+</span></span><span style="display:flex;"><span>}<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Apagando todos os elementos do vetor.&#34;</span>
+</span></span><span style="display:flex;"><span>    cores.clear();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>No exemplo acima, utilizamos a função <strong>empty()</strong>, que verifica se o vetor está vazio. Ela retorna o valor false (0) quando o vetor contém elementos e true (1) quando está vazio. No exemplo, adicionamos uma estrutura condicional para que o comando <strong>clear</strong> seja executado apenas quando o vetor possuir elementos, evitando uma operação desnecessária.</p>
 <!--
+
 ## Biblioteca string
 
 manipulação básica: concatenação, tamanho, comparação ...
@@ -1484,7 +1628,12 @@ MODULO 2
     </li>
     <li><a href="#vetores">Vetores</a>
       <ul>
-        <li><a href="#principais-operações">Principais operações</a></li>
+        <li><a href="#resumo-das-principais-operações">Resumo das principais operações</a></li>
+        <li><a href="#inserindo-no-final-do-vetor">Inserindo no final do vetor</a></li>
+        <li><a href="#inserindo-no-iniciomeio">Inserindo no inicio/meio</a></li>
+        <li><a href="#acessando-elementos">Acessando elementos</a></li>
+        <li><a href="#atualizando-valores">Atualizando valores</a></li>
+        <li><a href="#removendo-elementos">Removendo elementos</a></li>
       </ul>
     </li>
   </ul>
