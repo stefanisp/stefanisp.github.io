@@ -20,7 +20,7 @@ C&#43;&#43; é uma linguagem de programação de propósito geral que surgiu com
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.9297664c774a719412494eda7d0f5d7d2d40eebfb0a7a3481caf61c852cece5c.js" integrity="sha256-kpdmTHdKcZQSSU7afQ9dfS1A7r&#43;wp6NIHK9hyFLOzlw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f51e6f26627077800286ebcdee491ef2e0250dd8ca3bd7c3ebadcd6db9ed4743.js" integrity="sha256-9R5vJmJwd4AChuvN7kke8uAlDdjKO9fD663NbbntR0M=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -245,6 +245,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#removendo-elementos">Removendo elementos</a></li>
       </ul>
     </li>
+    <li><a href="#entrada-de-dados-com-getline">Entrada de dados com getline()</a></li>
   </ul>
 </nav>
 
@@ -1525,28 +1526,82 @@ azul
 </span></span><span style="display:flex;"><span>    cores.clear();
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>No exemplo acima, utilizamos a função <strong>empty()</strong>, que verifica se o vetor está vazio. Ela retorna o valor false (0) quando o vetor contém elementos e true (1) quando está vazio. No exemplo, adicionamos uma estrutura condicional para que o comando <strong>clear</strong> seja executado apenas quando o vetor possuir elementos, evitando uma operação desnecessária.</p>
-<!--
+<h2 id="entrada-de-dados-com-getline">
+  Entrada de dados com getline()
+  <a class="anchor" href="#entrada-de-dados-com-getline">#</a>
+</h2>
+<p>A função <strong>getline()</strong> é utilizada para ler uma linha inteira de texto digitada pelo usuário, incluindo espaços em branco.</p>
+<p>Enquanto o <code>cin</code> lê apenas até o primeiro espaço, o <code>getline()</code>captura tudo até o final da linha (até o <em>Enter</em>). A sintaxe de uso é:</p>
+<p><code>getline(cin, nome_variável_string);</code></p>
+<ul>
+<li><code>cin</code> indica que a leitura virá do teclado.</li>
+<li><code>variável_string</code> é a variável do tipo <em>string</em> que receberá o texto.</li>
+</ul>
+<p>Exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    string nomeCompleto;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Digite seu nome completo: &#34;</span>;
+</span></span><span style="display:flex;"><span>    getline(cin, nomeCompleto);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Olá, &#34;</span> <span style="color:#f92672">&lt;&lt;</span> nomeCompleto <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;! Seja bem-vindo.&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Um exemplo de saída é:</p>
+<pre><code>Digite seu nome completo: Ana Maria da Silva
+Olá, Ana Maria da Silva! Seja bem-vindo.
+</code></pre>
+<p><strong>IMPORTANTE: Cuidado ao usar <code>getline()</code>depois de um <code>cin</code>.</strong></p>
+<p>Quando utilizamos o <code>cin</code>para ler números ou palavras e depois tentamos usar o getline(), pode acontecer um &ldquo;erro&rdquo; comum no compilador, no qual o programa pula a leitura da linha. Isso ocorre porque, ao apertar <em>Enter</em> depois do <code>cin</code>, um caractere de nova linha (\n) fica na memória de entrada do teclado. O <code>getline()</code>acaba lendo esse \n e entende que a linha está &ldquo;vazia&rdquo;.</p>
+<p>Para corrigir esse problema, precisamos limpar a memória antes de usar o <code>getline()</code> com o comando:</p>
+<p><code>cin.ignore()</code></p>
+<p>Vejamos um exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> idade;
+</span></span><span style="display:flex;"><span>    string nome;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Digite sua idade: &#34;</span>;
+</span></span><span style="display:flex;"><span>    cin <span style="color:#f92672">&gt;&gt;</span> idade;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cin.ignore(); <span style="color:#75715e">// limpa o buffer antes do getline
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Digite seu nome completo: &#34;</span>;
+</span></span><span style="display:flex;"><span>    getline(cin, nome);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Olá, &#34;</span> <span style="color:#f92672">&lt;&lt;</span> nome <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;! Você tem &#34;</span> <span style="color:#f92672">&lt;&lt;</span> idade <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; anos.&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><!--
 
 ## Biblioteca string
 
 manipulação básica: concatenação, tamanho, comparação ...
 
-Leitura com getLine()
+
+Exemplo com funcoes e vetores
+
 
 ### FUNÇÕES - Escopo das variáveis
 
 Variáveis declaradas dentro de funções só existem durante a execução da função...
 
-Conceito de variáveis locais e globais...
-
-Exemplo simples mostrando conflito de nomes ou comportamento de escopo.
 
 
 MODULO 2
 
 ## Constantes
 
-<TODO>
+Conceito de variáveis locais e globais...
+
+Exemplo simples mostrando conflito de nomes ou comportamento de escopo.
 
 -->
 <p>&hellip;</p>
@@ -1636,6 +1691,7 @@ MODULO 2
         <li><a href="#removendo-elementos">Removendo elementos</a></li>
       </ul>
     </li>
+    <li><a href="#entrada-de-dados-com-getline">Entrada de dados com getline()</a></li>
   </ul>
 </nav>
 
