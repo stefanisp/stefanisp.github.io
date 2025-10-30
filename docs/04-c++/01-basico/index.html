@@ -20,7 +20,7 @@ C&#43;&#43; é uma linguagem de programação de propósito geral que surgiu com
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.f51e6f26627077800286ebcdee491ef2e0250dd8ca3bd7c3ebadcd6db9ed4743.js" integrity="sha256-9R5vJmJwd4AChuvN7kke8uAlDdjKO9fD663NbbntR0M=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.bef7e2059e6a8c8ff2e8f22b0940227428db2e9daca79416f84f8b3680ec197a.js" integrity="sha256-vvfiBZ5qjI/y6PIrCUAidCjbLp2sp5QW&#43;E&#43;LNoDsGXo=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -233,6 +233,13 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#com-retorno">Com retorno</a></li>
         <li><a href="#com-parâmetros-de-entrada">Com parâmetros de entrada</a></li>
         <li><a href="#com-múltiplos-retornos">Com múltiplos retornos</a></li>
+      </ul>
+    </li>
+    <li><a href="#escopo-de-variáveis">Escopo de variáveis</a>
+      <ul>
+        <li><a href="#escopo-global">Escopo global</a></li>
+        <li><a href="#dentro-da-função-main">Dentro da função main()</a></li>
+        <li><a href="#dentro-de-uma-função-comum">Dentro de uma função comum</a></li>
       </ul>
     </li>
     <li><a href="#vetores">Vetores</a>
@@ -491,6 +498,11 @@ std::string
 <td><code>float nota; </code> <br> <code>float media = 19.7;</code> <br> <code>float pi = 3.14159;</code></td>
 </tr>
 <tr>
+<td><strong>double</strong></td>
+<td>Números fracionados com maior precisão.</td>
+<td><code>double medicao; </code> <br> <code>double  volumeOceano = 1.3332e9;</code> <br> <code>double precoBitcoin = 345678.987654;</code></td>
+</tr>
+<tr>
 <td><strong>bool</strong></td>
 <td>Valor booleano, como verdadeiro ou falso.</td>
 <td><code>bool primeiro_acesso; </code> <br> <code>bool aprovado = 1;</code> <br> <code>boll estaAtivo = true;</code></td>
@@ -512,6 +524,7 @@ std::string
 <li><strong>bool</strong>: Em C++, variáveis do tipo <strong>bool</strong> possuem o valor numérico <strong>1</strong> para representar <strong>verdadeiro</strong> e o valor <strong>0</strong> para representar falso. A linguagem permite o uso das palavras <strong>true</strong> e <strong>false</strong> no código para facilitar a leitura, mas internamente os valores numéricos equivalentes (<strong>1</strong> e <strong>0</strong>) é que serão armazenados na memória.</li>
 <li><strong>char</strong>: O valor de uma variável do tipo char deve estar entre aspas simples.</li>
 <li><strong>string</strong>: O valor de uma variável do tipo string deve estar entre aspas duplas.</li>
+<li><strong>double</strong>: é usado para armazenar números reais grandes que ocupam mais espaço na memória que o tipo <em>float</em>. É indicado para cenários em que a precisão dos dados é essencial, como cálculos científicos, financeiros ou de engenharia.</li>
 </ul>
 <p>Segue um exemplo de código com declaração de variáveis e seus valores:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
@@ -526,7 +539,9 @@ std::string
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">float</span> notaMedia <span style="color:#f92672">=</span> <span style="color:#ae81ff">9.5</span>;     <span style="color:#75715e">// nota média do estudante
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">char</span> turma <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;B&#39;</span>;           <span style="color:#75715e">// turma do estudante
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">bool</span> aprovado <span style="color:#f92672">=</span> true;      <span style="color:#75715e">// status de aprovação
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">double</span> percentualPresenca <span style="color:#f92672">=</span> <span style="color:#ae81ff">98.75</span>; <span style="color:#75715e">// porcentagem de presença do estudante
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>     
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Exibindo as informações do estudante
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Dados do estudante: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
 </span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; Primeiro Nome: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> nome <span style="color:#f92672">&lt;&lt;</span> endl;
@@ -534,7 +549,7 @@ std::string
 </span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; Nota Média: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> notaMedia <span style="color:#f92672">&lt;&lt;</span> endl;
 </span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; Turma: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> turma <span style="color:#f92672">&lt;&lt;</span> endl;
 </span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; Aprovado? &#34;</span> <span style="color:#f92672">&lt;&lt;</span> aprovado <span style="color:#f92672">&lt;&lt;</span> endl;  <span style="color:#75715e">// true será mostrado como 1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; Percentual de presença: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> percentualPresenca <span style="color:#f92672">&lt;&lt;</span> endl;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>A saída será:</p>
@@ -544,6 +559,7 @@ std::string
  Nota Média: 8.5
  Turma: B
  Aprovado? 1
+ Percentual de presença: 98.75
 </code></pre>
 <p>Nós já aprendemos a ler informações do usuário utilizando o teclado como entrada de dados. Vejamos, então, um exemplo equivalente, no qual o usuário poderá fornecer as informações do aluno:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>
@@ -1226,7 +1242,72 @@ tipo_de_retorno nome_da_função(tipo1 parametro1, tipo2 parametro2, ...) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="vetores">
+</span></span></code></pre></div><h2 id="escopo-de-variáveis">
+  Escopo de variáveis
+  <a class="anchor" href="#escopo-de-vari%c3%a1veis">#</a>
+</h2>
+<p>O escopo de uma variável define onde ela pode ser acessada dentro do programa. Cada variável &ldquo;vive&rdquo; apenas dentro do bloco de código em que ela foi declarada - delimitado por chaves <code>{ }</code>.</p>
+<p>Existem três tipos principais de escopo onde uma variável pode ser declarada:</p>
+<ol>
+<li><strong>No escopo global</strong> (fora de qualquer função, inclusive fora de <code>main()</code>);</li>
+<li><strong>Dentro da função <code>main()</code></strong>;</li>
+<li><strong>Dentro de uma função comum</strong>.</li>
+</ol>
+<h3 id="escopo-global">
+  Escopo global
+  <a class="anchor" href="#escopo-global">#</a>
+</h3>
+<p>As variáveis com escopo global são declaradas fora de qualquer função (geralmente no início do programa).
+Elas podem ser acessadas e modificadas por qualquer função dentro do mesmo arquivo. Exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> contadorGlobal <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;  <span style="color:#75715e">// variável global
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">incrementar</span>() {
+</span></span><span style="display:flex;"><span>    contadorGlobal<span style="color:#f92672">++</span>;    <span style="color:#75715e">// acessa e altera a variável global
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Contador inicial: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> contadorGlobal <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    incrementar();
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Contador após incremento: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> contadorGlobal <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>No exemplo, a variável global <code>contadorGlobal</code> foi declarado no inicio do arquivo, fora de qualquer função. A variável pode ser acessada e modificada pela função incrementar() e pela função main().</p>
+<h3 id="dentro-da-função-main">
+  Dentro da função main()
+  <a class="anchor" href="#dentro-da-fun%c3%a7%c3%a3o-main">#</a>
+</h3>
+<p>Variáveis declaradas dentro da função <code>main()</code>são chamadas de locais. Elas só podem ser usadas dentro desse bloco principal, e outras funções não conseguem acessá-las diretamente. Esse é o tipo de variável que estamos utilizando desde o início desse módulo. Exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> idade <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;  <span style="color:#75715e">// variável local ao main
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Idade: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> idade <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="dentro-de-uma-função-comum">
+  Dentro de uma função comum
+  <a class="anchor" href="#dentro-de-uma-fun%c3%a7%c3%a3o-comum">#</a>
+</h3>
+<p>Como vimos na seção anterior de funções, cada função também pode ter suas próprias variáveis locais, que são declaradas dentro do bloco <code>{ }</code> da função. Essas variáveis são criadas quando a função é chamada e destruídas quando ela termina sua execução. Elas não podem ser acessadas fora da função. Exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">mostrarNota</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> nota <span style="color:#f92672">=</span> <span style="color:#ae81ff">8.5</span>;  <span style="color:#75715e">// variável local da função
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Nota do aluno: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> nota <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    mostrarNota();
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// cout &lt;&lt; nota; // ERRO: &#39;nota&#39; não é visível aqui
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>No exemplo acima, a variável <code>nota</code> existe apenas dentro da função <code>mostrarNota()</code>. Ao final da execução dessa função, ela é automaticamente removida da memória. Perceba que essa variável não pode ser acessada diretamente pela função <code>main()</code>.</p>
+<h2 id="vetores">
   Vetores
   <a class="anchor" href="#vetores">#</a>
 </h2>
@@ -1580,7 +1661,7 @@ Olá, Ana Maria da Silva! Seja bem-vindo.
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><!--
-
+## Biblioteca math
 ## Biblioteca string
 
 manipulação básica: concatenação, tamanho, comparação ...
@@ -1679,6 +1760,13 @@ Exemplo simples mostrando conflito de nomes ou comportamento de escopo.
         <li><a href="#com-retorno">Com retorno</a></li>
         <li><a href="#com-parâmetros-de-entrada">Com parâmetros de entrada</a></li>
         <li><a href="#com-múltiplos-retornos">Com múltiplos retornos</a></li>
+      </ul>
+    </li>
+    <li><a href="#escopo-de-variáveis">Escopo de variáveis</a>
+      <ul>
+        <li><a href="#escopo-global">Escopo global</a></li>
+        <li><a href="#dentro-da-função-main">Dentro da função main()</a></li>
+        <li><a href="#dentro-de-uma-função-comum">Dentro de uma função comum</a></li>
       </ul>
     </li>
     <li><a href="#vetores">Vetores</a>
