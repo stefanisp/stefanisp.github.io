@@ -20,7 +20,7 @@ C&#43;&#43; é uma linguagem de programação de propósito geral que surgiu com
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.bef7e2059e6a8c8ff2e8f22b0940227428db2e9daca79416f84f8b3680ec197a.js" integrity="sha256-vvfiBZ5qjI/y6PIrCUAidCjbLp2sp5QW&#43;E&#43;LNoDsGXo=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.6db60fc99db7657610af0aafb988054177406d40e35537821965cc32ed82f417.js" integrity="sha256-bbYPyZ23ZXYQrwqvuYgFQXdAbUDjVTeCGWXMMu2C9Bc=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -253,6 +253,11 @@ https://github.com/alex-shpak/hugo-book
       </ul>
     </li>
     <li><a href="#entrada-de-dados-com-getline">Entrada de dados com getline()</a></li>
+    <li><a href="#extra">Extra</a>
+      <ul>
+        <li><a href="#biblioteca-cmath">Biblioteca cmath()</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -1660,8 +1665,137 @@ Olá, Ana Maria da Silva! Seja bem-vindo.
 </span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Olá, &#34;</span> <span style="color:#f92672">&lt;&lt;</span> nome <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;! Você tem &#34;</span> <span style="color:#f92672">&lt;&lt;</span> idade <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; anos.&#34;</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><!--
-## Biblioteca math
+</span></span></code></pre></div><h2 id="extra">
+  Extra
+  <a class="anchor" href="#extra">#</a>
+</h2>
+<h3 id="biblioteca-cmath">
+  Biblioteca cmath()
+  <a class="anchor" href="#biblioteca-cmath">#</a>
+</h3>
+<p>A biblioteca <strong>cmath</strong> é a biblioteca matemática padrão da linguagem C++. Ela contém um conjunto de funções prontas que permitem realizar cálculos mais complexos do que as operações básicas (+, -, *, /, %).</p>
+<p>Com ela, é possível calcular potências, raízes, valores absolutos, seno, cosseno, logaritmos e muitas outras operações matemáticas úteis.</p>
+<p>Para utilizar a biblioteca, é necessário incluí-la no cabeçalho do arquivo, com a instrução:</p>
+<pre><code>#include &lt;cmath&gt;
+</code></pre>
+<p>Depois de incluí-la, você pode usar as funções da biblioteca em qualquer parte do seu programa. A sintaxe geral de uso das funções é:</p>
+<pre><code>resultado = funcao(parametro_de_entrada);
+</code></pre>
+<p><strong>Importante:</strong> As funções da biblioteca <em>cmath</em> normalmente trabalham com valores do tipo <em>double</em> (números reais). Se você passar um número inteiro, ele será automaticamente convertido para <em>double</em>.</p>
+<p>A tabela a seguir traz alguns exemplos de funções:</p>
+<table>
+<thead>
+<tr>
+<th>Função</th>
+<th>Descrição</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sqrt(x)</code></td>
+<td>Raiz quadrada de <em>x</em></td>
+<td><code>sqrt(25)</code></td>
+</tr>
+<tr>
+<td><code>pow(base, expoente)</code></td>
+<td>Potência</td>
+<td><code>pow(2, 3)</code></td>
+</tr>
+<tr>
+<td><code>abs(x)</code></td>
+<td>Valor absoluto (módulo) de <em>x</em></td>
+<td><code>abs(-10)</code></td>
+</tr>
+<tr>
+<td><code>log(x)</code></td>
+<td>Logaritmo natural (base <em>e</em>)</td>
+<td><code>log(10)</code></td>
+</tr>
+<tr>
+<td><code>log10(x)</code></td>
+<td>Logaritmo na base 10</td>
+<td><code>log10(1000)</code></td>
+</tr>
+<tr>
+<td><code>ceil(x)</code></td>
+<td>Arredonda <em>para cima</em></td>
+<td><code>ceil(4.2)</code></td>
+</tr>
+<tr>
+<td><code>floor(x)</code></td>
+<td>Arredonda <em>para baixo</em></td>
+<td><code>floor(4.8)</code></td>
+</tr>
+<tr>
+<td><code>round(x)</code></td>
+<td>Arredonda para o inteiro mais próximo</td>
+<td><code>round(4.6)</code></td>
+</tr>
+</tbody>
+</table>
+<!--
+| `sin(x)`              | Seno de *x* (x em radianos)             | `sin(3.14/)`  |
+| `cos(x)`              | Cosseno de *x* (em radianos)          | `cos(0)`      |
+| `tan(x)`              | Tangente de *x*                       | `tan(0.785)`   |
+-->
+<p>Vejamos um exemplo de uso:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;cmath&gt;     // Biblioteca matemática</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> numero <span style="color:#f92672">=</span> <span style="color:#ae81ff">9.0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> base <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> expoente <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> angulo <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.785398</span>; <span style="color:#75715e">// Aproximadamente 45 graus em radianos
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Aplicando várias funções matemáticas e armazenando os resultados
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">double</span> raiz <span style="color:#f92672">=</span> sqrt(numero);               <span style="color:#75715e">// Raiz quadrada
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">double</span> potencia <span style="color:#f92672">=</span> pow(base, expoente);    <span style="color:#75715e">// Potência base^expoente
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">double</span> absoluto <span style="color:#f92672">=</span> abs(<span style="color:#f92672">-</span><span style="color:#ae81ff">15.7</span>);             <span style="color:#75715e">// Valor absoluto
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">double</span> arredondado <span style="color:#f92672">=</span> round(<span style="color:#ae81ff">4.67</span>);         <span style="color:#75715e">// Arredondamento
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">double</span> teto <span style="color:#f92672">=</span> ceil(<span style="color:#ae81ff">4.2</span>);                  <span style="color:#75715e">// Arredonda para cima
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">double</span> piso <span style="color:#f92672">=</span> floor(<span style="color:#ae81ff">4.8</span>);                 <span style="color:#75715e">// Arredonda para baixo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Exibindo os resultados
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Raiz quadrada de &#34;</span> <span style="color:#f92672">&lt;&lt;</span> numero <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> raiz <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> base <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; elevado a &#34;</span> <span style="color:#f92672">&lt;&lt;</span> expoente <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> potencia <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Valor absoluto de -15.7: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> absoluto <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Arredondamento de 4.67: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> arredondado <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Teto de 4.2: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> teto <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Piso de 4.8: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> piso <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída será:</p>
+<pre><code>Raiz quadrada de 9: 3
+2 elevado a 3: 8
+Valor absoluto de -15.7: 15.7
+Arredondamento de 4.67: 5
+Teto de 4.2: 5
+Piso de 4.8: 4
+</code></pre>
+<p>As funções da biblioteca <cmath> também podem ser utilizadas diretamente dentro de expressões matemáticas, sem precisar armazenar seus resultados em variáveis intermediárias. Isso é útil quando desejamos realizar cálculos mais complexos de forma compacta.</p>
+<p>Segue um exemplo no qual combinamos as funções <code>sqrt()</code> e <code>pow()</code> em uma única expressão que calcula um resultado final:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;cmath&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> y <span style="color:#f92672">=</span> <span style="color:#ae81ff">4.0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Expressão que combina várias funções matemáticas
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">double</span> resultado <span style="color:#f92672">=</span> sqrt(pow(x, <span style="color:#ae81ff">2</span>) <span style="color:#f92672">+</span> pow(y, <span style="color:#ae81ff">2</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Resultado da expressao: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> resultado <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Nesse exemplo, <code>pow(x, 2) + pow(y, 2)</code> calcula a soma dos quadrados de <em>x</em> e <em>y</em>, e <code>sqrt()</code> extrai a raiz quadrada dessa soma, tudo dentro de uma única expressão.</p>
+<!--
+
 ## Biblioteca string
 
 manipulação básica: concatenação, tamanho, comparação ...
@@ -1685,9 +1819,6 @@ Conceito de variáveis locais e globais...
 Exemplo simples mostrando conflito de nomes ou comportamento de escopo.
 
 -->
-<p>&hellip;</p>
-<p>(EM DESENVOLVIMENTO)</p>
-<p>&hellip;</p>
 </article>
  
       
@@ -1780,6 +1911,11 @@ Exemplo simples mostrando conflito de nomes ou comportamento de escopo.
       </ul>
     </li>
     <li><a href="#entrada-de-dados-com-getline">Entrada de dados com getline()</a></li>
+    <li><a href="#extra">Extra</a>
+      <ul>
+        <li><a href="#biblioteca-cmath">Biblioteca cmath()</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
