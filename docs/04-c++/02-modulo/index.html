@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MÓDULO 2 - PROGRAMAÇÃO COM C&#43;&#43; # &lt;!!!!&gt; MÓDULO EM CONSTRUÇÃO &lt;!!!!&gt;
+Anotações para construção do módulo 2:
+Exemplo simples de declaração de classe e criação de objeto # #include &lt;iostream&gt; using namespace std; class Pessoa { private: string nome; public: void setNome(string n){ nome = n; } string getNome(){ return nome; } void apresentacao(){ cout &lt;&lt; &#34;Olá, meu nome é &#34; &lt;&lt; nome &lt;&lt; &#34;.&#34; &lt;&lt; endl; } }; int main() { Pessoa p1, p2, p3; p1.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Módulo 02" />
+<meta property="og:description" content="MÓDULO 2 - PROGRAMAÇÃO COM C&#43;&#43; # &lt;!!!!&gt; MÓDULO EM CONSTRUÇÃO &lt;!!!!&gt;
+Anotações para construção do módulo 2:
+Exemplo simples de declaração de classe e criação de objeto # #include &lt;iostream&gt; using namespace std; class Pessoa { private: string nome; public: void setNome(string n){ nome = n; } string getNome(){ return nome; } void apresentacao(){ cout &lt;&lt; &#34;Olá, meu nome é &#34; &lt;&lt; nome &lt;&lt; &#34;.&#34; &lt;&lt; endl; } }; int main() { Pessoa p1, p2, p3; p1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://stefanisp.github.io/docs/04-c&#43;&#43;/02-modulo/" /><meta property="article:section" content="docs" />
+
+
+<title>Módulo 02 | stefanisp.github.io</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.f94f4c4824ace909259f89d5f090b3a5070a0bb8a5f3e2686d7088b009516330.js" integrity="sha256-&#43;U9MSCSs6Qkln4nV8JCzpQcKC7il8&#43;JobXCIsAlRYzA=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>stefanisp.github.io</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/01-exerc%C3%ADcios/" class="">Exercícios de Programação</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/03-c-course/" class="">Introdução à Programação com a Linguagem C</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/02-py-course/" class="">Sumário de Python</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>CURSO: Informática com C&#43;&#43;</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-c&#43;&#43;/01-basico/" class="">Módulo 01</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Módulo 02</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#exemplo-simples-de-declaração-de-classe-e-criação-de-objeto">Exemplo simples de declaração de classe e criação de objeto</a></li>
+    <li><a href="#construtor">Construtor</a>
+      <ul>
+        <li><a href="#construtor-default">Construtor default</a></li>
+        <li><a href="#construtor-com-parametros">Construtor com parametros</a></li>
+        <li><a href="#construtor-com-lista-de-inicialização-de-membros">Construtor com lista de inicialização de membros</a></li>
+      </ul>
+    </li>
+    <li><a href="#definição-de-classe-em-arquivos-separados">Definição de classe em arquivos separados</a>
+      <ul>
+        <li><a href="#passo-1-arquivo-de-cabeçalho"><strong>PASSO 1</strong>: Arquivo de cabeçalho</a></li>
+        <li><a href="#passo-2-arquivo-de-implementação"><strong>PASSO 2</strong>: Arquivo de implementação</a></li>
+        <li><a href="#passo-3-arquivo-principal"><strong>PASSO 3</strong>: Arquivo principal</a></li>
+      </ul>
+    </li>
+    <li><a href="#herança">Herança</a>
+      <ul>
+        <li><a href="#passo-1-arquivo-de-cabeçalho-1"><strong>PASSO 1</strong>: Arquivo de cabeçalho</a></li>
+        <li><a href="#passo-2-arquivo-de-implementação-1"><strong>PASSO 2</strong>: Arquivo de implementação</a></li>
+        <li><a href="#passo-3-arquivo-principal-1"><strong>PASSO 3</strong>: Arquivo principal</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="módulo-2---programação-com-c">
+  MÓDULO 2 - PROGRAMAÇÃO COM C++
+  <a class="anchor" href="#m%c3%b3dulo-2---programa%c3%a7%c3%a3o-com-c">#</a>
+</h1>
+<p>&lt;!!!!&gt; MÓDULO EM CONSTRUÇÃO &lt;!!!!&gt;</p>
+<p>Anotações para construção do módulo 2:</p>
+<h2 id="exemplo-simples-de-declaração-de-classe-e-criação-de-objeto">
+  Exemplo simples de declaração de classe e criação de objeto
+  <a class="anchor" href="#exemplo-simples-de-declara%c3%a7%c3%a3o-de-classe-e-cria%c3%a7%c3%a3o-de-objeto">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pessoa</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        string nome;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">void</span> setNome(string n){
+</span></span><span style="display:flex;"><span>            nome <span style="color:#f92672">=</span> n;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        string <span style="color:#a6e22e">getNome</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> nome;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">apresentacao</span>(){
+</span></span><span style="display:flex;"><span>            cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Olá, meu nome é &#34;</span> <span style="color:#f92672">&lt;&lt;</span> nome <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Pessoa p1, p2, p3;
+</span></span><span style="display:flex;"><span>    p1.apresentacao();
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    p2.setNome(<span style="color:#e6db74">&#34;Maria&#34;</span>);
+</span></span><span style="display:flex;"><span>    p2.apresentacao();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    p3.setNome(<span style="color:#e6db74">&#34;João&#34;</span>);
+</span></span><span style="display:flex;"><span>    p3.apresentacao();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Pessoas cadastradas: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> p2.getNome() <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; e &#34;</span> <span style="color:#f92672">&lt;&lt;</span> p3.getNome() <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída será:</p>
+<pre><code>Olá, meu nome é .
+Olá, meu nome é Maria.
+Olá, meu nome é João.
+Pessoas cadastradas: Maria e João.
+</code></pre>
+<h2 id="construtor">
+  Construtor
+  <a class="anchor" href="#construtor">#</a>
+</h2>
+<h3 id="construtor-default">
+  Construtor default
+  <a class="anchor" href="#construtor-default">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pessoa</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        string nome;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Construtor default
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Pessoa (){
+</span></span><span style="display:flex;"><span>            nome <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;(Não definido)&#34;</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setNome</span>(string n){
+</span></span><span style="display:flex;"><span>            nome <span style="color:#f92672">=</span> n;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        string <span style="color:#a6e22e">getNome</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> nome;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">apresentacao</span>(){
+</span></span><span style="display:flex;"><span>            cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Olá, meu nome é &#34;</span> <span style="color:#f92672">&lt;&lt;</span> nome <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Pessoa p1, p2, p3;
+</span></span><span style="display:flex;"><span>    p1.apresentacao();
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    p2.setNome(<span style="color:#e6db74">&#34;Maria&#34;</span>);
+</span></span><span style="display:flex;"><span>    p2.apresentacao();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    p3.setNome(<span style="color:#e6db74">&#34;João&#34;</span>);
+</span></span><span style="display:flex;"><span>    p3.apresentacao();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Pessoas cadastradas: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> p2.getNome() <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; e &#34;</span> <span style="color:#f92672">&lt;&lt;</span> p3.getNome() <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída será:</p>
+<pre><code>Olá, meu nome é (Não definido).
+Olá, meu nome é Maria.
+Olá, meu nome é João.
+Pessoas cadastradas: Maria e João.
+</code></pre>
+<h3 id="construtor-com-parametros">
+  Construtor com parametros
+  <a class="anchor" href="#construtor-com-parametros">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pessoa</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        string nome;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Construtor default
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Pessoa (){
+</span></span><span style="display:flex;"><span>            nome <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;(Não definido)&#34;</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Construtor com parâmetro
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Pessoa (string n){
+</span></span><span style="display:flex;"><span>            nome <span style="color:#f92672">=</span> n;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setNome</span>(string n){
+</span></span><span style="display:flex;"><span>            nome <span style="color:#f92672">=</span> n;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        string <span style="color:#a6e22e">getNome</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> nome;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">apresentacao</span>(){
+</span></span><span style="display:flex;"><span>            cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Olá, meu nome é &#34;</span> <span style="color:#f92672">&lt;&lt;</span> nome <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Pessoa p1, p2, p3;
+</span></span><span style="display:flex;"><span>    p1.apresentacao();
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    p2.setNome(<span style="color:#e6db74">&#34;Maria&#34;</span>);
+</span></span><span style="display:flex;"><span>    p2.apresentacao();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    p3.setNome(<span style="color:#e6db74">&#34;João&#34;</span>);
+</span></span><span style="display:flex;"><span>    p3.apresentacao();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Pessoas cadastradas: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> p2.getNome() <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; e &#34;</span> <span style="color:#f92672">&lt;&lt;</span> p3.getNome() <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída será a mesma:</p>
+<pre><code>Olá, meu nome é (Não definido).
+Olá, meu nome é Maria.
+Olá, meu nome é João.
+Pessoas cadastradas: Maria e João.
+</code></pre>
+<ul>
+<li>Exemplo com mais parâmetros:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pessoa</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        string nome;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> idade;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Construtor default      
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Pessoa (){
+</span></span><span style="display:flex;"><span>            nome <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;(Não definido)&#34;</span>;
+</span></span><span style="display:flex;"><span>            idade <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Construtor com parâmetro
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Pessoa (string n){
+</span></span><span style="display:flex;"><span>            nome <span style="color:#f92672">=</span> n;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Construtor com parâmetro
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Pessoa (string n, <span style="color:#66d9ef">int</span> i){
+</span></span><span style="display:flex;"><span>            nome <span style="color:#f92672">=</span> n;
+</span></span><span style="display:flex;"><span>            idade <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setNome</span>(string n){
+</span></span><span style="display:flex;"><span>            nome <span style="color:#f92672">=</span> n;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        string <span style="color:#a6e22e">getNome</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> nome;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setIdade</span>(<span style="color:#66d9ef">int</span> i){
+</span></span><span style="display:flex;"><span>            idade <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getIdade</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> idade;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">apresentacao</span>(){
+</span></span><span style="display:flex;"><span>            cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Olá, meu nome é &#34;</span> <span style="color:#f92672">&lt;&lt;</span> nome <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;. Tenho &#34;</span> <span style="color:#f92672">&lt;&lt;</span> idade <span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34; anos.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Pessoa p1(<span style="color:#e6db74">&#34;Ana&#34;</span>, <span style="color:#ae81ff">21</span>), p2 (<span style="color:#e6db74">&#34;Maria&#34;</span>), p3;
+</span></span><span style="display:flex;"><span>    p1.apresentacao();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    p2.setIdade(<span style="color:#ae81ff">22</span>);
+</span></span><span style="display:flex;"><span>    p2.apresentacao();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    p3.setNome(<span style="color:#e6db74">&#34;João&#34;</span>);
+</span></span><span style="display:flex;"><span>    p3.apresentacao();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída será:</p>
+<pre><code>Olá, meu nome é Ana. Tenho 21 anos.
+Olá, meu nome é Maria. Tenho 22 anos.
+Olá, meu nome é João. Tenho -1 anos.
+</code></pre>
+<h3 id="construtor-com-lista-de-inicialização-de-membros">
+  Construtor com lista de inicialização de membros
+  <a class="anchor" href="#construtor-com-lista-de-inicializa%c3%a7%c3%a3o-de-membros">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pessoa</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        string nome;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> idade;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Construtor default      
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Pessoa (){
+</span></span><span style="display:flex;"><span>            nome <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;(Não definido)&#34;</span>;
+</span></span><span style="display:flex;"><span>            idade <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Construtor com lista de inicialização de membros
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Pessoa (string n) <span style="color:#f92672">:</span> nome(n){ }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Construtor com lista de inicialização de membros
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Pessoa (string n, <span style="color:#66d9ef">int</span> i) <span style="color:#f92672">:</span> nome(n), idade(i) { }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setNome</span>(string n){
+</span></span><span style="display:flex;"><span>            nome <span style="color:#f92672">=</span> n;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        string <span style="color:#a6e22e">getNome</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> nome;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setIdade</span>(<span style="color:#66d9ef">int</span> i){
+</span></span><span style="display:flex;"><span>            idade <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getIdade</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> idade;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">apresentacao</span>(){
+</span></span><span style="display:flex;"><span>            cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Olá, meu nome é &#34;</span> <span style="color:#f92672">&lt;&lt;</span> nome <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;. Tenho &#34;</span> <span style="color:#f92672">&lt;&lt;</span> idade <span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34; anos.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Pessoa p1(<span style="color:#e6db74">&#34;Ana&#34;</span>, <span style="color:#ae81ff">21</span>), p2 (<span style="color:#e6db74">&#34;Maria&#34;</span>), p3;
+</span></span><span style="display:flex;"><span>    p1.apresentacao();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    p2.setIdade(<span style="color:#ae81ff">22</span>);
+</span></span><span style="display:flex;"><span>    p2.apresentacao();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    p3.setNome(<span style="color:#e6db74">&#34;João&#34;</span>);
+</span></span><span style="display:flex;"><span>    p3.apresentacao();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A saída será a mesma:</p>
+<pre><code>Olá, meu nome é Ana. Tenho 21 anos.
+Olá, meu nome é Maria. Tenho 22 anos.
+Olá, meu nome é João. Tenho -1 anos.
+</code></pre>
+<h2 id="definição-de-classe-em-arquivos-separados">
+  Definição de classe em arquivos separados
+  <a class="anchor" href="#defini%c3%a7%c3%a3o-de-classe-em-arquivos-separados">#</a>
+</h2>
+<h3 id="passo-1-arquivo-de-cabeçalho">
+  <strong>PASSO 1</strong>: Arquivo de cabeçalho
+  <a class="anchor" href="#passo-1-arquivo-de-cabe%c3%a7alho">#</a>
+</h3>
+<p>Arquivo <strong>Pessoa.hpp</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#ifndef PESSOA_HPP
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define PESSOA_HPP
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pessoa</span>{
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    string nome;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> idade;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    Pessoa (string n, <span style="color:#66d9ef">int</span> i);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setNome</span>(string n);
+</span></span><span style="display:flex;"><span>    string <span style="color:#a6e22e">getNome</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setIdade</span>(<span style="color:#66d9ef">int</span> i);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getIdade</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">apresentacao</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#endif </span><span style="color:#75715e">// PESSOA_HPP
+</span></span></span></code></pre></div><h3 id="passo-2-arquivo-de-implementação">
+  <strong>PASSO 2</strong>: Arquivo de implementação
+  <a class="anchor" href="#passo-2-arquivo-de-implementa%c3%a7%c3%a3o">#</a>
+</h3>
+<p>Arquivo <strong>Pessoa.cpp</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Pessoa.hpp&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>Pessoa<span style="color:#f92672">::</span>Pessoa(string n, <span style="color:#66d9ef">int</span> i)<span style="color:#f92672">:</span> nome(n), idade(i){}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Pessoa<span style="color:#f92672">::</span>setNome(string n){
+</span></span><span style="display:flex;"><span>    nome <span style="color:#f92672">=</span> n;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>string Pessoa<span style="color:#f92672">::</span>getNome(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> nome;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Pessoa<span style="color:#f92672">::</span>setIdade(<span style="color:#66d9ef">int</span> i){
+</span></span><span style="display:flex;"><span>    idade <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> Pessoa<span style="color:#f92672">::</span>getIdade(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> idade;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Pessoa<span style="color:#f92672">::</span>apresentacao(){
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Olá, meu nome é &#34;</span> <span style="color:#f92672">&lt;&lt;</span> nome <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;. Tenho &#34;</span> <span style="color:#f92672">&lt;&lt;</span> idade <span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34; anos.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="passo-3-arquivo-principal">
+  <strong>PASSO 3</strong>: Arquivo principal
+  <a class="anchor" href="#passo-3-arquivo-principal">#</a>
+</h3>
+<p>Arquivo <strong>main.cpp</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Pessoa.hpp&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Iniciando o programa...&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Pessoa p1(<span style="color:#e6db74">&#34;Ana&#34;</span>, <span style="color:#ae81ff">21</span>);
+</span></span><span style="display:flex;"><span>    Pessoa p2 (<span style="color:#e6db74">&#34;Maria&#34;</span>, <span style="color:#ae81ff">22</span>), p3(<span style="color:#e6db74">&#34;João&#34;</span>, <span style="color:#ae81ff">23</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    p1.apresentacao();
+</span></span><span style="display:flex;"><span>    p2.apresentacao();
+</span></span><span style="display:flex;"><span>    p3.apresentacao();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="herança">
+  Herança
+  <a class="anchor" href="#heran%c3%a7a">#</a>
+</h2>
+<p>Uma nova classe que reaproveita os atributos e métodos de uma classe existente.</p>
+<h3 id="passo-1-arquivo-de-cabeçalho-1">
+  <strong>PASSO 1</strong>: Arquivo de cabeçalho
+  <a class="anchor" href="#passo-1-arquivo-de-cabe%c3%a7alho-1">#</a>
+</h3>
+<p>Arquivo <strong>Aluno.hpp</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#ifndef ALUNO_HPP
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define ALUNO_HPP
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Pessoa.hpp&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span>  std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Aluno</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> Pessoa{ <span style="color:#75715e">// Herança
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        string matricula;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        Aluno(string nome, <span style="color:#66d9ef">int</span> idade, string mat);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        string <span style="color:#a6e22e">getMatricula</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setMatricula</span>(string m);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">apresentacao</span>(); <span style="color:#75715e">//sobrescrita
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#endif </span><span style="color:#75715e">// ALUNO_HPP
+</span></span></span></code></pre></div><h3 id="passo-2-arquivo-de-implementação-1">
+  <strong>PASSO 2</strong>: Arquivo de implementação
+  <a class="anchor" href="#passo-2-arquivo-de-implementa%c3%a7%c3%a3o-1">#</a>
+</h3>
+<p>Arquivo <strong>Aluno.cpp</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Aluno.hpp&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Aluno<span style="color:#f92672">::</span>Aluno(string n, <span style="color:#66d9ef">int</span> i, string mat)<span style="color:#f92672">:</span> Pessoa(n, i), matricula(mat){}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>string Aluno<span style="color:#f92672">::</span>getMatricula(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> matricula;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Aluno<span style="color:#f92672">::</span>setMatricula(string m){
+</span></span><span style="display:flex;"><span>    matricula <span style="color:#f92672">=</span> m;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Aluno<span style="color:#f92672">::</span>apresentacao(){
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;[Aluno]&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; Nome: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> Aluno<span style="color:#f92672">::</span>getNome() <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; Idade: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> Aluno<span style="color:#f92672">::</span>getIdade() <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; Matricula: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> getMatricula() <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="passo-3-arquivo-principal-1">
+  <strong>PASSO 3</strong>: Arquivo principal
+  <a class="anchor" href="#passo-3-arquivo-principal-1">#</a>
+</h3>
+<p>Arquivo <strong>main.cpp</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Pessoa.hpp&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Aluno.hpp&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Iniciando o programa...&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Pessoa p1(<span style="color:#e6db74">&#34;Ana&#34;</span>, <span style="color:#ae81ff">21</span>);
+</span></span><span style="display:flex;"><span>    Pessoa p2 (<span style="color:#e6db74">&#34;Maria&#34;</span>, <span style="color:#ae81ff">22</span>), p3(<span style="color:#e6db74">&#34;João&#34;</span>, <span style="color:#ae81ff">23</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    p1.apresentacao();
+</span></span><span style="display:flex;"><span>    p2.apresentacao();
+</span></span><span style="display:flex;"><span>    p3.apresentacao();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Aluno a1(<span style="color:#e6db74">&#34;ALuno1&#34;</span>, <span style="color:#ae81ff">30</span>, <span style="color:#e6db74">&#34;111&#34;</span>);
+</span></span><span style="display:flex;"><span>    a1.apresentacao(); <span style="color:#75715e">//sobrescrito
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><!--
+(Brainstorm)- Candidatos a Conteúdo:
+- Mais sobre input/output cin >> a >> op >> c; (with streams?)
+- constantes
+- const e volative
+- sequencias de escape
+- structs and unions (depois de orientação a objetos??)
+- fluxos: 
+    - do-while
+    - switch 
+- jumps: break, continue and goto
+- ponteiros
+- class string (?)
+- Orientação a objetos ...
+	- Classes e objetos
+	- Arquivos de cabeçalho
+	- Herança
+	- Polimorfismo
+	- Classes abstratas
+- Capturando erros
+
+
+## Orientação a Objetos
+
+Introdução breve sobre o paradigma, conceito geral de abstração, o que é abstração na programação, pq oientaçao a objetos é uma abordagem ideal para representar abstraçoes, 
+
+- Figura com classes e objetos
+
+Comecemos com uma forma simples, classes declaradas no mesmo arquivo do programa principal main():
+
+
+Agora vamos estudar:
+
+- Estrutura dos arquivos. 
+- falamos que atributos e métoros de uma classe são 'membros'da classe
+-definicao do arquivo de cabeçalho
+-definicao do arquivo da classe
+-exemplo de criacao de objetos no arqvuivo main
+    - Construtores
+    - dizer q veremos exemplos de outras forma de criação (variacaoes de contrutores) mais pra frente.
+
+
+
+Depois de apresentar classe e objetos:
+
+Encapsulamento de dados
+Polimorfismo
+Abstração  - Classe abstrata ????? Interface?
++1
+
+
+
+Exemplo para escopo de variáveis locais e globais
+
+#include <iostream>
+using namespace std;
+
+int x = 9;
+
+int main() {
+    int x = 5;
+
+    cout << x << endl;
+    cout << ::x << endl; 
+
+    for(int x= 0; x < 4; x++){
+        cout << x << endl;
+    }
+
+    cout << x << endl;
+
+    return 0;
+}
+
+
+--></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#exemplo-simples-de-declaração-de-classe-e-criação-de-objeto">Exemplo simples de declaração de classe e criação de objeto</a></li>
+    <li><a href="#construtor">Construtor</a>
+      <ul>
+        <li><a href="#construtor-default">Construtor default</a></li>
+        <li><a href="#construtor-com-parametros">Construtor com parametros</a></li>
+        <li><a href="#construtor-com-lista-de-inicialização-de-membros">Construtor com lista de inicialização de membros</a></li>
+      </ul>
+    </li>
+    <li><a href="#definição-de-classe-em-arquivos-separados">Definição de classe em arquivos separados</a>
+      <ul>
+        <li><a href="#passo-1-arquivo-de-cabeçalho"><strong>PASSO 1</strong>: Arquivo de cabeçalho</a></li>
+        <li><a href="#passo-2-arquivo-de-implementação"><strong>PASSO 2</strong>: Arquivo de implementação</a></li>
+        <li><a href="#passo-3-arquivo-principal"><strong>PASSO 3</strong>: Arquivo principal</a></li>
+      </ul>
+    </li>
+    <li><a href="#herança">Herança</a>
+      <ul>
+        <li><a href="#passo-1-arquivo-de-cabeçalho-1"><strong>PASSO 1</strong>: Arquivo de cabeçalho</a></li>
+        <li><a href="#passo-2-arquivo-de-implementação-1"><strong>PASSO 2</strong>: Arquivo de implementação</a></li>
+        <li><a href="#passo-3-arquivo-principal-1"><strong>PASSO 3</strong>: Arquivo principal</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

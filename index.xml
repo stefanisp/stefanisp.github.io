@@ -37,6 +37,17 @@ C é uma linguagem de propósito geral. Isso quer dizer que ela pode ser utiliza
     </item>
     
     <item>
+      <title>Módulo 02</title>
+      <link>https://stefanisp.github.io/docs/04-c&#43;&#43;/02-modulo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stefanisp.github.io/docs/04-c&#43;&#43;/02-modulo/</guid>
+      <description>MÓDULO 2 - PROGRAMAÇÃO COM C++ # &amp;lt;!!!!&amp;gt; MÓDULO EM CONSTRUÇÃO &amp;lt;!!!!&amp;gt;
+Anotações para construção do módulo 2:
+Exemplo simples de declaração de classe e criação de objeto # #include &amp;lt;iostream&amp;gt; using namespace std; class Pessoa { private: string nome; public: void setNome(string n){ nome = n; } string getNome(){ return nome; } void apresentacao(){ cout &amp;lt;&amp;lt; &amp;#34;Olá, meu nome é &amp;#34; &amp;lt;&amp;lt; nome &amp;lt;&amp;lt; &amp;#34;.&amp;#34; &amp;lt;&amp;lt; endl; } }; int main() { Pessoa p1, p2, p3; p1.</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>https://stefanisp.github.io/docs/temp/expand/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
