@@ -5,12 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="MÓDULO 3 - PROGRAMAÇÃO COM C&#43;&#43; # &lt;!!!!&gt; MÓDULO EM CONSTRUÇÃO &lt;!!!!&gt;
 Anotações para construção do módulo 3:
-Orientação a objetos Exemplo simples de declaração de classe e criação de objetos # #include &lt;iostream&gt; using namespace std; class Pessoa { private: string nome; public: void setNome(string n){ nome = n; } string getNome(){ return nome; } void apresentacao(){ cout &lt;&lt; &#34;Olá, meu nome é &#34; &lt;&lt; nome &lt;&lt; &#34;.&#34; &lt;&lt; endl; } }; int main() { Pessoa p1, p2, p3; p1.">
+Orientação a objetos Classes e Objetos # Exemplo de declaração de classe e criação de objetos # TODO
+Encapsulamento de dados # #include &lt;iostream&gt; using namespace std; class Pessoa { private: string nome; public: void setNome(string n){ nome = n; } string getNome(){ return nome; } void apresentacao(){ cout &lt;&lt; &#34;Olá, meu nome é &#34; &lt;&lt; nome &lt;&lt; &#34;.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Módulo 03" />
 <meta property="og:description" content="MÓDULO 3 - PROGRAMAÇÃO COM C&#43;&#43; # &lt;!!!!&gt; MÓDULO EM CONSTRUÇÃO &lt;!!!!&gt;
 Anotações para construção do módulo 3:
-Orientação a objetos Exemplo simples de declaração de classe e criação de objetos # #include &lt;iostream&gt; using namespace std; class Pessoa { private: string nome; public: void setNome(string n){ nome = n; } string getNome(){ return nome; } void apresentacao(){ cout &lt;&lt; &#34;Olá, meu nome é &#34; &lt;&lt; nome &lt;&lt; &#34;.&#34; &lt;&lt; endl; } }; int main() { Pessoa p1, p2, p3; p1." />
+Orientação a objetos Classes e Objetos # Exemplo de declaração de classe e criação de objetos # TODO
+Encapsulamento de dados # #include &lt;iostream&gt; using namespace std; class Pessoa { private: string nome; public: void setNome(string n){ nome = n; } string getNome(){ return nome; } void apresentacao(){ cout &lt;&lt; &#34;Olá, meu nome é &#34; &lt;&lt; nome &lt;&lt; &#34;." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://stefanisp.github.io/docs/04-c&#43;&#43;/02-modulo/" /><meta property="article:section" content="docs" />
 
@@ -20,7 +22,7 @@ Orientação a objetos Exemplo simples de declaração de classe e criação de 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.bd193072668e9fc68437d9f5a9efcbc4dc3fe9933c26a3a54b483765f64eae87.js" integrity="sha256-vRkwcmaOn8aEN9n1qe/LxNw/6ZM8JqOlS0g3ZfZOroc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.6e945be1446dcfadff6bb34e1750431b5beb3b10060e50179dd4275758bbb94b.js" integrity="sha256-bpRb4URtz63/a7NOF1BDG1vrOxAGDlAXndQnV1i7uUs=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -202,8 +204,9 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#exemplo-simples-de-declaração-de-classe-e-criação-de-objetos">Exemplo simples de declaração de classe e criação de objetos</a>
+    <li><a href="#classes-e-objetos">Classes e Objetos</a>
       <ul>
+        <li><a href="#exemplo-de-declaração-de-classe-e-criação-de-objetos">Exemplo de declaração de classe e criação de objetos</a></li>
         <li><a href="#encapsulamento-de-dados">Encapsulamento de dados</a></li>
       </ul>
     </li>
@@ -215,7 +218,7 @@ https://github.com/alex-shpak/hugo-book
       </ul>
     </li>
     <li><a href="#destrutor">Destrutor</a></li>
-    <li><a href="#definição-de-classe-em-arquivos-separados">Definição de classe em arquivos separados</a>
+    <li><a href="#arquivos-de-cabeçalho-e-de-implementacao">Arquivos de cabeçalho e de implementacao</a>
       <ul>
         <li><a href="#passo-1-arquivo-de-cabeçalho"><strong>PASSO 1</strong>: Arquivo de cabeçalho</a></li>
         <li><a href="#passo-2-arquivo-de-implementação"><strong>PASSO 2</strong>: Arquivo de implementação</a></li>
@@ -259,10 +262,19 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>Orientação a objetos</li>
 </ul>
-<h2 id="exemplo-simples-de-declaração-de-classe-e-criação-de-objetos">
-  Exemplo simples de declaração de classe e criação de objetos
-  <a class="anchor" href="#exemplo-simples-de-declara%c3%a7%c3%a3o-de-classe-e-cria%c3%a7%c3%a3o-de-objetos">#</a>
+<h2 id="classes-e-objetos">
+  Classes e Objetos
+  <a class="anchor" href="#classes-e-objetos">#</a>
 </h2>
+<h3 id="exemplo-de-declaração-de-classe-e-criação-de-objetos">
+  Exemplo de declaração de classe e criação de objetos
+  <a class="anchor" href="#exemplo-de-declara%c3%a7%c3%a3o-de-classe-e-cria%c3%a7%c3%a3o-de-objetos">#</a>
+</h3>
+<p>TODO</p>
+<h3 id="encapsulamento-de-dados">
+  Encapsulamento de dados
+  <a class="anchor" href="#encapsulamento-de-dados">#</a>
+</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
 </span></span><span style="display:flex;"><span>
@@ -304,11 +316,6 @@ Olá, meu nome é Maria.
 Olá, meu nome é João.
 Pessoas cadastradas: Maria e João.
 </code></pre>
-<h3 id="encapsulamento-de-dados">
-  Encapsulamento de dados
-  <a class="anchor" href="#encapsulamento-de-dados">#</a>
-</h3>
-<TODO>
 <h2 id="construtor">
   Construtor
   <a class="anchor" href="#construtor">#</a>
@@ -543,9 +550,9 @@ Olá, meu nome é João. Tenho -1 anos.
   <a class="anchor" href="#destrutor">#</a>
 </h2>
 <TODO>
-<h2 id="definição-de-classe-em-arquivos-separados">
-  Definição de classe em arquivos separados
-  <a class="anchor" href="#defini%c3%a7%c3%a3o-de-classe-em-arquivos-separados">#</a>
+<h2 id="arquivos-de-cabeçalho-e-de-implementacao">
+  Arquivos de cabeçalho e de implementacao
+  <a class="anchor" href="#arquivos-de-cabe%c3%a7alho-e-de-implementacao">#</a>
 </h2>
 <h3 id="passo-1-arquivo-de-cabeçalho">
   <strong>PASSO 1</strong>: Arquivo de cabeçalho
@@ -977,8 +984,9 @@ Assim, um mesmo comando pode gerar comportamentos diferentes, dependendo do tipo
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#exemplo-simples-de-declaração-de-classe-e-criação-de-objetos">Exemplo simples de declaração de classe e criação de objetos</a>
+    <li><a href="#classes-e-objetos">Classes e Objetos</a>
       <ul>
+        <li><a href="#exemplo-de-declaração-de-classe-e-criação-de-objetos">Exemplo de declaração de classe e criação de objetos</a></li>
         <li><a href="#encapsulamento-de-dados">Encapsulamento de dados</a></li>
       </ul>
     </li>
@@ -990,7 +998,7 @@ Assim, um mesmo comando pode gerar comportamentos diferentes, dependendo do tipo
       </ul>
     </li>
     <li><a href="#destrutor">Destrutor</a></li>
-    <li><a href="#definição-de-classe-em-arquivos-separados">Definição de classe em arquivos separados</a>
+    <li><a href="#arquivos-de-cabeçalho-e-de-implementacao">Arquivos de cabeçalho e de implementacao</a>
       <ul>
         <li><a href="#passo-1-arquivo-de-cabeçalho"><strong>PASSO 1</strong>: Arquivo de cabeçalho</a></li>
         <li><a href="#passo-2-arquivo-de-implementação"><strong>PASSO 2</strong>: Arquivo de implementação</a></li>

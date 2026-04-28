@@ -15,7 +15,7 @@ Programar é a tarefa de se comunicar com o computador através da escrita de um
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.bd193072668e9fc68437d9f5a9efcbc4dc3fe9933c26a3a54b483765f64eae87.js" integrity="sha256-vRkwcmaOn8aEN9n1qe/LxNw/6ZM8JqOlS0g3ZfZOroc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.6e945be1446dcfadff6bb34e1750431b5beb3b10060e50179dd4275758bbb94b.js" integrity="sha256-bpRb4URtz63/a7NOF1BDG1vrOxAGDlAXndQnV1i7uUs=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://stefanisp.github.io/docs/03-c-course/index.xml" title="stefanisp.github.io" />
 <!--
 Made with Book Theme
@@ -1347,13 +1347,8 @@ Vejamos exemplos: -->
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Inicialização com texto
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">char</span> string_2[<span style="color:#ae81ff">7</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;String&#34;</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> string_3[<span style="color:#ae81ff">7</span>];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>string_3 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;String&#34;</span>
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, string_1);
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, string_2);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, string_3);
 </span></span></code></pre></div><p>Os strings em C possuem um <strong>\0</strong> ao final para representar o final do string. Observe que na declaração de <em>string_1</em> adicionamos explicitamente o <em>\0</em>. Na inicialização com texto, isso já é feito pelo compilador de forma implícita. Observe, também, que devemos contabilizar esse último caractere na definição do tamanho do array.</p>
 <p>Outra novidade é o indicador do tipo de variável no <em>printf</em>, que passou a ser <strong>%s</strong>.</p>
 <h3 id="leitura-de-strings">
