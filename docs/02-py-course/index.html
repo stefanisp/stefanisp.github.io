@@ -17,7 +17,7 @@ Criação de arquivos .py # Executamos código Python em arquivos com extensão 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.6e945be1446dcfadff6bb34e1750431b5beb3b10060e50179dd4275758bbb94b.js" integrity="sha256-bpRb4URtz63/a7NOF1BDG1vrOxAGDlAXndQnV1i7uUs=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.2c4991136c54269bad4192b1ef72244f2636741e1a6c04449e79459b4e1f8b1c.js" integrity="sha256-LEmRE2xUJputQZKx73IkTyY2dB4abAREnnlFm04fixw=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://stefanisp.github.io/docs/02-py-course/index.xml" title="stefanisp.github.io" />
 <!--
 Made with Book Theme
@@ -224,6 +224,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#bibliotecas">Bibliotecas</a>
       <ul>
         <li><a href="#math">Math</a></li>
+        <li><a href="#matplotlibpyplot">Matplotlib.pyplot</a></li>
       </ul>
     </li>
   </ul>
@@ -882,10 +883,118 @@ right = [('KeyEvent', 'ArrowUp', True), ('KeyEvent', 'ArrowLeft', False),('KeyEv
 </span></span><span style="display:flex;"><span>A <span style="color:#f92672">=</span> P <span style="color:#f92672">*</span> math<span style="color:#f92672">.</span>exp(r <span style="color:#f92672">*</span> t)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;O valor final após&#34;</span>, t, <span style="color:#e6db74">&#34;anos é: R$ &#34;</span>, A)
-</span></span></code></pre></div><!-- 
-### Matplotlib
-
-
+</span></span></code></pre></div><h3 id="matplotlibpyplot">
+  Matplotlib.pyplot
+  <a class="anchor" href="#matplotlibpyplot">#</a>
+</h3>
+<p><em>Matplotlib</em> é uma bilioteca para visualização de dados em Python que permite criar diversos tipos de gráficos. O <strong>pyplot</strong> é um módulo da biblioteca <em>Matplotlib</em>, que fornece uma interface simples e conveniente para criar e personalizar gráficos.</p>
+<p>Ao importar a biblioteca para nosso código, frequentemente utilizamos um apelido (<em>alias</em>) para facilitar o acesso às funções disponíveis. Por exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span></code></pre></div><p>Neste caso, <strong>plt</strong> será o apelido que utilizaremos para chamar as funções desse módulo. Vejamos um exemplo simples:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">8</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(x,y)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p>O código acima utiliza duas listas de números, <em>x</em> e <em>y</em>, para gerar o seguinte gráfico:</p>
+<p><img src="/pyplot_01.png" alt="pyplot" /></p>
+<p>Nesse exemplo,</p>
+<ul>
+<li><strong>plt.plot()</strong> cria o gráfico de linha, conectando os pontos formados com os valores das listas passadas como parâmetro.</li>
+<li><strong>plt.show()</strong> exibe a imagem do gráfico.</li>
+</ul>
+<p>Vamos adicionar mais informações ao gráfico:</p>
+<ul>
+<li>um título com a função <strong>.title()</strong></li>
+<li>um texto de rótulo para o eixo X, com <strong>.xlabel()</strong></li>
+<li>um texto de rótulo para o eixo Y, com <strong>.ylabel()</strong></li>
+<li>e desenhar uma grade para facilitar a visualização, com <strong>.grid()</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">8</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(x,y)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Variação de valores&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#34;Valores do eixo X.&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;Valores do eixo Y. &#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>grid()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p>O gráfico resultante é:</p>
+<p><img src="/pyplot_02.png" alt="pyplot" /></p>
+<p>A função <strong>plot()</strong> támbém permite customizar a aparência da linha utilizando <em>parâmetros</em>. Por exemplo, se trocarmos a instrução <em>plot</em> do gráfico acima para:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(x,y, marker<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;o&#34;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;green&#34;</span>, linestyle<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:&#34;</span>) 
+</span></span></code></pre></div><p>obtemos a seguinte linha customizada:</p>
+<p><img src="/pyplot_03.png" alt="pyplot" /></p>
+<p>A tabela abaixo lista exemplos de parâmetros:</p>
+<table>
+<thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+<th>Valores comuns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>marker</td>
+<td>Símbolo utilizado em cada ponto</td>
+<td>&ldquo;o&rdquo;, &ldquo;.&rdquo;, &ldquo;+&rdquo;, &ldquo;x&rdquo;, &ldquo;*&rdquo;, &ldquo;s&rdquo; (quadrado), &ldquo;D&rdquo; (losango), &ldquo;d&rdquo; (losango fino), &ldquo;^&rdquo; (triângulo para cima), &ldquo;v&rdquo; (baixo), &ldquo;&lt;&rdquo;, &ldquo;&gt;&rdquo;, &ldquo;p&rdquo; (pentágono), &ldquo;h&rdquo; (hexágono)</td>
+</tr>
+<tr>
+<td>color</td>
+<td>Cor da linha e dos marcadores</td>
+<td>&ldquo;blue&rdquo;, &ldquo;red&rdquo;, &ldquo;green&rdquo;, &ldquo;black&rdquo;, &ldquo;yellow&rdquo;, &ldquo;orange&rdquo;, &ldquo;purple&rdquo;, &ldquo;pink&rdquo;, &ldquo;gray&rdquo;, &ldquo;cyan&rdquo;, &ldquo;magenta&rdquo; ou códigos hexadecimais como &ldquo;#FF0000&rdquo;</td>
+</tr>
+<tr>
+<td>linestyle</td>
+<td>Estilo da linha</td>
+<td>&ldquo;-&rdquo; (contínua), &ldquo;&ndash;&rdquo; (tracejada), &ldquo;:&rdquo; (pontilhada), &ldquo;-.&rdquo; (traço-ponto), &quot;&quot; ou &ldquo;None&rdquo; (sem linha)</td>
+</tr>
+<tr>
+<td>linewidth</td>
+<td>Espessura da linha</td>
+<td>Número positivo (ex: 1, 2, 3.5)</td>
+</tr>
+<tr>
+<td>markersize</td>
+<td>Tamanho do marcador</td>
+<td>Número positivo (ex: 4, 5, 8.5)</td>
+</tr>
+<tr>
+<td>label</td>
+<td>Nome da série de dados (quando utilizado com legenda)</td>
+<td>Texto (ex: &ldquo;Função A&rdquo;)</td>
+</tr>
+</tbody>
+</table>
+<p>Também é possível plotar mais de uma série de dados no mesmo gráfico. Vejamos um exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">8</span>]
+</span></span><span style="display:flex;"><span>y_2 <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(x,y, marker<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;o&#34;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;green&#34;</span>, linestyle<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:&#34;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Sequência A&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(x,y_2, marker<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;x&#34;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;blue&#34;</span>, linestyle<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;--&#34;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Sequência B&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Variação de valores&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#34;Valores do eixo X.&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;Valores do eixo Y. &#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>grid()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p>Perceba que adicionamos mais um comando <em>plot()</em> com uma nova lista de valores compondo o eixo <em>Y</em> (<em>y_2</em>). Adicionamos, também, o parâmetro <em><strong>label</strong></em> para identificar cada linha e o comando <em><strong>plt.legend()</strong></em>, para que a legenda dos identificadores seja adicionada ao gráfico.</p>
+<p>O gráfico resultante é:</p>
+<p><img src="/pyplot_04.png" alt="pyplot" /></p>
+<!-- 
 ### NumPy
 
 Documentação do NumPy: https://numpy.org/doc/stable/
@@ -1085,6 +1194,7 @@ scikit-learn = built in NumPy, SciPy, and matplotlib
     <li><a href="#bibliotecas">Bibliotecas</a>
       <ul>
         <li><a href="#math">Math</a></li>
+        <li><a href="#matplotlibpyplot">Matplotlib.pyplot</a></li>
       </ul>
     </li>
   </ul>
