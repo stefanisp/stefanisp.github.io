@@ -15,7 +15,7 @@ Programar é a tarefa de se comunicar com o computador através da escrita de um
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.2c4991136c54269bad4192b1ef72244f2636741e1a6c04449e79459b4e1f8b1c.js" integrity="sha256-LEmRE2xUJputQZKx73IkTyY2dB4abAREnnlFm04fixw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.695c2ae96d8c935bbaf9bfd5fc5c04eb9e435d78bed3f297012a1c491302120e.js" integrity="sha256-aVwq6W2Mk1u6&#43;b/V/FwE655DXXi&#43;0/KXASocSRMCEg4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://stefanisp.github.io/docs/03-c-course/index.xml" title="stefanisp.github.io" />
 <!--
 Made with Book Theme
@@ -1020,11 +1020,8 @@ else
 <li>A <em>variável</em> dentro do <em>switch()</em> poderá ser do tipo <em>int</em> ou <em>char</em>;</li>
 <li>O switch é composto por blocos <em>case</em>. Cada bloco <em>case</em> é um teste para saber se o valor da variável é igual ao valor declarado após o nome <em>case</em> (valor_1, no exemplo do primeiro bloco case). Caso seja igual, as instruções pertencentes ao bloco serão executadas. Caso seja diferente, o próximo bloco <em>case</em> será testado. Podemos ler a estrutura acima dessa forma:
 <ul>
-<li>&ldquo;Caso o valor de <em>variável</em> seja igual a <em>valor_1</em>, execute as instruções do primeiro bloco case, pule todas as outras, e finalize a execução do switch. Caso seja diferente:
-<ul>
-<li>Execute o mesmo teste para os blocos <em>case</em> sequintes com seus respectivos valores.</li>
-</ul>
-</li>
+<li>Caso o valor de <em>variável</em> seja igual a <em>valor_1</em>, execute as instruções do primeiro bloco case, pule todas as outras, e finalize a execução do switch.</li>
+<li>Caso seja diferente, execute o mesmo teste para os blocos <em>case</em> sequintes com seus respectivos valores.</li>
 </ul>
 </li>
 <li>O último bloco é o <em>default</em>. Se o valor de <em>variável</em> for diferente de todos os valores declarados nos blocos case, as instruções do bloco <em>default</em> serão executadas. Esse bloco é opcional.</li>
@@ -1309,7 +1306,7 @@ Vejamos exemplos: -->
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Perceba que agora precisamos usar indexadores diferentes para cada dimensão, um para acessar a posição da linha e outro para a coluna. O par de indexadores representa o acesso a um único elemento na matriz. Por exemplo, <em>numeros[0][0]</em> acessa o primeiro elemento da matriz, que está na linha zero e coluna zero. Da mesma forma, para percorrer a matriz e imprimir seus elementos precisamos de duas estruturas de repetição, uma para cada dimensão. Cada estrutura define um indexador diferente. No código de exemplo, utilizamos os inteiros <strong>i</strong> e <strong>j</strong> para indexar linhas e colunas, respectivamente. Perceba que acrescentei um <em>printf(&quot;\n&rdquo;)</em> após a finalização do <em>for</em> que percorre as colunas. Dessa forma, após a impressão de cada coluna completa, pularemos uma linha para iniciar a impressão da próxima coluna. A saída do programa será:</p>
+</span></span></code></pre></div><p>Perceba que agora precisamos usar indexadores diferentes para cada dimensão, um para acessar a posição da linha e outro para a coluna. O par de indexadores representa o acesso a um único elemento na matriz. Por exemplo, <em>numeros[0][0]</em> acessa o primeiro elemento da matriz, que está na linha zero e coluna zero. Da mesma forma, para percorrer a matriz e imprimir seus elementos precisamos de duas estruturas de repetição, uma para cada dimensão. Cada estrutura define um indexador diferente. No código de exemplo, utilizamos os inteiros <strong>i</strong> e <strong>j</strong> para indexar linhas e colunas, respectivamente. Perceba que acrescentei um <em>printf(&quot;\n&quot;)</em> após a finalização do <em>for</em> que percorre as colunas. Dessa forma, após a impressão de cada coluna completa, pularemos uma linha para iniciar a impressão da próxima coluna. A saída do programa será:</p>
 <pre><code>10 11 12
 13 14 15
 </code></pre>
@@ -1776,7 +1773,7 @@ Aqui, str é um array de caracteres, mas você também pode tratá-lo como um po
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(num <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    resultado <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">/</span> num;
+</span></span><span style="display:flex;"><span>    resultado <span style="color:#f92672">=</span> <span style="color:#ae81ff">10.0</span> <span style="color:#f92672">/</span> num;
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> resultado;
 </span></span><span style="display:flex;"><span>}
